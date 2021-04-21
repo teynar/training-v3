@@ -22,7 +22,7 @@ At the end of this topic, you should be able to:
 
 This video summarizes the content of this topic:
 
-//video::cMSKmx6Pu7o[youtube,width=560,height=315]
+video::l9ZprjFoHsQ[youtube,width=560,height=315]
 
 Throughout this training, you should refer to:
 [square]
@@ -34,7 +34,6 @@ Throughout this training, you should refer to:
 Thus far, you have learned how to specify nodes, properties, and relationships in your Cypher queries.
 Since relationships are directional, it is important to understand how patterns are used in graph traversal during query execution.
 How a graph is traversed for a query depends on what directions are defined for relationships and how the pattern is specified in the `MATCH` clause.
-
 
 Here is an example where the _ACTED_IN_ relationship is defined as the relationship from an _Actor_ node to a _Movie_ node.
 
@@ -90,7 +89,7 @@ Run this query:
 [source,Cypher]
 ----
 MATCH  (a:Actor)<-[:ACTED_IN]-(m:Movie {title:'Toy Story'})
-RETURN a,m
+RETURN a, m
 ----
 
 This pattern is not represented in the graph which is why no nodes are returned.
@@ -112,7 +111,7 @@ Run this query:
 
 [source,Cypher]
 ----
-MATCH (m2)<-[:ACTED_IN]-(a:Actor)-[:ACTED_IN]->(m:Movie {title:"Toy Story"})
+MATCH (m:Movie {title:"Toy Story"})<-[:ACTED_IN]-(a:Actor)-[:ACTED_IN]->(m2)
 RETURN m, a, m2
 ----
 
@@ -148,7 +147,7 @@ Uncheck the setting to connect nodes and then run this query:
 
 [source,Cypher]
 ----
-MATCH  path = ((m2)<-[:ACTED_IN]-(a:Actor)-[:ACTED_IN]->(m:Movie {title:"Toy Story"}))
-RETURN path
+MATCH  subGraph = ((:Movie {title:"Toy Story"})<-[:ACTED_IN]-(:Actor)-[:ACTED_IN]->())
+RETURN subGraph
 ----
 

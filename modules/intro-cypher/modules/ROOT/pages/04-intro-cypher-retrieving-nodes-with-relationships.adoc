@@ -28,7 +28,7 @@ At the end of this topic, you should be able to:
 
 This video summarizes the content of this topic:
 
-//video::cMSKmx6Pu7o[youtube,width=560,height=315]
+video::nfOREP-p1Bk[youtube,width=560,height=315]
 
 Throughout this training, you should refer to:
 [square]
@@ -151,7 +151,7 @@ Run this Cypher code:
 
 [source,Cypher]
 ----
-MATCH (p:Person {name: 'Tom Hanks'})-[:ACTED_IN|DIRECTED]->(m:Movie)
+MATCH (:Person {name: 'Tom Hanks'})-[:ACTED_IN|DIRECTED]->(m:Movie)
 RETURN  m.title
 ----
 
@@ -173,7 +173,7 @@ Run this Cypher code to see that the duplicate title is eliminated:
 
 [source,Cypher]
 ----
-MATCH (p:Person {name: 'Tom Hanks'})-[:ACTED_IN|DIRECTED]->(m:Movie)
+MATCH (:Person {name: 'Tom Hanks'})-[:ACTED_IN|DIRECTED]->(m:Movie)
 RETURN  DISTICT m.title
 ----
 
