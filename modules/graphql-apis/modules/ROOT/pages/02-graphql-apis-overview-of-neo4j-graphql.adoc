@@ -26,7 +26,7 @@ image::02blanksandbox.png[Launching a blank Neo4j Sandbox,width=500,align=center
 
 image::02blanksandboxconnection.png[Neo4j Sandbox connection credentials,width=500,align=center]
 
-* Open the Codesandbox for this lesson using https://codesandbox.io/s/github/johnymontana/training-v3/modules/graphql-apis/supplemental/code/02-graphql-apis-overview-of-neo4j-graphql/begin?file=/schema.graphql[this link]. This Codesandbox contains the initial code for a GraphQL API application, however the application is throwing an error because it's not able to connect to a Neo4j instance. Let's fix this by adding our Neo4j Sandbox connection credentials.
+* Open the Codesandbox for this lesson using https://codesandbox.io/s/github/johnymontana/training-v3/tree/master/modules/graphql-apis/supplemental/code/02-graphql-apis-overview-of-neo4j-graphql/begin?file=/schema.graphql[this link^]. This Codesandbox contains the initial code for a GraphQL API application, however the application is throwing an error because it's not able to connect to a Neo4j instance. Let's fix this by adding our Neo4j Sandbox connection credentials.
 
 // TODO: add image
 
