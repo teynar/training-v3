@@ -29,21 +29,28 @@ image::02blanksandboxconnection.png[Neo4j Sandbox connection credentials,width=5
 * Open the Codesandbox for this lesson using https://codesandbox.io/s/github/johnymontana/training-v3/tree/master/modules/graphql-apis/supplemental/code/02-graphql-apis-overview-of-neo4j-graphql/begin?file=/schema.graphql[this link^]. This Codesandbox contains the initial code for a GraphQL API application, however the application is throwing an error because it's not able to connect to a Neo4j instance. Let's fix this by adding our Neo4j Sandbox connection credentials.
 
 
-image:02codesandboxerror.png[Codesandbox connection error,width=500,align=center]
+image::02codesandboxerror.png[Codesandbox connection error,width=500,align=center]
 
-* In order to make changes to the Codesandbox you'll need to fork it and then login to Codesandbox so that the changes are specific to your Codesandbox. Fork the codesandbox, then open the `.env` file, adding values for `NEO4J_URI`, `NEO4J_USER`, and `NEO4J_PASSWORD` specific to your Neo4j Sandbox instance.
+* In order to make changes to the Codesandbox you'll need to fork it and then login to Codesandbox so that the changes are specific to your Codesandbox. Fork the codesandbox, then open the `.env` file, adding values for `NEO4J_URI`, `NEO4J_USER`, and `NEO4J_PASSWORD` specific to your Neo4j Sandbox instance. Save the file and wait for the application to reload. You can test that it's working by running the following query in the GraphQL Playground window in your Codesandox (you should get back an empty array without any error messages).
 
-// TODO: add image showing what it should look like
+[source,GraphQL]
+----
+{
+  books {
+    title
+  }
+}
+----
 
-* Save the file and wait for the application to reload. You can test that it's working by running the following query in the GraphQL Playground window in your Codesandox (you should get back an empty array without any error messages).
+You should see a screen like this after updating the values in the `.env` file, with GraphQL Playground allowing your to execute GraphQL operations against your GraphQL API application connected to Neo4j Sandbox.
 
-// TODO: add image showing what it should look like
+image::02codesandboxcredentials.png[Codesandbox credentials, width=500, align=center]
 
 == GraphQL Type Definitions And The Property Graph Model
 
-* Intro to what we're going to build
-* show the graph model
-* show how to convert this graph model to graphql type definitions
+Now that our development environment is set up, let's take a look at what we'll be building throughout this course. The goal of this course is to build a GraphQL API application for an online bookstore. We'll need to handle customers searching for books, placing orders as well as leaving reviews for books they've purchased.
+
+We'll start with the following property graph data model:
 
 image::02book_graph.png[Graph data model,width=500,align=center]
 

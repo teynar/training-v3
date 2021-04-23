@@ -4,3 +4,4 @@
 * xref:03-graphql-apis-custom-logic.adoc[]
 * xref:04-graphql-apis-auth.adoc[]
 * xref:05-graphql-apis-ogm.adoc[]
+* xref:06-graphql-apis-summary.adoc[]

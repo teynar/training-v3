@@ -217,8 +217,6 @@ To familiarize yourself with GraphQL and writing GraphQL queries, explore the pu
 [.quiz]
 == Check Your Understanding
 
-Try writing queries to answer the following questions:
-
 === Question 1
 
 [.statement]
