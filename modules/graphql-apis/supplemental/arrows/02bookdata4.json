@@ -1,0 +1,341 @@
+{
+    "style": {
+      "node-color": "#4C8EDA",
+      "border-width": 0,
+      "border-color": "#000000",
+      "radius": 75,
+      "node-padding": 5,
+      "outside-position": "auto",
+      "caption-position": "inside",
+      "caption-max-width": 200,
+      "caption-color": "#ffffff",
+      "caption-font-size": 20,
+      "caption-font-weight": "normal",
+      "label-position": "inside",
+      "label-color": "#000000",
+      "label-background-color": "#ffffff",
+      "label-border-color": "#848484",
+      "label-border-width": 3,
+      "label-font-size": 20,
+      "label-padding": 5,
+      "label-margin": 4,
+      "directionality": "directed",
+      "detail-position": "above",
+      "detail-orientation": "parallel",
+      "arrow-width": 3,
+      "arrow-color": "#848484",
+      "margin-start": 5,
+      "margin-end": 5,
+      "margin-peer": 20,
+      "attachment-start": "normal",
+      "attachment-end": "normal",
+      "type-color": "#848484",
+      "type-background-color": "#ffffff",
+      "type-border-color": "#848484",
+      "type-border-width": 0,
+      "type-font-size": 21,
+      "type-padding": 5,
+      "property-position": "outside",
+      "property-color": "#848484",
+      "property-font-size": 20,
+      "property-font-weight": "normal"
+    },
+    "nodes": [
+      {
+        "id": "n0",
+        "position": {
+          "x": -29.279445539912416,
+          "y": -133.38038316515696
+        },
+        "caption": "",
+        "style": {},
+        "labels": [
+          "Book"
+        ],
+        "properties": {
+          "isbn": "\"1492047686\"",
+          "title": "\"Graph Algorithms\"",
+          "price": "37.48",
+          "description": "\"Practical Examples in Apache Spark and Neo4j\""
+        }
+      },
+      {
+        "id": "n1",
+        "position": {
+          "x": 54.333238781636624,
+          "y": 210.08857116532255
+        },
+        "caption": "",
+        "style": {
+          "node-color": "#fcdc00"
+        },
+        "labels": [
+          "Review"
+        ],
+        "properties": {
+          "rating": "5",
+          "text": "Best overview of graph data science!",
+          "createdAt": "2021-04-23T13:47:29.098000000Z"
+        }
+      },
+      {
+        "id": "n2",
+        "position": {
+          "x": -285.7275520261967,
+          "y": 297.1406210883217
+        },
+        "caption": "",
+        "style": {
+          "node-color": "#9f0500"
+        },
+        "labels": [
+          "Customer"
+        ],
+        "properties": {
+          "username": "EmilEifrem7474"
+        }
+      },
+      {
+        "id": "n3",
+        "position": {
+          "x": -458.0280369467645,
+          "y": -8.689305074541736
+        },
+        "caption": "",
+        "style": {
+          "node-color": "#194d33"
+        },
+        "labels": [
+          "ORDER"
+        ],
+        "properties": {
+          "orderID": "efba6b38-1279-4371-9c31-7abb3cd783a1",
+          "placedAt": "\"2021-04-23T13:47:29.098000000Z\""
+        }
+      },
+      {
+        "id": "n4",
+        "position": {
+          "x": -732.5378577339632,
+          "y": 210.08857116532255
+        },
+        "caption": "",
+        "style": {
+          "node-color": "#ab149e"
+        },
+        "labels": [
+          "Address"
+        ],
+        "properties": {
+          "address": "111 E 5th Ave, San Mateo, CA 94401",
+          "location": "{latitude: 37.5635, longitude: -122.3222}"
+        }
+      },
+      {
+        "id": "n5",
+        "position": {
+          "x": 440.3816683835024,
+          "y": -8.689305074541736
+        },
+        "caption": "",
+        "style": {
+          "node-color": "#194d33"
+        },
+        "labels": [
+          "Order"
+        ],
+        "properties": {
+          "orderID": "9491f888-7c07-4c79-bb64-6a000c75241c",
+          "placedAt": "2021-04-23T13:47:29.098000000Z"
+        }
+      },
+      {
+        "id": "n6",
+        "position": {
+          "x": 799.6743110178184,
+          "y": -8.689305074541736
+        },
+        "caption": "",
+        "style": {},
+        "labels": [
+          "Book"
+        ],
+        "properties": {
+          "isbn": "\"190962151X\"",
+          "title": "\"Ross Poldark\"",
+          "description": "\"Ross Poldark is the first novel in Winston Graham's sweeping saga of Cornish life in the eighteenth century.\"",
+          "price": "15.52"
+        }
+      },
+      {
+        "id": "n7",
+        "position": {
+          "x": 187.1135318995379,
+          "y": -423.39965933293576
+        },
+        "caption": "",
+        "style": {},
+        "labels": [
+          "Book"
+        ],
+        "properties": {
+          "isbn": "\"1119387507\"",
+          "title": "\"Inspired\"",
+          "description": "\"How to Create Tech Products Customers Love\"",
+          "price": "21.38"
+        }
+      },
+      {
+        "id": "n8",
+        "position": {
+          "x": 1125.4100617127083,
+          "y": -369.2799976976588
+        },
+        "caption": "",
+        "style": {
+          "node-color": "#fcdc00"
+        },
+        "labels": [
+          "Review"
+        ],
+        "properties": {
+          "rating": "4",
+          "text": "\"Beautiful depiction of Cornwall.\"",
+          "createdAt": "\"2021-04-23T13:47:29.098000000Z\""
+        }
+      },
+      {
+        "id": "n9",
+        "position": {
+          "x": 766.1174190783923,
+          "y": -369.2799976976588
+        },
+        "caption": "",
+        "style": {
+          "node-color": "#9f0500"
+        },
+        "labels": [
+          "Customer"
+        ],
+        "properties": {
+          "username": "\"BookLover123\""
+        }
+      },
+      {
+        "id": "n10",
+        "position": {
+          "x": 370.52913366495875,
+          "y": -586.5836625785354
+        },
+        "caption": "",
+        "style": {
+          "node-color": "#ab149e"
+        },
+        "labels": [
+          "Address"
+        ],
+        "properties": {
+          "address": "\"Nordenskiöldsgatan 24, 211 19 Malmö, Sweden\"",
+          "location": "{latitude: 55.6122, longitude: 12.9948}"
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "id": "n0",
+        "type": "REVIEWS",
+        "style": {},
+        "properties": {},
+        "toId": "n0",
+        "fromId": "n1"
+      },
+      {
+        "id": "n1",
+        "type": "WROTE",
+        "style": {},
+        "properties": {},
+        "fromId": "n2",
+        "toId": "n1"
+      },
+      {
+        "id": "n2",
+        "type": "PLACED",
+        "style": {},
+        "properties": {},
+        "fromId": "n2",
+        "toId": "n3"
+      },
+      {
+        "id": "n3",
+        "type": "CONTAINS",
+        "style": {},
+        "properties": {},
+        "fromId": "n3",
+        "toId": "n0"
+      },
+      {
+        "id": "n4",
+        "type": "SHIPS_TO",
+        "style": {},
+        "properties": {},
+        "fromId": "n3",
+        "toId": "n4"
+      },
+      {
+        "id": "n5",
+        "type": "CONTAINS",
+        "style": {},
+        "properties": {},
+        "fromId": "n5",
+        "toId": "n0"
+      },
+      {
+        "id": "n6",
+        "type": "CONTAINS",
+        "style": {},
+        "properties": {},
+        "fromId": "n5",
+        "toId": "n6"
+      },
+      {
+        "id": "n7",
+        "type": "CONTAINS",
+        "style": {},
+        "properties": {},
+        "fromId": "n5",
+        "toId": "n7"
+      },
+      {
+        "id": "n8",
+        "type": "REVIEWS",
+        "style": {},
+        "properties": {},
+        "fromId": "n8",
+        "toId": "n6"
+      },
+      {
+        "id": "n9",
+        "type": "WROTE",
+        "style": {},
+        "properties": {},
+        "toId": "n8",
+        "fromId": "n9"
+      },
+      {
+        "id": "n10",
+        "type": "PLACED",
+        "style": {},
+        "properties": {},
+        "fromId": "n9",
+        "toId": "n5"
+      },
+      {
+        "id": "n11",
+        "type": "",
+        "style": {},
+        "properties": {},
+        "fromId": "n5",
+        "toId": "n10"
+      }
+    ]
+  }

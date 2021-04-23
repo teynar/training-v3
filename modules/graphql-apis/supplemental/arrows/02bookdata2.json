@@ -1,0 +1,92 @@
+{
+    "style": {
+      "node-color": "#4C8EDA",
+      "border-width": 0,
+      "border-color": "#000000",
+      "radius": 75,
+      "node-padding": 5,
+      "outside-position": "auto",
+      "caption-position": "inside",
+      "caption-max-width": 200,
+      "caption-color": "#ffffff",
+      "caption-font-size": 20,
+      "caption-font-weight": "normal",
+      "label-position": "inside",
+      "label-color": "#000000",
+      "label-background-color": "#ffffff",
+      "label-border-color": "#848484",
+      "label-border-width": 3,
+      "label-font-size": 20,
+      "label-padding": 5,
+      "label-margin": 4,
+      "directionality": "directed",
+      "detail-position": "above",
+      "detail-orientation": "parallel",
+      "arrow-width": 3,
+      "arrow-color": "#848484",
+      "margin-start": 5,
+      "margin-end": 5,
+      "margin-peer": 20,
+      "attachment-start": "normal",
+      "attachment-end": "normal",
+      "type-color": "#848484",
+      "type-background-color": "#ffffff",
+      "type-border-color": "#848484",
+      "type-border-width": 0,
+      "type-font-size": 21,
+      "type-padding": 5,
+      "property-position": "outside",
+      "property-color": "#848484",
+      "property-font-size": 20,
+      "property-font-weight": "normal"
+    },
+    "nodes": [
+      {
+        "id": "n0",
+        "position": {
+          "x": -212,
+          "y": -133
+        },
+        "caption": "",
+        "style": {},
+        "labels": [
+          "Book"
+        ],
+        "properties": {
+          "isbn": "\"1492047686\"",
+          "title": "\"Graph Algorithms\"",
+          "price": "37.48",
+          "description": "\"Practical Examples in Apache Spark and Neo4j\""
+        }
+      },
+      {
+        "id": "n1",
+        "position": {
+          "x": 1.8734918736607256,
+          "y": 174.46982333924902
+        },
+        "caption": "",
+        "style": {
+          "node-color": "#fcdc00"
+        },
+        "labels": [
+          "Review"
+        ],
+        "properties": {
+          "rating": "5",
+          "text": "Best overview of graph data science!",
+          "createdAt": "2021-04-22T18:38:15.079Z"
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "id": "n0",
+        "type": "REVIEWS",
+        "style": {},
+        "properties": {},
+        "toId": "n0",
+        "fromId": "n1"
+      }
+    ]
+  }

@@ -1,0 +1,266 @@
+= Intro To Neo4j & GraphQL
+:slug: 01-graphql-apis-intro-to-graphql
+:doctype: book
+:toc: left
+:toclevels: 4
+:imagesdir: ../images
+:page-slug: {slug}
+:page-layout: training
+:page-quiz:
+:page-module-duration-minutes: 30
+
+== Introduction To GraphQL And The GraphQL Ecosystem
+
+In this module we take a look at Neo4j, GraphQL, and the Neo4j GraphQL Library. First, we explore writing GraphQL queries against a demo GraphQL API of movies. 
+
+== What is Neo4j?
+
+image::01graphplatform.png[The Neo4j Graph Data Platform,width=500,align=center]
+
+Neo4j is a native graph database with many features and functionality making up the Neo4j Graph Platform. Specifically:
+
+* The Neo4j DBMS
+* The property graph data model
+* The Cypher query language
+* Language drivers using the Bolt protocol for building applications
+* Graph analytics with Graph Data Science
+* Data visualization with Neo4j Bloom
+* Neo4j Aura database-as-a-service
+* A GraphQL integration for building GraphQL APIs backed by Neo4j
+
+== What is GraphQL?
+
+image::01graphqloverview.png[GraphQL Overview,width=500,align=center]
+
+GraphQL is an API query language and runtime for fulfilling those queries. GraphQL uses a type system to define the data available in the API, including what entities and attributes (*types* and *fields* in GraphQL parlance) exist and how types are connected (the data graph). GraphQL operations (queries, mutations, or subscriptions) specify an entry-point and a traversal of the data graph (the *selection set*) which defines what fields to be returned by the operation.
+
+
+=== Important GraphQL Concepts
+
+==== GraphQL Type Definitions
+
+GraphQL type definitions define the data available in the API. These type definitions are typically defined using the GraphQL Schema Definition Language (SDL), a language agnostic way of expressing the types. However, type definitions can be also be defined programmatically.
+
+image::01typedefs.png[GraphQL type definitions, width=500,align=center]
+
+==== GraphQL Operations
+
+Each GraphQL operation is either a Query, Mutation, or Subscription. The fields of the Query, Mutation, and Subscription types define the entry points for an operation. Each operation starts at the field of one of these types.
+
+image::01operation.png[GraphQL operations,width=500, align=center]
+
+==== The Selection Set
+
+The selection set specifies the fields to be returned by a GraphQL operation and can be thought of as a traversal through the data graph.
+
+image::01selectionset.png[GraphQL selection set,width=500, align=center]
+
+The response to a GraphQL request matches the shape of the selection set.
+
+image::01result.png[GraphQL result, width=500, align=center]
+
+==== Resolvers
+
+In GraphQL resolvers are the functions responsible for actually fulfilling the GraphQL operation. In the context of a query, this means fetching data from a data layer.
+
+image::01resolvers.png[GraphQL resolver functions,width=500,align=center]
+
+=== Benefits of GraphQL
+
+Some of the benefits of GraphQL include:
+
+* **Overfetching** - sending less data over the wire
+* **Underfetching** - everything the client needs in a single request
+* The **GraphQL specification** defines exactly what GraphQL is
+* **Simplify data fetching** with component based data interactions
+* **"Graphs all the way down"** - GraphQL can help unify disparate systems and focus API interactions on relationships instead of resources.
+* **Developer productivity** - By reasoning about application data as a graph with a strict type system developers can focus on building applications.
+
+
+=== GraphQL Challenges
+
+Of course GraphQL is not a silver bullet. It's important to be aware of some of the challenges that come from introducing GraphQL in a system.
+
+* Some well understood practices from REST don't apply
+    * HTTP status codes
+    * Error handling
+    * Caching
+* Exposing arbitrary complexity to the client and performance considerations
+* The n+1 query problem - the nested nature of GraphQL operations can lead to multiple requests to the data layer(s) to resolve a request
+* Query costing and rate limiting
+
+Best practices and tooling have emerged to address all of the above, however it's important to be aware of these challenges.
+
+== What is Neo4j GraphQL?
+
+The fundamental goal of the Neo4j GraphQL integrations is to make it easier to build GraphQL APIs backed by Neo4j.
+
+> It's important to point out that GraphQL is an API query language and NOT a database query language. The goal of the Neo4j GraphQL integration is to help build the API layer that sits between the client and database, not to execute GraphQL queries directly against the database.
+
+At a high level the goals are:
+
+* Reducing boilerplate
+* Developer productivity
+* Extensibility
+* Performance
+
+=== Goals of Neo4j GraphQL
+
+==== GraphQL First Development
+
+GraphQL type definitions can drive the database data model, which means we don't need to maintain two separate schemas.
+
+image::01graphqlfirst.png[GraphQL first development,width=500,align=center]
+
+==== Auto-generate GraphQL CRUD API
+
+This includes
+
+* Query & Mutation types (an API entrypoint for each type defined in the schema)
+* Ordering
+* Pagination
+* Complex filtering
+* DateTime & Spatial types and filtering
+
+image::01crud.png[Generated CRUD API,width=500,align=center]
+
+==== Generate Cypher From GraphQL Operations
+
+To reduce boilerplate and optimize for performance Neo4j GraphQL automatically generates a single database query for any arbitrary GraphQL request. This means the developer does not need to implement resolvers and each GraphQL operation results in a single roundtrip to the database.
+
+image::01generate.png[Generate Cypher from GraphQL, width=500, align=center]
+
+==== Extend GraphQL With Cypher
+
+To add custom logic beyond simple CRUD operations we can use the `@cypher` GraphQL schema directive to add computed fields bound to a Cypher query to the GraphQL schema.
+
+image::01cypher.png[Extend GraphQL with Cypher, width=500, align=center]
+
+== Neo4j GraphQL Implementations
+
+There are multiple implementations of Neo4j GraphQL, in this workshop we focus on the Neo4j GraphQL Library.
+
+
+=== The Neo4j GraphQL Library
+
+We will use the Neo4j GraphQL Library to build GraphQL APIs in this workshop. The Neo4j GraphQL Library is a JavaScript library designed to work with any Node.js GraphQL server.
+
+
+The two main features provided by the Neo4j GraphQL API are 
+
+1. Schema augmentation
+2. GraphQL to Cypher transpilation
+
+[source,bash]
+----
+$ npm install @neo4j/graphql graphql neo4j-driver apollo-server
+----
+
+The Neo4j GraphQL Library is a Node.js JavaScript library that can be used with JavaScript GraphQL implementations. In this course we'll be using a Codesandbox environment and won't need to worry about installing locally
+
+[source,javascript]
+----
+const { Neo4jGraphQL } = require("@neo4j/graphql");
+const neo4j = require("neo4j-driver");
+const { ApolloServer } = require("apollo-server");
+
+const typeDefs = `
+    type Movie {
+        title: String
+        year: Int
+        imdbRating: Float
+        genres: [Genre] @relationship(type: "IN_GENRE", direction: OUT)
+    }
+
+    type Genre {
+        name: String
+        movies: [Movie] @relationship(type: "IN_GENRE", direction: IN)
+    }
+`;
+
+const neoSchema = new Neo4jGraphQL({ typeDefs, driver });
+
+const driver = neo4j.driver(
+    "bolt://localhost:7687",
+    neo4j.auth.basic("neo4j", "letmein")
+);
+
+const server = new ApolloServer({
+    schema: neoSchema.schema,
+    context: ({ req }) => ({ req }),
+});
+
+server.listen(4000).then(() => console.log("Online"));
+----
+
+[source,bash]
+----
+node index.js
+----
+
+This will start a local GraphQL API, which can be queried with the GraphQL Playground tool that we saw in the previous lesson.
+
+
+
+== Exercise: Exploring The Movies GraphQL API
+
+To familiarize yourself with GraphQL and writing GraphQL queries, explore the public movies GraphQL API at https://movies.neo4j-graphql.co[movies.neo4j-graphql.com]. Open the URL in a web browser to access GraphQL Playground and explore the DOCS and SCHEMA tab to see the type definitions.
+
+
+// image::01moviesapi.png[GraphQL Playground,width=500,align=center]
+
+++++
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://movies.neo4j-graphql.com?tabs=%5B%7B%22endpoint%22%3A%22https%3A%2F%2Fmovies.neo4j-graphql.com%22%2C%22name%22%3A%22Movies%22%2C%22query%22%3A%22%5Cn%7B%5Cn++movies%28options%3A+%7B+limit%3A+10+%7D%29+%7B%5Cn++++title%5Cn++++actors+%7B%5Cn++++++name%5Cn++++%7D%5Cn++%7D%5Cn%7D%5Cn++++%22%7D%5D' style='border:0'></iframe></div>
+++++
+
+
+[.quiz]
+== Check Your Understanding
+
+Try writing queries to answer the following questions:
+
+=== Question 1
+
+[.statement]
+The n+1 query problem is a common problem developers face when building GraphQL APIs and can lead to poor performance if not properly addressed.
+
+[.statement]
+Is this statement true or false.
+
+[%interactive.answers]
+- [x] True
+- [ ] Bar
+
+=== Question 2
+
+[.statement]
+What is the name of the browser-based GraphQL IDE for executing GraphQL operations and exploring GraphQL API documentation?
+
+[.statement]
+Select the correct answer.
+
+[%interactive.answers]
+- [x] GraphQL Playground
+- [ ] Neo4j Browser
+- [ ] GraphQL Sunshine Beam
+
+=== Question 3
+
+[.statement]
+What is the term for the list of fields that define the information to be returned by a GraphQL operation?
+
+[.statement]
+Select the correct answer.
+
+[%interactive.answers]
+- [ ] GraphQL type definitions
+- [ ] GraphQL SDL
+- [ ] query field
+- [ ] field arguments
+- [x] selection set
+
+[.summary]
+== Summary
+
+In this lesson, we introduced GraphQL and the features of the Neo4j GraphQL Library. In the next lesson we explore generating GraphQL API using the Neo4j GraphQL Library.
+

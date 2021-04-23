@@ -1,0 +1,12 @@
+= The OGM
+:slug: 05-graphql-apis-ogm
+:doctype: book
+:toc: left
+:toclevels: 4
+:imagesdir: ../images
+:page-slug: {slug}
+:page-layout: training
+:page-quiz:
+:page-module-duration-minutes: 60
+
+== Leveraging Type Safety With The Neo4j GraphQL OGM
