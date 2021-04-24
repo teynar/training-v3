@@ -10,3 +10,5 @@
 :page-module-duration-minutes: 60
 
 == Protecting The API - Authorization With Neo4j GraphQL
+
+* We won't cover how to generate JWTs such as a sign up mutation as the integration with an authorization system depends on your specific requirements. To see an example, see the `neo-push` example in the `neo4j/graphql` repository: https://github.com/neo4j/graphql/blob/master/examples/neo-push/server/src/gql/User.ts

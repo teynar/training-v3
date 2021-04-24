@@ -699,12 +699,6 @@ If we refer back to our original graph data model we see that we're missing the 
 If you get stuck you can find the solutions in https://codesandbox.io/s/github/johnymontana/training-v3/tree/master/modules/graphql-apis/supplemental/code/02-graphql-apis-overview-of-neo4j-graphql/end?file=/.env[this Codesandbox.^]
 
 
-For quiz questions:
-
-* one question covering type defs (somethign about directives? true/false node labels are mapped to types in GraphQL)
-* one question covering mutations (connect vs create)
-* one question covering queries ()
-
 [.quiz]
 == Check Your Understanding
 
