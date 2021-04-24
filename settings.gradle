@@ -84,6 +84,9 @@ project(':4.0-updating').projectDir = file('modules/4.0-updating')
 include '4.0-best-practices'
 project(':4.0-best-practices').projectDir = file('modules/4.0-best-practices')
 
+include 'graphql-apis'
+project(':graphql-apis').projectDir = file('modules/graphql-apis')
+
 // browser guides
 file('browser-guides').eachDir { dir ->
   include dir.name

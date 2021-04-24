@@ -26,6 +26,7 @@ content:
       - 'modules/neo4j-administration'
       - 'modules/datascience'
       - 'modules/applied-algos'
+      - 'modules/graphql-apis'
 
 
 output:

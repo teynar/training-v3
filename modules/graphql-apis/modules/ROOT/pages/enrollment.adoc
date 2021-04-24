@@ -1,0 +1,36 @@
+= Building GraphQL APIs Using The Neo4j GraphQL Library
+:slug: graphql-apis
+:description: Learn how to use the Neo4j GraphQL library to build Node.js GraphQL APIs backed by the Neo4j graph database.
+:page-slug: {slug}
+:page-description: {description}
+:page-layout: training-enrollment
+:page-course-duration: 8 hrs
+:page-illustration: https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/courseLogos/MLWorkflowLinkPrediction-40.jpg
+
+:page-ogimage: https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/courseLogos/MLWorkflowLinkPrediction-40_withTitle.jpg
+
+image::https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/courseLogos/MLWorkflowLinkPrediction-40_withTitle.jpg[]
+
+== About The Course
+
+This online course introduces you to the Neo4j GraphQL library and how to build GraphQL APIs for Node.js backed by Neo4j. Each module consists of lessons, code examples, hands-on exercises, and quizzes that cover the features of the Neo4j GraphQL library. The course focuses on the backend aspects of building a GraphQL API and does not cover concepts such as integrating GraphQL into a front-end application. During the course we will build the API for an online retail application.
+
+== Prerequisites
+
+The successful participant should be familiar with Node.js JavaScript concepts. No prior experience with GraphQL or Neo4j is required, however this course focuses on building GraphQL APIs backed by Neo4j and will not cover Neo4j in detail so we recommend completing the "Overview of Neo4j 4.x" course.
+
+== Duration
+
+This course is designed to be completed in approximately 8 hours.
+
+== What You Will Learn
+
+[square]
+* What is GraphQL and how to query GraphQL APIs using GraphiQL and GraphQL Playground.
+* How to create GraphQL type definitions using the GraphQL Schema Definition Language (SDL)
+* How to create GraphQL resolvers
+* How to use the Neo4j GraphQL library to create Node.js GraphQL APIs
+* How to protect GraphQL APIs, making use of authenticated and authorization patterns
+* How to add custom logic to the GraphQL API using Cypher and custom resolvers
+* Making use of Cypher procedures like APOC and the Graph Data Science library in your GraphQL API
+* How to use the type safety of GraphQL in the Neo4j GraphQL OGM

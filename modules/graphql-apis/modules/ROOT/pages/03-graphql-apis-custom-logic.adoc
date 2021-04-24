@@ -1,0 +1,12 @@
+= Adding Custom Logic
+:slug: 03-graphql-apis-custom-logic
+:doctype: book
+:toc: left
+:toclevels: 4
+:imagesdir: ../images
+:page-slug: {slug}
+:page-layout: training
+:page-quiz:
+:page-module-duration-minutes: 60
+
+== Adding Custom Logic With Cypher And Custom Resolvers

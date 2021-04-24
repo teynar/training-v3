@@ -1,0 +1,227 @@
+{
+    "style": {
+      "node-color": "#4C8EDA",
+      "border-width": 0,
+      "border-color": "#000000",
+      "radius": 75,
+      "node-padding": 5,
+      "outside-position": "auto",
+      "caption-position": "inside",
+      "caption-max-width": 200,
+      "caption-color": "#ffffff",
+      "caption-font-size": 20,
+      "caption-font-weight": "normal",
+      "label-position": "inside",
+      "label-color": "#000000",
+      "label-background-color": "#ffffff",
+      "label-border-color": "#848484",
+      "label-border-width": 3,
+      "label-font-size": 20,
+      "label-padding": 5,
+      "label-margin": 4,
+      "directionality": "directed",
+      "detail-position": "above",
+      "detail-orientation": "parallel",
+      "arrow-width": 3,
+      "arrow-color": "#848484",
+      "margin-start": 5,
+      "margin-end": 5,
+      "margin-peer": 20,
+      "attachment-start": "normal",
+      "attachment-end": "normal",
+      "type-color": "#848484",
+      "type-background-color": "#ffffff",
+      "type-border-color": "#848484",
+      "type-border-width": 0,
+      "type-font-size": 21,
+      "type-padding": 5,
+      "property-position": "outside",
+      "property-color": "#848484",
+      "property-font-size": 20,
+      "property-font-weight": "normal"
+    },
+    "nodes": [
+      {
+        "id": "n0",
+        "position": {
+          "x": -193.43258117818027,
+          "y": -79.90516954906644
+        },
+        "caption": "",
+        "style": {
+          "node-color": "#fcc400"
+        },
+        "labels": [
+          "Book"
+        ],
+        "properties": {
+          "title": "String",
+          "price": "Float",
+          "description": "String"
+        }
+      },
+      {
+        "id": "n1",
+        "position": {
+          "x": 81.25154823340051,
+          "y": -311.1320816721515
+        },
+        "caption": "",
+        "style": {},
+        "labels": [
+          "Order"
+        ],
+        "properties": {
+          "orderID": "String",
+          "createdAt": "DateTime",
+          "shippingCost": "Float"
+        }
+      },
+      {
+        "id": "n2",
+        "position": {
+          "x": 425.857207270657,
+          "y": -14.241357903081905
+        },
+        "caption": "",
+        "style": {
+          "node-color": "#c45100"
+        },
+        "labels": [
+          "Customer"
+        ],
+        "properties": {
+          "username": "String"
+        }
+      },
+      {
+        "id": "n3",
+        "position": {
+          "x": 512.6181279648627,
+          "y": -455.42357827331637
+        },
+        "caption": "",
+        "style": {
+          "node-color": "#fe9200"
+        },
+        "labels": [
+          "Address"
+        ],
+        "properties": {
+          "address": "String",
+          "location": "Point"
+        }
+      },
+      {
+        "id": "n4",
+        "position": {
+          "x": 56.57605932559279,
+          "y": 251.33084672872715
+        },
+        "caption": "",
+        "style": {
+          "node-color": "#f44e3b"
+        },
+        "labels": [
+          "Review"
+        ],
+        "properties": {
+          "createdAt": "DateTime",
+          "text": "String",
+          "rating": "Int"
+        }
+      },
+      {
+        "id": "n5",
+        "position": {
+          "x": -538.0421195199833,
+          "y": 151.32174257401886
+        },
+        "caption": "",
+        "style": {
+          "node-color": "#9f0500"
+        },
+        "labels": [
+          "Subject"
+        ],
+        "properties": {
+          "name": "String"
+        }
+      },
+      {
+        "id": "n6",
+        "position": {
+          "x": -509.8761544152787,
+          "y": -348.3918242696777
+        },
+        "caption": "",
+        "style": {
+          "node-color": "#ab149e"
+        },
+        "labels": [
+          "Author"
+        ],
+        "properties": {
+          "name": "String"
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "id": "n0",
+        "type": "CONTAINS",
+        "style": {},
+        "properties": {},
+        "fromId": "n1",
+        "toId": "n0"
+      },
+      {
+        "id": "n1",
+        "type": "PLACED",
+        "style": {},
+        "properties": {},
+        "fromId": "n2",
+        "toId": "n1"
+      },
+      {
+        "id": "n2",
+        "type": "SHIPS_TO",
+        "style": {},
+        "properties": {},
+        "fromId": "n1",
+        "toId": "n3"
+      },
+      {
+        "id": "n4",
+        "type": "WROTE",
+        "style": {},
+        "properties": {},
+        "fromId": "n2",
+        "toId": "n4"
+      },
+      {
+        "id": "n5",
+        "type": "REVIEWS",
+        "style": {},
+        "properties": {},
+        "fromId": "n4",
+        "toId": "n0"
+      },
+      {
+        "id": "n6",
+        "type": "ABOUT",
+        "style": {},
+        "properties": {},
+        "fromId": "n0",
+        "toId": "n5"
+      },
+      {
+        "id": "n7",
+        "type": "AUTHOR_OF",
+        "style": {},
+        "properties": {},
+        "toId": "n0",
+        "fromId": "n6"
+      }
+    ]
+  }

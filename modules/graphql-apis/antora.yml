@@ -1,0 +1,13 @@
+name: training-graphql-apis
+title: Building GraphQL APIs Using The Neo4j GraphQL Library
+version: 'master'
+start_page: enrollment.adoc
+nav:
+  - modules/ROOT/nav.adoc
+asciidoc:
+  attributes:
+    page-course-name: 'graphql-apis'
+    page-theme: 'training'
+    page-toclevels: 1
+    page-pagination: '@'
+    toc: ~
