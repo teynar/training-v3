@@ -12,3 +12,246 @@
 == Protecting The API - Authorization With Neo4j GraphQL
 
 * We won't cover how to generate JWTs such as a sign up mutation as the integration with an authorization system depends on your specific requirements. To see an example, see the `neo-push` example in the `neo4j/graphql` repository: https://github.com/neo4j/graphql/blob/master/examples/neo-push/server/src/gql/User.ts
+
+
+== Authorization Overview
+
+Intro to the `@auth` directive and a bit about JWTs. 
+
+== Setup
+
+
+About how to initialize and configure authorization for Neo4j GraphQL Library
+
+This step has been completed in the initial Codesandbox we'll use for this lesson. Open https://codesandbox.io/s/github/johnymontana/training-v3/tree/master/modules/graphql-apis/supplemental/code/04-graphql-apis-auth/begin?file=/.env[the Codesandbox using this link^], again forking and editing the `.env` file to add the connection credentials for your Neo4j Sandbox instance.
+
+== JSON Web Token (JWT)
+
+----
+dFt8QaYykR6PauvxcyKVXKauxvQuWQTc
+----
+
+
+=== Example 
+
+----
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJFbWlsRWlmcmVtNzQ3NCIsInJvbGVzIjpbImN1c3RvbWVyIl0sImlhdCI6MTUxNjIzOTAyMn0.YwftAMDTw6GqmYOFLGHC_f6UiUhfrJAGkZGfrGmiQ2U
+----
+
+[source,JSON]
+----
+{
+  "sub": "EmilEifrem7474",
+  "roles": ["customer"],
+  "iat": 1516239022
+}
+----
+
+
+----
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJCb2JMb2JsYXc3Njg3Iiwicm9sZXMiOlsiYWRtaW4iXSwiaWF0IjoxNTE2MjM5MDIyfQ.f2GKIu31gz39fMJwj5_byFCMDPDy3ncdWOIhhqcwBxk
+----
+
+[source,JSON]
+----
+{
+  "sub": "BobLoblaw7687",
+  "roles": ["admin"],
+  "iat": 1516239022
+}
+----
+
+== Authentication
+
+Token in request header
+
+`@isAuthenticated` directive on books
+
+== Adding Authorization Rules
+
+=== `isAuthenticated`
+
+Premium search feature - only show the subject of books for signed-in users in our application.
+
+[source,GraphQL]
+----
+extend type Subject @auth(rules: [{isAuthenticated: true}])
+----
+
+=== Roles
+
+ADMIN role to be able to create, update books
+
+[source,GraphQL]
+----
+extend type Book @auth(rules: [{operations: [CREATE, UPDATE, DELETE], roles: ["admin"]}])
+----
+
+=== Allow
+
+Only show orders that were placed by the customer or if you're an admin
+
+[source,GraphQL]
+----
+extend type Order @auth(rules: [{allow: {customer: {username: "$jwt.sub"}}}])
+----
+
+If we try to access orders that aren't ours:
+
+TODO: error (we need a token for booklover123 as well!)
+
+
+but if we filter only for a specific order we have access:
+
+[source,GraphQL]
+----
+{
+  orders(where: { customer: { username: "EmilEifrem7474" } }) {
+    orderID
+    books {
+      title
+    }
+  }
+}
+----
+
+Of course we should also allow admins to have access to orders:
+
+[source,GraphQL]
+----
+extend type Order @auth(rules: [{allow: {customer: {username: "$jwt.sub"}}}, {roles: ["admin"]}])
+----
+
+=== Where
+
+Only show the currently authenticated user
+
+
+There are cases we won't expect the client to filter for only resources they should access to. For these cases we can use a `where` rule to apply a filter to the generated database query.
+
+[source,GraphQL]
+----
+extend type Customer @auth(rules: [{where: {username: "$jwt.sub"}}])
+----
+
+
+=== Bind
+
+Ensure a user writing a review is the currently authenticated user
+
+[source,GraphQL]
+----
+extend type Review @auth(rules: [{operations: [CREATE,UPDATE], bind: {author: {username: "$jwt.sub"} }}])
+----
+
+
+
+[source,GraphQL]
+----
+mutation {
+  createReviews(
+    input: {
+      rating: 1
+      text: "Borrring"
+      book: { connect: { where: { title: "Ross Poldark" } } }
+      author: { connect: { where: { username: "BookLover123" } } }
+    }
+  ) {
+    reviews {
+      text
+      rating
+      book {
+        title
+      }
+    }
+  }
+}
+
+----
+
+=== Auth In Cypher Directive Fields
+
+There are two ways to make use of authorization features when using the `@cypher` schema directive:
+
+1. Apply authorization rules `isAuthenticated` and `roles` using the `@auth` directive.
+2. Reference the JWT payload values in the Cypher query attached to a `@cypher` schema directive.
+
+Let's make use of both of those aspects by adding a Query field that returns personalized recommendations for a customer.
+
+[source,GraphQL]
+----
+extend type Query {
+ booksForCurrentUser: [Book] @auth(rules: [{ isAuthenticated: true }]) @cypher(statement: """
+ MATCH (c:Customer {username: $auth.jwt.sub})-[:PLACED]->(:Order)-[:CONTAINS]->(b:Book)
+ MATCH (b)-[:ABOUT]->(s:Subject)<-[:ABOUT]-(rec:Book)
+ WITH rec, COUNT(*) AS score ORDER BY score DESC
+ RETURN rec
+ """)
+} 
+----
+
+
+
+== Exercise: ???
+
+Using the admin token, create a new user. Next, create a JWT token for this user using jwt.io. Use this token to create an order for this user. Be sure to include some books in the order! Next, add a review for the book purchased by this user. Finally, write a query to view the customer's details, including their order history and their reviews.
+
+
+
+== Check Your Understanding
+
+[.quiz]
+== Check Your Understanding
+
+Try writing queries to answer the following questions:
+
+=== Question 1
+
+[.statement]
+Decode the following JWT using https://jwt.io/[jwt.io] or another method and inspect the payload of the token. What is the value of the `sub` claim on this token?
+
+----
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKZW5ueUNhdDQwNiIsImlhdCI6MTUxNjIzOTAyMn0.rS9h2wbNJDp5mBtj_Of2-I9KnkaMa8xi63nOcFN40bs
+----
+
+[.statement]
+Choose the correct answer.
+
+
+[%interactive.answers]
+- [ ] `EmilEifrem7474`
+- [ ] `BookLover123`
+- [x] `JennyCat406`
+- [ ] `BobLoblaw123`
+
+
+=== Question 2
+
+[.statement]
+Which of the following GraphQL SDL snippets show an authorization rule that states only a user with the role `admin` can create `User` nodes.
+
+[.statement]
+Select the correct answer.
+
+[%interactive.answers]
+- [x] `extend type User @auth(rules: [{operations: [CREATE]}, roles: ["admin"]])`
+- [ ] `extend type User @auth(rules: [{operations: [CREATE]}, allow: {role: admin}]`
+- [ ] `CREATE (u:User) WHERE u.role = "admin"`
+
+=== Question 3
+
+[.statement]
+When using the `@cypher` schema directive to define custom logic in the GraphQL schema there is no way to make use of the `@auth` directive to apply authorization rules for fields that use the `@cypher` directive.
+
+[.statement]
+Is this statement true or false?
+
+[%interactive.answers]
+- [ ] True
+- [x] False
+
+
+[.summary]
+== Summary
+
+In this lesson, we introduced GraphQL and the features of the Neo4j GraphQL Library. In the next lesson we explore generating GraphQL API using the Neo4j GraphQL Library.
