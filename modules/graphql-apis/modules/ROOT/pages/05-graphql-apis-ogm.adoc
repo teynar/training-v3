@@ -9,4 +9,66 @@
 :page-quiz:
 :page-module-duration-minutes: 60
 
+== Lesson Overview
+
 == Leveraging Type Safety With The Neo4j GraphQL OGM
+
+An express endpoint?
+
+Initalize database - create some data
+
+[.quiz]
+== Check Your Understanding
+
+Try writing queries to answer the following questions:
+
+=== Question 1
+
+[.statement]
+Decode the following JWT using https://jwt.io/[jwt.io] or another method and inspect the payload of the token. What is the value of the `sub` claim on this token?
+
+----
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKZW5ueUNhdDQwNiIsImlhdCI6MTUxNjIzOTAyMn0.rS9h2wbNJDp5mBtj_Of2-I9KnkaMa8xi63nOcFN40bs
+----
+
+[.statement]
+Choose the correct answer.
+
+
+[%interactive.answers]
+- [ ] `EmilEifrem7474`
+- [ ] `BookLover123`
+- [x] `JennyCat406`
+- [ ] `BobLoblaw123`
+
+
+=== Question 2
+
+[.statement]
+Which of the following GraphQL SDL snippets show an authorization rule that states only a user with the role `admin` can create `User` nodes.
+
+[.statement]
+Select the correct answer.
+
+[%interactive.answers]
+- [x] `extend type User @auth(rules: [{operations: [CREATE]}, roles: ["admin"]])`
+- [ ] `extend type User @auth(rules: [{operations: [CREATE]}, allow: {role: admin}]`
+- [ ] `CREATE (u:User) WHERE u.role = "admin"`
+
+=== Question 3
+
+[.statement]
+When using the `@cypher` schema directive to define custom logic in the GraphQL schema there is no way to make use of the `@auth` directive to apply authorization rules for fields that use the `@cypher` directive.
+
+[.statement]
+Is this statement true or false?
+
+[%interactive.answers]
+- [ ] True
+- [x] False
+
+
+[.summary]
+== Summary
+
+In this lesson, we introduced GraphQL and the features of the Neo4j GraphQL Library. In the next lesson we explore generating GraphQL API using the Neo4j GraphQL Library.

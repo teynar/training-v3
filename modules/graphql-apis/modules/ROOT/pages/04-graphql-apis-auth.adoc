@@ -9,6 +9,8 @@
 :page-quiz:
 :page-module-duration-minutes: 60
 
+== Lesson Overview
+
 == Protecting The API - Authorization With Neo4j GraphQL
 
 * We won't cover how to generate JWTs such as a sign up mutation as the integration with an authorization system depends on your specific requirements. To see an example, see the `neo-push` example in the `neo4j/graphql` repository: https://github.com/neo4j/graphql/blob/master/examples/neo-push/server/src/gql/User.ts
@@ -192,13 +194,10 @@ extend type Query {
 
 
 
-== Exercise: ???
+== Exercise: Adding A Customer & Order
 
 Using the admin token, create a new user. Next, create a JWT token for this user using jwt.io. Use this token to create an order for this user. Be sure to include some books in the order! Next, add a review for the book purchased by this user. Finally, write a query to view the customer's details, including their order history and their reviews.
 
-
-
-== Check Your Understanding
 
 [.quiz]
 == Check Your Understanding
@@ -210,6 +209,7 @@ Try writing queries to answer the following questions:
 [.statement]
 Decode the following JWT using https://jwt.io/[jwt.io] or another method and inspect the payload of the token. What is the value of the `sub` claim on this token?
 
+[source]
 ----
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKZW5ueUNhdDQwNiIsImlhdCI6MTUxNjIzOTAyMn0.rS9h2wbNJDp5mBtj_Of2-I9KnkaMa8xi63nOcFN40bs
 ----

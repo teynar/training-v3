@@ -9,6 +9,8 @@
 :page-quiz:
 :page-module-duration-minutes: 60
 
+== Lesson Overview
+
 In the previous lesson we explored building a GraphQL API using the Neo4j GraphQL Library that implemented basic create, read, update, and delete (CRUD) functionality. In this lesson we explore adding custom logic to our GraphQL using the power of the Cypher query language.
 
 == Codesandbox Setup
@@ -24,11 +26,11 @@ First, open Neo4j Browser for your Neo4j Sandbox instance and run the following 
 MATCH (a) DETACH DELETE a
 ----
 
-Next, open https://codesandbox.io/s/github/johnymontana/training-v3/tree/master/modules/graphql-apis/supplemental/code/03-graphql-apis-custom-logic/begin?file=/.env[this Codesandbox^] and edit the `.env` file, adding the connection credentials for your Neo4j Sandbox. Refer to the set instructions in the previous lesson if necessary.
+Next, open https://codesandbox.io/s/github/johnymontana/training-v3/tree/master/modules/graphql-apis/supplemental/code/03-graphql-apis-custom-logic/begin?file=/.env[this Codesandbox^] and edit the `.env` file, adding the connection credentials for your Neo4j Sandbox. Refer to the setup instructions in the previous lesson if necessary.
 
 In GraphQL Playground running in your Codesandbox, paste and execute the following GraphQL mutation to load the initial data we'll be working with:
 
-[source,Cypher]
+[source,GraphQL]
 ----
 mutation {
   createBooks(
@@ -135,11 +137,13 @@ mutation {
 
 ----
 
-=== The `@cypher` GraphQL Schema Directive
+With our initial data loaded let's dive into adding custom logic to our GraphQL API using Cypher!
 
-Schema directives are GraphQL's built-in extension mechanism and indicate that some custom logic should occur on the server. Schema directives are not exposed through GraphQL introspection and are therefore opaque to the client. The `@cypher` GraphQL schema directive allows for defining custom logic using Cypher in the GraphQL schema. Using the `@cypher` schema directive overrides field resolution and will execute the attached Cypher query to resolve the GraphQL field. Refer to the https://neo4j.com/docs/graphql-manual/current/type-definitions/cypher/[`@cypher` directive documentation for more information.]
+== The `@cypher` GraphQL Schema Directive
 
-==== Computed Scalar Field
+Schema directives are GraphQL's built-in extension mechanism and indicate that some custom logic should occur on the server. Schema directives are not exposed through GraphQL introspection and are therefore invisible to the client. The `@cypher` GraphQL schema directive allows for defining custom logic using Cypher in the GraphQL schema. Using the `@cypher` schema directive overrides field resolution and will execute the attached Cypher query to resolve the GraphQL field. Refer to the https://neo4j.com/docs/graphql-manual/current/type-definitions/cypher/[`@cypher` directive documentation for more information.]
+
+=== Computed Scalar Field
 
 Let's look at an example of using the `@cypher` directive to define a computed scalar field in our GraphQL schema. Since each order can contain multiple books we need to compute the order "subtotal" or the sum of the price of each book in the order. To calculate the subtotal for an order with `orderID` "123" in Cypher we would write a query like this:
 
@@ -149,10 +153,12 @@ MATCH (o:Order {orderID: "123"})-[:CONTAINS]->(b:Book)
 RETURN sum(b.price) AS subTotal
 ----
 
-With the `@cypher` schema directive in the Neo4j GraphQL Library we can add a field `subTotal` to our `Order` type that includes the logic for traversing to the associated `Book` nodes and summing the price property value of each book. Here we use the `extend type` syntax of GraphQL SDL but we could also add this field directly to the `Order` type as well:
+With the `@cypher` schema directive in the Neo4j GraphQL Library we can add a field `subTotal` to our `Order` type that includes the logic for traversing to the associated `Book` nodes and summing the price property value of each book. Here we use the `extend type` syntax of GraphQL SDL but we could also add this field directly to the `Order` type definition as well:
 
 [source,GraphQL]
 ----
+# schema.graphql
+
 extend type Order {
   subTotal: Float @cypher(statement:"MATCH (this)-[:CONTAINS]->(b:Book) RETURN sum(b.price)")
 }
@@ -211,10 +217,12 @@ We can now include this `subTotal` field in our GraphQL queries:
 }
 ----
 
-The `@cypher` directive gives us all the power of Cypher, with the ability to express complex traversals, pattern matching, even leveraging Cypher procedures like APOC. Let's add a slightly more complex `@cypher` directive field to see what is possible. Let's say that the policy for computing shipping costs of orders is to charge $0.01 per km from our distribution warehouse the order needs to be shipped. We can define this in Cypher in a 
+The `@cypher` directive gives us all the power of Cypher, with the ability to express complex traversals, pattern matching, even leveraging Cypher procedures like APOC. Let's add a slightly more complex `@cypher` directive field to see what is possible. Let's say that the policy for computing the shipping cost of orders is to charge $0.01 per km from our distribution warehouse. We can define this logic in Cypher, adding a `shippingCost` field to the `Order` type:
 
 [source,GraphQL]
 ----
+# schema.graphql
+
 extend type Order {
   shippingCost: Float @cypher(statement: """
   MATCH (this)-[:SHIPS_TO]->(a:Address)
@@ -223,12 +231,14 @@ extend type Order {
 }
 ----
 
-==== Node And Object Fields
+=== Node And Object Fields
 
-In addition to scalar fields we can also use `@cypher` directive fields on object and object array fields with Cypher queries that return nodes or objects. Let's add a "recommended" field to the `Customer` type, returning books they might be interested in purchasing based on their order history and the order history of other customers in the graph. 
+In addition to scalar fields we can also use `@cypher` directive fields on object and object array fields with Cypher queries that return nodes or objects. Let's add a `recommended` field to the `Customer` type, returning books the customer might be interested in purchasing based on their order history and the order history of other customers in the graph. 
 
 [source,GraphQL]
 ----
+# schema.graphql
+
 extend type Customer {
     recommended: [Book] @cypher(statement: """
     MATCH (this)-[:PLACED]->(:Order)-[:CONTAINS]->(:Book)<-[:CONTAINS]-(:Order)<-[:PLACED]-(c:Customer)
@@ -238,6 +248,8 @@ extend type Customer {
     """)
 }
 ----
+
+Now we can use this `recommended` field on the `Customer` type. Since `recommended` is an array of `Book` objects we need to select the nested fields we want to be returned - in this case the `title` field.
 
 [source,GraphQL]
 ----
@@ -279,10 +291,12 @@ extend type Customer {
 In this case we recommend two books to Emil that he hasn't purchased, however since BookLover123 has already purchased every book in our inventory we don't have any recommendations for them! 
 
 
-Any field arguments declared on a GraphQL field with a Cypher directive are passed through to the Cypher query as Cypher parameters. Let's say we want the client to be able to specify the number of recommendations returned. We'll add a field argument `limit` to the `recommended` field and reference that in our Cypher query.
+Any field arguments declared on a GraphQL field with a Cypher directive are passed through to the Cypher query as Cypher parameters. Let's say we want the client to be able to specify the number of recommendations returned. We'll add a field argument `limit` to the `recommended` field and reference that in our Cypher query as a Cypher parameter.
 
 [source,GraphQL]
 ----
+# schema.graphql
+
 extend type Customer {
     recommended(limit: Int = 3): [Book] @cypher(statement: """
     MATCH (this)-[:PLACED]->(:Order)-[:CONTAINS]->(:Book)<-[:CONTAINS]-(:Order)<-[:PLACED]-(c:Customer)
@@ -293,7 +307,7 @@ extend type Customer {
 }
 ----
 
-We set a default value of 3 for this `limit` argument so that if the value isn't specified the limit Cypher parameter will still be passed to the Cypher query with a value of 3. The client can now specify the number of recommended books to return:
+We set a default value of 3 for this `limit` argument so that if the value isn't specified the `limit` Cypher parameter will still be passed to the Cypher query with a value of 3. The client can now specify the number of recommended books to return:
 
 [source,GraphQL]
 ----
@@ -307,13 +321,15 @@ We set a default value of 3 for this `limit` argument so that if the value isn't
 }
 ----
 
-We can also return a map from our Cypher query when using the `@cypher` directive on an object or object array GraphQL field. This is useful when we have multiple computed values we want to return or for returning data from an external data layer. Let's add weather data for the order addresses so our delivery drivers know what to expect.
+We can also return a map from our Cypher query when using the `@cypher` directive on an object or object array GraphQL field. This is useful when we have multiple computed values we want to return or for returning data from an external data layer. Let's add weather data for the order addresses so our delivery drivers know what sort of conditions to expect. We'll query an external API to fetch this data using the https://neo4j.com/labs/apoc/4.2/import/load-json/[`apoc.load.json`] procedure.
 
-First, we'll add a type to the GraphQL type definitions to represent this object, then we'll use the apoc.load.json procedure to fetch data from an external API and return the current conditions.
+First, we'll add a type to the GraphQL type definitions to represent this object (`Weather`), then we'll use the `apoc.load.json` procedure to fetch data from an external API and return the current conditions, returning a map from our Cypher query that matches the shape of the `Weather` type.
 
 
 [source,GraphQL]
 ----
+# schema.graphql
+
 type Weather {
   temperature: Int
   windSpeed: Int
@@ -336,6 +352,8 @@ extend type Address {
       """)
 }
 ----
+
+Now we can include the `currentWeather` field on the `Address` type in our GraphQL queries:
 
 [source,GraphQL]
 ----
@@ -389,9 +407,9 @@ extend type Address {
 }
 ----
 
-==== Custom Query
+=== Custom Query Field
 
-We can use the `@cypher` directive on Query fields to compliment the auto-generated Query fields provided by the Neo4j GraphQL Library. Perhaps we want to leverage a full-text index for fuzzy matching for book searches.
+We can use the `@cypher` directive on Query fields to compliment the auto-generated Query fields provided by the Neo4j GraphQL Library. Perhaps we want to leverage a https://neo4j.com/docs/cypher-manual/current/administration/indexes-for-full-text-search/[full-text index^] for fuzzy matching for book searches?
 
 First, in Neo4j Browser we would create the full-text index
 
@@ -400,15 +418,21 @@ First, in Neo4j Browser we would create the full-text index
 CALL db.index.fulltext.createNodeIndex("bookIndex", ["Book"],["title", "description"])
 ----
 
-to search this full-text index we would use the `db.index.fulltext.queryNodes` procedure:
+To search this full-text index we would use the `db.index.fulltext.queryNodes` procedure:
 
 [source,Cypher]
 ----
 CALL db.index.fulltext.queryNodes("bookIndex", "garph~")
 ----
 
+Neo4j full-text indexes use Apache Lucene query syntax - the `~` indicates we want to use "fuzzy matching" taking into account slight misspellings.
+
+We add a `bookSearch` field to the Query type in our GraphQL type definitions which requires a `searchString` argument that becomes the full-text search term:
+
 [source,GraphQL]
 ----
+# schema.graphql
+
 type Query {
     bookSearch(searchString: String!): [Book] @cypher(statement: """
     CALL db.index.fulltext.queryNodes('bookIndex', $searchString+'~')
@@ -416,6 +440,8 @@ type Query {
     """)
 }
 ----
+
+And we now have a new entry-point to our GraphQL API allowing for full-text search of book titles and descriptions:
 
 [source,GraphQL]
 ----
@@ -441,13 +467,14 @@ type Query {
 }
 ----
 
-==== Custom Mutation
+=== Custom Mutation Field
 
-* MERGE
-
+Similar to adding Query fields, we can use `@cypher` schema directives to add new Mutation fields. This is useful in cases where we have specific logic we'd like to take into account when creating or updating data. Here we make use of the https://neo4j.com/docs/cypher-manual/current/clauses/merge/[`MERGE` Cypher clause^] to avoid creating duplicate `Subject` nodes and connecting them to books.
 
 [source,GraphQL]
 ----
+# schema.graphql
+
 type Mutation {
   mergeBookSubjects(subject: String!, bookTitles: [String!]!): Subject @cypher(statement: """
   MERGE (s:Subject {name: $subject})
@@ -472,21 +499,28 @@ mutation {
 }
 ----
 
-=== Custom Resolvers
+== Custom Resolvers
 
-Combining the power of Cypher and GraphQL is extremely powerful, however there are bound to be some cases where we want to add custom logic using code by implementing resolver functions. This might be where we want to fetch data from another database, API, or system
+Combining the power of Cypher and GraphQL is extremely powerful, however there are bound to be some cases where we want to add custom logic using code by implementing resolver functions. This might be where we want to fetch data from another database, API, or system. Let's consider a contrived example where we compute an estimated delivery date using a custom resolver function.
+
+First, we add an `estimatedDelivery` field to the `Order` type, including the https://neo4j.com/docs/graphql-manual/current/type-definitions/access-control/#type-definitions-access-control-ignore[`@ignore`^] directive which indicates we plan to resolve this field manually and it should not be included in the generated database queries.
 
 
 [source,GraphQL]
 ----
+# schema.graphql
+
 extend type Order {
     estimatedDelivery: DateTime @ignore
 }
 ----
 
+Now it's time to implement our `Order.estimatedDelivery` resolver function. Our function simply calculates a random date - but the point is that this can be any custom logic we choose to define.
 
 [source,JavaScript]
 ----
+// index.js
+
 const resolvers = {
   Order: {
     estimatedDelivery: (obj, args, context, info) => {
@@ -501,8 +535,12 @@ const resolvers = {
 };
 ----
 
+Next, we include the `resolvers` object when instantiating `Neo4jGraphQL`:
+
 [source,JavaScript]
 ----
+// index.js
+
 const neoSchema = new Neo4jGraphQL({
   typeDefs,
   resolvers,
@@ -516,6 +554,8 @@ const server = new ApolloServer({
   playground: true
 });
 ----
+
+And now we can reference the `estimatedDelivery` field in our GraphQL queries. When this field is included in the selection instead of trying to fetch this field from the database, our custom resolver will be executed.
 
 [source,GraphQL]
 ----
@@ -554,12 +594,14 @@ const server = new ApolloServer({
 
 == Exercise: Exploring The `@cypher` Directive
 
-We saw how powerful the Cypher directive can be for adding custom logic to our GraphQL API. For this exercise first be sure to follow along with the steps above to make use of the `@cypher` schema directive in your GraphQL type definitions. If you run into any issues you can refer to this Codesandbox with all the code we added in this lesson.
+We saw how powerful the Cypher directive can be for adding custom logic to our GraphQL API. For this exercise first be sure to follow along with the steps above to make use of the `@cypher` schema directive in your GraphQL type definitions. If you run into any issues you can refer to https://codesandbox.io/s/github/johnymontana/training-v3/tree/master/modules/graphql-apis/supplemental/code/03-graphql-apis-custom-logic/end?file=/.env[this Codesandbox^] with all the code we added in this lesson.
 
-For this exercise you will be adding a `similar` field to the `Book` type which will return similar books. How you determine similarity is up to you. Perhaps consider order co-occurence (books purchased together) or user reviews? First, think about how to query for similar books using Cypher, testing in Neo4j Browser. Then add the query as a `@cypher` directive field to the `Book` type. Advanced users may wish to explore the https://neo4j.com/docs/graph-data-science/current[Graph Data Science Library] and leverage those procedures. For example, here's how we can use the Jaccard Similarity procedure to find similar books using book subjects:
+For this exercise you will be adding a `similar` field to the `Book` type which will return similar books. How you determine similarity is up to you. Perhaps consider order co-occurence (books purchased together) or user reviews? First, think about how to query for similar books using Cypher, testing in Neo4j Browser. Then add the query as a `@cypher` directive field to the `Book` type. Advanced users may wish to explore the https://neo4j.com/docs/graph-data-science/current[Graph Data Science Library^] to leverage graph algorithms. For example, here's how we can use the https://neo4j.com/docs/graph-data-science/current/alpha-algorithms/jaccard/[Jaccard Similarity function^] to find similar books using book subjects:
 
 [source,GraphQL]
 ----
+# schema.graphql
+
 extend type Book {
   similar: [Book] @cypher(statement: """
   MATCH (this)-[:ABOUT]->(s:Subject)
@@ -572,6 +614,8 @@ extend type Book {
   """)
 }
 ----
+
+Your solution should enable clients of the GraphQL API to include the `similar` field in the selection set and view similar books:
 
 [source,GraphQL]
 ----
@@ -603,21 +647,16 @@ extend type Book {
 }
 ----
 
-== Check Your Understanding
-
 [.quiz]
 == Check Your Understanding
-
-Try writing queries to answer the following questions:
 
 === Question 1
 
 [.statement]
-In GraphQL, schema directives are used in GraphQL type definitions to indicate custom server-side logic. In the Neo4j GraphQL Library which GraphQL schema directive is used to define custom logic using the Cypher query language?
+Schema directives are used in GraphQL type definitions to indicate custom server-side logic. In the Neo4j GraphQL Library which GraphQL schema directive is used to define custom logic using the Cypher query language?
 
 [.statement]
-Choose the correct answer.
-
+Select the correct answer.
 
 [%interactive.answers]
 - [ ] `@gql`
@@ -656,4 +695,4 @@ Is this statement true or false?
 [.summary]
 == Summary
 
-In this lesson, we introduced GraphQL and the features of the Neo4j GraphQL Library. In the next lesson we explore generating GraphQL API using the Neo4j GraphQL Library.
+In this lesson, we explored two methods for adding custom logic to our GraphQL API: the `@cypher` schema directive and custom resolvers. In the next lesson we address adding authorization rules to our API using the `@auth` directive and JSON Web Tokens (JWTs).
