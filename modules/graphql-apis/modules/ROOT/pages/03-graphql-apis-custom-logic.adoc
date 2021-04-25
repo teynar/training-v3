@@ -281,7 +281,7 @@ In this case we recommend two books to Emil that he hasn't purchased, however si
 
 Any field arguments declared on a GraphQL field with a Cypher directive are passed through to the Cypher query as Cypher parameters. Let's say we want the client to be able to specify the number of recommendations returned. We'll add a field argument `limit` to the `recommended` field and reference that in our Cypher query.
 
-[Cypher,GraphQL]
+[source,GraphQL]
 ----
 extend type Customer {
     recommended(limit: Int = 3): [Book] @cypher(statement: """
@@ -295,7 +295,7 @@ extend type Customer {
 
 We set a default value of 3 for this `limit` argument so that if the value isn't specified the limit Cypher parameter will still be passed to the Cypher query with a value of 3. The client can now specify the number of recommended books to return:
 
-[Cypher,GraphQL]
+[source,GraphQL]
 ----
 {
   customers {
