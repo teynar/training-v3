@@ -13,11 +13,25 @@ const typeDefs = fs
   .readFileSync(path.join(__dirname, "schema.graphql"))
   .toString("utf-8");
 
+const resolvers = {
+  Order: {
+    estimatedDelivery: (obj, args, context, info) => {
+      const options = [1, 5, 10, 15, 30, 45];
+      const estDate = new Date();
+      estDate.setDate(
+        estDate.getDate() + options[Math.floor(Math.random() * options.length)]
+      );
+      return estDate;
+    }
+  }
+};
+
 // Create executable GraphQL schema from GraphQL type definitions,
 // using @neo4j/graphql to autogenerate resolvers
 const neoSchema = new Neo4jGraphQL({
   typeDefs,
-  debug: true,
+  resolvers,
+  debug: true
 });
 
 // Create Neo4j driver instance
@@ -33,7 +47,7 @@ const server = new ApolloServer({
   context: { driver },
   schema: neoSchema.schema,
   introspection: true,
-  playground: true,
+  playground: true
 });
 
 // Start ApolloServer
