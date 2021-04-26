@@ -203,7 +203,7 @@ To familiarize yourself with GraphQL and writing GraphQL queries, explore the pu
 
 Try running the following queries. Feel free to modify them by adding additional fields in the selection set and see how the results change. 
 
-[source,GraphQL
+[source,GraphQL]
 ----
 {
   movies(options: { limit: 10 }) {

@@ -99,7 +99,7 @@ It includes the following claims:
 }
 ----
 
-We can use the online tool at https://jwt.io[jwt.io] to encode/decode and validate tokens. Try pasting one of the above tokens into this tool to view the token's payload.
+We can use the online tool at https://jwt.io[jwt.io^] to encode/decode and validate tokens. Try pasting one of the above tokens into this tool to view the token's payload.
 
 image::04jwtio.png[Decoding a token using jwt.io,width=500,align=center]
 
@@ -301,9 +301,11 @@ image::04recommended.png[Recommended books,width=500,align=center]
 
 == Exercise: Adding A Customer & Order
 
-1. Using the admin token, create a new user. 
-2. Next, create a JWT token for this user using jwt.io. Use this token to create an order for this user. Be sure to include some books in the order! 
-3. Next, add a review for the book purchased by this user. Finally, write a query to view the customer's details, including their order history and their reviews.
+1. Update the `schema.graphql` file adding in the authorization rules we covered above. If you get stuck https://codesandbox.io/s/github/johnymontana/training-v3/tree/master/modules/graphql-apis/supplemental/code/04-graphql-apis-auth/end?file=/.env[this Codesandbox^] includes all the code from this lesson. 
+2. Using the admin token, create a new user. 
+3. Next, create a JWT token for this user using jwt.io. Use this token to create an order for this user. Be sure to include some books in the order! 
+4. Next, add a review for the book purchased by this user. 
+5. Finally, write a query to view the customer's details, including their order history and their reviews.
 
 
 [.quiz]
@@ -359,4 +361,4 @@ Is this statement true or false?
 [.summary]
 == Summary
 
-In this lesson, we explored how to add authorization rules . In the next lesson we explore generating GraphQL API using the Neo4j GraphQL Library.
+In this lesson, we explored how to add authorization rules to our GraphQL API using the `@auth` schema directive. In the next lesson we explore using the Neo4j GraphQL OGM.

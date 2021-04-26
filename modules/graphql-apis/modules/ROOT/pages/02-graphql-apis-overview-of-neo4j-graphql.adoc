@@ -578,7 +578,7 @@ See the https://neo4j.com/docs/graphql-manual/current/schema/pagination/[documen
 
 === Filtering
 
-Query results can be filtered using the `where` argument. Filter inputs are generated for each field and expose comparison operators specific to the type of the field. For example, for numeric fields filter input operators include equality, greater than (`_GT`), less than (`_LT`), etc. String fields expose the common string comparison operators such as `_STARTS_WITH`, `_CONTAINS`, `_ENDS_WITH, etc.
+Query results can be filtered using the `where` argument. Filter inputs are generated for each field and expose comparison operators specific to the type of the field. For example, for numeric fields filter input operators include equality, greater than (`_GT`), less than (`_LT`), etc. String fields expose the common string comparison operators such as `_STARTS_WITH`, `_CONTAINS`, `_ENDS_WITH`, etc.
 
 Let's search for all books where the price is less than 20.00:
 

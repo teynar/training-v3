@@ -1,4 +1,4 @@
-= The OGM
+= The Neo4j GraphQL OGM
 :slug: 05-graphql-apis-ogm
 :doctype: book
 :toc: left
@@ -7,68 +7,206 @@
 :page-slug: {slug}
 :page-layout: training
 :page-quiz:
-:page-module-duration-minutes: 60
+:page-module-duration-minutes: 15
 
 == Lesson Overview
 
-== Leveraging Type Safety With The Neo4j GraphQL OGM
+In this lesson we take a brief look at using the Neo4j GraphQL OGM for programmatically querying Neo4j.
 
-An express endpoint?
+== The Neo4j GraphQL OGM
 
-Initalize database - create some data
+The Neo4j GraphQL OGM is an object graph mapper that uses GraphQL type definitions to define models and exposes a programmatic way to query Neo4j without using Cypher.
+
+=== Using The Neo4j GraphQL OGM
+
+Install the Neo4j GraphQL OGM package:
+
+[source,Bash]
+----
+npm install @neo4j/graphql-ogm
+----
+
+Once installed, import the OGM into your project:
+
+[source, JavaScript]
+----
+const { OGM } = require("@neo4j/graphql-ogm");
+----
+
+The OGM is instantiated by passing the GraphQL type definitions and a Neo4j driver instance:
+
+[source, JavaScript]
+----
+const ogm = new OGM({ typeDefs, driver });
+----
+
+Model objects correspond to types declared in the GraphQL type definitions and expose `find`, `create`, `update`, and `delete` methods for working with the models.
+
+Here we use the `Book.find` method to query for all books in the database and log to the console.
+
+[source, JavaScript]
+----
+const Book = ogm.model("Book")
+
+const fetchBooks = async () => {
+  const books = await Book.find()
+  console.log(JSON.stringify(books, null, 2));
+}
+
+fetchBooks()
+----
+
+[source, JavaScript]
+----
+[
+  {
+    "isbn": "1492047686",
+    "title": "Graph Algorithms",
+    "price": 37.48,
+    "description": "Practical Examples in Apache Spark and Neo4j"
+  },
+  {
+    "isbn": "1119387507",
+    "title": "Inspired",
+    "price": 21.38,
+    "description": "How to Create Tech Products Customers Love"
+  },
+  {
+    "isbn": "190962151X",
+    "title": "Ross Poldark",
+    "price": 15.52,
+    "description": "Ross Poldark is the first novel in Winston Graham's sweeping saga of Cornish life in the eighteenth century."
+  }
+]
+----
+
+We can use the familiar filter arguments when querying using the Neo4j GraphQL OGM. To filter for a specific book by `isbn` value:
+
+[source, JavaScript]
+----
+const Book = ogm.model("Book")
+
+const fetchBooks = async () => {
+  const books = await Book.find({where: {isbn: "1492047686"}})
+  console.log(JSON.stringify(books, null, 2));
+}
+
+fetchBooks()
+----
+
+[source, JSON]
+----
+[
+  {
+    "isbn": "1492047686",
+    "title": "Graph Algorithms",
+    "price": 37.48,
+    "description": "Practical Examples in Apache Spark and Neo4j"
+  }
+]
+----
+
+We can pass a selection set to traverse relationships defined in the GraphQL type definitions. Here we traverse to the book's subjects using a selection set:
+
+[source, JavaScript]
+----
+const fetchBooks = async () => {
+
+  const selectionSet = `
+  {
+    title
+    description
+    isbn
+    price
+    subjects {
+      name
+    }
+  }
+  `
+  const books = await Book.find({where: {isbn: "1492047686"}, selectionSet })
+  console.log(JSON.stringify(books, null, 2));
+}
+
+fetchBooks()
+
+----
+
+[source, JSON]
+----
+[
+  {
+    "title": "Graph Algorithms",
+    "description": "Practical Examples in Apache Spark and Neo4j",
+    "isbn": "1492047686",
+    "price": 37.48,
+    "subjects": [
+      {
+        "name": "Non-fiction"
+      },
+      {
+        "name": "Neo4j"
+      },
+      {
+        "name": "Graph theory"
+      }
+    ]
+  }
+]
+----
+
+Create, update, and delete operations are also available using the Neo4j GraphQL OGM. Refer to the https://neo4j.com/docs/graphql-manual/current/ogm/[Neo4j GraphQL OGM documentation^] for more details.
+
+== Exercise: Neo4j GraphQL OGM
+
+Let's consider a hands-on example of using the Neo4j GraphQL OGM outside of a GraphQL API. Launch https://codesandbox.io/s/github/johnymontana/training-v3/tree/master/modules/graphql-apis/supplemental/code/05-graphql-apis-ogm/begin?file=/.env[this Codesandbox^] which is a simple node script that runs a report to log all orders. 
+
+* Update the `.env` file with the connection credentials for your Neo4j Sandbox instance.
+* Modify the script to include book titles and the price of each book in each order.
+
+See https://codesandbox.io/s/github/johnymontana/training-v3/tree/master/modules/graphql-apis/supplemental/code/05-graphql-apis-ogm/end?file=/.env[this Codesandbox^] for the solution.
 
 [.quiz]
 == Check Your Understanding
 
-Try writing queries to answer the following questions:
-
 === Question 1
 
 [.statement]
-Decode the following JWT using https://jwt.io/[jwt.io] or another method and inspect the payload of the token. What is the value of the `sub` claim on this token?
-
-----
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKZW5ueUNhdDQwNiIsImlhdCI6MTUxNjIzOTAyMn0.rS9h2wbNJDp5mBtj_Of2-I9KnkaMa8xi63nOcFN40bs
-----
+The Neo4j GraphQL OGM uses GraphQL type definitions to define models.
 
 [.statement]
-Choose the correct answer.
+Is this statement true or false?
 
 
 [%interactive.answers]
-- [ ] `EmilEifrem7474`
-- [ ] `BookLover123`
-- [x] `JennyCat406`
-- [ ] `BobLoblaw123`
-
+- [x] True
+- [ ] False
 
 === Question 2
 
 [.statement]
-Which of the following GraphQL SDL snippets show an authorization rule that states only a user with the role `admin` can create `User` nodes.
-
-[.statement]
-Select the correct answer.
-
-[%interactive.answers]
-- [x] `extend type User @auth(rules: [{operations: [CREATE]}, roles: ["admin"]])`
-- [ ] `extend type User @auth(rules: [{operations: [CREATE]}, allow: {role: admin}]`
-- [ ] `CREATE (u:User) WHERE u.role = "admin"`
-
-=== Question 3
-
-[.statement]
-When using the `@cypher` schema directive to define custom logic in the GraphQL schema there is no way to make use of the `@auth` directive to apply authorization rules for fields that use the `@cypher` directive.
+When querying using the Neo4j GraphQL OGM a selection set can be provided to indicate specific fields to be returned.
 
 [.statement]
 Is this statement true or false?
 
 [%interactive.answers]
-- [ ] True
-- [x] False
+- [x] True
+- [ ] False
+
+=== Question 3
+
+[.statement]
+The Neo4j GraphQL OGM can be used outside of GraphQL APIs, such as in a REST API implementation.
+
+[.statement]
+Is this statement true or false?
+
+[%interactive.answers]
+- [x] True
+- [ ] False
 
 
 [.summary]
 == Summary
 
-In this lesson, we introduced GraphQL and the features of the Neo4j GraphQL Library. In the next lesson we explore generating GraphQL API using the Neo4j GraphQL Library.
+In this lesson, we introduced the Neo4j GraphQL OGM for querying Neo4j programmatically.
