@@ -75,7 +75,7 @@ Each node label becomes a GraphQL type.
 Node properties are defined as GraphQL fields.
 Relationships are expressed as GraphQL objects or object array fields and include a special GraphQL schema directive `@relationship` that is used to capture the direction and relationship type.
 
-Execute this GraphQL code in your Codesandbox:
+Open the schema.graphql file, then make sure types as defined here are in Schema of your Codesandbox.
 
 [source,GraphQL]
 ----

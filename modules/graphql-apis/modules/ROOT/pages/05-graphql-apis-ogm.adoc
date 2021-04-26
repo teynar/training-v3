@@ -12,6 +12,7 @@
 == Lesson Overview
 
 In this lesson we take a brief look at using the Neo4j GraphQL OGM for programmatically querying Neo4j.
+Then in the Exercise, you will use the the OGM.
 
 == The Neo4j GraphQL OGM
 
@@ -21,7 +22,7 @@ The Neo4j GraphQL OGM is an object graph mapper that uses GraphQL type definitio
 
 Install the Neo4j GraphQL OGM package:
 
-[source,Bash]
+[source,Bash,role=nocopy]
 ----
 npm install @neo4j/graphql-ogm
 ----
