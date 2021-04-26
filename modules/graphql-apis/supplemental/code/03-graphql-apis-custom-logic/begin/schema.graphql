@@ -1,3 +1,7 @@
+scalar DateTime 
+scalar Point
+scalar PointInput
+
 type Order {
   orderID: ID! @id
   placedAt: DateTime @timestamp
