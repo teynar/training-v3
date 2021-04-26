@@ -19,15 +19,15 @@ No local setup is required for the course, we'll make use of https://codesandbox
 Some familiarity with Neo4j is helpful, such as first completing the https://neo4j.com/graphacademy/training-overview-40/enrollment/["Overview Of Neo4j 4.x"] course, however not strictly required.
 
 
-== Introduction To GraphQL And The GraphQL Ecosystem
+== Introduction To GraphQL & Neo4j
 
 [square]
 * What is GraphQL and why would I use it? 
 * An overview of the Neo4j GraphQL Library
 
-Estimated time: _60 minutes_
+Estimated time: _30 minutes_
 
-== Creating CRUD GraphQL APIs With The Neo4j GraphQL Library
+== The Neo4j GraphQL Library
 
 [square]
 * Modeling a graph with GraphQL type definitions
@@ -43,7 +43,7 @@ Estimated time: _60 minutes_
 
 Estimated time: _60 minutes_
 
-== Protecting The API - Authorization With Neo4j GraphQL
+== Authorization With The Neo4j GraphQL Library
 
 [square]
 * Working with JSON Web Tokens (JWTs) to authenticate your API users 
@@ -51,13 +51,13 @@ Estimated time: _60 minutes_
 
 Estimated time: _60 minutes_
 
-== Leveraging Type Safety With The Neo4j GraphQL OGM
+== The Neo4j GraphQL OGM
 
 [square]
 * Using GraphQL type definitions to define models
 * Programmatically query Neo4j using the Object Graph Mapper (OGM) package
 
-Estimated time: _60 minutes_
+Estimated time: _15 minutes_
 
 == Summary
 
