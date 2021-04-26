@@ -70,7 +70,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJFbWlsRWlmcmVtNzQ3NCIsInJvbGVzIjp
 
 The token's payload includes the following claims:
 
-[source,JSON]
+[source,JSON,role=nocopy]
 ----
 {
   "sub": "EmilEifrem7474",
@@ -90,7 +90,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJCb2JMb2JsYXc3Njg3Iiwicm9sZXMiOls
 
 It includes the following claims:
 
-[source,JSON]
+[source,JSON,role=nocopy]
 ----
 {
   "sub": "BobLoblaw7687",
@@ -135,7 +135,7 @@ image::04playgroundnoerror.png[Decoding a token using jwt.io,width=500,align=cen
 
 https://neo4j.com/docs/graphql-manual/current/auth/authorization/roles/[Roles^] are the next type of authorization rule that we will explore. A JWT payload can include an array of "roles" that describe the permissions associated with the token. For example, our example token for the "admin" user includes the following payload:
 
-[source,JSON]
+[source,JSON,role=nocopy]
 ----
 {
   "sub": "BobLoblaw7687",

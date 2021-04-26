@@ -94,7 +94,7 @@ const fetchBooks = async () => {
 fetchBooks()
 ----
 
-[source, JSON]
+[source,JSON,role=nocopy]
 ----
 [
   {
@@ -131,7 +131,7 @@ fetchBooks()
 
 ----
 
-[source, JSON]
+[source,JSON,role=nocopy]
 ----
 [
   {

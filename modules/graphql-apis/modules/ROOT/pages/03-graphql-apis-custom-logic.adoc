@@ -181,7 +181,7 @@ We can now include this `subTotal` field in our GraphQL queries:
 }
 ----
 
-[source,JSON]
+[source,JSON,role=nocopy]
 ----
 {
   "data": {
@@ -263,7 +263,7 @@ Now we can use this `recommended` field on the `Customer` type. Since `recommend
 }
 ----
 
-[source,JSON]
+[source,JSON,role=nocopy]
 ----
 {
   "data": {
@@ -373,7 +373,7 @@ Now we can include the `currentWeather` field on the `Address` type in our Graph
 }
 ----
 
-[source,JSON]
+[source,JSON,role=nocopy]
 ----
 {
   "data": {
@@ -453,7 +453,7 @@ And we now have a new entry-point to our GraphQL API allowing for full-text sear
 }
 ----
 
-[source,JSON]
+[source,JSON,role=nocopy]
 ----
 {
   "data": {
@@ -570,7 +570,7 @@ And now we can reference the `estimatedDelivery` field in our GraphQL queries. W
 ----
 
 
-[source,JSON]
+[source,JSON,role=nocopy]
 ----
 {
   "data": {
@@ -629,7 +629,7 @@ Your solution should enable clients of the GraphQL API to include the `similar` 
 }
 ----
 
-[source,JSON]
+[source,JSON,role=nocopy]
 ----
 {
   "data": {
