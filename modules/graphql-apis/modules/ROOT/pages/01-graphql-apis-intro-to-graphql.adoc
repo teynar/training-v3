@@ -157,7 +157,7 @@ $ npm install @neo4j/graphql graphql neo4j-driver apollo-server
 
 The Neo4j GraphQL Library is a *Node.js* JavaScript library that can be used with JavaScript GraphQL implementations.
 
-[source,javascript]
+[source,JavaScript,role=nocopy]
 ----
 // index.js
 
@@ -237,12 +237,13 @@ This will start a *local* GraphQL API and will also serve the GraphQL Playground
 }
 ----
 
-//
-//++++
-//<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://movies.neo4j-graphql.com?tabs=%5B%7B%22endpoint%22%3A%22https%3A%2F%2Fmovies.neo4j-graphql.com%22%2C%22name%22%3A%22Movies%22%2C%22query%22%3A%22%5Cn%7B%5Cn++movies%28options%3A+%7B+limit%3A+10+%7D%29+%7B%5Cn++++title%5Cn++++actors+%7B%5Cn++++++name%5Cn++++%7D%5Cn++%7D%5Cn%7D%5Cn++++%22%7D%5D' style='border:0'></iframe></div>
-//++++
 
-//> The GraphQL Playground embed above is interactive and can be used directly in this page or if you'd like some more screen real estate can be opened in a new tab at https://movies.neo4j-graphql.com[movies.neo4j-graphql.com]
+++++
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://movies.neo4j-graphql.com?tabs=%5B%7B%22endpoint%22%3A%22https%3A%2F%2Fmovies.neo4j-graphql.com%22%2C%22name%22%3A%22Movies%22%2C%22query%22%3A%22%5Cn%7B%5Cn++movies%28options%3A+%7B+limit%3A+10+%7D%29+%7B%5Cn++++title%5Cn++++actors+%7B%5Cn++++++name%5Cn++++%7D%5Cn++%7D%5Cn%7D%5Cn++++%22%7D%5D' style='border:0'></iframe></div>
+++++
+
+
+> The GraphQL Playground embed above is interactive and can be used directly in this page or if you'd like some more screen real estate can be opened in a new tab at https://movies.neo4j-graphql.com[movies.neo4j-graphql.com]
 
 
 [.quiz]

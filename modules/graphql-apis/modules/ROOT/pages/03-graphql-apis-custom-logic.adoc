@@ -147,7 +147,7 @@ Schema directives are GraphQL's built-in extension mechanism and indicate that s
 
 Let's look at an example of using the `@cypher` directive to define a computed scalar field in our GraphQL schema. Since each order can contain multiple books we need to compute the order "subtotal" or the sum of the price of each book in the order. To calculate the subtotal for an order with `orderID` "123" in Cypher we would write a query like this:
 
-[source,Cypher]
+[source,Cypher,role=nocopy]
 ----
 MATCH (o:Order {orderID: "123"})-[:CONTAINS]->(b:Book)
 RETURN sum(b.price) AS subTotal

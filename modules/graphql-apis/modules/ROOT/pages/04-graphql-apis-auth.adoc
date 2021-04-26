@@ -17,7 +17,7 @@ In this lesson we introduce authorization, protecting objects in our API. We cov
 
 The Neo4j GraphQL Library provides an `@auth` GraphQL schema directive that enables us to attach authorization rules to our GraphQL type definitions. The `@auth` directive uses JSON Web Tokens (JWTs) for authentication. Authenticated requests to the GraphQL API should include an `authorization` header with a Bearer token attached. For example:
 
-[source]
+[source,HTTP,role=nocopy]
 ----
 POST / HTTP/1.1
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJyb2xlcyI6WyJ1c2VyX2FkbWluIiwicG9zdF9hZG1pbiIsImdyb3VwX2FkbWluIl19.IY0LWqgHcjEtOsOw60mqKazhuRFKroSXFQkpCtWpgQI
@@ -37,7 +37,7 @@ dFt8QaYykR6PauvxcyKVXKauxvQuWQTc
 
 When instantiating `Neo4jGraphQL` pass a config object that includes the JWT secret. For example:
 
-[source,JavaScript]
+[source,JavaScript,role=nocopy]
 ----
 const neoSchema = new Neo4jGraphQL({
   typeDefs,
@@ -49,11 +49,15 @@ const neoSchema = new Neo4jGraphQL({
 });
 ----
 
-This step has been completed in the initial Codesandbox we'll use for this lesson. Open https://codesandbox.io/s/github/johnymontana/training-v3/tree/master/modules/graphql-apis/supplemental/code/04-graphql-apis-auth/begin?file=/.env[the Codesandbox using this link^], again forking and editing the `.env` file to add the connection credentials for your Neo4j Sandbox instance. You'll notice we've included an additional environment variable to keep track of our JWT secret.
+This step has been completed in the initial Codesandbox we'll use for this lesson.
+Open https://codesandbox.io/s/github/johnymontana/training-v3/tree/master/modules/graphql-apis/supplemental/code/04-graphql-apis-auth/begin?file=/.env[the Codesandbox using this link^], again forking and editing the `.env` file to add the connection credentials for your Neo4j Sandbox instance.
+You'll notice we've included an additional environment variable to keep track of our JWT secret.
 
 == JSON Web Token (JWT)
 
-JWTs are a standard for representing and cryptographically verifying claims securely and are commonly used for authentication and authorization. Implementing a sign-in flow and generating JWTs is beyond the scope of this course so we will use a few static JWTs for testing our authorization rules. For an example of a sign-up/sign-in flow using GraphQL mutations and the Neo4j GraphQL Library see the https://github.com/neo4j/graphql/blob/master/examples/neo-push/server/src/gql/User.ts[`neo-push` example application]^ in the `neo4j/graphql` repository.
+JWTs are a standard for representing and cryptographically verifying claims securely and are commonly used for authentication and authorization.
+Implementing a sign-in flow and generating JWTs is beyond the scope of this course so we will use a few static JWTs for testing our authorization rules.
+For an example of a sign-up/sign-in flow using GraphQL mutations and the Neo4j GraphQL Library see the https://github.com/neo4j/graphql/blob/master/examples/neo-push/server/src/gql/User.ts[`neo-push` example application^] in the `neo4j/graphql` repository.
 
 === Example JWTs
 
