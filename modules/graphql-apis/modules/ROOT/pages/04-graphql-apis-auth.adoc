@@ -341,8 +341,8 @@ Which of the following GraphQL SDL snippets show an authorization rule that stat
 Select the correct answer.
 
 [%interactive.answers]
-- [x] `extend type User @auth(rules: [{operations: [CREATE]}, roles: ["admin"]])`
-- [ ] `extend type User @auth(rules: [{operations: [CREATE]}, allow: {role: admin}]`
+- [x] `extend type User @auth(rules: [{operations: [CREATE], roles: ["admin"]}])`
+- [ ] `extend type User @auth(rules: [{operations: [CREATE], allow: {role: admin}}])`
 - [ ] `CREATE (u:User) WHERE u.role = "admin"`
 
 === Question 3
