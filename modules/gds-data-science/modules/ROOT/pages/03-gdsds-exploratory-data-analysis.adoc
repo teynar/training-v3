@@ -1,0 +1,123 @@
+= Exploratory Data Analysis
+:slug: 03-gdsds-exploratory-data-analysis
+:toc: left
+:toclevels: 4
+:imagesdir: ../images
+:page-slug: {slug}
+:page-layout: training
+:page-quiz:
+:page-module-duration-minutes: 30
+== About this module
+
+In the previous section, you setup your Neo4j Desktop environment and loaded the citation dataset.
+In this module you will explore that data.
+You will be querying Neo4j and processing the results using tools in the Python ecosystem.
+
+At the end of this module, you should be able to:
+[square]
+* Query a database for its schema.
+* Return and chart the number of node labels and relationship types using matplotlib.
+* Build and plot a histogram of papers and their citations using pandas and matplotlib.
+
+== Tools
+
+You will be using the following Python libraries in this course:
+
+=== py2neo
+
+The https://py2neo.org/v4/[py2neo^] driver enables data scientists to easily integrate Neo4j with tools in the Python Data Science ecosystem.
+It does this by providing functions that translate the results of queries into data structures used by these tools.
+You will be using this library to execute Cypher queries against Neo4j.
+
+=== pandas
+
+https://pandas.pydata.org/[pandas^] is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
+You will be using this library to do post-processing of the data that you query from Neo4j.
+
+=== Matplotlib
+
+https://matplotlib.org/[Matplotlib^] is a Python 2D plotting library which produces publication-quality figures in a variety of hard-copy formats and interactive environments across platforms.
+You will be using this library to create charts based on our data.
+
+
+== Citation Dataset
+
+Now you are ready to start exploring the data.
+
+Here is the graph model for the dataset:
+
+image::graph.png[Graph Model,width=600]
+
+You want to better understand the data you will be working with, including the distribution of authors, papers, and citations.
+You will then be able to use this knowledge to help build a recommendation engine and make predictions on the data.
+
+== Exercise 1: Exploring the data
+
+In this exercise you use the Jupyter notebook you set up previously.
+If you have the local Neo4j Desktop environment, you can open the mentioned Jupyter notebooks on your computer, otherwise follow the link to the Google Colaboratory instance of notebooks.
+
+Open the *02_EDA.ipynb* notebook to complete the first exercise.
+
+++++
+<a class="medium button-notebook" target="_blank" href="https://colab.research.google.com/github/neo4j-contrib/training-v3/blob/master/modules/gds-data-science/supplemental/notebooks/02_EDA.ipynb">Launch 02_EDA notebook on Google Colab!</a>
+++++
+
+{nbsp} +
+{nbsp} +
+
+Once you have attempted the exercises, you can see the answers by launching the *02_EDA_Solutions.ipynb* notebook.
+
+++++
+<a class="medium button-notebook" target="_blank" href="https://colab.research.google.com/github/neo4j-contrib/training-v3/blob/master/modules/gds-data-science/supplemental/notebooks/02_EDA_Solutions.ipynb">Launch 02_EDA_Solutions notebook on Google Colab!</a>
+++++
+
+[.quiz]
+== Check your understanding
+
+=== Question 1
+
+[.statement]
+What is the name of the procedure that returns the node labels in the database?
+[.statement]
+Select the correct answer.
+[%interactive.answers]
+- [x] db.labels
+- [ ] db.nodeLabels
+- [ ] db.nodes
+- [ ] dbms.labels
+
+=== Question 2
+
+[.statement]
+Which node label is the most popular one in this dataset?
+
+[.statement]
+Select the correct answer.
+
+[%interactive.answers]
+- [ ] Article
+- [x] Author
+- [ ] Venue
+
+=== Question 3
+
+[.statement]
+What is the mean number of articles published by an author?
+
+[.statement]
+Select the correct answer.
+
+[%interactive.answers]
+- [ ] 2.064
+- [ ] 89.000
+- [x] 1.751
+- [ ] 3.000
+
+
+== Summary
+
+You should now be able to:
+[square]
+* Query a database for its schema.
+* Return and chart the number of node labels and relationship types using matplotlib.
+* Build and plot a histogram of papers and their citations using pandas and matplotlib.

@@ -13,28 +13,37 @@
 
 We will spend the rest of the course building a GraphQL API for an online bookstore using the Neo4j GraphQL Library. In this lesson we set up our online development environment using Codesandbox and Neo4j Sandbox. We then see how to use GraphQL type definitions to define a property graph data model in Neo4j and create a GraphQL API using the Neo4j GraphQL Library. We'll create data using GraphQL mutations and see how to query it using GraphQL. 
 
-== Setting Up Our Environment
+== Setting Up Your Environment
 
-Now it's time to start using the Neo4j GraphQL Library to build GraphQL APIs! Instead of running our code locally, starting in this lesson we'll be using a browser-based service called Codesandbox to run Node.js JavaScript code, which in this case will be a GraphQL API application making use of the Neo4j GraphQL Library. Using Codesandbox means we won't have to troubleshoot local development environment issues and makes it easier to share code. Each lesson will start with an initial skeleton application that we'll modify as we explore new concepts. If you get stuck, each lesson also has the solution available as a Codesandbox.
+Now it's time to start using the Neo4j GraphQL Library to build GraphQL APIs!
+We'll be using a browser-based service called Codesandbox to run Node.js JavaScript code, which in this case will be a GraphQL API application making use of the Neo4j GraphQL Library. Using Codesandbox means we won't have to troubleshoot local development environment issues and makes it easier to share code. Each lesson will start with an initial skeleton application that we'll modify as we explore new concepts. If you get stuck, each lesson also has the solution available as a Codesandbox.
 
 We'll also be using Neo4j Sandbox to spin up a hosted Neo4j instance in the cloud. We'll connect to our Neo4j Sandbox instance from the GraphQL API application running in Codesandbox. To do this we'll use the connection credentials specific to our Neo4j Sandbox instance.
 
 Follow these steps to get your development environment set up using Codesandbox and Neo4j Sandbox:
 
-* Create a blank Neo4j Sandbox instance using https://sandbox.neo4j.com/?usecase=blank-sandbox[this link.^] You'll need to sign in to Neo4j Sandbox if you're not already authenticated, then click the "Launch Project" button.
+. Create a blank Neo4j Sandbox instance using https://sandbox.neo4j.com/?usecase=blank-sandbox[this link.^]
+You'll need to sign in to Neo4j Sandbox if you're not already authenticated, then click the "Launch Project" button.
 
 image::02blanksandbox.png[Launching a blank Neo4j Sandbox,width=500,align=center]
 
-* Once your blank Neo4j Sandbox instance is ready, navigate to the "Connection details" tab for the sandbox instance. Make note of the "Bolt URL", "Username", and "Password" values for your sandbox instance. You'll need these values in the next step to connect to Neo4j from the GraphQL API application we'll be building and running on Codesandbox.
+[start=2]
+. Once your blank Neo4j Sandbox instance is ready, you can go through the guide or close it. Then navigate to the "Connection details" tab for the sandbox instance.
+Make note of the "Bolt URL", "Username", and "Password" values for your sandbox instance.
+You'll need these values in the next step to connect to Neo4j from the GraphQL API application we'll be building and running in Codesandbox.
 
 image::02blanksandboxconnection.png[Neo4j Sandbox connection credentials,width=500,align=center]
 
-* Open the Codesandbox for this lesson using https://codesandbox.io/s/github/johnymontana/training-v3/tree/master/modules/graphql-apis/supplemental/code/02-graphql-apis-overview-of-neo4j-graphql/begin?file=/.env[this link^]. This Codesandbox contains the initial code for a GraphQL API application, however the application is throwing an error because it's not able to connect to a Neo4j instance. Let's fix this by adding our Neo4j Sandbox connection credentials.
+[start=3]
+. Open the Codesandbox for this lesson using https://codesandbox.io/s/github/johnymontana/training-v3/tree/master/modules/graphql-apis/supplemental/code/02-graphql-apis-overview-of-neo4j-graphql/begin?file=/.env[this link^].
+This Codesandbox contains the initial code for a GraphQL API application, however the application is throwing an error because it's not able to connect to a Neo4j instance.
+Fix this by adding *your* Neo4j Sandbox connection credentials.
 
 
 image::02codesandboxerror.png[Codesandbox connection error,width=500,align=center]
 
-* In order to save changes to the Codesandbox you'll be prompted to sign in to Codesandbox so that the changes are specific to your Codesandbox. Open the `.env` file, adding values for `NEO4J_URI`, `NEO4J_USER`, and `NEO4J_PASSWORD` specific to your Neo4j Sandbox instance. Save the file and wait for the application to reload. You should now see the GraphQL Playground application running in Codesandbox.
+[start=4]
+. In order to save changes to the Codesandbox you'll be prompted to sign in to Codesandbox so that the changes are specific to your Codesandbox. Open the `.env` file, adding values for `NEO4J_URI`, `NEO4J_USER`, and `NEO4J_PASSWORD` specific to your Neo4j Sandbox instance. Save the file and wait for the application to reload. You should now see the GraphQL Playground application running in Codesandbox.
 
 You can test that it's working by running the following query in the GraphQL Playground window in your Codesandbox (you should get back an empty array without any error messages).
 
@@ -53,13 +62,20 @@ image::02codesandboxcredentials.png[Codesandbox credentials, width=500, align=ce
 
 == GraphQL Type Definitions And The Property Graph Model
 
-Now that our development environment is set up, let's take a look at what we'll be building throughout this course. The goal of this course is to build a GraphQL API application for an online bookstore. We'll need to handle customers searching for books, placing orders as well as leaving reviews for books they've purchased.
+Now that your development environment is set up, let's take a look at what we'll be building throughout this course.
+The goal of this course is to build a GraphQL API application for an online bookstore.
+We'll need to handle customers searching for books, placing orders, as well as leaving reviews for books they've purchased.
 
 We'll start with the following property graph data model:
 
 image::02book_graph.png[Graph data model,width=500,align=center]
 
-Let's see how we would define this property graph model using GraphQL type definitions. Each node label becomes a GraphQL type. Node properties are defined as GraphQL fields. Relationships are expressed as GraphQL object or object array fields and include a special GraphQL schema directive `@relationship` that is used to capture the direction and relationship type.
+Let's see how we would define this property graph model using GraphQL type definitions.
+Each node label becomes a GraphQL type.
+Node properties are defined as GraphQL fields.
+Relationships are expressed as GraphQL objects or object array fields and include a special GraphQL schema directive `@relationship` that is used to capture the direction and relationship type.
+
+Open the schema.graphql file, then make sure types as defined here are in Schema of your Codesandbox.
 
 [source,GraphQL]
 ----
@@ -110,11 +126,12 @@ A few important concepts to note:
 * The `@timestamp` directive is used to indicate the property should be automatically updated when the node is created and updated.
 * The `@id` directive marks a field as a unique identifier and enables auto-generation when the node is created.
 
-Read more about using GraphQL type definitions with the Neo4j GraphQL Library in the documentation https://neo4j.com/docs/graphql-manual/current/type-definitions/[here^]. For more information on the GraphQL schema directives available with the Neo4j GraphQL Library refer to [this page.^]
+Read more about using GraphQL type definitions with the Neo4j GraphQL Library in the documentation https://neo4j.com/docs/graphql-manual/current/type-definitions/[here^].
+For more information on the GraphQL schema directives available with the Neo4j GraphQL Library refer to https://neo4j.com/docs/graphql-manual/current/directives/[this page.^]
 
 == Generated Mutations
 
-The first thing we'll need to do is add some books to our catalog using the GraphQL API - we wouldn't have much of bookstore without any books! We'll do this using a GraphQL mutation. There are several ways to use mutations generated by the Neo4j GraphQL Library.
+The first thing we'll need to do is add some books to our catalog using the GraphQL API - we wouldn't have much of a bookstore without any books! We'll do this using a GraphQL mutation. There are several ways to use mutations generated by the Neo4j GraphQL Library.
 
 First, let's add a single book using the `createBooks` mutation. Copy and paste this mutation to run it in GraphQL Playground running in your Codesandbox:
 
@@ -226,7 +243,7 @@ mutation {
 
 The response data from this mutation will match the shape of our selection set. We don't need to include all the fields we created in the mutation, the data will be created even if not returned. Here's what the response to the above mutation should look like:
 
-[source,JSON]
+[source,JSON,role=nocopy]
 ----
 {
   "data": {
@@ -282,7 +299,7 @@ First, clear your database by running this Cypher statement in Neo4j Browser. Yo
 MATCH (a) DETACH DELETE a
 ----
 
-Now, in GraphQL Playground run the following GraphQL mutation to add some sample data:
+Now, in GraphQL Playground running in your Codesandbox, run the following GraphQL mutation to add some sample data:
 
 [source,GraphQL]
 ----
@@ -405,7 +422,7 @@ Let's start with an example, querying for all books and their titles.
 
 If we loaded our sample data correctly we should see the follow result:
 
-[source,JSON]
+[source,JSON,role=nocopy]
 ----
 {
   "data": {
@@ -439,7 +456,7 @@ The response data matches the shape of our GraphQL query - as we add more fields
 
 produces the following result:
 
-[source,JSON]
+[source,JSON,role=nocopy]
 ----
 {
   "data": {
@@ -483,7 +500,7 @@ Traversals through the graph are expressed by adding nested fields to the GraphQ
 }
 ----
 
-[source,JSON]
+[source,JSON,role=nocopy]
 ----
 {
   "data": {
@@ -539,7 +556,7 @@ A sorting input type is generated for each type in the GraphQL type definitions,
 }
 ----
 
-[source,GraphQL]
+[source,JSON,role=nocopy]
 ----
 {
   "data": {
@@ -574,6 +591,7 @@ Page-based pagination is available by passing `skip` and `limit` values as part 
   }
 }
 ----
+
 See the https://neo4j.com/docs/graphql-manual/current/schema/pagination/[documentation] for more information.
 
 === Filtering
@@ -592,7 +610,7 @@ Let's search for all books where the price is less than 20.00:
 }
 ----
 
-[source,JSON]
+[source,JSON,role=nocopy]
 ----
 {
   "data": {
@@ -675,12 +693,15 @@ For more information and examples see the https://neo4j.com/docs/graphql-manual/
 
 == Exercise: Updating The GraphQL Schema
 
-If we refer back to our original graph data model we see that we're missing the `Author` and `Subject` nodes! In this exercise you will update the GraphQL schema adding the `Author` and `Subject` types including relationships. 
+To successfully perform the steps in this exercise, you should have executed all of the GraphQL code after you cleared the database above and loaded the sample books data.
 
-* Update `schema.graphql` to add these two types to the GraphQL schema. 
+If we refer back to our original graph data model we see that we're missing the `Author` and `Subject` nodes! In this exercise you will update the GraphQL schema adding the `Author` and `Subject` types including relationships.
+
+. Update `schema.graphql` to add these two types to the GraphQL schema.
 // TODO: add screenshot
 
-* Execute a GraphQL mutation to add authors to the graph according to the following table. 
+[start=2]
+.  Execute a GraphQL mutation to add authors to the graph according to the following table.
 
 > Try to do this in a single nested mutation operation and be sure to connect the authors to their books.
 
@@ -692,7 +713,8 @@ If we refer back to our original graph data model we see that we're missing the 
 | Graph Algorithms | Mark Needham, Amy E. Hodler        
 |============================
 
-* Execute a GraphQL mutation to add the book subjects and connect them to the books according to this table.
+[start=3]
+. Execute a GraphQL mutation to add the book subjects and connect them to the books according to this table.
 
 [width="50%"]
 |=============================
@@ -702,7 +724,8 @@ If we refer back to our original graph data model we see that we're missing the 
 | Graph Algorithms | Graph theory, Neo4j
 |=============================
 
-If you get stuck you can find the solutions in the README.md file in https://codesandbox.io/s/github/johnymontana/training-v3/tree/master/modules/graphql-apis/supplemental/code/02-graphql-apis-overview-of-neo4j-graphql/end?file=/.env[this Codesandbox.^] Be sure to add your sandbox credentials to the `.env` file after loading the Codesandbox.
+If you get stuck you can find the solutions in the README.md file in https://codesandbox.io/s/github/johnymontana/training-v3/tree/master/modules/graphql-apis/supplemental/code/02-graphql-apis-overview-of-neo4j-graphql/end?file=/.env[this Codesandbox.^]
+Be sure to add your sandbox credentials to the `.env` file after loading the Codesandbox.
 
 
 [.quiz]

@@ -1,0 +1,153 @@
+= Traversing the Graph
+:slug: 05-intro-cypher-traversing-the-graph
+:doctype: book
+:toc: left
+:toclevels: 4
+:imagesdir: ../images
+:page-slug: {slug}
+:page-layout: training
+:page-quiz:
+:page-module-duration-minutes:
+
+== About this topic
+
+Now that you have gained experience with retrieving nodes and relationships, you will learn more about how the query processor traverses the graph to retrieve data.
+
+At the end of this topic, you should be able to:
+
+[square]
+* Describe what the anchor of a query is.
+* Write queries that traverse multiple paths.
+* Write queries that return a subgraph.
+
+This video summarizes the content of this topic:
+
+video::l9ZprjFoHsQ[youtube,width=560,height=315]
+
+Throughout this training, you should refer to:
+[square]
+* https://neo4j.com/docs/cypher-manual/current/[Neo4j Cypher Manual^]
+* http://neo4j.com/docs/cypher-refcard/current/[Cypher Reference card^]
+
+== Patterns in the graph
+
+Thus far, you have learned how to specify nodes, properties, and relationships in your Cypher queries.
+Since relationships are directional, it is important to understand how patterns are used in graph traversal during query execution.
+How a graph is traversed for a query depends on what directions are defined for relationships and how the pattern is specified in the `MATCH` clause.
+
+Here is an example where the _ACTED_IN_ relationship is defined as the relationship from an _Actor_ node to a _Movie_ node.
+
+image::ToyStoryActors.svg[Toy Story Actors,width=600,align=center]
+
+
+== Using patterns for queries
+
+Run this query that returns all _Actor_ nodes who acted in Toy Story.
+
+//T: execute
+
+[source,Cypher]
+----
+MATCH  (a:Actor)-[:ACTED_IN]->(m:Movie {title:'Toy Story'})
+RETURN a, m
+----
+
+
+For this query the _Movie_ node for Toy Story is the anchor of the query.
+It is the first node that is retrieved from the graph.
+Then the graph engine looks for all  _ACTED_IN_ relationships _into_ this node and retrieves them.
+In the sample graph, four _Actor_ nodes are retrieved.
+
+
+image::ToyStoryActorsTraversal.png[ToyStoryActorsTraversal,width=400,align=center]
+
+== Traversal does not need direction in the pattern
+
+If we were to not specify the direction of the relationship in this query, we would find that the exact same results are returned:
+
+//T: execute
+
+Run this query:
+
+[source,Cypher]
+----
+MATCH  (a:Actor)-[:ACTED_IN]-(m:Movie {title:'Toy Story'})
+RETURN a, m
+----
+
+The graph engine knows that there is a relationship between _Actor_ and _Movie_ nodes so the same traversal occurs.
+
+=== Direction can be significant
+
+If we reverse the direction in the pattern, the query does not return any results.
+endif::[]
+
+//T: execute
+
+Run this query:
+
+[source,Cypher]
+----
+MATCH  (a:Actor)<-[:ACTED_IN]-(m:Movie {title:'Toy Story'})
+RETURN a, m
+----
+
+This pattern is not represented in the graph which is why no nodes are returned.
+The anchor node is retrieved, but no nodes are found in the graph with the specified relationship to _Actor_ nodes.
+So this pattern yields no nodes returned.
+
+[NOTE]
+A best practice is to specify direction in your `MATCH` statements. This will optimize queries, especially for larger graphs.
+
+== Traversing multiple relationships
+
+Since we have a graph, we can traverse through nodes to obtain relationships further into the traversal.
+
+For example, we can write a Cypher query to return all movies that the actors in the Toy Story movie acted in.
+
+//T: execute
+
+Run this query:
+
+[source,Cypher]
+----
+MATCH (m:Movie {title:"Toy Story"})<-[:ACTED_IN]-(a:Actor)-[:ACTED_IN]->(m2)
+RETURN m, a, m2
+----
+
+For this query the _Movie_ node for Toy Story is the anchor.
+The graph engine then looks for all _Actor_ nodes with the _ACTED_IN_ relationship to this _Movie_ node.
+Then it looks for all _Movie_ nodes related to the _Actor_ nodes found. For example, it finds all movies that Don Rickles acted in.
+
+image::MoviesOfToyStoryActorsTraversal.png[MoviesOfToyStoryActorsTraversal,width=300,align=center]
+
+As you gain more experience with Cypher, you will see how patterns in your queries enable you to focus on the relationships in the graph.
+
+
+Write a query that returns unique Genre names of all Movies that Tom Hanks acted in.
+
+//Q4: Most effort (write Cypher)
+//answer
+//MATCH (:Actor {name: 'Tom Hanks'})-[:ACTED_IN]->(:Movie)-[:IN_GENRE]->(g:Genre)
+//RETURN DISTINCT g.name
+
+== Returning paths
+
+In the visualization of the results returned, if you return nodes and they have relationships, the relationships will be shown in the visualization because by default, Neo4j Browser connects nodes.
+
+Your queries can also return subgraphs which are the traversal paths encountered in the `MATCH` clause.
+
+Here is how you can return a subgraph.
+If you were to uncheck the setting in Neo4j Browser to not connect nodes in the visualization, you would find that this query returns what you have seen before.
+
+
+//T: execute
+
+Uncheck the setting to connect nodes and then run this query:
+
+[source,Cypher]
+----
+MATCH  subGraph = ((:Movie {title:"Toy Story"})<-[:ACTED_IN]-(:Actor)-[:ACTED_IN]->())
+RETURN subGraph
+----
+

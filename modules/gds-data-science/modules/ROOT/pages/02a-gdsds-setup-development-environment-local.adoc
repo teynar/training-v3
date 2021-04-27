@@ -1,0 +1,152 @@
+
+= Local Development Environment
+:slug: 02a-gdsds-setup-development-environment-local
+:doctype: book
+:toc: left
+:toclevels: 4
+:imagesdir: ../images
+:page-slug: {slug}
+:page-layout: training
+:page-module-duration-minutes: 30
+:page-pagination!:
+
+== About this module
+
+As a data scientist, you will create Neo4j Databases, add and update data in them, and query the data.
+In this module you will learn how to setup the Neo4j Desktop for use in the rest of the course, and connect to it from Jupyter Notebook.
+
+In this module, you will:
+[square]
+* Set up Neo4j Desktop on your system and create a local DBMS.
+* Install APOC and GDSL for your DBMS.
+* Increase available heap memory.
+* Set up Jupyter Notebook on your system.
+* Download the course notebooks.
+* Launch a Jupyter Notebook and connect to the database.
+* Launch a Jupyter Notebook to load the database.
+
+== Step 1: Set up Neo4j Desktop on your system
+
+To perform the exercises of this course you must have downloaded and installed Neo4j Desktop on your system.
+
+ifdef::env-slides[]
+. Download the latest version of Neo4j Desktop.
+. Create a project in Neo4j Desktop named *Link Prediction*.
+. Create a local 4.1.x DBMS in this Link Prediction project.
+endif::[]
+
+
+ifdef::backend-html5,backend-pdf[]
+This video shows how to get started using Neo4j Desktop.
+For your environment you should:
+
+. Download the latest version of Neo4j Desktop.
+. Create a project in Neo4j Desktop named *Graph Algos*.
+. Create a local 4.1.x DBMS in this Graph Algos project.
+endif::[]
+
+ifdef::backend-html5[]
+
+[%collapsible%open]
+====
+video::uR9-NLxLzg4[youtube,width=560,height=315]
+====
+
+endif::[]
+
+ifdef::backend-pdf[]
+
+https://youtu.be/uR9-NLxLzg4
+
+endif::[]
+
+[.half-column]
+== Step 2: Install APOC and GDSL for your database
+
+. Click the *Details* area for the DBMS.
+. Select the *Plugins* tab.
+. Install the *APOC* plugin.
+. Install the *Graph Data Science* plugin.
+
+image::APOCAndGDSLInstalled.png[APOC and GDSL installed,width=500, align=center]
+
+=== Step 3: Increase available heap memory
+
+The last exercise in this course will require more heap memory than allocated by default.
+You will increase the maximum heap memory size to 3gb.
+
+. Click the three dots to the right of the DBMS.
+. Select *Settings...*.
+. Scroll down to *dbms.memory.heap.max_size* settings.
+. Overwrite this setting with the following value:
+----
+dbms.memory.heap.max_size=3G
+----
+. Click apply.
+. Start or restart the DBMS.
+
+=== Step 4: Set up Jupyter Notebook on your system
+
+You can install Jupyter Notebook on your system via pip or conda package managers.
+
+==== conda
+
+If you use conda package manager, you can install Jupyter Notebook with:
+
+[source,shell,role=noplay]
+----
+conda install -c conda-forge notebook
+----
+
+==== pip
+
+You can install Jupyter Notebook with:
+
+[source,shell,role=noplay]
+----
+pip install notebook
+----
+
+If you successfully installed Jupyter Notebook, you can run the following command at the Terminal (Mac/Linux) or Command Prompt (Windows) to open Jupyter Notebook:
+
+[source,shell,role=noplay]
+----
+jupyter notebook
+----
+
+Consult the https://jupyter.org/install[official Jupyter documentation] for more information.
+
+=== Step 5: Download the course notebooks
+
+The notebooks are available on the (https://github.com/neo4j-graph-analytics/ml-link-prediction-notebooks[GitHub repository]).
+If you are familiar with Git technology, you can either clone or fork this repository.
+Otherwise, you can prepare the notebooks on your system by downloading and extracting the https://github.com/neo4j-graph-analytics/ml-link-prediction-notebooks/raw/main/ml-link-prediction-notebooks.zip
+[following package].
+
+=== Step 6: Open a Jupyter Notebook to connect to the Neo4j database.
+
+All the notebooks in this course require a connection to your started Neo4j instance.
+
+Open the *00_Environment.ipynb* notebook and follow the steps to test your connection to the Neo4j database.
+
+=== Step 7: Open a Jupyter Notebook to load the data.
+
+Next, you will import the https://aminer.org/citation[aminer.org citation dataset] into the Neo4j database.
+
+Open the *01_DataLoading.ipynb* notebook and follow the steps to load the data.
+
+== Summary
+
+You should now have set up your development environment:
+[square]
+* Set up Neo4j Desktop on your system and created a database.
+* Installed APOC and GDSL for your database.
+* Increased available heap memory.
+* Started the database.
+* Set up Jupyter Notebook on your system.
+* Downloaded the course notebooks.
+* Launched a Jupyter Notebook and connected to the Neo4j database.
+* Launched a Jupyter Notebook and loaded the data.
+
+You have now prepared your development environment for performing
+xref:03-gdsds-exploratory-data-analysis.adoc[the exploratory data analysis] for this course.

@@ -1,0 +1,3 @@
+Add content from the Community post:
+
+https://community.neo4j.com/t/optimising-properties-access/36929/2

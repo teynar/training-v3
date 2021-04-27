@@ -1,11 +1,10 @@
-= Setting up your Neo4j training environment for the training session, Cypher Query Tuning
+= Setting up your Neo4j training environment for the training course, Cypher Query Tuning with Neo4j 4.x
 :doctype: book
 :toc: left
-:toclevels: 3
+:toclevels: 4
+:imagesdir: ../images
 :manual-cypher: {manual}/cypher
 :setup-guides-dir: ../../setup-guides/docs
-// for IntelliJ preview
-:imagesdir: ../images
 
 == Overview
 
@@ -75,7 +74,7 @@ Here is an overview of the steps you will perform to set up your development env
 
 === Getting Started with Neo4j Desktop
 
-include::{setup-guides-dir}/DesktopInstall-1.2.6.adoc[]
+include::{setup-guides-dir}/DesktopInstall.adoc[]
 
 == Step 1: Option 2: Using Neo4j Aura
 

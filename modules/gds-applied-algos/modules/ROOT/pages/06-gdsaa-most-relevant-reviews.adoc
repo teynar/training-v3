@@ -1,0 +1,72 @@
+= Most Relevant Reviews
+:slug: 06-gdsaa-most-relevant-reviews
+:imagesdir: ../images
+:page-slug: {slug}
+:page-layout: training
+:page-quiz:
+:page-module-duration-minutes: 60
+
+video::HAyOIeQG2gI[youtube,width=560,height=315]
+
+_PageRank overview and problem statement_
+
+
+In this section you will use the Personalized PageRank algorithm to identify "trusted" users, and present reviews from those users when viewing reviews of businesses.
+
+image::reactapp4.png[,width=700,align=center]
+
+== Exercise
+
+. In Neo4j Browser, perform the steps in the Neo4j Browser guide section *Relevant Reviews*. (:play gds-applied-algos-exercises/04.html)
+. In React application code, edit the Cypher query in `src/exercises/exercise3.js` to return reviews ordered by whether or not the business has been reviewed by a "trusted" user.
+. Save this file.
+. In React web application:
+.. Perform a search on behalf of as user by first selecting the *Layne* user.
+.. Select the *Restaurant* category.
+.. In the search pane, specify the string *Mamma* for the name of the restaurant. This will search for restaurants that start with that name and have reviews that are  most relevant to the user. The remaining reviews are in chronological order.
+.. You can select a restaurant to see the reviews.
+
+
+====
+.Useful Resources
+
+* https://neo4j.com/docs/graph-data-science/current/algorithms/similarity/[Similarity Algorithms^]
+====
+
+[.quiz]
+== Check your understanding
+=== Question 1
+
+[.statement]
+Which of the following best describe the Personalized PageRank algorithm?
+
+[.statement]
+Select the correct answer.
+
+[%interactive.answers]
+- [ ] It measures similarity of the structural context in which objects occur, based on their relationships with other objects.
+- [x] It is a variation of the PageRank algorithm that is biased towards a set of source nodes.
+- [ ] It computes the influence of a node by measuring the number of the immediate neighbors and also all other nodes in the network that connect to the node under consideration through these immediate neighbors.
+- [ ] It is a variation of the PageRank algorithm that reduces the bias that PageRank has towards assigning higher scores to nodes with relationships from nodes that have few outgoing relationships.
+
+=== Question 2
+
+[.statement]
+What is the default value of the `dampingFactor` used by the PageRank procedure?
+
+[.statement]
+Select the correct answer.
+
+[%interactive.answers]
+- [ ] 0.15
+- [x] 0.85
+- [ ] 0.70
+- [ ] 0.12
+
+[.summary]
+== Summary
+
+You should now be able to:
+[square]
+* Use the Personalized PageRank graph algorithm with Neo4j.
+

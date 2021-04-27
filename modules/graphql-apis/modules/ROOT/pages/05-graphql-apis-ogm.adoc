@@ -12,6 +12,7 @@
 == Lesson Overview
 
 In this lesson we take a brief look at using the Neo4j GraphQL OGM for programmatically querying Neo4j.
+Then in the Exercise, you will use the the OGM.
 
 == The Neo4j GraphQL OGM
 
@@ -21,21 +22,21 @@ The Neo4j GraphQL OGM is an object graph mapper that uses GraphQL type definitio
 
 Install the Neo4j GraphQL OGM package:
 
-[source,Bash]
+[source,Bash,role=nocopy]
 ----
 npm install @neo4j/graphql-ogm
 ----
 
 Once installed, import the OGM into your project:
 
-[source, JavaScript]
+[source, JavaScript,role=nocopy]
 ----
 const { OGM } = require("@neo4j/graphql-ogm");
 ----
 
 The OGM is instantiated by passing the GraphQL type definitions and a Neo4j driver instance:
 
-[source, JavaScript]
+[source, JavaScript,role=nocopy]
 ----
 const ogm = new OGM({ typeDefs, driver });
 ----
@@ -44,7 +45,7 @@ Model objects correspond to types declared in the GraphQL type definitions and e
 
 Here we use the `Book.find` method to query for all books in the database and log to the console.
 
-[source, JavaScript]
+[source, JavaScript,role=nocopy]
 ----
 const Book = ogm.model("Book")
 
@@ -56,7 +57,7 @@ const fetchBooks = async () => {
 fetchBooks()
 ----
 
-[source, JavaScript]
+[source, JavaScript,role=nocopy]
 ----
 [
   {
@@ -82,7 +83,7 @@ fetchBooks()
 
 We can use the familiar filter arguments when querying using the Neo4j GraphQL OGM. To filter for a specific book by `isbn` value:
 
-[source, JavaScript]
+[source, JavaScript,role=nocopy]
 ----
 const Book = ogm.model("Book")
 
@@ -94,7 +95,7 @@ const fetchBooks = async () => {
 fetchBooks()
 ----
 
-[source, JSON]
+[source,JSON,role=nocopy]
 ----
 [
   {
@@ -108,7 +109,7 @@ fetchBooks()
 
 We can pass a selection set to traverse relationships defined in the GraphQL type definitions. Here we traverse to the book's subjects using a selection set:
 
-[source, JavaScript]
+[source,JavaScript,role=nocopy]
 ----
 const fetchBooks = async () => {
 
@@ -131,7 +132,7 @@ fetchBooks()
 
 ----
 
-[source, JSON]
+[source,JSON,role=nocopy]
 ----
 [
   {
