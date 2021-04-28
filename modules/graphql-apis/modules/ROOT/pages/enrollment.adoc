@@ -7,7 +7,6 @@
 :page-course-duration: 4 hrs
 :page-course-label: New
 :page-illustration: https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/courseLogos/GraphQL-APIs.jpg
-
 :page-ogimage: https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/courseLogos/GraphQL-APIs_withTitle.jpg
 
 image::https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/courseLogos/GraphQL-APIs_withTitle.jpg[]
