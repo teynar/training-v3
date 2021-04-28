@@ -82,8 +82,10 @@ link:https://neo4j.com/graphacademy/training-querying-40/enrollment/[Progress to
 == Neo4j Certification
 
 Take the link:https://neo4j.com/graphacademy/neo4j-certification/[Neo4j Certified Professional exam] to gain your certificate.
-This certification exam tests you on content from courses, _Introduction to Neo4j 4.0_ or _Introduction to Neo4j 3.5_.
+This certification exam tests you on content from the courses in the _Introduction to Neo4j 4.x series_.
 You can take the certification exam multiple times until you pass!
+
+link:https://neo4j.com/graphacademy/neo4j-certification/[Take the Neo4j Certified Professional exam^, role=button]
 
 
 ifndef::env-slides[]
