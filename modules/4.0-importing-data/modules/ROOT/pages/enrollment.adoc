@@ -14,9 +14,6 @@ image::https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/courseLogos/Impo
 
 This online course is a collection of lessons and and hands-on exercises that will help you learn the many ways that you can import data into a Neo4j database.
 
-[NOTE]
-This course is a subset of the importing lessons from the _Introduction to Neo4j 4.0_ course. If you have completed the importing lessons of the _Introduction to Neo4j 4.0_ course, you need not enroll in this course.
-
 == Prerequisites
 
 You should have completed the courses:

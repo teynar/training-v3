@@ -21,60 +21,91 @@ In this course, you have learned how to:
 * Use an application to import data.
 * Use the ETL Tool to import data.
 
+ifdef::env-slides[]
+== Resources - 1
+endif::[]
+
+ifndef::env-slides[]
 == Resources
+endif::[]
 
-There are many resources available to you for learning more about Neo4j and Cypher.
-
-https://neo4j.com/developer/resources/
-
-Neo4j Community Site where you can ask or answer questions about Neo4j and discuss with other users:
-
-https://community.neo4j.com
-
-Neo4j documentation:
-
-https://neo4j.com/docs/
+There are link:https://neo4j.com/developer/resources/[many resources available to you^] for learning more about Neo4j and Cypher.
 
 
-Neo4j Sandboxes for experimenting with graphs:
+* Neo4j Community Site where you can ask or answer questions about Neo4j and discuss with other users: +
+  https://community.neo4j.com
 
-https://
-sandbox.neo4j.com/?ref=graph-academy
+* Neo4j documentation: +
+  https://neo4j.com/docs/
 
-Videos on  the Neo4j YouTube channel:
+ifdef::env-slides[]
+== Resources - 2
+endif::[]
 
-https://www.youtube.com/channel/UCvze3hU6OZBkB1vkhH2lH9Q
+* Neo4j Sandboxes for experimenting with graphs: +
+  https://sandbox.neo4j.com/?ref=graph-academy
 
-Neo4j online and instructor-led training:
+* Videos on  the Neo4j YouTube channel: +
+  https://www.youtube.com/channel/UCvze3hU6OZBkB1vkhH2lH9Q
 
-https://neo4j.com/graphacademy/
+* Neo4j online and classroom training: +
+  https://neo4j.com/graphacademy/
 
-Become a Neo4j certified developer:
-
-https://neo4j.com/graphacademy/neo4j-certification/
-
-GitHub repository:
-
-https://github.com/neo4j-contrib
-
-Neo4j events all over the world:
-
-https://neo4j.com/events/world/all/
-
-Graph Gists for learning more use cases for Neo4j:
-
-https://neo4j.com/graphgists/
-
-Attend a Neo4j meetup:
-
-https://www.meetup.com/topics/neo4j/
-
-View questions/answers raised about Neo4j:
-
-https://stackoverflow.com/tags/neo4j/hot
+ifdef::env-slides[]
+== Resources - 3
+endif::[]
 
 
+* GitHub repository: +
+  https://github.com/neo4j-contrib
+
+* Neo4j events all over the world: +
+  https://neo4j.com/events/world/all/
+
+ifdef::env-slides[]
+== Resources - 4
+endif::[]
+
+* Graph Gists for learning more use cases for Neo4j: +
+  https://neo4j.com/graphgists/
+
+* Attend a Neo4j meetup: +
+  https://www.meetup.com/topics/neo4j/
+
+* View questions/answers raised about Neo4j: +
+  https://stackoverflow.com/tags/neo4j/hot
+
+
+== Next Steps
+
+Now that you have completed the _Importing Data with Neo4j 4.x_ Course, you can progress to the link:https://neo4j.com/graphacademy/training-gdm-40/enrollment/[Graph Data Modeling with Neo4j^]
+ course.
+This course teaches you how to model a domain into a Neo4j graph data model, some best practices for graph data modeling,  and contains numerous hands-on exercises.
+
+link:https://neo4j.com/graphacademy/training-gdm-40/enrollment/[Progress to Graph Data Modeling with Neo4j^,role=button]
+
+Or, you can take any other course in this Series:
+
+link:https://neo4j.com/graphacademy/training-overview-40/enrollment/[Overview of Neo4j 4.x^]
+
+link:https://neo4j.com/graphacademy/training-querying-40/enrollment/[Querying with Cypher in Neo4j 4.x^]
+
+link:https://neo4j.com/graphacademy/training-updating-40/enrollment/[Creating Nodes and Relationships in Neo4j 4.x^]
+
+link:https://neo4j.com/graphacademy/training-best-practices-40/enrollment/[Using Indexes and Query Best Practices in Neo4j 4.x^]
+
+
+== Neo4j Certification
+
+Take the link:https://neo4j.com/graphacademy/neo4j-certification/[Neo4j Certified Professional exam] to gain your certificate.
+This certification exam tests you on content from the courses in the _Introduction to Neo4j 4.x Series_.
+You can take the certification exam multiple times until you pass!
+
+link:https://neo4j.com/graphacademy/neo4j-certification/[Take the Neo4j Certified Professional exam^, role=button]
+
+
+ifndef::env-slides[]
 == Course feedback
 
 We want your feedback on this course. Please provide your https://forms.gle/k6nhzMXiYFyUYUNs7[feedback] so we can improve this course.
-
+endif::[]

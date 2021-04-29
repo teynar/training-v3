@@ -16,9 +16,6 @@ image::https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/courseLogos/Crea
 This online course is a collection of lessons and and hands-on exercises which help you build a good starting knowledge for updating a Neo4j 4.x database.
 You will learn Cypher syntax for updating the database and perform numerous hands-on exercises.
 
-[NOTE]
-This course is a subset of the lessons from the _Introduction to Neo4j 4.0_ course that teach you how to create, delete, and merge nodes and relationships. If you have completed these lessons of the _Introduction to Neo4j 4.0_ course, you need not enroll in this course.
-
 == Prerequisites
 
 You should have completed the courses:

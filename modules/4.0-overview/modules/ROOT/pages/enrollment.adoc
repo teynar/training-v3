@@ -18,9 +18,6 @@ You will learn what a graph database is and how it is supported with Neo4j.
 You will learn about the features of Neo4j and the many ways you can access a Neo4j instance.
 In this course, you will also have an opportunity to get started using Neo4j using Neo4j Desktop and Neo4j Browser for accessing the Neo4j instance.
 
-[NOTE]
-This course is a subset of first two lessons from the _Introduction to Neo4j 4.0_ course (_Neo4j is a Graph Database, The Neo4j Graph Platform_). If you have completed these lessons of the _Introduction to Neo4j 4.0_ course, you need not enroll in this course.
-
 == Prerequisites
 
 You need not have any programming experience to take this course.

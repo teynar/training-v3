@@ -16,9 +16,6 @@ image::https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/courseLogos/Usin
 This online course is a collection of lessons and and hands-on exercises which teaches you how to create constraints and indexes for your Neo4j database, as well as use full-text schema indexes.
 You will also learn some best practices in querying the database. Most query best practices, however, are covered in the course _Cypher Query Tuning in Neo4j 4.x_.
 
-[NOTE]
-This course is a subset of the lessons from the _Introduction to Neo4j 4.0_ course that teach you how to use indexes and some query best practices. If you have completed these lessons of the _Introduction to Neo4j 4.0_ course, you need not enroll in this course.
-
 == Prerequisites
 
 You should have completed the courses:

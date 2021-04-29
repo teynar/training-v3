@@ -1,4 +1,4 @@
-= Introduction to Graph Algorithms with Neo4j 4.x
+= Introduction to Graph Algorithms in Neo4j 4.x
 :slug: 01-iga-40-about-this-course
 :doctype: book
 :toc: left

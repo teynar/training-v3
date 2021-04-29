@@ -16,6 +16,87 @@ In this course, you have learned how to use the:
 * Node similarity algorithm
 * Label Propagation Community Detection algorithm
 
+ifdef::env-slides[]
+== Resources - 1
+endif::[]
+
+ifndef::env-slides[]
+== Resources
+endif::[]
+
+Here are some Graph Data Science-specific resources:
+
+* link:https://neo4j.com/graph-algorithms-book/[O'Reilly Graph Algorithms Book^]
+
+* link:https://medium.com/neo4j/tagged/data-science[Neo4j Analytics Category on Medium^]
+
+* link:https://tbgraph.wordpress.com/[Tomaz Bratanic’s Blog^]
+
+* link:https://www.octavian.ai/[Octavian AI^]
+
+There are link:https://neo4j.com/developer/resources/[many resources available to you^] for learning more about Neo4j and Cypher.
+
+* Neo4j Community Site where you can ask or answer questions about Neo4j and discuss with other users: +
+  https://community.neo4j.com
+
+* Neo4j documentation: +
+  https://neo4j.com/docs/
+
+ifdef::env-slides[]
+== Resources - 2
+endif::[]
+
+* Neo4j Sandboxes for experimenting with graphs: +
+  https://sandbox.neo4j.com/?ref=graph-academy
+
+* Videos on  the Neo4j YouTube channel: +
+  https://www.youtube.com/channel/UCvze3hU6OZBkB1vkhH2lH9Q
+
+* Neo4j online and classroom training: +
+  https://neo4j.com/graphacademy/
+
+ifdef::env-slides[]
+== Resources - 3
+endif::[]
+
+
+* GitHub repository: +
+  https://github.com/neo4j-contrib
+
+* Neo4j events all over the world: +
+  https://neo4j.com/events/world/all/
+
+ifdef::env-slides[]
+== Resources - 4
+endif::[]
+
+* Graph Gists for learning more use cases for Neo4j: +
+  https://neo4j.com/graphgists/
+
+* Attend a Neo4j meetup: +
+  https://www.meetup.com/topics/neo4j/
+
+* View questions/answers raised about Neo4j: +
+  https://stackoverflow.com/tags/neo4j/hot
+
+
+== Next Steps
+
+Now that you have completed the _Applied Graph Data Science for Web Applications_ Course, you can take any of these other Graph Data Science courses:
+
+link:https://neo4j.com/graphacademy/training-iga-40/enrollment/[Introduction to Graph Algorithms in Neo4j 4.x^]
+
+link:https://neo4j.com/graphacademy/training-gdsds-40/enrollment/[Using a Machine Learning Workflow for Link Prediction^]
+
+== Neo4j Graph Data Science Certification
+
+Take the link:https://neo4j.com/graphacademy/neo4j-gds-certify/[Neo4j Graph Data Science Certified exam] to gain your certificate.
+This certification exam tests you on content from the courses in the _Introduction to Graph Algorithms in Neo4j 4.x_.
+You can take the certification exam multiple times until you pass!
+
+link:https://neo4j.com/graphacademy/neo4j-gds-certify/[Take the Neo4j Graph Data Science Certification exam^, role=button]
+
+
 ifndef::env-slides[]
 == Course feedback
 

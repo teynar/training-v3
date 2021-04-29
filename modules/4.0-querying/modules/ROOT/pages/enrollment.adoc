@@ -15,9 +15,6 @@ image::https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/courseLogos/Quer
 This online course is a collection of lessons and and hands-on exercises which help you build a good starting knowledge for querying the Neo4j 4.x DBMS.
 You will learn Cypher syntax for querying the database and perform numerous hands-on exercises.
 
-[NOTE]
-This course is a subset of the querying lessons from the _Introduction to Neo4j 4.0_ course. If you have completed these lessons of the _Introduction to Neo4j 4.0_ course, you need not enroll in this course.
-
 == Prerequisites
 
 You should have completed the course: _Overview of Neo4j 4.x_.
