@@ -132,8 +132,13 @@ Enter the following in the query edit pane:
 
 [source]
 ----
-:use system
 CREATE DATABASE crimes
+----
+
+Enter the following in the query edit pane:
+
+[source]
+----
 :use crimes
 ----
 
