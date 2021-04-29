@@ -8,6 +8,8 @@
 :page-illustration: https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/courseLogos/IntroductionToNeo4j-4.0.jpg
 :page-ogimage: https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/courseLogos/IntroNeo4j4.xSeries_withTitle.jpg
 :page-disable-enrollment:
+:page-course-hidden:
+
 image::https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/courseLogos/IntroNeo4j4.xSeries_withTitle.jpg[]
 
 == About this series
