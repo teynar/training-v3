@@ -3,8 +3,6 @@
 == Exercise 16: Importing data (Preparations)
 
 You will start with a new database named importcsv. Execute these commands in Neo4j Browser to create the database.
-[source, cypher]
-----
 
 [source, cypher]
 ----
