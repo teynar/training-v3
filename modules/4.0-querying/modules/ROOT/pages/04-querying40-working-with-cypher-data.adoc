@@ -50,10 +50,10 @@ image::DefaultGrouping.png[DefaultGrouping,width=800,align=center]
 
 [.notes]
 --
-Notice that the rows are grouped by the value of _m.title_.
-In this example three people review the movie, _The Replacements_, and they are grouped together in the rows returned.
-How Cypher groups values returned by default will depend on the number of nodes of each type in the graph.
-This graph has more _Person_ nodes than _Movie_ nodes so the grouping is done based upon the movie titles.
+Notice that  with this particular graph, the rows are ordered by the value of _m.title_.
+In this example three people review the movie, _The Replacements_, and they are ordered together in the rows returned.
+How Cypher orders values returned by default will depend on the number of nodes of each type in the graph.
+You cannot rely on this ordering. To guarantee ordering, you must explicitly aggregate the rows.
 --
 
 == Using `count()` to aggregate
