@@ -15,7 +15,7 @@ ifndef::env-slides[]
 Cypher is the query language you use to retrieve data from the Neo4j Database, as well as create and update the data.
 
 
-At the end of this module, you should be able to write Cypher statements to:
+At the end of this module, you will write Cypher statements to:
 
 [square]
 * Retrieve nodes from the graph.
@@ -23,7 +23,7 @@ At the end of this module, you should be able to write Cypher statements to:
 * Retrieve property values from nodes in the graph.
 * Filter nodes retrieved using relationships.
 
-Throughout this training, you should refer to:
+Throughout this training, you can refer to:
 [square]
 * https://neo4j.com/docs/cypher-manual/current/[Neo4j Cypher Manual^]
 * http://neo4j.com/docs/cypher-refcard/current/[Cypher Reference card^]
@@ -600,7 +600,7 @@ image::PersonNodes-graph.png[PersonNodes-graph,width=700, align=center]
 
 ifndef::env-slides[]
 [NOTE]
-When you specify a pattern for a `MATCH` clause, you should always specify a node label if possible. In doing so, the graph engine uses an index to retrieve the nodes which will perform better than not using a label for the `MATCH`.
+When you specify a pattern for a `MATCH` clause, always specify a node label if possible. In doing so, the graph engine uses an index to retrieve the nodes which will perform better than not using a label for the `MATCH`.
 
 
 One thing to notice in this example is that some of the displayed nodes are connected by the _FOLLOWS_ relationship.
@@ -688,7 +688,7 @@ ifdef::env-slides[]
 --
 Note: Show students how to  *:play 4.0-intro-exercises* and how to navigate to *Exercise 1*.
 
-They should have already populated the database from the *Neo4j Guided Exercise* in the previous lesson,
+They will have already populated the database from the *Neo4j Guided Exercise* in the previous lesson,
 but if they have not, there is a script at the beginning of each Exercise to delete all nodes and re-populate the database.
 *Note*: If students are using a *Sandbox*, they could run into access issues if they have an ad blocker, or on a VPN, or if certain ports are blocked.
 
@@ -702,16 +702,16 @@ These *hands-on exercises* provide instructions that are available within Neo4j 
 
 Before you start ...  let me show you how these work.
 
-* Your *Neo4j Desktop* should be active and running the *Movies database*, as we covered earlier.
-* You should see that the database is active in the Desktop.
-* You should open-up a Neo4j Browser.
+* Your *Neo4j Desktop* must be active and running the *Movies database*, as we covered earlier.
+* You must see that the database is active in the Desktop.
+* You must open-up a Neo4j Browser.
 * Execute the command - colon play intro dash exercises. (*:play 4.0-intro-exercises*)
 
 This takes you to the guide that *introduces* these exercises.
 
 * The first *three pages* are about environment setup.
 * All of you have already done this.
-** So, you should be able to skip through to the last page.
+** So, you will be able to skip through to the last page.
 
 Here, you can see we have a *link* for *each* of the exercises.
 
@@ -722,8 +722,8 @@ Here, you can see we have a *link* for *each* of the exercises.
 There’s are number of *tasks*, you are asked to do.
 
 * Most tasks are composed of a *pair* made of of *Instructions* and *Solutions*.
-* You should read the instruction and try to answer the question.
-* Whether or not you have an answer you should continue on to the answer page.
+* You can read the instruction and try to answer the question.
+* Whether or not you have an answer you can continue on to the answer page.
 * There - check your answer - and run the answer code if your code didn’t work.
 * It’s OK if you don’t get the code in the time allotted.
 ** You can always go back after class to hone your skills.
@@ -1521,7 +1521,7 @@ ifndef::env-slides[]
 === Specify labels whenever possible
 
 *Important:* You specify node labels whenever possible in your queries as it optimizes the retrieval in the graph engine.
-That is, you should *not* specify the previous query as:
+That is, you must *not* specify the previous query as:
 
 [source,Cypher,role=noplay]
 ----
@@ -1898,7 +1898,7 @@ Q: For a relationship, can we put in a property and not specify the relationship
 A: The problem with doing that - is in the area of performance.
 
 * *Relationship types* - are one of the cheapest most accessible pieces of information,
-* ... along with *relationship direction*. You should use them as often as you can.
+* ... along with *relationship direction*. You will use them as often as you can.
 
 Q: Is there a *cost* to specifying *variable names everywhere*?
 
@@ -2458,7 +2458,7 @@ For *Cypher keywords* - are not - case sensitive.
 For string constants, you can use either single quotes or double quotes.
 
 * We tend to default - to single quotes - because it saves you - a press of the shift key, - but either way works.
-* For consistency, one way should be selected.
+* For consistency, one way must be selected.
 * If you're string contains - one of the reserved characters, - there would be an exception.
 
 Another recommendation is to specify variables - ...
@@ -2695,7 +2695,7 @@ endif::[]
 [.summary]
 == Summary
 
-You should now be able to write Cypher statements to:
+You can now write Cypher statements to:
 [square]
 * Retrieve nodes from the graph.
 * Filter nodes retrieved using property values of nodes.

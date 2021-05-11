@@ -19,7 +19,7 @@ In this module you will learn how aggregation works in a Cypher query and how to
 You will also gain some experience working with other data types in Cypher.
 --
 
-At the end of this module, you should be able to write Cypher statements to:
+At the end of this module, you will write Cypher statements to:
 [square]
 * Aggregate data into lists.
 * Work with lists.
@@ -193,6 +193,9 @@ These are described in the _Aggregating Functions_ section of the _Neo4j Cypher 
 
 You can either use `count()` to count the number of rows, or alternatively, you can return the size of the collected results.
 The `size()` function returns the number of elements in a list.
+
+[NOTE]
+As you gain more experience with query tuning, you will learn that `count()` is more efficient because it gets its values from the internal count store of the graph.
 --
 
 Here is an alternative to using `count()` that returns the same results, but using `size()`:
@@ -507,7 +510,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to write Cypher statements to:
+You can now write Cypher statements to:
 [square]
 * Aggregate data into lists.
 * Count results returned.

@@ -14,7 +14,7 @@
 
 Next, you will learn how to perform some administrative tasks with the Neo4j instance.
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Start the Neo4j instance.
 * Stop the Neo4j instance.
@@ -84,12 +84,12 @@ https://neo4j.com/docs/operations-manual/4.0/configuration/password-and-user-rec
 
 === Post-install: Debian
 
-Initially and *only on Debian*, you should disable _neo4j_ as a service that is started automatically when the system starts.
+Initially and *only on Debian*, you must disable _neo4j_ as a service that is started automatically when the system starts.
 You do this with this command:
 
 `[sudo] systemctl disable neo4j`
 
-In addition, you should create the directory */var/run/neo4j* that is owned by _neo4j:neo4j_.
+In addition, you must create the directory */var/run/neo4j* that is owned by _neo4j:neo4j_.
 This is where the PID for the currently running Neo4j instance is placed.
 
 == Managing the Neo4j instance
@@ -163,7 +163,7 @@ You can view details of the Neo4j instance by examining the log file.
 
 [.notes]
 --
-The status command gives you a short glimpse of the status of the Neo4j instance. In some cases, although the instance is _active_, it may not have started successfully. You may want to examine more information about the instance, such as the directories it is using at runtime and information about activity against the instance, and especially if any errors occurred during startup. As an administrator, you should become familiar with the types of records that are written to the log files for the Neo4j instance.
+The status command gives you a short glimpse of the status of the Neo4j instance. In some cases, although the instance is _active_, it may not have started successfully. You may want to examine more information about the instance, such as the directories it is using at runtime and information about activity against the instance, and especially if any errors occurred during startup. As an administrator, you must become familiar with the types of records that are written to the log files for the Neo4j instance.
 --
 
 [.small]
@@ -278,7 +278,7 @@ Select the correct answers.
 
 == Summary
 
-You should now be able to:
+You can now:
 
 [square]
 * Start the Neo4j instance.

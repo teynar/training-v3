@@ -18,7 +18,7 @@ You will also learn some best practices in querying the database. Most query bes
 
 == Prerequisites
 
-You should have completed the courses:
+You must have completed the courses:
 
 [square]
 * _Overview of Neo4j 4.x_

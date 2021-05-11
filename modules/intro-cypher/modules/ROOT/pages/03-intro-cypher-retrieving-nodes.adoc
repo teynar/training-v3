@@ -15,7 +15,7 @@
 The `MATCH` clause is used to retrieve nodes(data) from the graph.
 In this topic, you will learn how to write simple queries to retrieve nodes from the graph.
 
-At the end of this topic, you should be able to:
+At the end of this topic, you will be able to:
 
 [square]
 * Retrieve nodes using simple node patterns.
@@ -28,7 +28,7 @@ This video summarizes the content of this topic:
 
 video::cMSKmx6Pu7o[youtube,width=560,height=315]
 
-Throughout this training, you should refer to:
+Throughout this training, you can refer to:
 [square]
 * https://neo4j.com/docs/cypher-manual/current/[Neo4j Cypher Manual^]
 * http://neo4j.com/docs/cypher-refcard/current/[Cypher Reference card^]
@@ -102,7 +102,7 @@ When you execute this Cypher code, the graph engine returns all nodes with the l
 And the variable _g_ is specified so that nodes can be returned to the client.
 
 [NOTE]
-When you specify a pattern for a `MATCH` clause, you should always specify a node label if possible. In doing so, the graph engine uses an index to retrieve the nodes which will perform better than not using a label for the `MATCH`.
+When you specify a pattern for a `MATCH` clause, always specify a node label if possible. In doing so, the graph engine uses an index to retrieve the nodes which will perform better than not using a label for the `MATCH`.
 
 //Q3: More effort (modify Cypher)
 
@@ -166,7 +166,7 @@ RETURN m
 ----
 
 This query returns 266 nodes.
-If you view the properties for these nodes returned in the table view, you should see that all _year_ values for these nodes is 1999.
+If you view the properties for these nodes returned in the table view, you will see that all _year_ values for these nodes is 1999.
 
 //Q4: Most effort (write Cypher from scratch)
 

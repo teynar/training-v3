@@ -13,7 +13,7 @@
 
 You have learned how to query a graph using a number of Cypher clauses and keywords that start with the `MATCH` clause. You learned how to retrieve data based upon label values, property key values, and relationship types, and how to perform some useful intermediate processing during a query to control what data is returned.
 
-At the end of this module, you should be able to write Cypher statements to:
+At the end of this module, you will write Cypher statements to:
 [square]
 * Create a node
 ** Add and remove node labels
@@ -509,7 +509,7 @@ We can now query the nodes related to _Batman Begins_ to see that this movie now
 [.thumb]
 image::BatmanBeginsRelationships2.png[BatmanBeginsRelationships2,width=700]
 
-Even though we have deleted the relationship between actor, _Christian Bale_ and the movie _Batman Begins_, we note that this actor is connected to another movie in the graph, so we should not delete this _Christian Bale_ node.
+Even though we have deleted the relationship between actor, _Christian Bale_ and the movie _Batman Begins_, we note that this actor is connected to another movie in the graph, so we will not delete this _Christian Bale_ node.
 
 [.thumb]
 image::ChristianBaleConnections.png[ChristianBaleConnections,width=700]
@@ -605,7 +605,7 @@ h|The result is:
 {set:cellbgcolor!}
 
 [WARNING]
-You should never create duplicate nodes or relationships in a graph.
+You must never create duplicate nodes or relationships in a graph.
 
 The `MERGE` clause is used to find elements in the graph. If the element is not found, it is created.
 
@@ -632,7 +632,7 @@ RETURN variable
 
 If there is an existing node with  _Label_ and _nodeProperties_  found in the graph, no node is created. If, however the node is not found in the graph, then the node is created.
 
-When you specify _nodeProperties_ for `MERGE`, you should only use properties that satisfy some sort of uniqueness constraint. You will learn about uniqueness constraints in the next module.
+When you specify _nodeProperties_ for `MERGE`, only use properties that satisfy some sort of uniqueness constraint. You will learn about uniqueness constraints in the next module.
 
 Here is what we currently have in the graph for the _Person_, _Michael Caine_.
 This node has values for _name_ and _born_. Notice also that the label for the node is _Person_.
@@ -655,7 +655,7 @@ Here is the result of running this Cypher example. We do not find a node with th
 image::MergeActorMichaelCaine.png[MergeActorMichaelCaine,width=600]
 
 [NOTE]
-When you specify the node to merge, you should only use properties that have a unique index. You will learn about uniqueness later in this training.
+When you specify the node to merge, only use properties that have a unique index. You will learn about uniqueness later in this training.
 
 If we were to repeat this `MERGE` clause, no additional _Actor_ nodes would be created in the graph.
 
@@ -720,7 +720,7 @@ image::UpdateToUK.png[UpdateToUK,width=700]
 
 === Using `MERGE` to create relationships
 
-Using `MERGE` to create relationships is expensive and you should only do it when you need to ensure that a relationship is unique and you are not sure if it already exists.
+Using `MERGE` to create relationships is expensive. Only do it when you need to ensure that a relationship is unique and you are not sure if it already exists.
 
 In this example, we use the `MATCH` clause to find all _Person_ nodes that represent _Michael Caine_ and we find the movie, _Batman Begins_ that we want to connect to all of these nodes. We already have a connection between one of the _Person_ nodes and the _Movie_ node. We do not want this relationship to be duplicated. This is where we can use `MERGE` as follows:
 
@@ -737,7 +737,7 @@ Here is the result of executing this Cypher statement. It went through all the n
 [.thumb]
 image::MergeRelationships.png[MergeRelationships,width=800]
 
-You must be aware of the  behavior of the `MERGE` clause and how it will automatically create nodes and relationships. `MERGE` tries to find a full pattern and if it doesn't find it, it creates that full pattern. That's why in most cases you should first `MERGE` your nodes and then your relationship afterwards.
+You must be aware of the  behavior of the `MERGE` clause and how it will automatically create nodes and relationships. `MERGE` tries to find a full pattern and if it doesn't find it, it creates that full pattern. That's why in most cases you will first `MERGE` your nodes and then your relationship afterwards.
 
 Only if you intentionally want to create a node within the context of another (like a month within a year) then a MERGE pattern with one bound and one unbound node makes sense.
 
@@ -815,7 +815,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to write Cypher statements to:
+You can now write Cypher statements to:
 [square]
 
 * Create a node

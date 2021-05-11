@@ -12,7 +12,7 @@
 == About this module
 
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Describe the domain for a model.
 * Define the questions for the domain.
@@ -115,7 +115,7 @@ Sample data need not be expansive, detailed, or even of particularly high qualit
 It simply needs to represent the broad shape of the information you would expect to find in the real data.
 
 Sample data can either be completely made up, or can be a sample pulled from a real dataset.
-If you’ve done the work to properly understand the domain, it should not strongly matter either way.
+If you’ve done the work to properly understand the domain, it will not strongly matter either way.
 --
 
 === BOM high-level sample data
@@ -259,7 +259,7 @@ Identifiers serve two purposes:
 There are subtly different best practices for properties serving each of those functions, which you will learn about later.
 For now, we simply group them all into this one generic bucket of usefulness.
 
-Decorators should usually be left out of the initial model.
+Decorators are usually left out of the initial model.
 If they are not being used to answer questions, they are a waste of storage, and their presence can distract users and developers from the information that is actually important.
 Remember that we endorse a narrow, focused approach to model design, based on the relative ease of modifying a graph data model.
 
@@ -364,7 +364,7 @@ ifdef::env-slides[]
 [.notes]
 --
 
-The students should have downloaded the exercise files here which contain the JSON solutions for the Arrows tool:
+The students must have downloaded the exercise files here which contain the JSON solutions for the Arrows tool:
 
 https://data.neo4j.com/v4.0-graph-data-modeling/GraphDataModeling-40-files-v2.zip
 
@@ -380,7 +380,7 @@ endif::[]
 [.one-sixth-five-sixths-row]
 === Exercise 2 solution
 
-Here is what it should look like in the UI of the Arrows tool:
+Here is what it will look like in the UI of the Arrows tool:
 
 image::Exercise2Solution.png[Exercise2Solution,width=1000,align=center]
 
@@ -523,7 +523,7 @@ image::Exercise2Solution.png[Exercise2Solution,width=500,align=center]
 --
 Focus on type and directions first.
 Then check for any qualifiers that will help answer questions.
-Should these qualifiers be types or properties? Why?
+Must these qualifiers be types or properties? Why?
 --
 
 [.one-sixth-five-sixths-row]
@@ -635,8 +635,8 @@ image::TestModel4.png[TestModel4,width=800,align=center]
 We anchor on the Wood table 60" product, and iteratively  traverse each CONTAINS to the parts that the product contains.
 The application would simply add up the prices of the parts (multiplied by quantity when applicable) to come up with the total price.
 
-During the entity identification stage, there is often a debate about whether Assembly nodes should contain a price, or if price should be kept only on the Part leaf nodes.
-That debate may even extend to whether price should be kept on Product nodes.
+During the entity identification stage, there is often a debate about whether Assembly nodes will contain a price, or if price will be kept only on the Part leaf nodes.
+That debate may even extend to whether price will be kept on Product nodes.
 Again, there is no “right” answer, only tradeoffs to be aware of.
 
 If price is only on Parts, then this query needs to traverse further in order to find the answer.
@@ -662,7 +662,7 @@ This modeler felt that that benefit balanced out the added data maintenance expe
 === Testing scalability
 
 --
-Here are some questions you should answer:
+Here are some questions you may answer:
 
 [square.small]
 * How many products?
@@ -677,7 +677,7 @@ image::Scalable.png[Scalable,width=700,align=center]
 
 [.notes]
 --
-Scalability questions should be asked by stakeholders and developers.
+Scalability questions must be asked by stakeholders and developers.
 Developers will have a better idea of the challenges with implementing the model as it scales so they are a key player in doing the scalability analysis.
 Stakeholders would have a better idea of how many products and parts, how often prices change etc.
 
@@ -733,7 +733,7 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Describe the domain for a model.
 * Define the questions for the domain.

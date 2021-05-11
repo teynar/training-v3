@@ -25,7 +25,7 @@ endif::[]
 
 ifdef::backend-html5,backend-pdf[]
 These videos show how to install and get started using Neo4j Desktop.
-For your environment you should:
+For your environment you must:
 
 . Download the latest version of Neo4j Desktop.
 . Create a project in Neo4j Desktop named *Graph Algos*.
@@ -101,11 +101,11 @@ ifdef::env-slides[]
 endif::[]
 
 [start=4]
-. A new browser tab should open for this address.
-. Copy this address to your clipboard. It should be: https://neo.jfrog.io/neo/api/npm/npm/neuler.
+. A new browser tab will open for this address.
+. Copy this address to your clipboard. It will be: https://neo.jfrog.io/neo/api/npm/npm/neuler.
 . In the left *Graph Apps* panel, paste this address in the *Install* field at the bottom.
 . Click *Install*.
-. The *Graph Data Science Graph Playground* Graph App should now appear in the left pane.
+. The *Graph Data Science Graph Playground* Graph App will now appear in the left pane.
 
 
 [.summary]

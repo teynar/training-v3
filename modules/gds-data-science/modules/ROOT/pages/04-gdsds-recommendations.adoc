@@ -12,7 +12,7 @@
 
 Now that you have a basic understanding of the data, you will build a recommendation engine for authors.
 
-At the end of this module, you should be able to write Cypher queries to:
+At the end of this module, you will be able to write Cypher queries to:
 [square]
 * Find potential collaborators for an author.
 * Find relevant papers about a topic for an author.
@@ -114,7 +114,7 @@ Select the correct answer.
 
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Find potential collaborators for an author.
 * Find relevant papers about a topic for an author.

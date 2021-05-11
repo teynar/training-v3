@@ -14,13 +14,13 @@ On a non-Docker installation, you would specify this location in the Neo4j confi
 
 . Make sure you have a terminal window open to your Docker Neo4j instance for this course.
 . Ensure that the Neo4j instance is stopped.
-. You should have previously created the dump file, *movies.dump* for the movie database in the *$HOME/docker-neo4j/data* directory.
+. You have previously created the dump file, *movies.dump* for the movie database in the *$HOME/docker-neo4j/data* directory.
 
 == Exercise steps:
 
 . Create a directory named *$HOME/docker-neo4j/neo4j/data/new-location*. This is the directory where the databases will reside which is different from the default location used by Neo4j.
 . Make sure that this *new-location* directory is writable.
-. Modify the *neo4j.conf* file to use this new location as the data directory. Also ensure that there the default database is _maindb_. Your *neo4j.conf* file should look something like this:
+. Modify the *neo4j.conf* file to use this new location as the data directory. Also ensure that there the default database is _maindb_. Your *neo4j.conf* file will look something like this:
 +
 
 [source,config,role=noplay]
@@ -37,7 +37,7 @@ image::NewLocationDocker.png[NewLocationDocker,width=900,align=center]
 
 image::Neo4jStarted-newLocationDocker.png[Neo4jStarted-newLocationDocker,width=800,align=center]
 
-. Examine the files in the *new-location* directory. The instance should have created the *databases* and *transactions* directories. The *databases* directory should look as follows:
+. Examine the files in the *new-location* directory. The instance will have created the *databases* and *transactions* directories. The *databases* directory will look as follows:
 +
 
 image::Neo4jStarted-newLocation2Docker.png[Neo4jStarted-newLocation2Docker,width=800,align=center]

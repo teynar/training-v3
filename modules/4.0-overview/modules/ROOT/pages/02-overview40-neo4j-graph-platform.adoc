@@ -14,7 +14,7 @@ ifndef::env-slides[]
 
 The Neo4j Graph Platform enables developers to create applications that are best architected as graph-powered systems that are built upon the rich connectedness of data.
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Describe the components and benefits of the Neo4j Graph Platform.
 * Access a Neo4j database using Neo4j Browser
@@ -57,7 +57,7 @@ ifdef::env-slides[]
 == In this module you'll learn ...
 
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 
 [square]
 * Describe the components and benefits of the Neo4j Graph Platform:
@@ -562,7 +562,7 @@ image::Neo4jDesktop.png[Neo4jDesktop,width=550,align=center]
 
 ifndef::env-slides[]
 The Neo4j Desktop runs on OS X, Linux, and Windows. You can download it from our https://neo4j.com/download[download page].
-You should follow the instructions on the download page for installing Neo4j Desktop.
+Follow the instructions on the download page for installing Neo4j Desktop.
 
 endif::[]
 
@@ -764,7 +764,7 @@ Steps to show:
 . Let's create a new project. We select New in the Project sidebar. The default name for a project is Project. We want a custom name for our project so we select the edit button and change the name of the project.
 . In a project, you can add one or more local DBMSs, connections to remote DBMSs, and files. Let's create a local DBMS.
 . When you create a local DBMS, you can change the name of the DBMS to describe your use case.
-. You must specify a password that you should remember as it may be required for clients connecting to the DBMS. Neo4j Browser started from Neo4j Desktop automatically uses this password, but other clients may need the user name of neo4j and the password you specify here to connect.
+. You must specify a password that you will remember as it may be required for clients connecting to the DBMS. Neo4j Browser started from Neo4j Desktop automatically uses this password, but other clients may need the user name of neo4j and the password you specify here to connect.
 . Next, you can specify the version of the DBMS you want to use. Here we see that the default version that comes with this version of Neo4j Desktop is 4.2.1.
 . Notice that you have many versions of the DBMS to choose from, but each one shown here will require that resources need to be downloaded in order to create these versions.
 . Then you click Create to create the DBMS for the project.
@@ -1395,6 +1395,6 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Describe the components and benefits of the Neo4j Graph Platform.

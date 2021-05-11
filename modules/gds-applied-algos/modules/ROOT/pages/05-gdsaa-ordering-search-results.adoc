@@ -32,12 +32,12 @@ Instead of selecting the reviews for our businesses based on the opinions of use
 . In React application code, edit the Cypher query in `src/exercises/exercise2.js` to return businesses.
 . Save this file.
 . In the React web application, select a user from the *User Profile* drop down. This will set this user for the search.
-. Select *Business Search*,  entering *pizza* for the search text and select *Restaurant* for the category. You should see a list of restaurants that are relevant to that user.
-. Select a different user and then search for pizza restaurants. You should see a different set of restaurants.
+. Select *Business Search*,  entering *pizza* for the search text and select *Restaurant* for the category. You will see a list of restaurants that are relevant to that user.
+. Select a different user and then search for pizza restaurants. You will see a different set of restaurants.
 
 [NOTE]
 --
-This query should be be in the context of the currently "logged in" user in the application. Since our simple application doesn't have any authentication mechanism we fake this by choosing a user in the dropdown in the "User Profile" section of the application. The id of the currently logged in user will be available as a Cypher parameter `userId` in the query.
+This query will be be in the context of the currently "logged in" user in the application. Since our simple application doesn't have any authentication mechanism we fake this by choosing a user in the dropdown in the "User Profile" section of the application. The id of the currently logged in user will be available as a Cypher parameter `userId` in the query.
 
 So for example, to find the currently logged in user:
 
@@ -84,6 +84,6 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Use the Pearson Similarity graph algorithm.

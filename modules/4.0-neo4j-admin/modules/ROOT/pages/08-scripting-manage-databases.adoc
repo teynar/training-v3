@@ -16,7 +16,7 @@
 In most cases, you will want to automate the management of a Neo4j instance.
 --
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Create Cypher scripts to change a database.
 * Create shell scripts to execute Cypher scripts.
@@ -159,7 +159,7 @@ Select the correct answer.
 
 == Summary
 
-You should now be able to:
+You can now:
 
 [square]
 * Create Cypher scripts to change a database.

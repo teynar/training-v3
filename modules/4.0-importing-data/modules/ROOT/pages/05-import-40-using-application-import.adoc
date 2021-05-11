@@ -16,7 +16,7 @@ Another way that you can import data into the graph is with an application that 
 In a java-based application, you can import data by establishing a connection to both the relational database and the Neo4j database to read from the relational database via jdbc drivers and access the Neo4j database using the appropriate language drivers.
 Next, you will learn about the Neo4j drivers to load data into the graph.
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 
 [square]
 * Read data from a relational database and create nodes in a Neo4j database using the Neo4j Java drivers.
@@ -275,7 +275,7 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 
 [square]
 * Read data from a relational database and create nodes in a Neo4j database using the Neo4j Java drivers.

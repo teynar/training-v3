@@ -32,7 +32,7 @@ type files\movies.cypher | docker exec --interactive neo4j bin/cypher-shell --da
 ----
 +
 [start=4]
-. In `cypher-shell` confirm that the database was loaded. It should contain 171 nodes:
+. In `cypher-shell` confirm that the database was loaded. It will contain 171 nodes:
 +
 [source,Cypher,role=noplay]
 ----

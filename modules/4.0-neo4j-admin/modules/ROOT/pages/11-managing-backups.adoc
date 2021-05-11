@@ -54,7 +54,7 @@ image::BackupArchitecture.png[BackupArchitecture,width=900,align=center]
 [.notes]
 --
 A common practice for many enterprises is to back up their databases to Amazon S3 sites.
-In addition, if any backups are to be stored in S3, they should  be encrypted as well as the channel used to create send the backup to S3.
+In addition, if any backups are to be stored in S3, they must  be encrypted as well as the channel used to create send the backup to S3.
 --
 
 == Backup concepts
@@ -238,4 +238,4 @@ Select the correct answer.
 
 == Summary
 
-You should now be able to back up and restore a Neo4j database.
+You can now back up and restore a Neo4j database.

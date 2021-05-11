@@ -16,7 +16,7 @@ This online course is a collection of lessons and and hands-on exercises that wi
 
 == Prerequisites
 
-You should have completed the courses:
+You will have completed the courses:
 
 [square]
 * _Overview of Neo4j 4.x_

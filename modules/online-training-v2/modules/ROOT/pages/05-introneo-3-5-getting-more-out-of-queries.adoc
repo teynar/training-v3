@@ -15,7 +15,7 @@ You have learned how to query nodes and relationships in a graph using simple pa
 You learned how to use node labels, relationship types, and properties to filter your queries.
 Cypher provides a rich set of `MATCH` clauses and keywords you can use to get more out of your queries.
 
-At the end of this module, you should be able to write Cypher statements to:
+At the end of this module, you will write Cypher statements to:
 [square]
 * Filter queries using the `WHERE` clause
 * Control query processing
@@ -96,7 +96,7 @@ There are a number of numeric functions you can use in your conditions.
 See the _Neo4j Cypher Manual's_ section _Mathematical Functions_ for more information.
 
 A special condition in a query is when the retrieval returns an unknown value called `null`.
-You should read the _Neo4j Cypher Manual's_ section _Working with null_ to understand how  `null` values are used at runtime.
+Read the _Neo4j Cypher Manual's_ section _Working with null_ to understand how  `null` values are used at runtime.
 
 ==== Testing labels
 
@@ -267,7 +267,7 @@ If you have a set of values you want to test with, you can place them in a list 
 You can define the list in the `WHERE` clause.
 During the query, the graph engine will compare each property with the values `IN` the list.
 You can place either numeric or string values in the list, but typically, elements of the list are of the same type of data.
-If you are testing with a property of a string type, then all the elements of the list should be strings.
+If you are testing with a property of a string type, then all the elements of the list will be strings.
 
 In this example, we only want to retrieve _Person_ nodes of people born in 1965 or 1970:
 
@@ -328,7 +328,7 @@ WHERE m.released = 2000
 RETURN a.name, m.title, d.name
 ----
 
-If possible, you should write the same query as follows:
+If possible, you write the same query as follows:
 
 [source,Cypher,role=noplay]
 ----
@@ -360,7 +360,7 @@ RETURN n.name
 ----
 
 When you perform this type of query, you may see a warning in the query edit pane stating that the pattern represents a cartesian product and may require a lot of resources to perform the query.
-You should only perform these types of queries if you know the data well and the implications of doing the query.
+Only perform these types of queries if you know the data well and the implications of doing the query.
 
 [.thumb]
 image::CartesionProductWarning.png[CartesionProductWarning,width=800]
@@ -441,7 +441,7 @@ Retrieve [.underline]#all# paths of any length with the relationship, _:RELTYPE_
 (nodeA)-[:RELTYPE*]->(nodeB)
 ----
 
-Retrieve [.underline]#all# paths of any length with the relationship, _:RELTYPE_ from _nodeA_ to _nodeB_ or from _nodeB_ to _nodeA_ and beyond. This is usually a very expensive query so you should place limits on how many nodes are retrieved:
+Retrieve [.underline]#all# paths of any length with the relationship, _:RELTYPE_ from _nodeA_ to _nodeB_ or from _nodeB_ to _nodeA_ and beyond. This is usually a very expensive query so you place limits on how many nodes are retrieved:
 
 [source,syntax,role=nocopy noplay]
 ----
@@ -485,9 +485,9 @@ image::ShortestPath1.png[ShortestPath1,width=800]
 
 Notice that the graph engine has traversed many types of relationships to get to the end node.
 
-When you use the `shortestPath()` function, the query editor will show a warning that this type of query could potentially run for a long time. You should heed the warning, especially for large graphs. Read the _Graph Algorithms_ documentation about the shortest path algorithm.
+When you use the `shortestPath()` function, the query editor will show a warning that this type of query could potentially run for a long time. You must heed the warning, especially for large graphs. Read the _Graph Algorithms_ documentation about the shortest path algorithm.
 
-When you use `ShortestPath()`, you can specify a upper limits for the shortest path. In addition, you should aim to provide the patterns for the from an to nodes that execute efficiently. For example, use labels and indexes.
+When you use `ShortestPath()`, you can specify a upper limits for the shortest path. In addition, aim to provide the patterns for the from an to nodes that execute efficiently. For example, use labels and indexes.
 
 ==== Specifying optional pattern matching
 
@@ -927,7 +927,7 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to write Cypher statements to:
+You can now write Cypher statements to:
 [square]
 
 * Filter queries using the `WHERE` clause

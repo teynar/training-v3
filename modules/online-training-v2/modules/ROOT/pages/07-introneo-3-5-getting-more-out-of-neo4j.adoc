@@ -13,7 +13,7 @@
 
 You have learned how to set up your development environment for accessing a Neo4j graph and how to write basic Cypher statements for querying the graph modifying the graph.
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 
 * Use parameters in your Cypher statements.
@@ -29,7 +29,7 @@ Because some of the code examples in this lesson modify the database, it is reco
 
 == Cypher parameters
 
-In a deployed application, you should not *hard code*  values in your Cypher statements. You use a variety values when you are testing your Cypher statements.  But you don't want to change the Cypher statement every time you test. In addition, you typically include  Cypher statements in an application where parameters are passed in to the Cypher statement before it executes. For these scenarios, you should parameterize values in your Cypher statements.
+In a deployed application, you must not *hard code*  values in your Cypher statements. You use a variety values when you are testing your Cypher statements.  But you don't want to change the Cypher statement every time you test. In addition, you typically include  Cypher statements in an application where parameters are passed in to the Cypher statement before it executes. For these scenarios, you must parameterize values in your Cypher statements.
 
 === Using Cypher parameters
 
@@ -160,7 +160,7 @@ If you are testing an application and have run several queries against the graph
 * The query takes a long time to execute in the graph engine.
 ** Example: `MATCH (a), (b), (c), (d), (e) RETURN count(id(a))`
 
-If the query executes and then *returns a lot of data*, there is no way to monitor it or kill the query. All that you can do is close your Neo4j Browser session and start a new one. If the server has many of these *rogue* queries running, it will slow down considerably so you should aim to limit these types of queries. If you are running Neo4j Desktop, you can simply restart the database to clear things up, but if you are using a Neo4j Sandbox, you cannot do so. The database server is always running and you cannot restart it. Your only option is to shut down the Neo4j Sandbox and create a new Neo4j Sandbox, but then you lose any data you have worked with.
+If the query executes and then *returns a lot of data*, there is no way to monitor it or kill the query. All that you can do is close your Neo4j Browser session and start a new one. If the server has many of these *rogue* queries running, it will slow down considerably so you must aim to limit these types of queries. If you are running Neo4j Desktop, you can simply restart the database to clear things up, but if you are using a Neo4j Sandbox, you cannot do so. The database server is always running and you cannot restart it. Your only option is to shut down the Neo4j Sandbox and create a new Neo4j Sandbox, but then you lose any data you have worked with.
 
 If, however, the query is a *long-running query*, you can monitor it by using the `:queries` command. Here is a screenshot where we are monitoring a long-running query in another Neo4j Browser session:
 
@@ -403,7 +403,7 @@ Here is a brief summary of when single-property indexes are used:
 
 Composite indexes are used only for equality checks and list membership.
 
-In this module, we introduce the basics of Neo4j indexes, but you should consult the Neo4j _Operations Manual_ for more details about creating and maintaining indexes.
+In this module, we introduce the basics of Neo4j indexes, consult the Neo4j _Operations Manual_ for more details about creating and maintaining indexes.
 
 [NOTE]
 Because index maintenance incurs additional overhead when nodes are created, We recommend that for large graphs, indexes are created after the data has been loaded into the graph. You can view the progress of the creation of an index when you use the `:schema` command.
@@ -441,7 +441,7 @@ With the result:
 [.thumb]
 image::CreateSingle-propertyIndex.png[CreateSingle-propertyIndex,width=600]
 
-If a set of properties for a node must be unique for every node, then you should create a constraint as a node key, rather than an index.
+If a set of properties for a node must be unique for every node, then you must create a constraint as a node key, rather than an index.
 
 If, however, there can be duplication for a set of property values, but you want faster access to them, then you can create a composite index. A composite index is based upon multiple properties for a node.
 
@@ -538,7 +538,7 @@ endif::backend-html5[]
 
 == Importing data
 
-In many applications, it is the case that the data that you want to populate your graph with comes from data that was written to _.csv_ files or files of other types. There are many nuances and best practices for loading data into a graph from files. In this module, you will be introduced to some simple steps for loading CSV data into your graph with Cypher. If you are interested in direct loading of data from a relational DBMS into a graph, you should read about the Neo4j Extract Transform Load (ETL) tool at http://neo4j.com/developer/neo4j-etl/, as well as many of the useful pre-written procedures that are available for your use in the APOC library.
+In many applications, it is the case that the data that you want to populate your graph with comes from data that was written to _.csv_ files or files of other types. There are many nuances and best practices for loading data into a graph from files. In this module, you will be introduced to some simple steps for loading CSV data into your graph with Cypher. If you are interested in direct loading of data from a relational DBMS into a graph, read about the Neo4j Extract Transform Load (ETL) tool at http://neo4j.com/developer/neo4j-etl/, as well as many of the useful pre-written procedures that are available for your use in the APOC library.
 
 In Cypher, you can:
 
@@ -580,7 +580,7 @@ id,title,country,year,summary
 3,The Shawshank Redemption,USA,1994, Fear can hold you prisoner. Hope can set you free.
 ----
 
-Before you load data from CSV files into your graph, you should first confirm that the data retrieved looks OK. Rather than creating nodes or relationships, you can simply return information about the data to be loaded.
+Before you load data from CSV files into your graph, first confirm that the data retrieved looks OK. Rather than creating nodes or relationships, you can simply return information about the data to be loaded.
 
 For example you can execute this Cypher statement to get a count of the data to be loaded from the *movies_to_load.csv* file so you have an idea of how much data will be loaded:
 
@@ -813,7 +813,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 
 * Use parameters in your Cypher statements.

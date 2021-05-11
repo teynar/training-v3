@@ -68,7 +68,7 @@ Select the correct answer.
 
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Use the Jaccard similarity algorithm.
 * Use the Label Propagation Community Detection algorithm with Neo4j.

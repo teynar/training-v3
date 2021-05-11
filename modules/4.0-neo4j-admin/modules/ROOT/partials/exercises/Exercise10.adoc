@@ -42,7 +42,7 @@ curl -v -H "Content-Type: application/json" -d '{ "statements" : [ { "statement"
 ----
 +
 You must specify the password for the Neo4j instance.
-You should see something like the following:
+You will see something like the following:
 +
 image::UsePort9999.png[UsePort9999,width=1200,align=center]
 

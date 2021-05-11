@@ -11,7 +11,7 @@
 
 == About this module
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Describe what graph data modeling is.
 * Describe how Neo4j supports graph data modeling.
@@ -62,7 +62,7 @@ It’s common for both the *domain* - and the *questions* - to evolve and change
 
 * These changes - inevitably - will also - change the data model.
 
-The key point here - is that you *SHOULD* expect - the model to change.
+The key point here - is that you expect - the model to change.
 
 * One of the *strengths* - of *Neo4j* -
 ** is that it is - much *more malleable* - than *traditional* databases.
@@ -129,7 +129,7 @@ endif::[]
 
 ifndef::env-slides[]
 Nodes and relationships are the key components of a graph.
-Nodes should have labels to categorize entities.
+Nodes must have labels to categorize entities.
 Relationships must have direction and type.
 Nodes and relationships can have properties.
 A label is used to categorize a set of nodes.
@@ -277,7 +277,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Describe what graph data modeling is.
 * Describe how Neo4j supports graph data modeling.

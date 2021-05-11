@@ -18,7 +18,7 @@ As a Neo4j database administrator, you will be responsible for ensuring that the
 This includes ensuring that the Neo4j software is up-to-date and configured properly, monitoring the use of Neo4j, performing life cycle activities such as backups, and managing multiple Neo4j instances.
 --
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Describe common application architectures that use Neo4j.
 * Determine which edition of Neo4j to use.
@@ -195,7 +195,7 @@ Additionally, the preview releases are not certified for production use.
 
 _General Availability_ releases are our certified releases.
 They include all features and functionalities intended for that version and supported for production deployments.
-Production deployments should only use _General Availability_ releases.
+Production deployments must only use _General Availability_ releases.
 --
 
 [WARNING]
@@ -242,7 +242,7 @@ However, you cannot use Neo4j Desktop for production purposes.
 
 == Installing Neo4j
 
-After you have determined which Edition and version of Neo4j you will install for your application, you should follow the steps outlined in the https://neo4j.com/docs/operations-manual/4.0/installation/[Neo4j Operations Manual].
+After you have determined which Edition and version of Neo4j you will install for your application, follow the steps outlined in the https://neo4j.com/docs/operations-manual/4.0/installation/[Neo4j Operations Manual].
 [.notes]
 --
 The instructions include actions that must be taken before installing Neo4j.
@@ -271,7 +271,7 @@ To install and use Neo4j, the system(s) that host Neo4j Enterprise Edition have 
 * Filesystem
 
 [.statement]
-You should consult the https://neo4j.com/docs/operations-manual/4.0/installation/requirements/[System Requirements] to learn more.
+Consult the https://neo4j.com/docs/operations-manual/4.0/installation/requirements/[System Requirements] to learn more.
 
 == Neo4j deployment options
 
@@ -303,7 +303,7 @@ image::ClientServerDeployment.png[ClientServerDeployment,width=700,align=center]
 
 ==== Server mode for the Neo4j administrator
 
-When deployed as a server, you should expect to perform many common administration, configuration, and troubleshooting tasks as you would for any database deployment.
+When deployed as a server, you will perform many common administration, configuration, and troubleshooting tasks as you would for any database deployment.
 Neo4j provides utilities and tools for enabling these capabilities, which you will learn about later in this training.
 
 [.notes]
@@ -333,7 +333,7 @@ Your hands-on administration work with Neo4j is very minimal with embedded deplo
 
 [.notes]
 --
-Most of the core administration tasks, such as initiating backups, monitoring, and configuration should be built into the application that is embedding Neo4j.
+Most of the core administration tasks, such as initiating backups, monitoring, and configuration will be built into the application that is embedding Neo4j.
 --
 === Neo4j in the Cloud
 
@@ -388,7 +388,7 @@ endif::[]
 
 == References
 
-You should consult the https://neo4j.com/docs/operations-manual/current/installation/[Neo4j Operations Manual] for more information about the installation requirements and procedures for your target platform, as well as details for Neo4j administration tasks.
+Consult the https://neo4j.com/docs/operations-manual/current/installation/[Neo4j Operations Manual] for more information about the installation requirements and procedures for your target platform, as well as details for Neo4j administration tasks.
 
 The https://neo4j.com/docs/java-reference/current/tutorials-java-embedded/[Java Developer Manual ] covers using embedded mode for Neo4j and is intended for developers.
 
@@ -441,7 +441,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Describe common application architectures that use Neo4j.
 * Determine which edition of Neo4j to use.

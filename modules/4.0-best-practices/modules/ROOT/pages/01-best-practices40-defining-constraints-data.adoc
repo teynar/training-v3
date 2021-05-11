@@ -19,7 +19,7 @@ In addition, you may want to enforce the creation of mandatory properties for se
 These are called constraints in a Neo4j graph data model and are typically defined during the graph data modeling phase of your application developement.
 --
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 
 * Create a uniqueness constraint for a node property in the graph.
@@ -377,7 +377,7 @@ image::CannotRemoveNodeKeyProperty.png[CannotRemoveNodeKeyProperty,width=800,ali
 == Exercise 13: Defining constraints on your data
 
 [IMPORTANT]
-Prior to performing this exercise, you should have set up your development environment to use one of the following, which is covered in the course, _Overview of Neo4j 4.x_.
+Prior to performing this exercise, set up your development environment to use one of the following, which is covered in the course, _Overview of Neo4j 4.x_.
 [square]
 * Neo4j Desktop
 * Neo4j Sandbox
@@ -424,24 +424,25 @@ Select the correct answers.
 - [x] Unique values for a set of properties of a node
 - [ ] Unique values for a set of properties of a relationship
 
+
 === Question 3
 
 [.statement]
-How many properties can be defined for a NODE KEY constraint?
+Which statements below are true about node keys?
 
 [.statement]
 Select the correct answers.
 
 [%interactive.answers]
-- [ ] 0
-- [x] 1
-- [x] 2
-- [x] unlimited
+- [ ] A node key does not require you to define a label for the node.
+- [x] A node key requires you to define a label for the node.
+- [ ] You do not have to specify properties when you define a node key.
+- [x] You can specify an unlimited number of properties when you define a node key.
 
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 
 * Create a uniqueness constraint for a node property in the graph.

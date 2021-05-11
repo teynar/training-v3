@@ -18,7 +18,7 @@ In this module you will learn how to use each of these development environments 
 Many graph-enabled applications have been developed and deployed using Neo4j's Community Edition (free).
 If your enterprise requires production features such as failover, clustering, monitoring, advanced access control, secure routing, etc. you will use Neo4j's Enterprise Edition, or you can use Neo4j Aura which is the cloud instance of a Neo4j Enterprise Edition Database.
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Determine the development environment that is best for you:
 ** Install and start using the Neo4j Desktop.
@@ -37,7 +37,7 @@ It includes an application called  Neo4j Browser.
 Neo4j Browser enables you to access a Neo4j database using Cypher.
 You can also call built-in procedures that communicate with the database server.
 There are a number of additional libraries and drivers for accessing the Neo4j database from Cypher or from another programming language that you can install in your development environment.
-If you are looking to use your system for application development and you want to be able to create multiple Neo4j databases on your machine, you should consider downloading the Neo4j Desktop (free download).
+If you are looking to use your system for application development and you want to be able to create multiple Neo4j databases on your machine, consider downloading the Neo4j Desktop (free download).
 The Neo4j Desktop runs on OS X, Linux, and Windows.
 |===
 
@@ -140,14 +140,14 @@ endif::backend-pdf[]
 In order to perform the hands-on exercises for this training, you must install Neo4j Desktop, create a Database in Neo4j Aura, or create a Neo4j Sandbox.
 
 ifdef::backend-html5[]
-If you want to create and use a Neo4j Database in the cloud using a Neo4j Aura, follow along with this video to create a Neo4j Database with Neo4j Aura for training purposes. For this course, you should select the smallest database in Neo4j Aura which is 1G.
+If you want to create and use a Neo4j Database in the cloud using a Neo4j Aura, follow along with this video to create a Neo4j Database with Neo4j Aura for training purposes. For this course, select the smallest database in Neo4j Aura which is 1G.
 
 video::lnoxoAsWguM[youtube,width=560,height=315]
 
 endif::backend-html5[]
 
 ifdef::backend-pdf[]
-If you want to create and use a Neo4j Database in the cloud using a Neo4j Aura, follow along with this video to create a Neo4j Database with Neo4j Aura for training purposes. For this course, you should select the smallest database in Neo4j Aura which is 1G.
+If you want to create and use a Neo4j Database in the cloud using a Neo4j Aura, follow along with this video to create a Neo4j Database with Neo4j Aura for training purposes. For this course, select the smallest database in Neo4j Aura which is 1G.
 
 https://youtu.be/lnoxoAsWguM
 
@@ -160,14 +160,14 @@ endif::backend-pdf[]
 In order to perform the hands-on exercises for this training, you must install Neo4j Desktop, create a Database in Neo4j Aura, or create a Neo4j Sandbox.
 
 ifdef::backend-html5[]
-If you want to run the Neo4j Database server in the cloud using a Neo4j Sandbox, follow along with this video to create a https://sandbox.neo4j.com/?ref=graph-academy[Neo4j Sandbox] for training purposes. For this course, you should select the Blank Sandbox.
+If you want to run the Neo4j Database server in the cloud using a Neo4j Sandbox, follow along with this video to create a https://sandbox.neo4j.com/?ref=graph-academy[Neo4j Sandbox] for training purposes. For this course, select the Blank Sandbox.
 
 video::OSk1ePl2PUM[youtube,width=560,height=315]
 
 endif::backend-html5[]
 
 ifdef::backend-pdf[]
-If you want to run the Neo4j Database server in the cloud using a Neo4j Sandbox, follow along with this video to create a https://sandbox.neo4j.com/?ref=graph-academy[Neo4j Sandbox] for training purposes. For this course, you should select the Blank Sandbox.
+If you want to run the Neo4j Database server in the cloud using a Neo4j Sandbox, follow along with this video to create a https://sandbox.neo4j.com/?ref=graph-academy[Neo4j Sandbox] for training purposes. For this course, select the Blank Sandbox.
 
 https://youtu.be/OSk1ePl2PUM
 
@@ -218,7 +218,7 @@ endif::backend-pdf[]
 === Question 1
 
 [.statement]
-What development environment should you use if you want to develop a graph-enabled application using a local Neo4j Database?
+What development environment do you use if you want to develop a graph-enabled application using a local Neo4j Database?
 
 [.statement]
 Select the correct answer.
@@ -231,7 +231,7 @@ Select the correct answer.
 === Question 2
 
 [.statement]
-What development environment should you use if you want develop a graph-enabled application using a temporary, cloud-based Neo4j Database?
+What development environment do you use if you want develop a graph-enabled application using a temporary, cloud-based Neo4j Database?
 
 [.statement]
 Select the correct answer.
@@ -257,7 +257,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Determine the development environment that is best for you:
 ** Install and start using the Neo4j Desktop.

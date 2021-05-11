@@ -38,7 +38,7 @@ endif::[]
 
 ifdef::backend-html5,backend-pdf[]
 This video shows how to get started using Neo4j Desktop.
-For your environment you should:
+For your environment you will:
 
 . Download the latest version of Neo4j Desktop.
 . Create a project in Neo4j Desktop named *Graph Algos*.
@@ -137,7 +137,7 @@ Open the *01_DataLoading.ipynb* notebook and follow the steps to load the data.
 
 == Summary
 
-You should now have set up your development environment:
+You now have set up your development environment:
 [square]
 * Set up Neo4j Desktop on your system and created a database.
 * Installed APOC and GDSL for your database.

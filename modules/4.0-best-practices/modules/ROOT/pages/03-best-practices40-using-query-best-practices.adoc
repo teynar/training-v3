@@ -14,13 +14,13 @@
 [.notes]
 --
 You have learned most of the basics for using Cypher to query the graph.
-As you gain more experience with Cypher and use it to create your application graph, there are some best practices that you should use.
+As you gain more experience with Cypher and use it to create your application graph, there are some best practices that you can use.
 Next, you will learn some of these best practices for using Cypher for your application.
 
 The training course, _Cypher Query Tuning in Neo4j 4.x_ goes into greater depth about Cypher best practices and query tuning.
 --
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 
 * Use parameters in your Cypher statements.
@@ -30,14 +30,14 @@ At the end of this module, you should be able to:
 == Cypher parameters
 
 Most deployed applications that use Neo4j have client code written in Java, Javascript, Python, etc.
-In a deployed application, you should not *hard code*  values in your Cypher statements.
+In a deployed application, you must not *hard code*  values in your Cypher statements.
 
 [.notes]
 --
 As you test your Cypher statements, you will use a variety literal values to ensure that your Cypher queries are correct.
 But you don't want to change the Cypher statement every time you test.
 In fact, any change to a Cypher statement requires a recompilation of the Cypher code which is expensive.
-You should create Cypher statements what will not change, except for the substitution of placeholders (parameters) in the query.
+You create Cypher statements what will not change, except for the substitution of placeholders (parameters) in the query.
 A best practice is to parameterize values in your Cypher statements.
 --
 
@@ -379,7 +379,7 @@ The `:queries` command is only available in the Enterprise Edition of Neo4j.
 
 [.notes]
 --
-Here is a very high-level list of some of the best practices you should aim for in your Cypher queries:
+Here is a very high-level list of some of the best practices to aim for in your Cypher queries:
 --
 
 [square]
@@ -458,7 +458,7 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 
 * Use parameters in your Cypher statements.

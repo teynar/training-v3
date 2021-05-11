@@ -18,7 +18,7 @@ You learned how to use node labels, relationship types, and properties to filter
 Cypher provides a rich set of `MATCH` clauses and keywords you can use to get more out of your queries.
 --
 
-At the end of this module, you should be able to write Cypher `WHERE` clauses for testing:
+At the end of this module, you will be able to write Cypher `WHERE` clauses for testing:
 [.small]
 --
 [square]
@@ -118,7 +118,7 @@ There are a number of numeric functions you can use in your conditions.
 See the _Neo4j Cypher Manual's_ section _Mathematical Functions_ for more information.
 
 A special condition in a query is when the retrieval returns an unknown value called `null`. 
-You should read the _Neo4j Cypher Manual's_ section _Working with null_ to understand how  `null` values are used at runtime.
+Read the _Neo4j Cypher Manual's_ section _Working with null_ to understand how  `null` values are used at runtime.
 --
 
 == Testing labels
@@ -347,7 +347,7 @@ A Cypher list is a comma-separated set of values within square brackets.
 You can define the list in the `WHERE` clause. 
 During the query, the graph engine will compare each property with the values `IN` the list. 
 You can place either numeric or string values in the list, but typically, elements of the list are of the same type of data. 
-If you are testing with a property of a string type, then all the elements of the list should be strings. 
+If you are testing with a property of a string type, then all the elements of the list will be strings.
 --
 
 [.statement]
@@ -479,7 +479,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to write Cypher `WHERE` clauses to test:
+You can now write Cypher `WHERE` clauses to test:
 [.small]
 --
 [square]

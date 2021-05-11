@@ -15,7 +15,7 @@ In this lesson we introduce authorization, protecting objects in our API. We cov
 
 == The `@auth` Directive
 
-The Neo4j GraphQL Library provides an `@auth` GraphQL schema directive that enables us to attach authorization rules to our GraphQL type definitions. The `@auth` directive uses JSON Web Tokens (JWTs) for authentication. Authenticated requests to the GraphQL API should include an `authorization` header with a Bearer token attached. For example:
+The Neo4j GraphQL Library provides an `@auth` GraphQL schema directive that enables us to attach authorization rules to our GraphQL type definitions. The `@auth` directive uses JSON Web Tokens (JWTs) for authentication. Authenticated requests to the GraphQL API will include an `authorization` header with a Bearer token attached. For example:
 
 [source,HTTP,role=nocopy]
 ----
@@ -183,7 +183,7 @@ mutation {
 
 === Allow
 
-A customer should not be able to view orders placed by other customers. Adding an https://neo4j.com/docs/graphql-manual/current/auth/authorization/allow/[Allow^] rule will allow us to protect orders from other nosy customers.
+A customer must not be able to view orders placed by other customers. Adding an https://neo4j.com/docs/graphql-manual/current/auth/authorization/allow/[Allow^] rule will allow us to protect orders from other nosy customers.
 
 Here we add a rule to the `Order` type that a customer's "sub" (the subject) claim in the JWT must match the username of the customer who placed the order.
 
@@ -202,7 +202,7 @@ but if we filter only for the orders placed by the customer we  have access:
 
 image::04notforbidden.png[Filtering orders,width=500,align=center]
 
-Of course we should also allow admins to have access to orders, so let's update the rule to also grant access to any requests with the "admin" role:
+Of course we will also allow admins to have access to orders, so let's update the rule to also grant access to any requests with the "admin" role:
 
 [source,GraphQL]
 ----

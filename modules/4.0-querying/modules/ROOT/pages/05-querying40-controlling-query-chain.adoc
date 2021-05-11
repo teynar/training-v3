@@ -18,7 +18,7 @@ You have learned how to work with different data types in Cypher.
 Next, you will learn how you can use intermediate results in a query to perform additional querying so that you can have a chain of queries  before a result is returned.
 --
 
-At the end of this module, you should be able to write Cypher statements to:
+At the end of this module, you will write Cypher statements to:
 [square]
 * Perform intermediate processing with `WITH`.
 * Using `WITH` and `UNWIND` for query processing.
@@ -288,7 +288,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to write Cypher statements to:
+You can now write Cypher statements to:
 [square]
 * Perform intermediate processing with `WITH`.
 * Using `WITH` and `UNWIND` for query processing.

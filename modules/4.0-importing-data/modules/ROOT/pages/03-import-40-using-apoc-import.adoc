@@ -15,7 +15,7 @@ You have just learned how import data into the graph using Cypher's `LOAD CSV` c
 This is one of the easiest ways to import data, but it has its limitations.
 Next, you will learn how you can use some of the APOC procedures to help you import data into the graph.
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 
 [square]
 * Ensure the APOC library is available.
@@ -38,7 +38,7 @@ Here are the steps for adding the APOC library to your database server in Neo4j 
 . Open the details for DBMS you are working with, by clicking the DBMS.
 . Select the *Plugins* tab.
 . Select APOC to install.
-. The DBMS should automatically restart.
+. The DBMS will automatically restart.
 
 === Confirming APOC is available
 
@@ -257,7 +257,7 @@ image::APOCPeriodicIterate.png[APOCPeriodicIterate,width=1300,align=center]
 JSON is another data format you might need to import into a graph.
 There are many data sources out there that can provide data in JSON format.
 For this course, we will use the StackOverflow data.
-Your first step should be to become familiar with the data that you want to load into the graph.
+Your first step is to become familiar with the data that you want to load into the graph.
 
 In this example we call `apoc.load.json` to return 10 questions from StackOverflow so we can view them:
 
@@ -339,7 +339,7 @@ Here is the result of querying the nodes in the graph after the load:
 
 image::SOLoadedGraph.png[SOLoadedGraph,width=500,align=center]
 
-If you were to load thousands or more questions, you should ensure that you have created uniqueness constraints on _Question.question_id_ and _User.name_ before you attempt the load.
+If you were to load thousands or more questions, you must ensure that you have created uniqueness constraints on _Question.question_id_ and _User.name_ before you attempt the load.
 
 [.student-exercise]
 == Exercise: Using APOC for importing data
@@ -380,7 +380,7 @@ The procedure `apoc.do.when()` is used for:
 Select the correct answers.
 
 [%interactive.answers]
-- [ ] Scheduling when a load should occur.
+- [ ] Scheduling when a load will occur.
 - [x] Executing Cypher code when a condition is true and alternate Cypher code when the condition is false.
 - [ ] An alternative to the `MERGE` clause.
 - [x] Understanding how many operations occurred during the execution.
@@ -402,7 +402,7 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 
 [square]
 * Ensure the APOC library is available.

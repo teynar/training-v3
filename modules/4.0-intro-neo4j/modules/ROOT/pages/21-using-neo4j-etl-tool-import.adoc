@@ -18,7 +18,7 @@ You have learned how to import data into the graph using Cypher, APOC, the neo4j
 Another way that you can import data into the graph is with the Neo4j ETL Tool.
 --
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 
 [square]
 * Create a connection to a live RDBMS.
@@ -55,7 +55,7 @@ image::AddETLTool.png[AddETLTool,width=300,align=center]
 
 [.small]
 --
-Here is what your project should look like with the Neo4j ETL Tool added:
+Here is what your project will look like with the Neo4j ETL Tool added:
 --
 
 image::ETLToolAdded.png[ETLToolAdded,width=200,align=center]
@@ -111,7 +111,7 @@ image::OpenETLTool.png[OpenETLTool,width=800,align=center]
 
 [.small]
 --
-The first thing you should do is connect to the RDBMS.
+The first thing you must do is connect to the RDBMS.
 --
 == Connecting to the RDBMS
 
@@ -204,7 +204,7 @@ image::RelationshipMapping.png[RelationshipMapping,width=800,align=center]
 
 [.notes]
 --
-After your customization of the mapping, you should always save it.
+After your customization of the mapping, you must always save it.
 --
 
 image::SaveMapping.png[SaveMapping,width=800,align=center]
@@ -304,7 +304,7 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 
 [square]
 * Create a connection to a live RDBMS.

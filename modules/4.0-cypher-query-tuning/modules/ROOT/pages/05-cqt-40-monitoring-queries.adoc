@@ -20,7 +20,7 @@ Even in a production environment, it may be necessary to monitor queries.
 You monitor queries to discover any problems in the queries that run during a specific time-period.
 For example, if there may be a spike in access to the data, you may want to monitor how it is affecting queries over a period of time.
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 --
 
 [square]
@@ -245,7 +245,7 @@ You cannot change configuration settings if you are using Neo4j Sandbox or Neo4j
 
 You can configure Neo4j to log an event if a query runs more than xx milliseconds. There is no
 standard for what a reasonable period of time is for a query, but in most databases, a query that
-runs for minutes is not a good thing! At a minimum, you should enable logging for queries and set a
+runs for minutes is not a good thing! At a minimum, you must enable logging for queries and set a
 threshold for the length of time queries take. Then, as part of your monitoring, you could regularly
 inspect the *query.log* file to determine if a certain set of queries or users are possibly performing
 queries that tax the resources of the Neo4j instance.
@@ -367,7 +367,7 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 
 [square]
 * Monitor queries that are currently running.

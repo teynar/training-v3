@@ -17,7 +17,7 @@ You have learned how to query the database using both simple and complex pattern
 In this module, we focus on controlling how results are processed in the `RETURN`  and `WITH` clauses.
 --
 
-At the end of this module, you should be able to write Cypher statements to:
+At the end of this module, you will write Cypher statements to:
 [square]
 * Eliminate duplication in results.
 * Order results.
@@ -398,7 +398,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to write Cypher statements to:
+You can now write Cypher statements to:
 [square]
 * Eliminate duplication in results returned.
 * Order results returned.

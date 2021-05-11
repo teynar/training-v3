@@ -16,7 +16,7 @@
 You have learned how to query nodes and relationships in a graph using simple patterns and also how to use the `WHERE` clause for filtering queries.
 --
 
-At the end of this module, you should be able to write Cypher statements to:
+At the end of this module, you will write Cypher statements to:
 [square]
 * Specify multiple `MATCH` patterns.
 * Specify multiple `MATCH` clauses.
@@ -157,7 +157,7 @@ RETURN n.name
 [.notes]
 --
 When you perform this type of query, you may see a warning in the query edit pane stating that the pattern represents a cartesian product and may require a lot of resources to perform the query. 
-You should only perform these types of queries if you know the data well and the implications of doing the query.
+You only perform these types of queries if you know the data well and the implications of doing the query.
 
 If you click the warning symbol in the top left corner, it produces an explanation result pane.
 --
@@ -350,7 +350,7 @@ Retrieve [.underline]#all# paths of any length with the relationship, _:RELTYPE_
 ----
 
 [.statement]
-Retrieve [.underline]#all# paths of any length with the relationship, _:RELTYPE_ from _nodeA_ to _nodeB_ or from _nodeB_ to _nodeA_ and beyond. This is usually a very expensive query so you should place limits on how many nodes are retrieved:
+Retrieve [.underline]#all# paths of any length with the relationship, _:RELTYPE_ from _nodeA_ to _nodeB_ or from _nodeB_ to _nodeA_ and beyond. This is usually a very expensive query so you place limits on how many nodes are retrieved:
 
 [source,syntax,role=nocopy noplay]
 ----
@@ -405,7 +405,7 @@ image::ShortestPathWarning.png[shortestPathWarning,width=600,align=center]
 
 [.notes]
 --
-You should heed the warning, especially for large graphs.
+You must heed the warning, especially for large graphs.
 You can also read the _Graph Data Science_ documentation about the shortest path algorithm, which performs even better than the one that is build into Cypher.
 
 Here is the result returned:
@@ -420,7 +420,7 @@ image::ShortestPath1.png[shortestPath1,width=500,align=center]
 --
 Notice that the graph engine has traversed many types of relationships to get to the end node.
 
-When you use `shortestPath()`, you can specify a upper limits for the shortest path. In addition, you should aim to provide the patterns for the from and to nodes that execute efficiently. For example, use labels and indexes.
+When you use `shortestPath()`, you can specify a upper limits for the shortest path. In addition, aim to provide the patterns for the from and to nodes that execute efficiently. For example, use labels and indexes.
 --
 
 == Returning a subgraph
@@ -434,7 +434,7 @@ For example, here is an example where we want a subgraph of all nodes connected 
 
 [source,Cypher,role=noplay]
 ----
-MATCH paths = (m:Movie)-[rel]-(p:Person)
+MATCH paths = (m:Movie)--(p:Person)
 WHERE m.title = 'The Replacements'
 RETURN paths
 ----
@@ -571,9 +571,9 @@ RETURN a.name, m.title, m.released, w.name
 Select the correct answer.
 
 [%interactive.answers]
-- [ ] The second line should be: `(m2:Movie)<-[:WROTE]-(w:Person)`.
+- [ ] The second line must be: `(m2:Movie)<-[:WROTE]-(w:Person)`.
 - [x] Add a comma after the first pattern in the `MATCH` clause.
-- [ ] The second line should be: `(m2:Movie)<-[:WROTE]-(a)`.
+- [ ] The second line must be: `(m2:Movie)<-[:WROTE]-(a)`.
 - [ ] Add a `MATCH` clause at the beginning of the second line.
 
 === Question 3
@@ -596,7 +596,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to write Cypher statements to:
+You can now write Cypher statements to:
 [square]
 * Specify multiple `MATCH` patterns.
 * Specify multiple `MATCH` clauses.

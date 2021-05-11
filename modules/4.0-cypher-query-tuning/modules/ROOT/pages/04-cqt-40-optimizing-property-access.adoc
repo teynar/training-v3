@@ -16,7 +16,7 @@
 You have learned some of the ways that you can tune queries by reducing the cardinality of the rows that are passed between the steps of an execution plan.
 In this module, you will learn how to rewrite queries so that property access is optimized.
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 --
 
 [square]
@@ -94,8 +94,8 @@ RETURN startNode(rel).name, endNode(rel).title, rel.roles
 
 [.notes]
 --
-Your goal for indexing and writing queries should be to minimize the number of properties that need to be accessed during the query.
-In addition, you should aim to only return property values that are truly needed by the application.
+Your goal for indexing and writing queries will be to minimize the number of properties that need to be accessed during the query.
+In addition, you will aim to only return property values that are truly needed by the application.
 --
 
 [.half-column]
@@ -104,7 +104,7 @@ In addition, you should aim to only return property values that are truly needed
 [.notes]
 --
 During query processing you may aggregate data and perform multiple `MATCH` clauses with the ultimate goal of returning something to the client.
-You should always aim to return the minimum amount of data to the client.
+Always aim to return the minimum amount of data to the client.
 --
 
 This query will return all properties of all nodes and relationships retrieved for the query:
@@ -171,7 +171,7 @@ image::returnSome2.png[returnSome2,width=800,align=center]
 
 [.notes]
 --
-In addition, you should strive to limit the number of rows returned as accessing fewer rows to obtain property values will be faster.
+In addition, strive to limit the number of rows returned as accessing fewer rows to obtain property values will be faster.
 --
 
 Here we limit the number of rows returned by only returning movies that have greater than _$maxActors_ actors.
@@ -208,7 +208,7 @@ Furthermore, if you use `ORDER BY` for a property that was retrieved with the in
 Since Neo4j is schema-free, you must specify to the planner how retrieve the data.
 --
 
-Your queries should specify how to compare the data used by the index, for example:
+Your queries specify how to compare the data used by the index, for example:
 
 [square]
 * For strings: n.name STARTS WITH ""
@@ -331,7 +331,7 @@ In the execution plan, we see no aggregation to find the minimum value.
 
 [.notes]
 --
-In a query where a property value is used to order and provide a top or bottom of the result set, you should strive to move the `ORDER BY` and `LIMIT` earlier in the query.
+In a query where a property value is used to order and provide a top or bottom of the result set, strive to move the `ORDER BY` and `LIMIT` earlier in the query.
 --
 
 We want to return the 100 most recent movies and their actors, ordered by the release year:
@@ -657,7 +657,7 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 
 [square]
 * Describe when properties are accessed in a query.

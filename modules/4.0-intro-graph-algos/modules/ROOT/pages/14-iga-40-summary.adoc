@@ -11,7 +11,7 @@
 
 == Summary
 
-You should now be able to:
+You can now:
 
 [square]
 * Describe how Neo4j supports graph algorithms for analysis and machine learning.

@@ -23,7 +23,7 @@ video::FfW5YCXBnhQ[youtube]
 
 == Prerequisites
 
-This course focuses on using graph algorithms with Neo4j in an applied environment to enhance functionality of an application. To be successful you should:
+This course focuses on using graph algorithms with Neo4j in an applied environment to enhance functionality of an application. To be successful you:
 
 * Have completed Introduction to Neo4j course or have equal Cypher proficiency.
 * Be familiar with Neo4j Browser.

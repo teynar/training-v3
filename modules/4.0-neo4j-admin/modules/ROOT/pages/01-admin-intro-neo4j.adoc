@@ -16,7 +16,7 @@
 Neo4j enables developers to create applications that are best architected as graph-powered systems that are built upon the rich connectedness of data.
 --
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Describe graph components.
 * Describe what a graph database is.
@@ -68,7 +68,7 @@ Mathematically, a node is defined as “a point where two or more edges (relatio
 This is not at all intuitive!
 However, it provides important insight into how graphs are used.
 Since the entire point of modeling data as a graph is to traverse a chain of linked nodes, one useful way of thinking about nodes is that they are waypoints along the traversal route.
-They contain information you need to decide which links are good ones to follow, and which should be ignored.
+They contain information you need to decide which links are good ones to follow, and which can be ignored.
 Relationships are those links.
 --
 
@@ -696,7 +696,7 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Describe graph components.
 * Describe what a graph database is.

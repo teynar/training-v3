@@ -18,7 +18,7 @@ In this module, you will learn how to add data to a graph by creating nodes.
 
 --
 
-At the end of this module, you should be able to write Cypher statements to:
+At the end of this module, you will write Cypher statements to:
 
 [square]
 * Create a node.
@@ -149,14 +149,13 @@ endif::[]
 image::CreateMultiplePersonNodes.png[CreateMultiplePersonNodes,width=400,align=center]
 --
 
-[NOTE]
---
+
 The graph engine will create a node with the same properties of a node that already exists. You can prevent this from happening in one of two ways:
 
 * You can use `MERGE` rather than `CREATE` when creating the node.
 
 * You can add constraints to your graph.
---
+
 
 [.notes]
 --
@@ -462,7 +461,7 @@ image::RemoveProperties.png[RemoveProperties,width=400,align=center]
 == Exercise 9: Creating nodes
 
 [IMPORTANT]
-Prior to performing this exercise, you should have set up your development environment to use one of the following, which is covered in the course, _Overview of Neo4j 4.x_.
+Prior to performing this exercise, set up your development environment to use one of the following, which is covered in the course, _Overview of Neo4j 4.x_.
 [square]
 * Neo4j Desktop
 * Neo4j Sandbox
@@ -543,7 +542,7 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to write Cypher statements to:
+You can now write Cypher statements to:
 [square]
 
 * Create a node.

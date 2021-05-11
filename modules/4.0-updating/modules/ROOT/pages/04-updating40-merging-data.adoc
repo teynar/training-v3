@@ -20,7 +20,7 @@ You also want to ensure that you do not create unnecessary or duplicate relation
 Next, you will learn how to merge data in the graph.
 --
 
-At the end of this module, you should be able to write Cypher statements to:
+At the end of this module, you will write Cypher statements to:
 [square]
 * Merge data in a graph by:
 ** Creating nodes.
@@ -108,7 +108,7 @@ RETURN variable
 If there is an existing node with  _Label_ and _nodeProperties_  found in the graph, no node is created.
 If, however the node is not found in the graph, then the node is created.
 
-When you specify _nodeProperties_ for `MERGE`, you should only use properties that satisfy some sort of uniqueness constraint.
+When you specify _nodeProperties_ for `MERGE`,  only use properties that satisfy some sort of uniqueness constraint.
 You will learn about uniqueness constraints in the course, _Using Indexes and Query Best Practices in Neo4j 4.x_.
 
 Here is what we currently have in the graph for the _Person_, _Michael Caine_. 
@@ -329,7 +329,7 @@ image::UpdateToUK.png[UpdateToUK,width=300,align=center]
 
 [.notes]
 --
-Using `MERGE` to create relationships is expensive and you should only do it when you need to ensure that a relationship is unique and you are [underline]#not# sure if it already exists.
+Using `MERGE` to create relationships is expensive, only do it when you need to ensure that a relationship is unique and you are [underline]#not# sure if it already exists.
 
 In this example, we use the `MATCH` clause to find all _Person_ nodes that represent _Michael Caine_ and we find the movie, _Batman Begins_ that we want to connect to all of these nodes. We already have a connection between one of the _Person_ nodes and the _Movie_ node. We do not want this relationship to be duplicated. This is where we can use `MERGE` as follows:
 --
@@ -353,7 +353,7 @@ image::MergeRelationships.png[MergeRelationships,width=1000,align=center]
 --
 You must be aware of the  behavior of the `MERGE` clause and how it will automatically create nodes and relationships.
 `MERGE` tries to find a full pattern and if it doesn't find it, it creates that full pattern.
-That's why in most cases you should first `MERGE` your nodes and then your relationship afterwards.
+That's why in most cases you will first `MERGE` your nodes and then your relationship afterwards.
 --
 
 === Use MERGE carefully
@@ -388,7 +388,7 @@ Estimated time to complete: 45 minutes.
 === Question 1
 
 [.statement]
-Given this `MERGE` clause, what is the most important thing you should make sure of?
+Given this `MERGE` clause, what is the most important thing you must make sure of?
 
 [source,Cypher,role=nocopy noplay]
 ----
@@ -454,7 +454,7 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to write Cypher statements to:
+You can now write Cypher statements to:
 [square]
 * Merge data in a graph by:
 ** Creating nodes.

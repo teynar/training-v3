@@ -17,7 +17,7 @@ This online course introduces you to the Neo4j GraphQL library and how to build 
 
 == Prerequisites
 
-The successful participant should be familiar with Node.js JavaScript concepts. No prior experience with GraphQL or Neo4j is required, however this course focuses on building GraphQL APIs backed by Neo4j and will not cover Neo4j in detail so we recommend completing the "Overview of Neo4j 4.x" course.
+The successful participant must be familiar with Node.js JavaScript concepts. No prior experience with GraphQL or Neo4j is required, however this course focuses on building GraphQL APIs backed by Neo4j and will not cover Neo4j in detail so we recommend completing the "Overview of Neo4j 4.x" course.
 
 == Duration
 

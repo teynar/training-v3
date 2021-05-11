@@ -15,7 +15,7 @@ In many applications, you want to populate your graph with data that was written
 There are many nuances and best practices for loading data into a graph from files.
 In this lesson, you will be introduced to some simple steps for loading CSV data into your graph with Cypher.
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 
 
 [square]
@@ -48,7 +48,7 @@ In Cypher, you can:
 CSV import is commonly used to import data into a graph.
 If you want to import data from CSV, you will need to first develop a model that describes how data from your CSV maps to data in your graph.
 
-Assuming that you have an agreed-upon data model, here are the basic steps you should follow for importing using Cypher and CSV files:
+Assuming that you have an agreed-upon data model, here are the basic steps you follow for importing using Cypher and CSV files:
 
 . Determine how the CSV file will be structured.
 . Determine if normalized or denormalized data.
@@ -119,9 +119,9 @@ image::UniqueIDs.png[UniqueIDs,width=1300,align=center]
 
 == Is the data clean?
 
-Before you load CSV data, you should understand how delimeters, quotes, and separators are used for each row.
+Before you load CSV data, you must understand how delimeters, quotes, and separators are used for each row.
 
-Here are some things you should check:
+Here are some things you must check:
 
 [square]
 * Check for headers that do not match.
@@ -194,7 +194,7 @@ image::FilterLOADCSV.png[FilterLOADCSV,width=700,align=center]
 == Determine if data needs transformation
 
 The data in the rows of a CSV file may not exactly match how you want field values to be placed into node or relationship property values.
-When you inspect a subset of the data, you should be able to determine what transformations will be required.
+When you inspect a subset of the data, you can determine what transformations will be required.
 As you have seen, data is by default interpreted as a string or null.
 If you want numeric data, then you must transform it with functions such as:
 
@@ -238,7 +238,7 @@ RETURN toFloat(line.avgVote), split(coalesce(line.genres,""), ":"),
        LIMIT 10
 ----
 
-If all fields have data, then `split()` alone will work. If, however, some fields may have no values and you want an empty list created for the property, then you should use `split()` together with `coalesce()`.
+If all fields have data, then `split()` alone will work. If, however, some fields may have no values and you want an empty list created for the property, then you use `split()` together with `coalesce()`.
 
 image::TransformMovieData3.png[TransformMovieData3,width=700,align=center]
 
@@ -246,6 +246,10 @@ image::TransformMovieData3.png[TransformMovieData3,width=700,align=center]
 == Guided Exercise: Creating a new database
 
 Neo4j 4.x Enterprise Edition supports multiple databases per Neo4j DBMS.
+
+[NOTE]
+If you are using Neo4j Aura or Neo4j Sandbox, you cannot create a new database, but you can start with an empty database or blank sandbox.
+
 In this exercise, you will create a new database that will be served by the started Neo4j DBMS.
 
 Here are the steps to create a new database, _Movies_:
@@ -275,12 +279,12 @@ You can switch between databases simply by selected them in the left Database pa
 
 == Create constraints before loading the data
 
-As part of your graph data modeling process, you should have agreed upon properties that will unique identify a node.
+As part of your graph data modeling process, you must have agreed upon properties that will unique identify a node.
 Especially if you have a large amount of data to import, you want to ensure that the data will not introduce duplicate data in the graph.
-To do this, you should create constraints for the data.
+To do this, you create constraints for the data.
 
 For this movie data in the CSV files, we want to ensure that a Movie node is unique as well as a Person node.
-The IDs in the CSV files ideally are unique, but you should create the constraints in the graph to ensure that this will be true when data is imported.
+The IDs in the CSV files ideally are unique, but you must create the constraints in the graph to ensure that this will be true when data is imported.
 
 Here is the code for creating the constraints in the graph where we will import data to _Movie_ and _Person_ nodes where the _id_ property will be unique.
 Note that the _id_ property is different from the internal _id_ of a node that is created automatically by the graph engine.
@@ -300,7 +304,7 @@ If your load process uses `MERGE`, rather than `CREATE` to create nodes, the loa
 The uniqueness constraint is itself an index which makes a lookup fast.
 
 Indexes, however, will slow down the creation of data due to added writes, but are necessary if you want transactionally consistent data and indexes in the database.
-You should create additional indexes in the graph after the data is loaded.
+You will create additional indexes in the graph after the data is loaded.
 
 == Determine the size of the data to be loaded
 
@@ -412,7 +416,7 @@ These indexes are not unique indexes.
 
 
 [IMPORTANT]
-Prior to performing this exercise, you should have set up your development environment to use one of the following, which is covered in the course, _Overview of Neo4j 4.x_.
+Prior to performing this exercise, you must have set up your development environment to use one of the following, which is covered in the course, _Overview of Neo4j 4.x_.
 [square]
 * Neo4j Desktop
 * Neo4j Sandbox
@@ -448,7 +452,7 @@ Select the correct answer.
 === Question 2
 
 [.statement]
-What should you add to the graph before you import using `LOAD CSV`?
+What do you add to the graph before you import using `LOAD CSV`?
 
 [.statement]
 Select the correct answer.
@@ -477,7 +481,9 @@ Select the correct answer.
 == Summary
 
 ifndef::env-slides[]
-You should now be able to:
+
+You can now:
+
 endif::[]
 
 [square]

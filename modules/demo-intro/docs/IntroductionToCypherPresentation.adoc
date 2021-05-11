@@ -17,7 +17,7 @@
 
 == Overview
 
-At the end of this module, you should be able to write Cypher statements to:
+At the end of this module, you will write Cypher statements to:
 [square]
 * Retrieve nodes from the graph.
 * Filter nodes retrieved using labels and property values of nodes.
@@ -34,7 +34,7 @@ Show the students:
 
 === References
 
-Throughout this training, you should refer to:
+Throughout this training, you can refer to:
 [square]
 * https://neo4j.com/docs/cypher-manual/current/[Neo4j Cypher Manual^]
 * http://neo4j.com/docs/cypher-refcard/current/[Cypher Reference card^]
@@ -533,7 +533,7 @@ Select the correct answer.
 
 == Summary
 
-You should now be able to write Cypher statements to:
+You can now write Cypher statements to:
 [square]
 * Retrieve nodes from the graph.
 * Filter nodes retrieved using property values of nodes.

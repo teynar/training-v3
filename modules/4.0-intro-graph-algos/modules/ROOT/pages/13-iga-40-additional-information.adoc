@@ -39,7 +39,7 @@ You will find Link Prediction, Pathfinding, and Node Embedding algorithms that w
 It is vital to understand the type of graph you want to analyze.
 Remember, most of the Community Detection and Centrality algorithms are designed to run on a monopartite graph.
 If you start with a bipartite graph, you might want to use the Similarity algorithms or Cypher projection to infer a monopartite network before moving on to other graph algorithms.
-You should always include the Weakly Connected Components algorithm in your graph analytics workflow to learn how the graph is connected.
+You always include the Weakly Connected Components algorithm in your graph analytics workflow to learn how the graph is connected.
 Disconnected components might skew the results of other graph algorithms, so it is critical to understand how well your graph is connected.
 Another thing to keep in mind is the direction of relationships.
 Differentiating between directed and undirected networks is of great importance, as it has a significant influence on the algorithm's results.
@@ -75,7 +75,7 @@ What you want to do each day is to provide the communities from the previous day
 There are two reasons for this.
 The first one is that it is easier to track a specific community through time by providing the communities from the day before as a seed property, we make sure that the community ids do not change.
 That is, unless a community disintegrates.
-The second reason is that the algorithm execution should be faster as most of the communities are already calculated from the day before, so the algorithms needs less iteration. 
+The second reason is that the algorithm execution will be faster as most of the communities are already calculated from the day before, so the algorithms needs less iteration.
 --
 
 ifdef::env-slides[]
@@ -161,7 +161,7 @@ Select the correct answer.
 === Question 3
 
 [.statement]
-When running GDSL on a causal cluster, what should you avoid?
+When running GDSL on a causal cluster, what must you avoid?
 
 [.statement]
 Select the correct answers.

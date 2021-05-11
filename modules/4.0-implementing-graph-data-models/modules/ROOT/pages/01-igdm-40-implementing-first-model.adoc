@@ -11,7 +11,7 @@
 
 == About this module
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Write Cypher code to implement a simple initial graph data model.
 * Confirm that the starter data is in the graph.
@@ -87,7 +87,7 @@ image::InitialSampleDataAndModel.png[InitialSampleDataAndModel,width=500,align=c
 [.statement]
 A best practice when creating a graph with Cypher is to use the `MERGE` statement.
 When creating nodes, you specify the properties in the `MERGE` statement to ensure that nodes with the same property values are not duplicated in the graph.
-For large graphs, the node properties used for the MERGE should have uniqueness constraints on them.
+For large graphs, the node properties used for the MERGE must have uniqueness constraints on them.
 
 [.statement]
 In the next exercise, Exercise 1, you will:
@@ -207,7 +207,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Write Cypher code to implement a simple initial graph data model.
 * Confirm that the starter data is in the graph.

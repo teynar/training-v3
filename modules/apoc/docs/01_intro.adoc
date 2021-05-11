@@ -27,7 +27,7 @@
 Neo4j enables developers to create applications that are best architected as graph-powered systems that are built upon the rich connectedness of data.
 --
 
-At the end of this training, you should be able to:
+At the end of this training, you will:
 [square]
 * Thing 1
 * Thing 2
@@ -967,7 +967,7 @@ sequence:'Post |-Blocked, NEXT>, Reply, <FROM, >Admin, POSTED>| REPLIED>'
 
 == End nodes/terminator nodes
 
-What if we already have the nodes that should end the expansion?
+What if we already have the nodes that end the expansion?
 
 * `endNodes` – like filter, but takes a collection of nodes (or ids)
 * `terminatorNodes` – like filter (stop expand), but also takes a collection (whitelistNodes and blacklistNodes too!)

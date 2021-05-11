@@ -28,7 +28,7 @@ Before downloading the Yelp data, you need to read and agree to the {uri-yelp-da
 ... Replace the value for REACT_APP_NEO4J_PASSWORD with the *Password* in the *Connection Details* tab of the Yelp Sandbox.
 .. Save this file.
 .. Click the refresh icon to connect the CodeSandbox Browser (on the right) to the database.
-.. Confirm that you can now view data in the database by selecting a name in the drop down (initially selected with Dolores). Data should be retrieved for each user.
+.. Confirm that you can now view data in the database by selecting a name in the drop down (initially selected with Dolores). Data will be retrieved for each user.
 
 
 == Neo4j Browser Guides

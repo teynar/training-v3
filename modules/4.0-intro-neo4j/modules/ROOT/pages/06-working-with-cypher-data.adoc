@@ -19,7 +19,7 @@ In this module you will learn how aggregation works in a Cypher query and how to
 You will also gain some experience working with other data types in Cypher.
 --
 
-At the end of this module, you should be able to write Cypher statements to:
+At the end of this module, you will write Cypher statements to:
 [square]
 * Aggregate data into lists.
 * Work with lists.
@@ -507,7 +507,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to write Cypher statements to:
+You can now write Cypher statements to:
 [square]
 * Aggregate data into lists.
 * Count results returned.

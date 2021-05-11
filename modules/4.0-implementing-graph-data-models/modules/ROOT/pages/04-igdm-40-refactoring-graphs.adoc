@@ -11,7 +11,7 @@
 
 == About this module
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Create constraints that help with performance of node creation and queries.
 * Determine if a query can be improved.
@@ -29,7 +29,7 @@ Because the code examples in this lesson modify the database, it is recommended 
 
 [.notes]
 --
-After profiling queries and determining that they are not performing optimally, you should rethink your graph data model.
+After profiling queries and determining that they are not performing optimally, you must rethink your graph data model.
 You do so by examining how queries perform, especially with data at scale.
 
 In the previous lesson, we saw that the query to retrieve the airports and flight information for flight number 1016 for airline WN ended up making two passes through the graph to perform the query.
@@ -292,7 +292,7 @@ ifdef::env-slides[]
 [.notes]
 --
 Before you execute the query, show the students that you now have 10K flight nodes in the database.
-You should have 3 indexes: :Flight(number), :Flight(id), and :Airport(code).
+You will have 3 indexes: :Flight(number), :Flight(id), and :Airport(code).
 --
 endif::[]
 
@@ -321,7 +321,7 @@ Some stats about this graph:
 Searching for flights by day is a problem.
 
 The query starts by using an index to find MDW but then has to traverse all incoming _LANDS_IN_ relationships and check the _Flight.date_ property on the other side.
-The more flights an airport has the more we will have to scan through, and since we are only working with 10,000 flights we should probably find a better way to model our data before importing any more data.
+The more flights an airport has the more we will have to scan through, and since we are only working with 10,000 flights we must find a better way to model our data before importing any more data.
 
 This is an opportunity to change the model.
 --
@@ -346,7 +346,7 @@ You only pull out a node if you are going to query through it, otherwise a prope
 
 [.notes]
 --
-You should not be too aggressive with creating nodes from other nodes.
+You must not be too aggressive with creating nodes from other nodes.
 If you pull out every single property and create nodes then you end up with an RDF model and lose the benefit of the property graph.
 --
 
@@ -412,7 +412,7 @@ MERGE (destination)-[:HAS_DAY]->(destinationAirportDay)
 
 [.notes]
 --
-After a refactor, you should check that all queries perform OK. Here is our first query: What are the airports and flight information for flight number 1016 for airline WN?
+After a refactor, you must check that all queries perform OK. Here is our first query: What are the airports and flight information for flight number 1016 for airline WN?
 --
 
 [.is-two-thirds.left-column]
@@ -928,7 +928,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Create constraints that help with performance of node creation and queries.
 * Determine if a query can be improved.

@@ -15,7 +15,7 @@ You have learned how to import data into the graph using Cypher, APOC, the neo4j
 
 Another way that you can import data into the graph is with the Neo4j ETL Tool.
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 
 [square]
 * Create a connection to a live RDBMS.
@@ -87,7 +87,7 @@ image::SelectTargetDB.png[SelectTargetDB,width=800,align=center]
 
 == Step 4: Specify and test the source RDBMS connection
 
-The next thing you should do is connect to the RDBMS.
+The next thing you must do is connect to the RDBMS.
 You click *ADD CONNECTION*.
 
 === Specify the connection information
@@ -124,7 +124,7 @@ n4examples
 36gdOVABr3Ex
 ----
 
-This is what your configuration should look like:
+This is what your configuration will looks like:
 
 image::JDBCConnection.png[JDBCConnection,width=700,align=center]
 
@@ -133,7 +133,7 @@ image::JDBCConnection.png[JDBCConnection,width=700,align=center]
 Next, you must test and save the RDBMS connection to ensure the Neo4j ETL Tool will be able to access the RDBMS.
 Click the *TEST AND SAVE CONNECTION* button.
 
-You should see this message that you can then close:
+You will see this message that you can then close:
 
 image::ConnectionSaved.png[ConnectionSaved,width=700,align=center]
 
@@ -183,7 +183,7 @@ image::RelationshipMapping.png[RelationshipMapping,width=800,align=center]
 
 ==  Step 7: Save the mapping
 
-After your customization of the mapping, you should always save it by clicking the *SAVE MAPPING* button.
+After your customization of the mapping, you must always save it by clicking the *SAVE MAPPING* button.
 
 image::SaveMapping.png[SaveMapping,width=800,align=center]
 
@@ -253,7 +253,7 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 
 [square]
 * Create a connection to a live RDBMS.

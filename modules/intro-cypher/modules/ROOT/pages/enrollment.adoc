@@ -17,7 +17,7 @@ You will learn Cypher syntax for querying the database and perform numerous hand
 
 == Prerequisites
 
-You should have completed the course: _Overview of Neo4j 4.x_.
+You  have completed the course: _Overview of Neo4j 4.x_.
 
 == Duration
 

@@ -105,7 +105,7 @@ docker run^
     neo4j:4.2.2-enterprise
 ----
 +
-*Note*: You may see a popup asking if you want Docker to access your local file system which you should respond yes to.
+*Note*: You may see a popup asking if you want Docker to access your local file system which you respond yes to.
 +
 . Run the script to create the Neo4j instance and confirm that it creates the neo4j directory.
 . Run the Docker command to see the running instances.
@@ -146,7 +146,7 @@ ssh -i neo4j-training.pem ubuntu@<IP address>
 yes
 ----
 +
-. You should now be logged in to the EC2 instance.
+. You will now be logged in to the EC2 instance.
 
 === Setup steps (Windows):
 
@@ -179,7 +179,7 @@ image::PuTTYSavedSession.png[PuTTYSavedSession,width=500,align=center]
 +
 image::OpenEC2FromPuTTY.png[OpenEC2FromPuTTY,width=400,align=center]
 +
-. You should now have a terminal window for the EC2 instance. Enter *ubuntu* to log in.
+. You will now have a terminal window for the EC2 instance. Enter *ubuntu* to log in.
 +
 image::EC2TerminalFromPuTTY.png[EC2TerminalFromPuTTY,width=600,align=center]
 

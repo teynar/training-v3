@@ -19,7 +19,7 @@ In addition, you may want to enforce the creation of mandatory properties for se
 These are called constraints in a Neo4j graph data model and are typically defined during the graph data modeling phase of your application developement.
 --
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 
 * Create a uniqueness constraint for a node property in the graph.
@@ -431,7 +431,7 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 
 * Create a uniqueness constraint for a node property in the graph.

@@ -43,9 +43,9 @@ Fix this by adding *your* Neo4j Sandbox connection credentials.
 image::02codesandboxerror.png[Codesandbox connection error,width=500,align=center]
 
 [start=4]
-. In order to save changes to the Codesandbox you'll be prompted to sign in to Codesandbox so that the changes are specific to your Codesandbox. Open the `.env` file, adding values for `NEO4J_URI`, `NEO4J_USER`, and `NEO4J_PASSWORD` specific to your Neo4j Sandbox instance. Save the file and wait for the application to reload. You should now see the GraphQL Playground application running in Codesandbox.
+. In order to save changes to the Codesandbox you'll be prompted to sign in to Codesandbox so that the changes are specific to your Codesandbox. Open the `.env` file, adding values for `NEO4J_URI`, `NEO4J_USER`, and `NEO4J_PASSWORD` specific to your Neo4j Sandbox instance. Save the file and wait for the application to reload. You will now see the GraphQL Playground application running in Codesandbox.
 
-You can test that it's working by running the following query in the GraphQL Playground window in your Codesandbox (you should get back an empty array without any error messages).
+You can test that it's working by running the following query in the GraphQL Playground window in your Codesandbox (you will get back an empty array without any error messages).
 
 [source,GraphQL]
 ----
@@ -56,7 +56,7 @@ You can test that it's working by running the following query in the GraphQL Pla
 }
 ----
 
-You should see a screen like this after updating the values in the `.env` file, with GraphQL Playground allowing your to execute GraphQL operations against your GraphQL API application connected to Neo4j Sandbox.
+You will see a screen like this after updating the values in the `.env` file, with GraphQL Playground allowing your to execute GraphQL operations against your GraphQL API application connected to Neo4j Sandbox.
 
 image::02codesandboxcredentials.png[Codesandbox credentials, width=500, align=center]
 
@@ -123,7 +123,7 @@ A few important concepts to note:
 
 * The `@relationship` directive is used to define relationships.
 * `DateTime` and `Point` scalar types are available and map to the equivalent native Neo4j database types.
-* The `@timestamp` directive is used to indicate the property should be automatically updated when the node is created and updated.
+* The `@timestamp` directive is used to indicate the property will be automatically updated when the node is created and updated.
 * The `@id` directive marks a field as a unique identifier and enables auto-generation when the node is created.
 
 Read more about using GraphQL type definitions with the Neo4j GraphQL Library in the documentation https://neo4j.com/docs/graphql-manual/current/type-definitions/[here^].
@@ -241,7 +241,7 @@ mutation {
 }
 ----
 
-The response data from this mutation will match the shape of our selection set. We don't need to include all the fields we created in the mutation, the data will be created even if not returned. Here's what the response to the above mutation should look like:
+The response data from this mutation will match the shape of our selection set. We don't need to include all the fields we created in the mutation, the data will be created even if not returned. Here's what the response to the above mutation will look like:
 
 [source,JSON,role=nocopy]
 ----
@@ -395,7 +395,7 @@ mutation {
 }
 ----
 
-Now, the data in our database should look something like this:
+Now, the data in our database will look something like this:
 
 image::02bookdata4.png[Books, orders, customers, and reviews,width=500,align=center]
 
@@ -420,7 +420,7 @@ Let's start with an example, querying for all books and their titles.
 }
 ----
 
-If we loaded our sample data correctly we should see the follow result:
+If we loaded our sample data correctly we will see the follow result:
 
 [source,JSON,role=nocopy]
 ----
@@ -693,7 +693,7 @@ For more information and examples see the https://neo4j.com/docs/graphql-manual/
 
 == Exercise: Updating The GraphQL Schema
 
-To successfully perform the steps in this exercise, you should have executed all of the GraphQL code after you cleared the database above and loaded the sample books data.
+To successfully perform the steps in this exercise, you will have executed all of the GraphQL code after you cleared the database above and loaded the sample books data.
 
 If we refer back to our original graph data model we see that we're missing the `Author` and `Subject` nodes! In this exercise you will update the GraphQL schema adding the `Author` and `Subject` types including relationships.
 

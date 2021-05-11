@@ -21,7 +21,7 @@ You will be working with data for a much larger dataset representing crimes.
 
 --
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 
 [square]
 * Import data from a set of CSV files using the `neo4j-admin` tool.
@@ -39,7 +39,7 @@ These include:
 [.notes]
 --
 In this lesson, you will learn how to use the import feature of `neo4j-admin`.
-You should use `neo4j-admin` for import when you have extremely large amounts of data to import, for example greater than 10M nodes.
+You use `neo4j-admin` for import when you have extremely large amounts of data to import, for example greater than 10M nodes.
 
 You will load data into a crimes database that is much larger than the databases you have been working with.
 --
@@ -199,7 +199,7 @@ The relationship, _:TYPE_ is not specified in this file so it will be specified 
 [.notes]
 --
 After you have created or obtained the CSV files for the data, you import the data.
-The data import creates a database so the database you specify must either be empty or should not exist.
+The data import creates a database so the database you specify must either be empty or not exist.
 --
 
 [.statement]
@@ -224,11 +224,11 @@ In most cases, you will want to use the _trim-strings_ argument to ensure that l
 --
 
 [NOTE]
-You should *not* have a space after the "," when specifying a header file with the CSV file.
+You must *not* have a space after the "," when specifying a header file with the CSV file.
 
 [.notes]
 --
-You should refer to the documentation for details for using the import tool.
+Refer to the documentation for details for using the import tool.
 Note that it is possible to specify regular expressions for the files specified when you import.
 --
 
@@ -309,7 +309,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 
 [square]
 * Import data from a set of CSV files using the neo4j-admin tool.

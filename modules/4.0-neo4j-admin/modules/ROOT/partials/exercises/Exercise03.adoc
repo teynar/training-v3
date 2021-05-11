@@ -136,7 +136,7 @@ CALL db.schema.visualization();
 MATCH (p:Person) WHERE p.name = 'Tom Hanks' RETURN p;
 ----
 +
-You should see something like this:
+You will see something like this:
 
 image::ConfirmMovieDataDocker.png[ConfirmMovieDataDocker,width=1000,align=center]
 

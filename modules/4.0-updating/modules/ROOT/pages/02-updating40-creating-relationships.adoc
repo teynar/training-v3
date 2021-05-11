@@ -17,7 +17,7 @@ You have learned how to create nodes in the graph, add and remove labels from th
 Next, you will learn how to create a relationship between two existing nodes in the graph.
 --
 
-At the end of this module, you should be able to write Cypher statements to:
+At the end of this module, you will write Cypher statements to:
 [square]
 * Create a relationship.
 * Create a relationship with properties.
@@ -347,7 +347,7 @@ CREATE (a)-[rel:ACTED_IN]-(m)
 Select the correct answer.
 
 [%interactive.answers]
-- [ ] `CREATE` should be replaced with `CREATE RELATIONSHIP`.
+- [ ] `CREATE` must be replaced with `CREATE RELATIONSHIP`.
 - [ ] You cannot specify a variable for a relationship.
 - [x] Direction must be specified when you create the relationship.
 - [ ] You cannot return the variable, _rel_.
@@ -398,7 +398,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to write Cypher statements to:
+You can now write Cypher statements to:
 [square]
 * Create a relationship.
 * Create a relationship with properties.

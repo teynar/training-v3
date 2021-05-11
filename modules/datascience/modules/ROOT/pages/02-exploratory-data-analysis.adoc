@@ -13,7 +13,7 @@ In the previous section, we setup our Neo4j Sandbox environment containing the c
 In this module we're going to explore that data.
 We'll be querying Neo4j and processing the results using tools in the Python ecosystem.
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 
 [square]
 * Query a database for its schema.
@@ -107,7 +107,7 @@ Select the correct answer.
 
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Query a database for its schema.
 * Return and chart the number of node labels and relationship types using matplotlib.

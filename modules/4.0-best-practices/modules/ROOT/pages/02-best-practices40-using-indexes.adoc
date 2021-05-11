@@ -20,7 +20,7 @@ Next, you will learn about creating property and full-text schema indexes in the
 
 [.small]
 --
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Describe when indexes are used in Cypher.
 * Create a single property index.
@@ -61,7 +61,7 @@ Composite indexes are used only for equality checks and list membership.
 
 [.notes]
 --
-In this course, we introduce the basics of Neo4j b-tree indexes, but you should consult the Neo4j _Operations Manual_ for more details about creating and maintaining indexes.
+In this course, we introduce the basics of Neo4j b-tree indexes, consult the Neo4j _Operations Manual_ for more details about creating and maintaining indexes.
 
 [NOTE]
 Because index maintenance incurs additional overhead when nodes are created, Neo4j recommends that for large graphs, indexes are created after the data has been loaded into the graph.
@@ -122,7 +122,7 @@ image::CreateSingle-propertyIndex.png[CreateSingle-propertyIndex,width=1000,alig
 
 [.notes]
 --
-If a set of properties for a node must be unique for every node, then you should create a constraint as a node key, rather than an index.
+If a set of properties for a node must be unique for every node, then you create a constraint as a node key, rather than an index.
 
 If, however, there can be duplication for a set of property values, but you want faster access to them, then you can create a composite index.
 A composite index is based upon multiple properties for a node.
@@ -459,7 +459,7 @@ Select the correct answer.
 
 [.small]
 --
-You should now be able to:
+You can now:
 
 [square]
 * Describe when indexes are used in Cypher

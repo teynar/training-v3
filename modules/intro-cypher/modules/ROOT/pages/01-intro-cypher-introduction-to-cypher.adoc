@@ -20,7 +20,7 @@ This video summarizes the content of this topic:
 
 video::o7Pz8XseQ4M[youtube,width=560,height=315]
 
-Throughout this training, you should refer to:
+Throughout this training, you can refer to:
 [square]
 * https://neo4j.com/docs/cypher-manual/current/[Neo4j Cypher Manual^]
 * http://neo4j.com/docs/cypher-refcard/current/[Cypher Reference card^]

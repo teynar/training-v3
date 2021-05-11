@@ -12,7 +12,7 @@
 == About this module
 
 ifndef::env-slides[]
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 
 [square]
 * Describe the components of query processing.
@@ -144,7 +144,7 @@ The query executes when you specify `PROFILE` and includes these values:
 
 ifndef::env-slides[]
 [square]
-* *rows*: This is probably the most important metric you should aim to reduce in a query. The rows passed from one step of a query to the next require both memory and CPU resources. What  you want to watch for are spikes in the number of rows passed between steps as these may be areas where you can tune.
+* *rows*: This is probably the most important metric you will aim to reduce in a query. The rows passed from one step of a query to the next require both memory and CPU resources. What  you want to watch for are spikes in the number of rows passed between steps as these may be areas where you can tune.
 * *db hits*: You can think of a db hit as an abstract unit of work. Db hits from one step to another cannot really be compared due to the complexity of how data is stored physically. You may not always be able to reduce the number of db hits. You also want to reduce the amount of data that needs to be retrieved from the graph. If you can confine retrievals to what is in indexes, the less data needs to be retrieved from the graph.
 * *elapsed time*: Elapsed time includes the time to run the query as well as return results. Whether data needs to cross a network may also impact the elapsed time.
 * *memory*: The amount of extra heap required to execute that operator in the execution plan.
@@ -159,7 +159,7 @@ ifdef::env-slides[]
 
 [.notes]
 --
-* *rows*: This is probably the most important metric you should aim to reduce in a query. The rows passed from one step of a query to the next require both memory and CPU resources. What  you want to watch for are spikes in the number of rows passed between steps as these may be areas where you can tune.
+* *rows*: This is probably the most important metric you will aim to reduce in a query. The rows passed from one step of a query to the next require both memory and CPU resources. What  you want to watch for are spikes in the number of rows passed between steps as these may be areas where you can tune.
 * *db hits*: You can think of a db hit as an abstract unit of work. Db hits from one step to another cannot really be compared due to the complexity of how data is stored physically. You may not always be able to reduce the number of db hits. You also want to reduce the amount of data that needs to be retrieved from the graph. If you can confine retrievals to what is in indexes, the less data needs to be retrieved from the graph. Db hits are typically proportionately related to the input rows.
 * *elapsed time*: Elapsed time includes the time to run the query as well as return results. Whether data needs to cross a network may also impact the elapsed time.
 * *memory*: The amount of extra heap required to execute that operator in the execution plan.
@@ -184,7 +184,7 @@ image::Sysinfo.png[Sysinfo,width=600,align=center]
 [.notes]
 --
 Ideally, you  want the utilization of the Page Cache to be as close to 100% as possible.
-If you see that in your application, there are a lot of flushes of the Page Cache, then you should consider, if possible, adding more RAM to the system.
+If you see that in your application, there are a lot of flushes of the Page Cache, then you must consider, if possible, adding more RAM to the system.
 --
 
 === Heap memory
@@ -221,7 +221,7 @@ ifdef::env-slides[]
 endif::[]
 
 The result of a query is returned to the client with the `RETURN` clause.
-In many cases the data is sent over a network so minimizing the amount of data that needs to be read from the database,  formatted and sent back to the client should be a goal.
+In many cases the data is sent over a network so minimizing the amount of data that needs to be read from the database,  formatted and sent back to the client will be a goal.
 ifdef::env-slides[]
 --
 endif::[]
@@ -629,7 +629,7 @@ image::LetSemiApply.png[LetSemiApply,width=800,align=center]
 
 [.notes]
 --
-You should strive to eliminate SLOTTED from your (read-only) execution plans by rewriting the query to not use operators that must use SLOTTED.
+Strive to eliminate SLOTTED from your (read-only) execution plans by rewriting the query to not use operators that must use SLOTTED.
 For example, this query can be rewritten to:
 --
 
@@ -652,7 +652,7 @@ image::PIPELINED.png[PIPELINED,width=800,align=center]
 
 [.notes]
 --
-As you gain experience with query tuning and viewing execution plans, your goals should be:
+As you gain experience with query tuning and viewing execution plans, your goals are:
 --
 
 ifndef::env-slides[]
@@ -783,7 +783,7 @@ Part of understanding the performance of Cypher queries is to know what indexes 
 You learned that node labels are automatically indexed in the graph so the graph engine has efficient access to nodes of a particular type.
 You must understand what indexes exist for the properties in the graph. The index is only used for determining the anchor nodes for a query (`MATCH/WHERE`) clauses.
 
-As a starting point, you should query to graph to learn about all of the indexes defined:
+As a starting point, query the graph to learn about all of the indexes defined:
 --
 
 [source,Cypher,role=noplay]
@@ -1059,7 +1059,7 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 
 [square]
 * Describe the components of query processing.

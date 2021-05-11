@@ -17,7 +17,7 @@ In your real application, if you were to back up a production stand-alone Neo4j 
 == Exercise steps:
 
 . Modify the Neo4j configuration so that online backup is enabled and will be done on this same host.
-For example, your *neo4j.conf* properties should look something like this:
+For example, your *neo4j.conf* properties will look something like this:
 +
 [source,config,role=noplay]
 ----
@@ -28,7 +28,7 @@ dbms.backup.listen_address=localhost:6362
 . Start the Docker Neo4j instance.
 . View the logs to make sure it started with no errors.
 . Since we are using Docker for our training exercises, you must create a directory that is accessible from the Docker Neo4j instance. Create the following directory in the $HOME/docker-neo4j/neo4j/logs directory named *backups* and ensure that it has all permissions (chmod 777 backups).
-. In `cypher-shell`, make sure that all database are started. There should be four databases:
+. In `cypher-shell`, make sure that all database are started. There will be four databases:
 ** system
 ** maindb
 ** movies
@@ -56,7 +56,7 @@ MATCH (n) RETURN count(n);
 [sudo] docker exec --interactive neo4j bin/neo4j-admin backup --backup-dir=logs/backups --from=localhost:6362 --check-consistency --database=system --report-dir=logs/reports
 ----
 +
-The result of the backup should look something like this:
+The result of the backup will look something like this:
 +
 image::BackupSystemDocker.png[BackupSystemDocker,width=1000,align=center]
 +
@@ -112,7 +112,7 @@ MATCH (n) RETURN count(n);
 .. Perform a consistency check.
 .. Use the *backups* directory for the location of the backup.
 
-The result of the backup should look as follows:
+The result of the backup will look as follows:
 
 image::BackupMoviesDocker.png[BackupMoviesDocker,width=1000,align=center]
 

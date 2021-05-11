@@ -18,7 +18,7 @@ Next, you will learn how to add data to a graph by creating nodes.
 
 --
 
-At the end of this module, you should be able to write Cypher statements to:
+At the end of this module, you will write Cypher statements to:
 
 [square]
 * Create a node.
@@ -537,7 +537,7 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to write Cypher statements to:
+You can now write Cypher statements to:
 [square]
 
 * Create a node.

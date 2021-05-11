@@ -13,7 +13,7 @@
 
 The Neo4j Graph Platform enables developers to create applications that are best architected as graph-powered systems that are built upon the rich connectedness of data.
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Describe the components and benefits of the Neo4j Graph Platform.
 
@@ -186,7 +186,7 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Describe the components and benefits of the Neo4j Graph Platform.
 

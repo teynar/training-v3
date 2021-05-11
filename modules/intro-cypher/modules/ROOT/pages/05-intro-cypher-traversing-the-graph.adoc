@@ -13,7 +13,7 @@
 
 Now that you have gained experience with retrieving nodes and relationships, you will learn more about how the query processor traverses the graph to retrieve data.
 
-At the end of this topic, you should be able to:
+At the end of this topic, you will be able to:
 
 [square]
 * Describe what the anchor of a query is.
@@ -24,7 +24,7 @@ This video summarizes the content of this topic:
 
 video::l9ZprjFoHsQ[youtube,width=560,height=315]
 
-Throughout this training, you should refer to:
+Throughout this training, you can refer to:
 [square]
 * https://neo4j.com/docs/cypher-manual/current/[Neo4j Cypher Manual^]
 * http://neo4j.com/docs/cypher-refcard/current/[Cypher Reference card^]

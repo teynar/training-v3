@@ -11,7 +11,7 @@
 
 == About this module
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Describe common graph structures used in modeling:
 ** Intermediate nodes
@@ -130,14 +130,14 @@ The power of a Graph Database is that the To-From relationship is maintained in 
 whereas in a Traditional Relational Database a row with a Primary Key has no information about who is pointing to it.
 
 ifndef::env-slides[]
-You should *never* use a doubly-linked list in Neo4j because doubly-linked lists use redundant symmetrical relationships.
+*Never* use a doubly-linked list in Neo4j because doubly-linked lists use redundant symmetrical relationships.
 endif::[]
 --
 
 ifdef::env-slides[]
 [.notes]
 --
-*Concept check*:  Who can tell me why you should never use doubly-linked lists?
+*Concept check*:  Who can tell me why you never use doubly-linked lists?
 
 *Answer*: Doubly-linked lists use redundant symmetrical relationships.  We discussed before why those are a bad idea in Neo4j.
 --
@@ -407,7 +407,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Describe common graph structures used in modeling:
 ** Intermediate nodes

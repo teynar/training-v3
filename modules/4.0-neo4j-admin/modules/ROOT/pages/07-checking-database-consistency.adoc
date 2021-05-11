@@ -17,7 +17,7 @@
 Next, you will learn how to check the consistency of a Neo4j database.
 --
 
-At the end of this module, you should be able to use `neo4j-admin` to check the consistency of a Neo4j database.
+At the end of this module, you will be able to use `neo4j-admin` to check the consistency of a Neo4j database.
 
 == Checking the consistency of a database
 
@@ -49,7 +49,7 @@ See the https://neo4j.com/docs/operations-manual/4.0/tools/consistency-checker/[
 For example, you typically check the consistency of a backup which is a best practice you will learn about later in this training.
 
 Suppose we had loaded the *movies2* database with `neo4j-admin`.
-Here is what a successful run of the consistency checker should produce:
+Here is what a successful run of the consistency checker will produce:
 --
 image::ConsistentPassed.png[ConsistentPassed,width=550,align=center]
 
@@ -62,7 +62,7 @@ No report is written to the reports directory because the consistency check pass
 
 [.notes]
 --
-Here is an example of what an unsuccessful run of the consistency checker should produce:
+Here is an example of what an unsuccessful run of the consistency checker will produce:
 --
 
 image::Inconsistencies.png[Inconsistencies,width=700,align=center]
@@ -71,7 +71,7 @@ image::Inconsistencies.png[Inconsistencies,width=700,align=center]
 --
 If inconsistencies are found, a report is generated and placed in the directory specified for the report location.
 
-Inconsistencies in a database are a serious matter that should be looked into with the help of Neo4j Technical Support.
+Inconsistencies in a database are a serious matter that must be looked into with the help of Neo4j Technical Support.
 --
 
 ifdef::backend-revealjs,backend-pdf,env-slides[]
@@ -124,7 +124,7 @@ Select the correct answer.
 === Question 3
 
 [.statement]
-As a best practice, when should you always check the consistency of a database?
+As a best practice, when must you always check the consistency of a database?
 
 [.statement]
 Select the correct answers.
@@ -137,4 +137,4 @@ Select the correct answers.
 
 == Summary
 
-You should now be able to use `neo4j-admin` to check the consistency of a Neo4j database.
+You can now use `neo4j-admin` to check the consistency of a Neo4j database.

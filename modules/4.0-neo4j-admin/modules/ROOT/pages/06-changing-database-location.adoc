@@ -16,7 +16,7 @@
 Next, you will learn how to set up the Neo4j instance to use a specific, non-default location for the databases.
 --
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Modify the location where Neo4j databases are placed.
 
@@ -39,7 +39,7 @@ In addition, we have specified mainDB as the default database.
 
 [.notes]
 --
-Here is a best practice you should follow when managing a Neo4j installation.
+Here is a best practice you follow when managing a Neo4j installation.
 It is easier to place all changed property values at the end of the *neo4j.conf* file.
 That way, you can easily see what non-default values you have configured.
 
@@ -150,7 +150,7 @@ Select the correct answers.
 
 == Summary
 
-You should now be able to:
+You can now:
 
 [square]
 * Modify the location where Neo4j databases are placed.

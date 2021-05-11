@@ -60,7 +60,7 @@ image:CreateFraudDB.png[CreateFraudDB,width=800]
 
 == Step 3: Install plugins for this database
 
-For this training, you will use the GDS and APOC plugins. You should NOT install the Graph Algorithms plugin!
+For this training, you will use the GDS and APOC plugins. Do NOT install the Graph Algorithms plugin!
 
 . Go to the Manage area for the Fraud database you just created:
 
@@ -71,7 +71,7 @@ image:GoToManageFraud.png[GoToManageFraud,width=400]
 
 image:SelectPluginsFraud.png[SelectPluginsFraud,width=800]
 
-Here is what you should see after installation:
+Here is what you will see after installation:
 
 image:PluginsInstalledFraud.png[PluginsInstalledFraud,width=800]
 
@@ -89,7 +89,7 @@ image:OpenFraudTerminal.png[OpenFraudTerminal,width=800]
 .. Unzip the zip file.
 .. Remove the zip file.
 
-You should now have a *graph.db* directory in the data/databases directory:
+You will now have a *graph.db* directory in the data/databases directory:
 
 image:CopyFraudDB.png[CopyFraudDB,width=900]
 
@@ -112,7 +112,7 @@ image:StartFraudDB.png[StartFraudDB,width=600]
 
 == Step 7: Verify your setup
 
-. After the database starts, you should see 1,663,200 nodes and 3,271,992 relationships in the database.
+. After the database starts, you will see 1,663,200 nodes and 3,271,992 relationships in the database.
 . Open Neo4j Browser for the started fraud database.
 . Enter these statements:
 .. RETURN gds.version();

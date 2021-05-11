@@ -17,7 +17,7 @@
 Next, you will learn how to perform some administrative tasks using the `cypher-shell` tool.
 --
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Create a Neo4j database.
 * Start a Neo4j database.
@@ -373,7 +373,7 @@ Select the correct answer.
 
 [.statement]
 Suppose you have entered the following commands in `cypher-shell` to create the _customers_ database and list all databases for the Neo4j instance.
-What is the next thing you should do to be able to create a node in the _customers_ database from this session?
+What is the next thing you do to be able to create a node in the _customers_ database from this session?
 
 ----
 :USE system
@@ -393,7 +393,7 @@ Select the correct answer.
 
 == Summary
 
-You should now be able to:
+You can now:
 
 [square]
 * Create a Neo4j database.

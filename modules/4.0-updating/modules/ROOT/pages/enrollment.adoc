@@ -18,7 +18,7 @@ You will learn Cypher syntax for updating the database and perform numerous hand
 
 == Prerequisites
 
-You should have completed the courses:
+You must have completed the courses:
 
 [square]
 * _Overview of Neo4j 4.x_

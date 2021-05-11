@@ -18,7 +18,7 @@ Nodes are related to other nodes in the graph and their relationships are an imp
 In topic, you will learn how to retrieve data from the graph where the relationships between nodes is significant.
 This is another way that you can filter what data is retrieved from the graph.
 
-At the end of this topic, you should be able to:
+At the end of this topic, you will be able to:
 
 [square]
 * Retrieve nodes based upon their relationship to other nodes in the graph.
@@ -30,7 +30,7 @@ This video summarizes the content of this topic:
 
 video::nfOREP-p1Bk[youtube,width=560,height=315]
 
-Throughout this training, you should refer to:
+Throughout this training, you can refer to:
 [square]
 * https://neo4j.com/docs/cypher-manual/current/[Neo4j Cypher Manual^]
 * http://neo4j.com/docs/cypher-refcard/current/[Cypher Reference card^]
@@ -128,7 +128,7 @@ Modify this query to return the names of the people who acted in the movie, Toy 
 === Specify labels whenever possible
 
 You specify node labels whenever possible in your queries as it optimizes the retrieval in the graph engine.
-That is, you should *not* specify the previous query as:
+That is, you must *not* specify the previous query as:
 
 [source,Cypher]
 ----
@@ -218,7 +218,7 @@ Here is the next scenario you will be working with.
 The movie, Toy Story had several people rate it. These are _User_ nodes with the _RATED_ relationship to _Movie_ nodes.
 
 Write a query that returns the person's name and the relationship to the Toy Story movie.
-*Hint*: You should return the entire relationship so you can examine its properties.
+*Hint*: You return the entire relationship so you can examine its properties.
 
 //Q4: Most effort (write Cypher)
 //answer

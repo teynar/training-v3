@@ -11,7 +11,7 @@
 
 In this module you will learn how to build a machine learning classifier to predict co-authorships in the citation graph.
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Describe what link prediction is
 * Use the link prediction functions in Neo4j
@@ -119,7 +119,7 @@ Select the correct answer.
 
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Describe what link prediction is
 * Use the link prediction functions in Neo4j

@@ -13,14 +13,14 @@
 
 Cypher is the query language you use to retrieve data from the Neo4j Database, as well as create and update the data.
 
-At the end of this module, you should be able to write Cypher statements to:
+At the end of this module, you will write Cypher statements to:
 [square]
 * Retrieve nodes from the graph.
 * Filter nodes retrieved using labels and property values of nodes.
 * Retrieve property values from nodes in the graph.
 * Filter nodes retrieved using relationships.
 
-Throughout this training, you should refer to:
+Throughout this training, you can refer to:
 [square]
 * https://neo4j.com/docs/cypher-manual/current/[Neo4j Cypher Manual^]
 * http://neo4j.com/docs/cypher-refcard/current/[Cypher Reference card^]
@@ -188,7 +188,7 @@ The result returned is:
 image::PersonNodes-graph.png[PersonNodes,width=500]
 
 [NOTE]
-When you specify a pattern for a `MATCH` clause, you should always specify a node label if possible. In doing so, the graph engine uses an index to retrieve the nodes which will perform better than not using a label for the `MATCH`.
+When you specify a pattern for a `MATCH` clause, always specify a node label if possible. In doing so, the graph engine uses an index to retrieve the nodes which will perform better than not using a label for the `MATCH`.
 
 ==== Viewing nodes as table data
 
@@ -481,7 +481,7 @@ For this query, we are using the variable _p_ to represent the _Person_ nodes du
 We return a graph with the _Person_ nodes, the _Movie_ node and their _ACTED_IN_ relationships.
 
 *Important:* You specify node labels whenever possible in your queries as it optimizes the retrieval in the graph engine.
-That is, you should *not* specify this same query as:
+That is, you must *not* specify this same query as:
 
 [source,Cypher,role=noplay]
 ----
@@ -795,7 +795,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to write Cypher statements to:
+You can now write Cypher statements to:
 [square]
 * Retrieve nodes from the graph.
 * Filter nodes retrieved using property values of nodes.

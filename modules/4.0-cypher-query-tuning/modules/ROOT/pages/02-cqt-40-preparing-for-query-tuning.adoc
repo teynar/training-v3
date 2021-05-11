@@ -13,9 +13,9 @@
 
 [.notes]
 --
-In this module you will learn about the steps you should take before you begin your query tuning work.
+In this module you will learn about the steps you take before you begin your query tuning work.
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 --
 
 [square]
@@ -36,7 +36,7 @@ ifndef::env-slides[]
 * *RAM* - Ideally you want to fit your entire graph in memory.
 * *CPU cores* - The more cores, the more concurrent operations can occur.
 * *Number of open files* - It is recommended that you set it to 40000 if many indexes and users connect.
-* *Neo4j version* - You should use the latest GA release of Neo4j to take advantage of the performance improvements that come with Neo4j.
+* *Neo4j version* - You will use the latest GA release of Neo4j to take advantage of the performance improvements that come with Neo4j.
 endif::[]
 
 ifdef::env-slides[]
@@ -58,11 +58,11 @@ ifdef::env-slides[]
 * *RAM* - Ideally you want to fit your entire graph in memory.
 * *CPU cores* - The more cores, the more concurrent operations can occur.
 * *Number of open files* - It is recommended that you set it to 40000 if many indexes and users connect.
-* *Neo4j version* - You should use the latest minor version of a GA release of Neo4j to take advantage of the performance improvements that come with Neo4j.
+* *Neo4j version* - You use the latest minor version of a GA release of Neo4j to take advantage of the performance improvements that come with Neo4j.
 --
 endif::[]
 
-In addition, you should be prepared to monitor system bottlenecks:
+In addition, you must monitor system bottlenecks:
 
 [square]
 * top or htop for CPU and memory usage
@@ -74,7 +74,7 @@ You can read more details about system configuration https://neo4j.com/docs/oper
 
 [.notes]
 --
-To prepare for query tuning, you should examine and modify these settings in *neo4j.conf*:
+To prepare for query tuning, examine and modify these settings in *neo4j.conf*:
 --
 
 
@@ -95,10 +95,10 @@ endif::[]
 If possible, set to the size of the graph (:sysinfo).
 |512m, but if not set, Neo4j uses 50% of RAM.
 |dbms.memory.heap.initial_size
-|In most cases 8G - 16G is sufficient, but this should never exceed the amount of physical RAM. It should match what you configure for dbms.memory.heap.max_size.
+|In most cases 8G - 16G is sufficient, but this can never exceed the amount of physical RAM. It must match what you configure for dbms.memory.heap.max_size.
 |512m
 |dbms.memory.heap.max_size
-|In most cases 8G - 16G is sufficient, but this should never exceed the amount of physical RAM
+|In most cases 8G - 16G is sufficient, but this must never exceed the amount of physical RAM
 |1G
 |====
 
@@ -150,7 +150,7 @@ It is extremely important that the dataset you are performing the queries agains
 
 How the execution plan is created depends upon the DB Stats as well as the indexes defined for the database.
 
-You should always:
+You must always:
 --
 
 [square]
@@ -170,8 +170,8 @@ Before you begin query tuning, make sure that all queries are properly formed:
 
 [.notes]
 --
-As you learned in the previous lesson, you should aim to always use parameters in your queries, rather than literals. This will ensure that the Query Cache is used to your advantage.
-If a literal is used, it should be one that is always used in the queries.
+As you learned in the previous lesson, you aim to always use parameters in your queries, rather than literals. This will ensure that the Query Cache is used to your advantage.
+If a literal is used, it will be one that is always used in the queries.
 
 Let's look at some other examples where the queries could be written incorrectly.
 --
@@ -201,7 +201,7 @@ image::propertyWrong.png[propertyWrong,width=400,align=center]
 The problem we see with this query is that we know that there is an index on the Person nodes using the _name_ property.
 With this query we would expect the index to be used.
 As we see in the image, no index is used to perform the query.
-_p.fullName_ should have been specified as _.name_.
+_p.fullName_ must have been specified as _.name_.
 
 Furthermore, we can see that _fullName_ is not a valid property key.
 --
@@ -252,7 +252,7 @@ This is not correct because the query had an error in it.
 
 [.notes]
 --
-It should have been written as follows:
+It is written as follows:
 --
 
 [source,Cypher,role=noplay]
@@ -304,7 +304,7 @@ When the Neo4j instance is restarted, it fills the Page Cache with the data it h
 
 [.notes]
 --
-Part of your query tuning work should be to monitor the hit percentages in the Page Cache:
+Part of your query tuning work is to monitor the hit percentages in the Page Cache:
 --
 
 image::pageCacheHits.png[pageCacheHits,width=800,align=center]
@@ -373,7 +373,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 
 [square]
 * Ensure you have the appropriate system hardware and settings that can affect performance.

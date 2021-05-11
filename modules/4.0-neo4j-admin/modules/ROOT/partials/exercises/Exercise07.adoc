@@ -40,7 +40,7 @@ You will see a few information messages about record formats which are specific 
 
 image::CorruptMovies3.png[CorruptMovies3,width=1000,align=center]
 
-. Run the consistency check tool on *movies3* using `neo4j-admin` specifying *logs/reports* as the directory where the report will be written. The consistency check tool should return something like the following:
+. Run the consistency check tool on *movies3* using `neo4j-admin` specifying *logs/reports* as the directory where the report will be written. The consistency check tool will return something like the following:
 +
 
 image::InconsistenciesDocker.png[InconsistenciesDocker,width=1000,align=center]

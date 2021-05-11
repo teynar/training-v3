@@ -55,7 +55,7 @@ Here are the lessons of this course:
 . Using the ETL Tool for Import
 
 [IMPORTANT]
-Prior to taking this course, you should have set up your development environment to use one of the following, which is covered in the course, _Overview of Neo4j 4.x_.
+Prior to taking this course, you must set up your development environment to use one of the following, which is covered in the course, _Overview of Neo4j 4.x_.
 [square]
 * Neo4j Desktop
 * Neo4j Sandbox
@@ -64,7 +64,7 @@ Prior to taking this course, you should have set up your development environment
 == Resources
 
 We have set up a discussion area in our https://community.neo4j.com/c/general/online-training[Neo4j Community Site], if you run into problems in the course and need assistance.
-You should register on the community site where you can view other questions and answers for students taking our online training courses.
+You can register on the community site where you view other questions and answers for students taking our online training courses.
 The Neo4j Community Site is an excellent resource for answering many types of questions posed by other users of Neo4j.
 
 Here are some resources you will use as you learn about Neo4j and Cypher for this course:

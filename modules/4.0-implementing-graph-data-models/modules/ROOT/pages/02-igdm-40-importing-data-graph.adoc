@@ -11,7 +11,7 @@
 
 == About this module
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Write Cypher code to import CSV data into the graph.
 * Confirm that the data has been loaded.
@@ -43,8 +43,8 @@ Using Cypher enables us to control and customize how data is created and refacto
 
 [.notes]
 --
-Before you import data into the graph, you should have an idea of the target graph data model you want to achieve.
-You should work with the data architects for your application so that everybody agrees upon:
+Before you import data into the graph, you must have an idea of the target graph data model you want to achieve.
+Work with the data architects for your application so that everybody agrees upon:
 --
 
 [square]
@@ -62,7 +62,7 @@ You should work with the data architects for your application so that everybody 
 CSV import is commonly used to import data into a graph.
 If you want to import data from CSV, you will need to first develop a model that describes how data from your CSV maps to data in your graph.
 
-Assuming that you have an agreed-upon data model, here are the basic steps you should follow for importing using Cypher and CSV files:
+Assuming that you have an agreed-upon data model, here are the basic steps you follow for importing using Cypher and CSV files:
 --
 [.small]
 --
@@ -136,7 +136,7 @@ From the _row_ values, we create the connection between the two nodes based upon
 We use `MERGE` to ensure that duplicate nodes and relationships are not created with the same property values.
 If the connection is being created, we provide additional properties, _departure_ and _arrival_.
 
-For *large* datasets, you should ensure that uniqueness constraints (indexes) are created on the Airport code property before you load the data.
+For *large* datasets, you must ensure that uniqueness constraints (indexes) are created on the Airport code property before you load the data.
 This will dramatically improve the performance of the load as it will use the index during the `MERGE`.
 This dataset is small so load performance is not an issue at this point.
 --
@@ -214,7 +214,7 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Write Cypher code to import CSV data with Cypher.
 * Confirm that the data has been loaded.

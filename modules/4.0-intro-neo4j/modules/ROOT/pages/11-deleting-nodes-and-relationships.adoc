@@ -17,7 +17,7 @@ You have just learned how to create nodes, relationships, and properties for the
 Next, you will learn how to delete nodes and relationships in the graph.
 --
 
-At the end of this module, you should be able to write Cypher statements to:
+At the end of this module, you will be able to write Cypher statements to:
 [square]
 
 * Delete a node.
@@ -253,7 +253,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to write Cypher statements to:
+You can now write Cypher statements to:
 [square]
 
 * Delete a node.

@@ -11,7 +11,7 @@
 
 == About this module
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Describe graph data modeling best practices for modeling:
 ** Nodes (entities)
@@ -21,7 +21,7 @@ At the end of this module, you should be able to:
 
 == Best practices for modeling nodes
 
-Your model should address:
+Your model must address:
 
 [square]
 * Uniqueness of nodes
@@ -40,7 +40,7 @@ The Country nodes are considered *super nodes* (a node with lots of fan-in or fa
 
 [.notes]
 --
-In models like this one, an address should be uniquely identified because it should represent a single point of data in the graph.
+In models like this one, an address must be uniquely identified because it represents a single point of data in the graph.
 This is important in fraud detection applications where variations of the same address may be used to make a fraudulent transaction against the application.
 
 In this particular example, it is clear from the wider context that the various 500 Main St nodes are all distinct places.
@@ -105,7 +105,7 @@ It is almost never the case that *every* property is an anchor or used for the t
 
 == Best practices for modeling relationships
 
-Your model should address:
+Your model must address:
 
 [square]
 * Using specific relationship types.
@@ -197,7 +197,7 @@ image::ComplexData1.png[ComplexData1,width=400,align=center]
 [.small]
 --
 [square]
-* Anchors and properties used for traversal should be as simple as possible.
+* Anchors and properties used for traversal will be as simple as possible.
 * Identifiers, outputs, and decoration are OK as complex values.
 --
 
@@ -299,7 +299,7 @@ Select the correct answers.
 === Question 3
 
 [.statement]
-Which data should be most accessible for your queries?
+Which data must be most accessible for your queries?
 
 [.statement]
 Select the correct answers.
@@ -313,7 +313,7 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Describe graph data modeling best practices for modeling:
 ** Nodes (entities)

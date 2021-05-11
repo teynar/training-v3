@@ -17,7 +17,7 @@
 Most applications will take advantage of the many Cypher libraries that are available for use.
 --
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Make a library (plugin) available to applications.
 * Confirm that a plugin is available.
@@ -132,7 +132,7 @@ image::DefaultSandboxing.png[DefaultSandboxing,width=600,align=center]
 --
 [square]
 * Neo4j _whitelisting_ can be used to allow loading only a few extensions from a larger library.
-* The configuration setting `dbms.security.procedures.whitelist` is used to name certain procedures that should be
+* The configuration setting `dbms.security.procedures.whitelist` is used to name certain procedures that must be
 available from a library.
 * It defines a comma-separated list of procedures that are to be loaded.
 * The list may contain fully-qualified procedure names and partial names with the wildcard *.
@@ -165,7 +165,7 @@ image::InstallAPOCPluginJar.png[InstallAPOCPluginJar,width=1200,align=center]
 --
 After you have placed the *.jar* file into the *plugins* directory, you must modify the configuration for the instance as described in the main page for APOC.
 As described on the APOC GitHub page, you have an option of either _sandboxing_ or _whitelisting_ the procedures of the plugin.
-How much of the APOC library is used by your application is determined by the developers so you should use them as a resource for this type of configuration change.
+How much of the APOC library is used by your application is determined by the developers so you use them as a resource for this type of configuration change.
 
 Suppose we want to allow [.underline]#all# APOC procedures to be available to this Neo4j instance.
 We would sandbox the plugin in the *neo4j.conf* file as follows where we specify:
@@ -281,7 +281,7 @@ Select the correct answer.
 
 == Summary
 
-You should now be able to:
+You can now:
 
 [square]
 * Make a library (plugin) available to applications.

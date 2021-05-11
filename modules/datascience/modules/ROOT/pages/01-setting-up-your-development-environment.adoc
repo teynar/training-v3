@@ -64,7 +64,7 @@ You can use Neo4j Browser functionality via the web interface.
 
 Open a Neo4j Browser connection to the Citations Sandbox by clicking the *Open Neo4j Browser* for the Sandbox.
 
-A new Web browser tab should open with a connection to the Citations Sandbox:
+A new Web browser tab will open with a connection to the Citations Sandbox:
 
 image::Neo4jBrowser-DataScience.png[Neo4jBrowser-DataScience,width=800]
 
@@ -83,7 +83,7 @@ Launch the notebook by clicking below. This will open a tab for the Jupyter Note
 
 == Summary
 
-You should now have set up your development environment by:
+You have now set up your development environment by:
 [square]
 * Creating a Neo4j Sandbox for learning Neo4j.
 * Connecting to the Citations database with  Neo4j Browser.

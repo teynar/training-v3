@@ -16,7 +16,7 @@
 Now that you have gained experience with querying the graph and creating nodes and relationships, you will learn about the various ways that you can import data into Neo4j.
 --
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 
 * Describe your options for importing data into Neo4j.
@@ -39,8 +39,8 @@ image::ImportOptions.png[ImportOptions,width=1000,align=center]
 
 [.notes]
 --
-Before you import data into the graph, you should have an idea of the target graph data model you want to achieve.
-You should work with the data architects for your application so that everybody agrees upon:
+Before you import data into the graph, you must have an idea of the target graph data model you want to achieve.
+Work with the data architects for your application so that everybody agrees upon:
 --
 
 [square]
@@ -53,7 +53,7 @@ You should work with the data architects for your application so that everybody 
 
 [.notes]
 --
-These graph data model components should be agreed upon before you import the data.
+These graph data model components must be agreed upon before you import the data.
 You learn how to model your data in the course _Graph Data Modeling for Neo4j_
 --
 
@@ -221,7 +221,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 
 * Describe your options for importing data into Neo4j.

@@ -13,7 +13,7 @@
 
 The Neo4j Graph Platform enables developers to create applications that are best architected as graph-powered systems that are built upon the rich connectedness of data.
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Describe what a graph database is.
 * Describe some common use cases for using a graph database.
@@ -254,7 +254,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Describe what a graph database is.
 * Describe some common use cases for using a graph database.

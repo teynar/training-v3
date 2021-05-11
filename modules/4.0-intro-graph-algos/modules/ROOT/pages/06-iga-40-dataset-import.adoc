@@ -65,7 +65,7 @@ This is a very simple data model where each node has only a name and there are n
 . In Neo4j Desktop, start the database.
 . Start the *Graph Data Science Graph Playground* Graph App:
 .. Double-click *Graph Data Science Graph Playground*  app in the left pane to start it.
-.. Once started, it should open a new window as follows:
+.. Once started, it will open a new window as follows:
 
 image::GDSPlaygroundStarted.png[Graph Data Science Playground Started,width=500, align=center]
 

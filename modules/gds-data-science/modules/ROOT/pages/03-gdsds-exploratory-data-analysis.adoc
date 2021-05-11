@@ -13,7 +13,7 @@ In the previous section, you setup your Neo4j Desktop environment and loaded the
 In this module you will explore that data.
 You will be querying Neo4j and processing the results using tools in the Python ecosystem.
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Query a database for its schema.
 * Return and chart the number of node labels and relationship types using matplotlib.
@@ -116,7 +116,7 @@ Select the correct answer.
 
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Query a database for its schema.
 * Return and chart the number of node labels and relationship types using matplotlib.

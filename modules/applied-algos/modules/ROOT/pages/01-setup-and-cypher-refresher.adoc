@@ -103,7 +103,7 @@ Before creating a Yelp Neo4j Sandbox instance, you need to read and agree to the
 ... Replace the value for REACT_APP_NEO4J_PASSWORD with the *Password* in the *Connection Details* tab of the Yelp Sandbox.
 .. Save this file.
 .. Click the refresh icon to connect the CodeSandbox Browser (on the right) to the database.
-.. Confirm that you can now view data in the database by selecting a name in the drop down (initially selected with Dolores). Data should be retrieved for each user.
+.. Confirm that you can now view data in the database by selecting a name in the drop down (initially selected with Dolores). Data will be retrieved for each user.
 
 [NOTE]
 ====
@@ -114,7 +114,7 @@ Before creating a Yelp Neo4j Sandbox instance, you need to read and agree to the
 
 If you get stuck, watch this video to see how it all fits together.
 
-NOTE: The creation of the Yelp Sandbox has changed and you should use the link provided above for creating the Yelp Sandbox, as well as using the *Connection Details* information for the sandbox.
+NOTE: The creation of the Yelp Sandbox has changed and you must use the link provided above for creating the Yelp Sandbox, as well as using the *Connection Details* information for the sandbox.
 
 video::cG5oaywCTFg[youtube]
 
@@ -151,7 +151,7 @@ Select the correct answer.
 
 == Summary
 
-You should now have:
+You now have:
 [square]
 * Created a Yelp Neo4j Sandbox instance.
 * Opened a Neo4j Browser for the Yelp database.

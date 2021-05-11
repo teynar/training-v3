@@ -6,7 +6,7 @@
 
 == Overview
 
-You should bring a laptop to the class that is properly set up for the class.
+You must bring a laptop to the class that is properly set up for the class.
 
 You may choose to use your personal laptop rather than your work laptop for this course if:
 [square]

@@ -17,7 +17,7 @@ This course introduces you to using Cypher to query a Neo4j database.
 endif::[]
 
 This course is intended for developers, administrators, architects, data scientists, and data analysts.
-You need not have programming experience to take this training, but you should have a basic understanding of what a graph database is and the Neo4j Graph Platform.
+You need not have programming experience to take this training, but you must have a basic understanding of what a graph database is and the Neo4j Graph Platform.
 
 ifndef::env-slides[]
 In this course, you complete hands-on exercises to gain experience with querying a Neo4j database.
@@ -65,7 +65,7 @@ endif::[]
 * Controlling how results are returned
 
 [IMPORTANT]
-Prior to taking this course, you should have set up your development environment to use one of the following, which is covered in the course, _Overview of Neo4j 4.x_.
+Prior to taking this course, set up your development environment to use one of the following, which is covered in the course, _Overview of Neo4j 4.x_.
 [square]
 * Neo4j Desktop
 * Neo4j Sandbox
@@ -75,7 +75,7 @@ Prior to taking this course, you should have set up your development environment
 
 ifndef::env-slides[]
 We have set up a discussion area in our https://community.neo4j.com/c/general/online-training[Neo4j Community Site], if you run into problems in the course and need assistance.
-You should register on the community site where you can view other questions and answers for students taking our online training courses.
+You can register on the community site where you view other questions and answers for students taking our online training courses.
 The Neo4j Community Site is an excellent resource for answering many types of questions posed by other users of Neo4j.
 
 Here are some resources you will use as you learn about Neo4j and Cypher for this course:
@@ -104,7 +104,7 @@ Here’s a list of some great Neo4j resources.
 You’ll find a discussion area in the Neo4j Community Site.
 [square]
 * The Neo4j Community Site is an excellent resource for answering many types of questions posed by Neo4j users.
-* I recommend that you should register on this community site.
+* Neo4j recommends that you register on this community site.
 * There  you can view other questions and answers.
 
 As you work with Neo4j, when encountering problems and when questions arise, -

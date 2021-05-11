@@ -11,7 +11,7 @@
 
 == About this module
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Describe why you would refactor a graph data model.
 * Refactor a model to:
@@ -199,7 +199,7 @@ endif::[]
 [.notes]
 --
 Here, we begin by following the modeling process: identifying entities and connection based on the question.
-The entities should be Airports, and the connections FLYING_TO, with one connection per flight.
+The entities will be Airports, and the connections FLYING_TO, with one connection per flight.
 Airport data like city and flight data like airline, flight number, departure, etc. are necessary properties.
 --
 
@@ -448,7 +448,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Describe why you would refactor a graph data model.
 * Refactor a model to:

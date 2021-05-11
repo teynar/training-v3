@@ -13,7 +13,7 @@
 
 Now that you have gained experience managing a Neo4j instance and database,  managing Neo4j Causal Clusters, and the steps you must take to secure your deployed Neo4j application, you will learn how to monitor the Neo4j instance as it is used by applications.
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Describe the categories of monitoring and measurement you can perform with Neo4j.
 * Monitor:
@@ -27,7 +27,7 @@ At the end of this module, you should be able to:
 
 == Monitoring in Neo4j
 
-As an administrator, you should configure your deployed Neo4j application so that you can perform routine monitoring of activity, as well as being prepared to more deeply monitor and possibly re-configure Neo4j.
+As an administrator, you configure your deployed Neo4j application so that you can perform routine monitoring of activity, as well as being prepared to more deeply monitor and possibly re-configure Neo4j.
 
 The Neo4j instance writes events to log files where you can configure the level of logging you want to perform. In addition, Neo4j writes metrics to a directory that is dedicated for collecting runtime data. The https://neo4j.com/docs/operations-manual/3.5/configuration/file-locations/[Neo4j Operations Manual] describes these files and locations that you will be working with in this module.
 
@@ -58,7 +58,7 @@ As an administrator, you can configure Neo4j to write information about queries 
 
 === Configuring query logging
 
-You can configure Neo4j to log an event if a query runs more than xx milliseconds. There is no standard for what a reasonable period of time is for a query, but in most databases, a query that runs for minutes is not a good thing! At a minimum, you should enable logging for queries and set a threshold for the length of time queries take. Then, as part of your monitoring, you could regularly inspect the *query.log* file to determine if a certain set of queries or users are possibly performing queries that tax the resources of the Neo4j instance.
+You can configure Neo4j to log an event if a query runs more than xx milliseconds. There is no standard for what a reasonable period of time is for a query, but in most databases, a query that runs for minutes is not a good thing! At a minimum, you must enable logging for queries and set a threshold for the length of time queries take. Then, as part of your monitoring, you could regularly inspect the *query.log* file to determine if a certain set of queries or users are possibly performing queries that tax the resources of the Neo4j instance.
 
 For example, here are the properties you would set in the Neo4j configuration to log a message and provide information when a query takes more than 1000ms to complete:
 
@@ -91,7 +91,7 @@ There are two reasons why a Cypher query may take a long time:
 * The query takes a long time to execute in the graph engine.
 ** Example: `MATCH (a), (b), (c), (d), (e) RETURN count(id(a))`
 
-If the query executes and then *returns a lot of data*, there is no way to monitor it or kill the query.  If the Neo4j instance has many of these *rogue* queries running, it will slow down considerably so you should aim to limit these types of queries.
+If the query executes and then *returns a lot of data*, there is no way to monitor it or kill the query.  If the Neo4j instance has many of these *rogue* queries running, it will slow down considerably so you must aim to limit these types of queries.
 
 === Viewing currently running queries (Neo4j Browser)
 
@@ -154,10 +154,10 @@ MATCH (a), (b), (c), (d) RETURN count(id(a));
 ----
 +
 [NOTE]
-You should [underline]#never# run this type of query against a large database. It is only presented here for illustrative purposes to show  a long-running query.
+You must [underline]#never# run this type of query against a large database. It is only presented here for illustrative purposes to show  a long-running query.
 
 [start=5]
-. Wait about a minute, it should complete.
+. Wait about a minute, it will complete.
 
 image::L06-Ex1-LongQuery.png[L06-Ex1-LongQuery,width=800,align=center]
 
@@ -210,9 +210,9 @@ In the previous Exercise, you saw that you can query the Neo4j instance for curr
 
 A transaction is either a read-only transaction or a read-write transaction. Read-only transactions never block other clients as they acquire _share_ locks, but can take a long period of time to execute as you saw in the previous Exercise. A read-write transaction acquires _exclusive_ locks during the transaction and may be blocked by other transactions that have acquired _exclusive_ locks on the same resources. In some scenarios, a deadlock could occur if one transaction is blocked and is also blocking another transaction from acquiring the exclusive locks it needs.
 
-In a multi-user read-write transactional application, you should should configure the Neo4j instance so that a transaction will be aborted if it cannot obtain _exclusive_ locks after a certain period of time. This will eliminate a deadlock situation.
+In a multi-user read-write transactional application, you mustconfigure the Neo4j instance so that a transaction will be aborted if it cannot obtain _exclusive_ locks after a certain period of time. This will eliminate a deadlock situation.
 
-In addition, you should configure an upper limit for how long a transaction can run. This will depend on your particular application, but it should be set to a value that is greater than the lock timeout value. This is called a _transaction guard_ which is a good thing in a production system. In fact, you can use _transaction guard_ to automatically kill queries that take longer than xx minutes to execute.
+In addition, you must configure an upper limit for how long a transaction can run. This will depend on your particular application, but it must be set to a value that is greater than the lock timeout value. This is called a _transaction guard_ which is a good thing in a production system. In fact, you can use _transaction guard_ to automatically kill queries that take longer than xx minutes to execute.
 
 === Example: Configuring transaction guard
 
@@ -270,9 +270,9 @@ You can query the Neo4j instance's currently running transactions. If you see tr
 
 == Monitoring connections
 
-A Neo4j instance (stand-alone or cluster mode) uses a set of ports for inter-cluster communication and a set of ports for client communication. When you configure the Neo4j instance, you should ensure that the configured ports are available and are not blocked by a firewall.
+A Neo4j instance (stand-alone or cluster mode) uses a set of ports for inter-cluster communication and a set of ports for client communication. When you configure the Neo4j instance, you must ensure that the configured ports are available and are not blocked by a firewall.
 
-The default ports used by a Neo4j instance are documented in the https://neo4j.com/docs/operations-manual/3.5/configuration/ports/[Neo4j Operations Manual]. And you have learned that you can modify the port numbers used by a Neo4j instance. As you learned in a previous lesson about securing Neo4j, for a secure Neo4j application, you should [underline]#not# use any default port numbers.
+The default ports used by a Neo4j instance are documented in the https://neo4j.com/docs/operations-manual/3.5/configuration/ports/[Neo4j Operations Manual]. And you have learned that you can modify the port numbers used by a Neo4j instance. As you learned in a previous lesson about securing Neo4j, for a secure Neo4j application, you must [underline]#not# use any default port numbers.
 
 As an administrator, you can view the current connections to a Neo4j instance from `cypher-shell` by executing the call to `dbms.listConnections()`:
 
@@ -341,7 +341,7 @@ image::L06-Ex3-ListConnections4.png[L06-Ex3-ListConnections4,width=1000,align=ce
 image::L06-Ex3-KillConnection.png[L06-Ex3-KillConnection,width=1000,align=center]
 
 [start=10]
-. In the window where the write Java application is waiting for you to press *Enter*, press the *Enter* key. You should see a message that the connection was closed.
+. In the window where the write Java application is waiting for you to press *Enter*, press the *Enter* key. You will see a message that the connection was closed.
 
 image::L06-Ex3-KillConnection2.png[L06-Ex3-KillConnection2,width=800,align=center]
 
@@ -357,7 +357,7 @@ You can set this property in *neo4j.conf* to log these requests:
 dbms.logs.http.enabled=true
 ----
 
-With HTTP logging enabled, you will see records for each HTTP request so you should also limit the number of log files to keep and their sizes. Part of your monitoring might be to look for certain patterns in the *http.log* file(s) and in particular, requests made from IP addresses that you may not want accessing the instance.
+With HTTP logging enabled, you will see records for each HTTP request so you will also limit the number of log files to keep and their sizes. Part of your monitoring might be to look for certain patterns in the *http.log* file(s) and in particular, requests made from IP addresses that you may not want accessing the instance.
 
 [.student-exercise]
 === Exercise #4: Monitoring HTTP requests
@@ -444,7 +444,7 @@ This tool provides recommended memory settings based upon information in your da
 
 === Monitoring memory consumption
 
-If you suspect that there is a memory issue with your Neo4j instance, you should temporarily turn on GC logging in the Neo4j configuration: `dbms.logs.gc.enabled=true`.  In addition, records will be written to *debug.log* if an out of memory event occurs in the Neo4j instance. When trying to resolve out of memory issues with your application, you should work with Neo4j Technical Support to determine the cause and solution for the problem.
+If you suspect that there is a memory issue with your Neo4j instance, you must temporarily turn on GC logging in the Neo4j configuration: `dbms.logs.gc.enabled=true`.  In addition, records will be written to *debug.log* if an out of memory event occurs in the Neo4j instance. When trying to resolve out of memory issues with your application, you can work with Neo4j Technical Support to determine the cause and solution for the problem.
 
 === Using jcmd to obtain summary information
 
@@ -473,7 +473,7 @@ jcmd <PID for Neo4j instance> VM.native_memory summary.diff
 [NOTE]
 In order to use `jcmd` for a Neo4j instance, you must ensure that the instance is started with the `dbms.jvm.additional` property set and you must run it as the user _neo4j_.  *Hint*: `sudo su - neo4j`.
 
-Refer to the https://neo4j.com/docs/operations-manual/3.5/performance/[Neo4j Operations Manual] for guidance about configuring memory, indexes, etc. for the Neo4j instance. In a production environment, you should work with Neo4j Technical Support to ensure that you are monitoring memory usage and have the appropriate settings. The _Performance_ section of the documentation has guidelines that you should consider when configuring your Neo4j instance that are beyond the scope of this training.
+Refer to the https://neo4j.com/docs/operations-manual/3.5/performance/[Neo4j Operations Manual] for guidance about configuring memory, indexes, etc. for the Neo4j instance. In a production environment, you can work with Neo4j Technical Support to ensure that you are monitoring memory usage and have the appropriate settings. The _Performance_ section of the documentation has guidelines that you consider when configuring your Neo4j instance that are beyond the scope of this training.
 
 [.student-exercise]
 === Exercise #5: Monitoring a memory issue
@@ -497,12 +497,12 @@ In this Exercise, you will execute a query that exhausts memory, then you will c
 FOREACH (i IN RANGE(1,1300000) | CREATE (:Person {name:'Person' + i}));
 ----
 
-. Wait a few minutes. Eventually, you should receive an error.
+. Wait a few minutes. Eventually, you will receive an error.
 
 image::L06-Ex5-OutOfMemory.png[L06-Ex5-OutOfMemory,width=1000,align=center]
 
 [start=5]
-. View the the Neo4j log *Hint*: `journalctl -e -u neo4j` on Debian. It should also have an error logged as well as an error in *debug.log*.
+. View the the Neo4j log *Hint*: `journalctl -e -u neo4j` on Debian. It will also have an error logged as well as an error in *debug.log*.
 
 image::L06-Ex5-OutOfMemory2.png[L06-Ex5-OutOfMemory2,width=800,align=center]
 
@@ -528,7 +528,7 @@ In your production application, you must work with developers and users of the a
 
 == Managing log files
 
-As an administrator, you will configure the Neo4j instance to log at the appropriate levels. In most production environments, you will archive log files so that they may be viewed at a later time as part of an auditing process or to troubleshoot a problem. Each type of log file (if configured to use) should have its maximum size defined, as well as the number of log files to keep.
+As an administrator, you will configure the Neo4j instance to log at the appropriate levels. In most production environments, you will archive log files so that they may be viewed at a later time as part of an auditing process or to troubleshoot a problem. Each type of log file (if configured to use) must have its maximum size defined, as well as the number of log files to keep.
 
 [source,config,role=nocopy noplay]
 ----
@@ -693,7 +693,7 @@ Select the correct answers.
 === Question 2
 
 [.statement]
-What tool can you use to determine how much virtual memory you should configure for the Neo4j instance?
+What tool can you use to determine how much virtual memory you configure for the Neo4j instance?
 
 [.statement]
 Select the correct answer.
@@ -721,7 +721,7 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Describe the categories of monitoring and measurement you can perform with Neo4j.
 * Monitor:

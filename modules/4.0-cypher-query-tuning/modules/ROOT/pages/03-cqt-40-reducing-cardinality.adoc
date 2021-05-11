@@ -19,7 +19,7 @@ In this module, you will learn how to modify queries to reduce the amount of dup
 --
 
 ifndef::env-slides[]
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 
 [square]
 * Describe cardinality in an execution plan.
@@ -321,7 +321,7 @@ Estimated time to complete: 20 minutes.
 
 [.notes]
 --
-In your `MATCH` statement patterns, you should strive to create execution plans that either use an index or label (which is also an index).
+In your `MATCH` statement patterns, strive to create execution plans that either use an index or label (which is also an index).
 --
 
 In your execution plans, you may see these operators at the leaf steps:
@@ -387,7 +387,7 @@ image::PersonNodes.png[PersonNodes,width=800,align=center]
 
 [.notes]
 --
-But if you are only really interested in directors, you should anchor your query with this node label:
+But if you are only really interested in directors, anchor your query with this node label:
 --
 
 [source,Cypher,role=noplay]
@@ -404,7 +404,7 @@ image::DirectorNodes.png[DirectorNodes,width=800,align=center]
 [.notes]
 --
 A really big win for reducing cardinality is to ensure that indexes can be used for your queries, especially if they represent unique constraints for a value.
-If a query is performed frequently by the application, you should add an index for the property that is used for the query.
+If a query is performed frequently by the application, you must add an index for the property that is used for the query.
 The type of index-related step in the execution plan will depend upon the type of filtering your query requires.
 --
 
@@ -586,7 +586,7 @@ image::CabbieExample4.png[CabbieExample4,width=800,align=center]
 This is much better. We see far fewer rows, no NodeByLabelScan, much fewer db hits, and a smaller elapsed time.
 
 [NOTE]
-When you call a procedure in Cypher, the execution plan shows zero db hits. When calling procedures, you should mainly rely on rows and elapsed time.
+When you call a procedure in Cypher, the execution plan shows zero db hits. When calling procedures, you will mainly rely on rows and elapsed time.
 
 When you use `CALL` for a subquery, however, db hits are measured.
 
@@ -599,7 +599,7 @@ They are also good for optimizing case-insensitive searches on any node or relat
 
 [.notes]
 --
-If the database has indexes, you should strive to ensure that execution plans use them.
+If the database has indexes, strive to ensure that execution plans use them.
 Ideally, you want indexes that have values with the lowest selectivity.
 The query planner will always choose to use indexes with low selectivity values.
 
@@ -665,7 +665,7 @@ If the database had multiple actors with these names, you would see a greater pe
 
 [.notes]
 --
-You should use caution, however when you are explicitly specifying the use of indexes.
+Use caution, however when you are explicitly specifying the use of indexes.
 Here are some things to consider:
 --
 
@@ -938,7 +938,7 @@ This version of the query produces fewer rows from the `UNWIND` and had better p
 [.notes]
 --
 Cartesian products are useful as hash-joins when you are creating relationships between nodes.
-But for read-only queries, you should aim to eliminate cartesian products in your queries.
+But for read-only queries, aim to eliminate cartesian products in your queries.
 --
 
 Here is an example where we have set _$year_ to 1990:
@@ -1066,7 +1066,7 @@ Select the correct answer.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 
 [square]
 * Describe cardinality in an execution plan.

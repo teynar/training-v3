@@ -17,7 +17,7 @@
 Next, you will learn the ways that  you can copy a database.
 --
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Copy a Neo4j database using the copy command.
 * Create a dump file for a database.
@@ -32,7 +32,7 @@ Perhaps the developers are at a juncture in their development where they want to
 Or perhaps they want to give a copy of the database to another developer to work with on a different system.
 
 The structure of a Neo4j database is proprietary and could change from one release to another.
-You should [underline]#never# copy the database files from one location in the filesystem/network to another location.
+You must [underline]#never# copy the database files from one location in the filesystem/network to another location.
 --
 [.statement]
 --
@@ -217,7 +217,7 @@ Select the correct answers.
 
 == Summary
 
-You should now be able to:
+You can now:
 
 [square]
 * Copy a Neo4j database using the copy command.

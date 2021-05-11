@@ -31,7 +31,7 @@ The ports frequently used are the connector ports:
 {set:cellbgcolor:white}
 HTTP
 | 7474
-| Used by Neo4j Browser. It is *not* encrypted so it should never be exposed externally.
+| Used by Neo4j Browser. It is *not* encrypted so it must never be exposed externally.
 | HTTPS
 | 7473
 | Requires additional SSL configuration.
@@ -112,9 +112,9 @@ dbms.connectors.default_listen_address=0.0.0.0
 
 [.notes]
 --
-In production, an application that needs to connect to the Neo4j instance from a different system, should use a secure (encrypted) connection.
+In production, an application that needs to connect to the Neo4j instance from a different system, must use a secure (encrypted) connection.
 But another level of security for a system is to use non-default ports. In this training, we will not be configuring secure HTTPs connectors as we need a real CA for a real company to do this.
-You should consult the https://neo4j.com/docs/operations-manual/current/security/ssl-framework/[SSL documentation] for details in your real, production environment.
+Consult the https://neo4j.com/docs/operations-manual/current/security/ssl-framework/[SSL documentation] for details in your real, production environment.
 --
 
 ifdef::backend-revealjs,backend-pdf,env-slides[]
@@ -182,4 +182,4 @@ Select the correct answer.
 
 == Summary
 
-You should now be able to change HTTP and bolt ports for your Neo4j instance.
+You can now change HTTP and bolt ports for your Neo4j instance.

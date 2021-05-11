@@ -13,7 +13,7 @@
 
 Now that you have gained experience managing a Neo4j instance and database , you will learn how to get started with creating and managing Neo4j Causal Clusters.
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Describe why you would use clusters.
 * Describe the components of a  cluster.
@@ -39,7 +39,7 @@ image::ClustersArchitecture.png[ClustersArchitecture,width=400,align=center]
 
 ==== Core servers
 
-Core servers are used for read and write access to the database. The core servers are used to synchronize updates to the database, regardless of the number and physical locations of the Neo4j instances. By default, in a cluster architecture, a transaction is committed if a majority (_quorum_) of the core servers defined as the minimum required for the cluster have written the data to the physical database.  This coordination  between core servers is implemented using the _Raft_ protocol. You can have a large number of core servers, but the more core servers in the application architecture, the longer a "majority" commit will take. At a minimum, an application should use three core servers to be considered fault-tolerant. If one of the three servers fail, the cluster is still operable for updates to the database. If you want an architecture that can support two servers failing, then you must configure five core servers. You cannot configure a cluster with two core servers because if one server fails, the second server is automatically set to be read-only, leaving your database to be inoperable for updates.
+Core servers are used for read and write access to the database. The core servers are used to synchronize updates to the database, regardless of the number and physical locations of the Neo4j instances. By default, in a cluster architecture, a transaction is committed if a majority (_quorum_) of the core servers defined as the minimum required for the cluster have written the data to the physical database.  This coordination  between core servers is implemented using the _Raft_ protocol. You can have a large number of core servers, but the more core servers in the application architecture, the longer a "majority" commit will take. At a minimum, an application will use three core servers to be considered fault-tolerant. If one of the three servers fail, the cluster is still operable for updates to the database. If you want an architecture that can support two servers failing, then you must configure five core servers. You cannot configure a cluster with two core servers because if one server fails, the second server is automatically set to be read-only, leaving your database to be inoperable for updates.
 
 image::QuorumCommit.png[QuorumCommit,width=600,align=center]
 
@@ -116,7 +116,7 @@ Please refer to the https://neo4j.com/docs/operations-manual/3.5/clustering/sett
 
 ==== Identify core servers
 
-When setting up clustering, you should first identify at least three machines that will host core servers. For these machines, you should make sure these properties are set in *neo4j.conf* where XXXX is the IP address of the machine on the network and XXX1, XXX2, XXX3 are the IP addresses of the machines that will participate in the cluster. These machines must be network accessible.
+When setting up clustering, you will first identify at least three machines that will host core servers. For these machines, you make sure these properties are set in *neo4j.conf* where XXXX is the IP address of the machine on the network and XXX1, XXX2, XXX3 are the IP addresses of the machines that will participate in the cluster. These machines must be network accessible.
 
 image::IdentifyMachines.png[IdentifyMachines,width=800,align=center]
 
@@ -177,7 +177,7 @@ The minimum number of core servers at runtime in a fault-tolerant cluster is thr
 
 === Starting the core servers
 
-After you have modified the *neo4j.conf* files for the cluster, you start each Neo4j instance. When you start a set of core servers, it doesn't matter what order they are started. The cluster is not considered _started_ until the number of core servers specified in _causal_clustering.minimum_core_cluster_size_at_formation_ have started. One of the members of the core group will automatically be elected as the _LEADER_.  Note that which core server is the _LEADER_ could change at any time. You should observe the log output for each core server instance to ensure that it started with no errors.
+After you have modified the *neo4j.conf* files for the cluster, you start each Neo4j instance. When you start a set of core servers, it doesn't matter what order they are started. The cluster is not considered _started_ until the number of core servers specified in _causal_clustering.minimum_core_cluster_size_at_formation_ have started. One of the members of the core group will automatically be elected as the _LEADER_.  Note that which core server is the _LEADER_ could change at any time. You must observe the log output for each core server instance to ensure that it started with no errors.
 
 [NOTE]
 There is a configuration property (_causal_clustering.refuse_to_be_leader_) that you can set to true in the *neo4j.conf* file that specifies that this particular core server will [underline]#never# be a leader. It is [underline]#not# recommended that you set this property.
@@ -289,7 +289,7 @@ image::L04-Ex1-containersCreated.png[L04-Ex1-containersCreated,width=1000,align=
 
 [start=7]
 . Open a terminal window for each of the core servers. (three of them).
-. In each core server window, start the instance: `docker start -a coreX`. The instance should be started. These instances are set up so that the default browser port on localhost will be 11474, 12474, and 13474 on each instance respectively. Notice that each instance uses it's own database as the active database. For example, here is the result of starting the core server containers. Notice that each server starts as part of the cluster. The servers are not fully started until all catchup has been done between the servers and the _Started_ record is shown. The databases will not be accessible by clients until _all_ core members of the cluster have successfully started.
+. In each core server window, start the instance: `docker start -a coreX`. The instance will be started. These instances are set up so that the default browser port on localhost will be 11474, 12474, and 13474 on each instance respectively. Notice that each instance uses it's own database as the active database. For example, here is the result of starting the core server containers. Notice that each server starts as part of the cluster. The servers are not fully started until all catchup has been done between the servers and the _Started_ record is shown. The databases will not be accessible by clients until _all_ core members of the cluster have successfully started.
 
 image::L04-Ex1-CoresStarted.png[L04-Ex1-CoresStarted,width=600,align=center]
 
@@ -398,7 +398,7 @@ image::Routing.png[Routing,width=800,align=center]
 
 === bolt+routing
 
-Applications that update the database should [underline]#always# use _bolt+routing_ when accessing the core servers in a cluster. Using this protocol, applications gain:
+Applications that update the database must [underline]#always# use _bolt+routing_ when accessing the core servers in a cluster. Using this protocol, applications gain:
 
 * Automatic routing to an available server.
 * Load balancing of requests between the available servers.
@@ -411,7 +411,7 @@ For example, if you have a cluster with three core servers and _core1_ is the _L
 
 image::CannotWriteFollower.png[CannotWriteFollower,width=800,align=center]
 
-When using clustering, [underline]#all# application code that updates the application should use the _bolt+routing_ protocol which will enable applications to be able to write to the database, even in the event of a failure of one of the core servers. Applications should be written with the understanding that transactions are automatically retried.
+When using clustering, [underline]#all# application code that updates the application will use the _bolt+routing_ protocol which will enable applications to be able to write to the database, even in the event of a failure of one of the core servers. Applications must be written with the understanding that transactions are automatically retried.
 
 [.student-exercise]
 === Exercise #3: Accessing the core servers in a cluster
@@ -422,21 +422,21 @@ In this Exercise, you gain some experience with _bolt+routing_ by running two st
 
 . Ensure that you have performed the steps in Exercise 2 where you have populated the database used for the cluster and all three core servers are running. Note that you can perform the steps of this Exercise in a single terminal window.
 . Ensure that the three core servers are started.
-. Log out of the core server if you have not done so already. You should be in a terminal window where you manage Docker.
+. Log out of the core server if you have not done so already. You will be in a terminal window where you manage Docker.
 
 
 *Exercise steps*:
 
 . Navigate to the *neo4j-docker/testApps* folder.
-. There are three Java applications as well as scripts for running them. These scripts enable you to run a read-only client or write client against the database where you specify the protocol and the port for connecting to the Neo4j instance. Unless you modified port numbers in the *create_initial_cores.sh* script when you created the containers, the bolt ports used for core1, core2, and core3 are 11687, 12687, and 13687 respectively. What this means is that clients can read from the database using these ports using the _bolt_ protocol. Try running *testRead.sh*, providing bolt as the protocol and one of the above port numbers. For example, type `./testRead.sh bolt 12687`. You should be able to successfully read from each server. Here is an example of running the script against the core2 server which currently is a _FOLLOWER_ in the cluster:
+. There are three Java applications as well as scripts for running them. These scripts enable you to run a read-only client or write client against the database where you specify the protocol and the port for connecting to the Neo4j instance. Unless you modified port numbers in the *create_initial_cores.sh* script when you created the containers, the bolt ports used for core1, core2, and core3 are 11687, 12687, and 13687 respectively. What this means is that clients can read from the database using these ports using the _bolt_ protocol. Try running *testRead.sh*, providing bolt as the protocol and one of the above port numbers. For example, type `./testRead.sh bolt 12687`. You will successfully read from each server. Here is an example of running the script against the core2 server which currently is a _FOLLOWER_ in the cluster:
 
 image::L04-Ex3_ReadFollower.png[L04-Ex3_ReadFollower,width=800,align=center]
 
 [start=3]
-. Next, run the script against the other servers in the network. All reads should be successful.
+. Next, run the script against the other servers in the network. All reads will be successful.
 
 [start=4]
-. Next, run the *testWrite.sh* script against the same port using the _bolt_ protocol. For example, type `./testWrite.sh bolt 11687`. What you should see is that you can only use the _bolt_ protocol for writing against the _LEADER_.
+. Next, run the *testWrite.sh* script against the same port using the _bolt_ protocol. For example, type `./testWrite.sh bolt 11687`. What you will see is that you can only use the _bolt_ protocol for writing against the _LEADER_.
 
 image::L04-Ex3_WriteLeaderFollower.png[L04-Ex3_WriteLeaderFollower,width=800,align=center]
 
@@ -690,7 +690,7 @@ dbms.backup.address=<server-address>:6362`
 
 === Using a read replica for the backup
 
-A best practice is to create and use a read replica server for the backup. In doing so, the read replica server will be in catchup mode with the core servers but can ideally keep up with the committed transactions on the core servers. You can check to see what the last transaction ID is on a core server vs. a read replica by executing the Cypher statement: `CALL dbms.listTransactions() YIELD transactionId;` on each server. Each server will have a different last transaction ID, but as many transactions are performed against the cluster, you should see these values increasing at the same rate. If you find that the read replica is far behind in catching up, you may want to consider using a core server for the backup. If you use a core server for a backup, it could degrade performance of the cluster. If you want to use a core server for backup, you should increase the number of core servers in the cluster, for example from three to five.
+A best practice is to create and use a read replica server for the backup. In doing so, the read replica server will be in catchup mode with the core servers but can ideally keep up with the committed transactions on the core servers. You can check to see what the last transaction ID is on a core server vs. a read replica by executing the Cypher statement: `CALL dbms.listTransactions() YIELD transactionId;` on each server. Each server will have a different last transaction ID, but as many transactions are performed against the cluster, you will see these values increasing at the same rate. If you find that the read replica is far behind in catching up, you may want to consider using a core server for the backup. If you use a core server for a backup, it could degrade performance of the cluster. If you want to use a core server for backup, you must increase the number of core servers in the cluster, for example from three to five.
 
 === Performing the backup
 
@@ -794,7 +794,7 @@ Select the correct answer.
 === Question 2
 
 [.statement]
-What protocol should application clients use to update a database in the cluster?
+What protocol must application clients use to update a database in the cluster?
 
 [.statement]
 Select the correct answer.
@@ -822,7 +822,7 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Describe why you would use clusters.
 * Describe the components of a  cluster.

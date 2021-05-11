@@ -33,7 +33,7 @@ https://github.com/graphaware/hume-nodes2020
 [NOTE]
 Because of the size of the configuration, it will take time for processes to start when you begin your hands-on exercises.
 
-Here are the credentials you should use for logging in to Hume:
+Here are the credentials you use for logging in to Hume:
 
 login : nodes2020
 

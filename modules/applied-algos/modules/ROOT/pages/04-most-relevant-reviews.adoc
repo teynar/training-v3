@@ -73,6 +73,6 @@ Select the correct answer.
 
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Use the Personalized PageRank graph algorithm with Neo4j.

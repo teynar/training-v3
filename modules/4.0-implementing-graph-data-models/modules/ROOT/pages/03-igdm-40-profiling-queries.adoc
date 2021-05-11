@@ -11,7 +11,7 @@
 
 == About this module
 
-At the end of this module, you should be able to:
+At the end of this module, you will be able to:
 [square]
 * Profile queries against the graph.
 * Determine if a query can be improved.
@@ -21,7 +21,7 @@ At the end of this module, you should be able to:
 [.notes]
 --
 Understanding the performance of the queries for your use cases is an important part of implementing a graph data model.
-Here is the workflow you should use:
+Here is the workflow you will use:
 --
 
 [.small]
@@ -223,7 +223,7 @@ Select the correct answers.
 [.summary]
 == Summary
 
-You should now be able to:
+You can now:
 [square]
 * Profile queries against the graph.
 * Determine if a query can be improved.

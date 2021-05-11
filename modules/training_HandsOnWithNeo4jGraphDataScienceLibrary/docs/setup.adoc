@@ -37,7 +37,7 @@ If you already have Neo4j Desktop installed, but is is not up to version 1.3.5 o
 
 == Step 3: Install plugins for this database
 
-For this training, you will use the GDS and APOC plugins. You should NOT install the Graph Algorithms plugin!
+For this training, you will use the GDS and APOC plugins. Do NOT install the Graph Algorithms plugin!
 
 . Go to the Manage area for the Fraud database you just created.
 
@@ -68,11 +68,11 @@ For this training, you will use the GDS and APOC plugins. You should NOT install
 
 == Step 6: Verify your setup
 
-. After the database starts, you should see 332,948 nodes and 979,772 relationships in the database.
+. After the database starts, you will see 332,948 nodes and 979,772 relationships in the database.
 . Open Neo4j Browser for the started fraud database.
 . Enter these statements:
-.. RETURN gds.version() // It should return 1.3.3
-.. RETURN apoc.version() // It should return 4.1.0.2
+.. RETURN gds.version() // It will return 1.3.3
+.. RETURN apoc.version() // It will return 4.1.0.2
 
 
 *Congratulations!* You are now ready to perform the exercises for this training session.
