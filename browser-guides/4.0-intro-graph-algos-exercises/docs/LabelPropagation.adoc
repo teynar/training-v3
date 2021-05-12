@@ -3,9 +3,9 @@
 
 == Label Propagation (Preparations)
 
-The database you start with should contain all of the data you loaded in the setup for this course.
+The database you start with must contain all of the data you loaded in the setup for this course.
 
-This is what you should see when you click the database icon image:database-icon.png[].
+This is what you will see when you click the database icon image:database-icon.png[].
 
 image::DataLoaded.png[DataLoaded,width=150]
 
@@ -13,9 +13,9 @@ If you do not see this in your Neo4j Browser, you will need to perform the setup
 
 == Label Propagation (Graph Catalog)
 
-The projected graphs *roads* and *dach-region* should be created and stored in the GDS graph catalog.
+The projected graphs *roads* and *dach-region* must be created and stored in the GDS graph catalog.
 
-This is what you should see when you execute the following query:
+This is what you will see when you execute the following query:
 
 [source, cypher]
 ----
@@ -51,7 +51,7 @@ You can get a quick overview and distribution of the community structure by usin
 
 Write Cypher code to perform the Label Propagation algorithm on the European road network using these guidelines:
 
-* The algorithm should use the projected graph *roads*, which is stored in the graph catalog.
+* The algorithm must use the projected graph *roads*, which is stored in the graph catalog.
 * Use the `stats` mode of the LPA algorithm.
 * `YIELD` the following results: communityCount, communityDistribution.
 
@@ -61,7 +61,7 @@ Write Cypher code to perform the Label Propagation algorithm on the European roa
 
 Write Cypher code to perform the Label Propagation algorithm on the European road network using these guidelines:
 
-* The algorithm should use the projected graph *roads*, which is stored in the graph catalog.
+* The algorithm must use the projected graph *roads*, which is stored in the graph catalog.
 * Use the `stats` mode of the LPA algorithm.
 * `YIELD` the following results: communityCount, communityDistribution.
 
@@ -74,7 +74,7 @@ YIELD communityCount, communityDistribution
 RETURN communityCount, communityDistribution
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXLPA.1.png[EXLPA.1,width=400]
@@ -104,7 +104,7 @@ MATCH (:Place)-[r:EROAD]->(:Place)
 RETURN property, apoc.agg.statistics(r[property], [0.5,0.75,0.9,0.95,0.99])
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXLPA.2.png[EXLPA.2,width=500]
@@ -124,7 +124,7 @@ For this reason, you will use the *inverse_distance* property as the relationshi
 
 Write Cypher code to perform the weighted Label Propagation algorithm on the European road network using these guidelines:
 
-* The algorithm should use the projected graph *roads*, which is stored in the graph catalog.
+* The algorithm must use the projected graph *roads*, which is stored in the graph catalog.
 * Use the `stats` mode of the LPA algorithm.
 * `YIELD` the following results: communityCount, communityDistribution.
 * The relationship weight property name is *inverse_distance*.
@@ -135,7 +135,7 @@ Write Cypher code to perform the weighted Label Propagation algorithm on the Eur
 
 Write Cypher code to perform the weighted Label Propagation algorithm on the European road network using these guidelines:
 
-* The algorithm should use the projected graph *roads*, which is stored in the graph catalog.
+* The algorithm must use the projected graph *roads*, which is stored in the graph catalog.
 * Use the `stats` mode of the LPA algorithm.
 * `YIELD` the following results: communityCount, communityDistribution.
 * The relationship weight property name is *inverse_distance*.
@@ -150,7 +150,7 @@ YIELD communityCount, communityDistribution
 RETURN communityCount, communityDistribution
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXLPA.3.png[EXLPA.3,width=400]
@@ -168,7 +168,7 @@ First, you need to write back the results to Neo4j.
 
 Write Cypher code to perform the Label Propagation algorithm on the European road network and store the results back to nodes using these guidelines:
 
-* The algorithm should use the projected graph *roads*, which is stored in the graph catalog.
+* The algorithm must use the projected graph *roads*, which is stored in the graph catalog.
 * Use the `write` mode of the LPA algorithm.
 * The algorithm will perform a maximum of 10 iterations.
 * The algorithm will write a property named *community_lpa* to each node with the computed value.
@@ -181,7 +181,7 @@ Write Cypher code to perform the Label Propagation algorithm on the European roa
 
 Write Cypher code to perform the Label Propagation algorithm on the European road network and store the results back to nodes using these guidelines:
 
-* The algorithm should use the projected graph *roads*, which is stored in the graph catalog.
+* The algorithm must use the projected graph *roads*, which is stored in the graph catalog.
 * Use the `write` mode of the LPA algorithm.
 * The algorithm will perform a maximum of 10 iterations.
 * The algorithm will write a property named *community_lpa* to each node with the computed value.
@@ -202,7 +202,7 @@ YIELD nodePropertiesWritten, communityCount, ranIterations, didConverge
 RETURN nodePropertiesWritten, communityCount, ranIterations, didConverge
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXLPA.4.png[EXLPA.4,width=400]
@@ -237,7 +237,7 @@ ORDER BY communitySize DESC
 LIMIT 10
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXLPA.5.png[EXLPA.5,width=400]
@@ -247,7 +247,7 @@ image::EXLPA.5.png[EXLPA.5,width=400]
 The largest community has 13 members and contains places mostly located in Spain like Madrid, Bilbao, and San Sebastian.
 It also includes Bordeaux and Toulouse, which are two cities located in France.
 If you inspect the world map, you can observe that Bordeaux and Toulouse are near the border with Spain, which makes sense, given that the LPA algorithm assigned them the same community as some Spanish cities.
-The generated value for communityId may be different for your graph, but the community sizes and members should match.
+The generated value for communityId may be different for your graph, but the community sizes and members will match.
 
 == Label Propagation: Taking it further
 

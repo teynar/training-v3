@@ -122,7 +122,7 @@ image::DataLoaded.png[DataLoaded,width=150]
 
 Refresh the database contents in NEuler to have the new datasets available for algorithm execution.
 
-The database contents in NEuler should look as follows:
+The database contents in NEuler will look as follows:
 
 [.thumb]
 image::LoadedNEuler.png[LoadedNEuler,width=500]

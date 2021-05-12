@@ -3,9 +3,9 @@
 
 == Analysis of commonly used together ingredients (Preparations)
 
-The database you start with should contain all of the data you loaded in the setup for this course.
+The database you start with must contain all of the data you loaded in the setup for this course.
 
-This is what you should see when you click the database icon image:database-icon.png[].
+This is what you will see when you click the database icon image:database-icon.png[].
 
 image::DatabaseBeforeIngredientAnalysis.png[DatabaseBeforeIngredientAnalysis,width=200]
 
@@ -36,10 +36,10 @@ In this section, you will use the *REVERSE* orientation of the *CONTAINS_INGREDI
 
 Write Cypher code to project the Ingredient graph to Graph Catalog using these guidelines:
 
-* The created graph should be named *ingredient*.
+* Name the graph *ingredient*.
 * Project all nodes labeled *Ingredient* and *Recipe*.
 * Project all relationships with a type *CONTAINS_INGREDIENT*.
-* Relationships should use the *REVERSE* orientation.
+* Relationships must use the *REVERSE* orientation.
 
 *Hint*: You will call `gds.graph.create`.
 
@@ -47,10 +47,10 @@ Write Cypher code to project the Ingredient graph to Graph Catalog using these g
 
 Write Cypher code to project the Ingredient graph to Graph Catalog using these guidelines:
 
-* The created graph should be named *ingredient*.
+* Name the graph *ingredient*.
 * Project all nodes labeled *Ingredient* and *Recipe*.
 * Project all relationships with a type *CONTAINS_INGREDIENT*.
-* Relationships should use the *REVERSE* orientation.
+* Relationships must use the *REVERSE* orientation.
 
 *Hint*: You will call `gds.graph.create`.
 
@@ -65,7 +65,7 @@ CALL gds.graph.create('ingredient',
       orientation:'REVERSE'}})
 ----
 
-You should see these results:
+You will see these results:
 
 image::EXIA.1.png[EXIA.2,width=600]
 
@@ -76,7 +76,7 @@ You will evaluate the Jaccard similarity score distribution to help you fine-tun
 
 Write Cypher code to examine the similarity score distribution between ingredients following these guidelines:
 
-* The algorithm should use the projected graph *ingredient*, which is stored in the graph catalog.
+* The algorithm must use the projected graph *ingredient*, which is stored in the graph catalog.
 * Use the `stats` mode of the Node Similarity algorithm.
 * `YIELD` the following result: nodesCompared,similarityDistribution.
 
@@ -87,7 +87,7 @@ Write Cypher code to examine the similarity score distribution between ingredien
 
 You will evaluate the Jaccard similarity score distribution to better fine-tune the *topK* and *similarityCutoff* parameters of the Node Similarity algorithm in the next step.
 
-* The algorithm should use the projected graph *recipes*, which is stored in the graph catalog.
+* The algorithm must use the projected graph *recipes*, which is stored in the graph catalog.
 * Use the `stats` mode of the Node Similarity algorithm.
 * `YIELD` the following result: nodesCompared,similarityDistribution.
 
@@ -101,7 +101,7 @@ CALL gds.nodeSimilarity.stats('ingredient')
 YIELD nodesCompared, similarityDistribution
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXIA.2.png[EXIA.2,width=300]
@@ -120,7 +120,7 @@ This way, you can use the results of the Node Similarity algorithm as an input t
 
 Write Cypher code to execute the Node Similarity algorithm on the Ingredients graph using these guidelines:
 
-* The algorithm should use the projected graph *ingredient*, which is stored in the graph catalog.
+* The algorithm must use the projected graph *ingredient*, which is stored in the graph catalog.
 * Use the `mutate` mode of the Node Similarity algorithm.
 * The algorithm will mutate a relationship with a type *COMMONLY_USED_TOGETHER* between a pair of ingredients.
 * The algorithm will mutate a property named *score* to each relationship with the computed value.
@@ -134,7 +134,7 @@ Write Cypher code to execute the Node Similarity algorithm on the Ingredients gr
 
 Write Cypher code to execute the Node Similarity algorithm on the Ingredients graph using these guidelines:
 
-* The algorithm should use the projected graph *ingredient*, which is stored in the graph catalog.
+* The algorithm must use the projected graph *ingredient*, which is stored in the graph catalog.
 * Use the `mutate` mode of the Node Similarity algorithm.
 * The algorithm will mutate a relationship with a type *COMMONLY_USED_TOGETHER* between a pair of ingredients.
 * The algorithm will mutate a property named *score* to each relationship with the computed value.
@@ -156,7 +156,7 @@ CALL gds.nodeSimilarity.mutate('ingredient',{
 YIELD nodesCompared, relationshipsWritten
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXIA.3.png[EXIA.3,width=300]
@@ -174,7 +174,7 @@ Because you used the *mutate* mode of the Node Similarity algorithm, the *COMMON
 
 Write Cypher code to perform the weighted Louvain Modularity algorithm on the Ingredient graph using these guidelines:
 
-* The algorithm should use the projected graph *ingredient*, which is stored in the graph catalog.
+* The algorithm must use the projected graph *ingredient*, which is stored in the graph catalog.
 * Use the `write` mode of the Louvain Modularity algorithm.
 * The algorithm will consider only relationships with a type *COMMONLY_USED_TOGETHER*.
 * The algorithm will consider only nodes with a label *Ingredient*.
@@ -188,7 +188,7 @@ Write Cypher code to perform the weighted Louvain Modularity algorithm on the In
 
 Write Cypher code to perform the weighted Louvain Modularity algorithm on the Ingredient graph using these guidelines:
 
-* The algorithm should use the projected graph *ingredient*, which is stored in the graph catalog.
+* The algorithm must use the projected graph *ingredient*, which is stored in the graph catalog.
 * Use the `write` mode of the Louvain Modularity algorithm.
 * The algorithm will consider only relationships with a type *COMMONLY_USED_TOGETHER*.
 * The algorithm will consider only nodes with a label *Ingredient*.
@@ -210,7 +210,7 @@ CALL gds.louvain.write('ingredient',
 YIELD modularity, ranLevels, communityCount
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXIA.4.png[EXIA.4,width=300]
@@ -228,7 +228,7 @@ To investigate the inferred similarity network, you have to write the mutated re
 
 Write Cypher code to write the mutated *COMMONLY_USED_TOGETHER* relationship back to Neo4j using these guidelines:
 
-* The procedure should use the projected graph *ingredient*, which is stored in the graph catalog.
+* The procedure must use the projected graph *ingredient*, which is stored in the graph catalog.
 * The procedure will write relationships with a type *COMMONLY_USED_TOGETHER* back to Neo4j.
 
 *Hint*: You will call `gds.graph.writeRelationship`.
@@ -237,7 +237,7 @@ Write Cypher code to write the mutated *COMMONLY_USED_TOGETHER* relationship bac
 
 Write Cypher code to write the mutated *COMMONLY_USED_TOGETHER* relationship back to Neo4j using these guidelines:
 
-* The procedure should use the projected graph *ingredient*, which is stored in the graph catalog.
+* The procedure must use the projected graph *ingredient*, which is stored in the graph catalog.
 * The procedure will write relationships with a type *COMMONLY_USED_TOGETHER* back to Neo4j.
 
 *Hint*: You will call `gds.graph.writeRelationship`.
@@ -249,7 +249,7 @@ Here is the solution code:
 CALL gds.graph.writeRelationship('ingredient', 'COMMONLY_USED_TOGETHER', 'score')
 ----
 
-You should see these results:
+You will see these results:
 
 [.thumb]
 image::EXIA.5.png[EXIA.5,width=600]
@@ -273,7 +273,7 @@ WHERE NOT (i)-[:COMMONLY_USED_TOGETHER]-()
 RETURN count(*) as count
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXIA.6.png[EXIA.6,width=500]
@@ -314,7 +314,7 @@ RETURN i.ingredient_community as community,
 ORDER BY communitySize DESC LIMIT 5
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXIA.7.png[EXIA.7,width=300]
@@ -396,7 +396,7 @@ RETURN community, communitySize, collect(gds.util.asNode(nodeId).name)[..3] as r
 ORDER BY communitySize DESC
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXIA.8.png[EXIA.8,width=300]

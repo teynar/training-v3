@@ -3,9 +3,9 @@
 
 == Node Similarity (Preparations)
 
-The database you start with should contain all of the data you loaded in the setup for this course.
+The database you start with must contain all of the data you loaded in the setup for this course.
 
-This is what you should see when you click the database icon image:database-icon.png[].
+This is what you will see when you click the database icon image:database-icon.png[].
 
 image::DataLoaded.png[DataLoaded,width=150]
 
@@ -47,7 +47,7 @@ MATCH p=(:Recipe)-[:CONTAINS_INGREDIENT]-(:Ingredient)
 RETURN p LIMIT 10
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXNS.1.png[EXNS.1,width=300]
@@ -81,7 +81,7 @@ RETURN i.name as ingredient,
 ORDER BY count DESC LIMIT 5
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXNS.2.png[EXNS.2,width=300]
@@ -97,7 +97,7 @@ Here you will project a named graph that consists of nodes with labels *Recipe* 
 
 Write Cypher code to project the Recipes graph to Graph Catalog using these guidelines:
 
-* The created graph should be named *recipes*.
+* Name the graph *recipes*.
 * Project all *Recipe* and *Ingredient* nodes.
 * Project all relationships with a type *CONTAINS_INGREDIENT*.
 
@@ -107,7 +107,7 @@ Write Cypher code to project the Recipes graph to Graph Catalog using these guid
 
 Write Cypher code to project the Recipes graph to Graph Catalog using these guidelines:
 
-* The created graph should be named *recipes*.
+* Name the graph *recipes*.
 * Project all *Recipe* and *Ingredient* nodes.
 * Project all relationships with a type *CONTAINS_INGREDIENT*.
 
@@ -121,7 +121,7 @@ CALL gds.graph.create('recipes',
   ['Ingredient','Recipe'],'CONTAINS_INGREDIENT')
 ----
 
-You should see this result:
+You will see this result:
 
 [.thumb]
 image::EXNS.3.png[EXNS.3,width=600]
@@ -134,7 +134,7 @@ This is probably the most crucial step of the Node Similarity algorithm as the *
 
 Write Cypher code to examine the similarity score distribution of the Recipes dataset following these guidelines:
 
-* The algorithm should use the projected graph *recipes*, which is stored in the graph catalog.
+* The algorithm must use the projected graph *recipes*, which is stored in the graph catalog.
 * Use the `stats` mode of the Node Similarity algorithm.
 * `YIELD` the following result: nodesCompared,similarityDistribution.
 
@@ -144,7 +144,7 @@ Write Cypher code to examine the similarity score distribution of the Recipes da
 
 Write Cypher code to examine the similarity score distribution of the Recipes dataset following these guidelines:
 
-* The algorithm should use the projected graph *recipes*, which is stored in the graph catalog.
+* The algorithm must use the projected graph *recipes*, which is stored in the graph catalog.
 * Use the `stats` mode of the Node Similarity algorithm.
 * `YIELD` the following result: nodesCompared,similarityDistribution.
 
@@ -158,7 +158,7 @@ CALL gds.nodeSimilarity.stats('recipes')
 YIELD nodesCompared, similarityDistribution
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXNS.4.png[EXNS.4,width=300]
@@ -176,7 +176,7 @@ After the similarity score distribution examination, you can go ahead and write 
 
 Write Cypher code to execute the Node Similarity algorithm on the Recipes dataset using these guidelines:
 
-* The algorithm should use the projected graph *recipes*, which is stored in the graph catalog.
+* The algorithm must use the projected graph *recipes*, which is stored in the graph catalog.
 * Use the `write` mode of the Node Similarity algorithm.
 * The algorithm will write a relationship with a type *SIMILAR* between a pair of similar recipes.
 * The algorithm will write a property named *score* to each relationship with the computed value.
@@ -190,7 +190,7 @@ Write Cypher code to execute the Node Similarity algorithm on the Recipes datase
 
 Write Cypher code to execute the Node Similarity algorithm on the Recipes dataset using these guidelines:
 
-* The algorithm should use the projected graph *recipes*, which is stored in the graph catalog.
+* The algorithm must use the projected graph *recipes*, which is stored in the graph catalog.
 * Use the `write` mode of the Node Similarity algorithm.
 * The algorithm will write a relationship with a type *SIMILAR* between a pair of similar recipes.
 * The algorithm will write a property named *score* to each relationship with the computed value.
@@ -213,7 +213,7 @@ CALL gds.nodeSimilarity.write('recipes',{
 YIELD nodesCompared, relationshipsWritten
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXNS.5.png[EXNS.4,width=300]
@@ -242,7 +242,7 @@ MATCH p=(:Recipe)-[:SIMILAR]-(:Recipe)
 RETURN p LIMIT 10
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXNS.6.png[EXNS.6,width=300]
@@ -271,7 +271,7 @@ RETURN recommendation.name as recommendation, s.score as score
 ORDER BY score DESC LIMIT 3
 ----
 
-The results returned should look something like this:
+The results returned will look something like this:
 
 [.thumb]
 image::EXNS.7.png[EXNS.7,width=300]

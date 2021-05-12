@@ -3,9 +3,9 @@
 
 == Triangle Count (Preparations)
 
-The database you start with should contain all of the data you loaded in the setup for this course.
+The database you start with must contain all of the data you loaded in the setup for this course.
 
-This is what you should see when you click the database icon image:database-icon.png[].
+This is what you will see when you click the database icon image:database-icon.png[].
 
 image::DataLoaded.png[DataLoaded,width=150]
 
@@ -14,9 +14,9 @@ If you do not see this in your Neo4j Browser, you will need to perform the setup
 
 == Triangle Count (Graph Catalog)
 
-The projected graphs *roads* and *dach-region* should be created and stored in the GDS graph catalog.
+The projected graphs *roads* and *dach-region* must be created and stored in the GDS graph catalog.
 
-This is what you should see when you execute the following query:
+This is what you will see when you execute the following query:
 
 [source, cypher]
 ----
@@ -51,7 +51,7 @@ First, you will calculate the number of triangles for each node and store the re
 
 Write a query to perform the Triangle Count algorithm on the European road network using these guidelines:
 
-* The algorithm should use the projected graph *roads*, which is stored in the graph catalog.
+* The algorithm must use the projected graph *roads*, which is stored in the graph catalog.
 * The algorithm will write a property named *triangles* to each node with the computed value.
 
 *Hint*: You will call `algo.triangleCount.write`.
@@ -60,7 +60,7 @@ Write a query to perform the Triangle Count algorithm on the European road netwo
 
 Write a query to perform the Triangle Count algorithm on the European road network using these guidelines:
 
-* The algorithm should use the projected graph *roads*, which is stored in the graph catalog.
+* The algorithm must use the projected graph *roads*, which is stored in the graph catalog.
 * The algorithm will write a property named *triangles* to each node with the computed value.
 
 *Hint*: You will call `algo.triangleCount.write`.
@@ -75,7 +75,7 @@ YIELD globalTriangleCount, nodeCount
 RETURN globalTriangleCount, nodeCount
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXTC.1.png[EXTC.1,width=400]
@@ -110,7 +110,7 @@ ORDER BY triangles DESC
 LIMIT 10
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXTC.2.png[EXTC.2,width=400]
@@ -136,7 +136,7 @@ WHERE (p)--(neighbour)
 RETURN path
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXTC.3.png[EXTC.3,width=400]
@@ -155,7 +155,7 @@ Now, you will find the *Place* nodes with the highest triangle count of the DACH
 
 Write a query to perform the Triangle Count algorithm on the DACH region of the European road network using these guidelines:
 
-* The algorithm should use the projected graph *dach-region*, which is stored in the graph catalog.
+* The algorithm must use the projected graph *dach-region*, which is stored in the graph catalog.
 * Use the `gds.util.asNode()` function to fetch the node from the nodeId value and return its name.
 * Order the results by triangles count descending.
 * Limit it to the top ten results.
@@ -166,7 +166,7 @@ Write a query to perform the Triangle Count algorithm on the DACH region of the 
 
 Write a query to perform the Triangle Count algorithm on the DACH region of the European road network using these guidelines:
 
-* The algorithm should use the projected graph *dach-region*, which is stored in the graph catalog.
+* The algorithm must use the projected graph *dach-region*, which is stored in the graph catalog.
 * Use the `gds.util.asNode()` function to fetch the node from the nodeId value and return its name.
 * Order the results by triangles count descending.
 * Limit it to the top ten results.
@@ -182,7 +182,7 @@ ORDER BY triangleCount DESC
 LIMIT 10
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXTC.4.png[EXTC.3,width=400]

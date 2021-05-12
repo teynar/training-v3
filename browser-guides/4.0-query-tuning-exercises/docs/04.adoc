@@ -3,7 +3,7 @@
 
 == Exercise 4: Reducing Cardinality with Anchor Selectivity (Preparations)
 
-Before you begin this exercise, you should have this environment:
+Before you begin this exercise, you must have this environment:
 
 . Have a database that has access to the APOC library.
 
@@ -14,7 +14,7 @@ Before you begin this exercise, you should have this environment:
 include::scripts/initialDatabase.cypher[]
 ----
 
-This is what you should see in the left panel for the database:
+This is what you will see in the left panel for the database:
 
 [.thumb]
 image::InitialDatabase.png[InitialDatabase,width=300]
@@ -99,7 +99,7 @@ Set the parameter:
 
 Then execute the query (twice):
 
-The result should be:
+The result will be:
 
 [.thumb]
 image::EX4.1.png[EX4.1,width=600]
@@ -109,7 +109,7 @@ image::EX4.1.png[EX4.1,width=600]
 
 *NOTE*: Remember to run the query twice to ensure no compilation time is included in the metrics the second time it is run.
 
-If you look at the execution plan, the first thing you should notice is that it starts with a NodeByLabelScan.
+If you look at the execution plan, the first thing you will notice is that it starts with a NodeByLabelScan.
 That is not good, especially since we have indexes defined for this dataset.
 
 Here is the query where we can take advantage of the index. The index is defined for the _Person_ nodes, not the _Actor_ nodes.
@@ -122,7 +122,7 @@ WHERE a.name = $actor
 RETURN m.title
 ----
 
-The profile when executing this code should be:
+The profile when executing this code will be:
 
 [.thumb]
 image::EX4.1B.png[EX4.1B,width=600]

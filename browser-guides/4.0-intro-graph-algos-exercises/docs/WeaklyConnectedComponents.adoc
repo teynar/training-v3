@@ -3,9 +3,9 @@
 
 == Weakly Connected Components (Preparations)
 
-The database you start with should contain all of the data you loaded in the setup for this course.
+The database you start with must contain all of the data you loaded in the setup for this course.
 
-This is what you should see when you click the database icon image:database-icon.png[].
+This is what you will see when you click the database icon image:database-icon.png[].
 
 image::DataLoaded.png[DataLoaded,width=150]
 
@@ -13,9 +13,9 @@ If you do not see this in your Neo4j Browser, you will need to perform the setup
 
 == Weakly Connected Components (Graph Catalog)
 
-The projected graphs *roads* and *dach-region* should be created and stored in the GDS graph catalog.
+The projected graphs *roads* and *dach-region* must be created and stored in the GDS graph catalog.
 
-This is what you should see when you execute the following query:
+This is what you will see when you execute the following query:
 
 [source, cypher]
 ----
@@ -59,7 +59,7 @@ MATCH p=(:Place)-[:EROAD]-(:Place)
 RETURN p LIMIT 10
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXWCC.1.png[EXWCC.1,width=500]
@@ -75,7 +75,7 @@ The properties for an *EROAD* relationship are *distance*, *inverse_distance*, *
 A weakly connected component is one where there is a path in any direction between all nodes in the component.
 Write the Cypher code to find all weakly connected nodes and set the property *wcc_component* for each node based upon the result of the algorithm.
 
-* The algorithm should use the projected graph *roads*, which is stored in the graph catalog.
+* The algorithm must use the projected graph *roads*, which is stored in the graph catalog.
 * `YIELD` the following results: nodePropertiesWritten, componentCount, componentDistribution.
 
 *Hint*: You will use `gds.wcc.write`.
@@ -85,7 +85,7 @@ Write the Cypher code to find all weakly connected nodes and set the property *w
 A weakly connected component is one where there is a path in any direction between all nodes in the component.
 Write the Cypher code to find all weakly connected nodes and set the property *wcc_component* for each node based upon the result of the algorithm.
 
-* The algorithm should use the projected graph *roads*, which is stored in the graph catalog.
+* The algorithm must use the projected graph *roads*, which is stored in the graph catalog.
 * `YIELD` the following results: nodePropertiesWritten, componentCount, componentDistribution.
 
 *Hint*: You will use `gds.wcc.write`.
@@ -100,7 +100,7 @@ YIELD nodePropertiesWritten, componentCount, componentDistribution
 RETURN nodePropertiesWritten, componentCount, componentDistribution
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXWCC.2.png[EXWCC.2,width=400]
@@ -141,7 +141,7 @@ ORDER BY componentSize ASC
 LIMIT 10
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXWCC.3.png[EXWCC.3,width=400]
@@ -172,7 +172,7 @@ WHERE p.name in ["Memmingen", "Füssen"]
 RETURN path
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXWCC.4.png[EXWCC.4,width=400]
@@ -233,7 +233,7 @@ WHERE componentSize <= 10
 RETURN component_id, componentSize, places, countryCodes
 ----
 
-The results returned should look like this:
+The results returned will look like this:
 
 [.thumb]
 image::EXWCC.5.png[EXWCC.5,width=400]

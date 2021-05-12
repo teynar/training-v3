@@ -3,9 +3,9 @@
 
 == Graph Catalog (Preparations)
 
-The database you start with should contain all of the data you loaded in the setup for this course.
+The database you start with must contain all of the data you loaded in the setup for this course.
 
-This is what you should see when you click the database icon image:database-icon.png[].
+This is what you will see when you click the database icon image:database-icon.png[].
 
 image::DataLoaded.png[DataLoaded,width=150]
 
@@ -32,7 +32,7 @@ Go to the next page to start this exercise.
 In the Guided Exercise, you have executed the Degree centrality separately for the *NATURAL* and *REVERSE* orientation of *HELPS* relationship type.
 Here, you will project both the *NATURAL* and *REVERSE* orientation of the *HELPS* relationship type in a single named graph.
 
-* The created graph should be named *PersonGraph*.
+* Name the graph *PersonGraph*.
 * Project all nodes labeled *Person*.
 * Project all relationships with a type *HELPS* and include both the *NATURAL* and *REVERSE* orientations.
 
@@ -56,7 +56,7 @@ CALL gds.graph.create('PersonGraph', 'Person',
 == Part 2: Execute the Degree Centrality algorithm on a named graph (Instructions/Solution)
 
 You will execute the Degree Centrality algorithm on the *PersonGraph* named graph without any additional configuration options.
-As you do not specify which relationship types should the algorithm consider, it will use all available relationship types as an input.
+As you do not specify which relationship types the algorithm consider, it will use all available relationship types as an input.
 
 *Hint*: You will call `gds.alpha.degree.stream`.
 
@@ -70,13 +70,13 @@ ORDER BY score DESC
 
 Note that if we consider both the *NATURAL* and *REVERSE* orientation of a relationship type as in input to a graph algorithm, we will get identical results as if we projected it *UNDIRECTED*. You can confirm this by running the *UNDIRECTED* orientation of the *HELPS* relationship in NEuler.
 
-This is what you should see in the result pane:
+This is what you will see in the result pane:
 
 image::UndirectedDegree.png[NativeProjection,width=300]
 
 == Part 3: Execute the Degree Centrality algorithm on a named graph and filter relationship types (Instructions/Solution)
 
-The advantage of using a named graph with multiple relationship types is that you can filter which relationships should the algorithm consider at the execution time with the *relationshipTypes* parameter.
+The advantage of using a named graph with multiple relationship types is that you can filter which relationships the algorithm consider at the execution time with the *relationshipTypes* parameter.
 You will execute the Degree Centrality algorithm on the *Person* named graph and consider only *HELPS_NATURAL* relationships.
 
 *Hint*: You will call `gds.alpha.degree.stream` and include the `relationshipTypes` parameter.
@@ -90,7 +90,7 @@ RETURN gds.util.asNode(nodeId).name as name, score
 ORDER BY score DESC
 ----
 
-This is what you should see in the result pane:
+This is what you will see in the result pane:
 
 image::DirectedDegree.png[NativeProjection,width=500]
 
@@ -119,10 +119,10 @@ For this reason, you will now project the European Roads graph as a named graph 
 
 Write Cypher code to project the European Roads graph to Graph Catalog using these guidelines:
 
-* The created graph should be named *roads*.
+* Name the graph *roads*.
 * Project all nodes labeled *Place*.
 * Project all relationships with a type *EROAD*.
-* Relationships should use the *UNDIRECTED* orientation.
+* Relationships must use the *UNDIRECTED* orientation.
 * Include *inverse_distance* property as a relationship property.
 * Set the default value for *inverse_distance* relationship property to be 1.0.
 
@@ -132,10 +132,10 @@ Write Cypher code to project the European Roads graph to Graph Catalog using the
 
 Write Cypher code to project the European Roads graph to Graph Catalog using these guidelines:
 
-* The created graph should be named *roads*.
+* Name the graph *roads*.
 * Project all nodes labeled *Place*.
 * Project all relationships with a type *EROAD*.
-* Relationships should use the *UNDIRECTED* orientation.
+* Relationships must use the *UNDIRECTED* orientation.
 * Include *inverse_distance* property as a relationship property.
 * Set the default value for *inverse_distance* relationship property to be 1.0.
 
@@ -157,7 +157,7 @@ CALL gds.graph.create('roads','Place',
 })
 ----
 
-This is what you should see in the result pane:
+This is what you will see in the result pane:
 
 image::NativeProjection.png[NativeProjection,width=500]
 
@@ -169,7 +169,7 @@ Due to this limitation of native projection, you will use cypher projection to d
 
 Write Cypher code to project the European Roads graph to Graph Catalog using these guidelines:
 
-* The created graph should be named *dach-region*.
+* Name the graph *dach-region*.
 * Project all nodes labeled *Place* that have one of the following country codes: *D*, *A*, or *CH*
 * Project all relationships with a type *EROAD* and treat them as *UNDIRECTED*.
 * Include *inverse_distance* property as a relationship property.
@@ -188,7 +188,7 @@ CALL gds.graph.create.cypher('dach-region',
     , {validateRelationships:false})
 ----
 
-This is what you should see in the result pane:
+This is what you will see in the result pane:
 
 image::Subgraph.png[Subgraph,width=500]
 
