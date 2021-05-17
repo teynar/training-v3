@@ -3,7 +3,7 @@
 
 == Exercise 3: Reducing Cardinality with Aggregation (Preparations)
 
-Before you begin this exercise, you should have this environment:
+Before you begin this exercise, you must have this environment:
 
 . Have a database that has access to the APOC library.
 
@@ -14,7 +14,7 @@ Before you begin this exercise, you should have this environment:
 include::scripts/initialDatabase.cypher[]
 ----
 
-This is what you should see in the left panel for the database:
+This is what you will see in the left panel for the database:
 
 [.thumb]
 image::InitialDatabase.png[InitialDatabase,width=300]
@@ -98,12 +98,12 @@ RETURN genre, director, movie
 
 *IMPORTANT*: For all query tuning measurements, you must [underline]#always# run the query twice. The first time ensures that the compiled query is in the Query Cache. The second time ensures that the reported metrics for the execution plan do not include the cost of compilation.
 
-The profile when executing this code should be:
+The profile when executing this code will be:
 
 [.thumb]
 image::EX3.1.png[EX3.1,width=600]
 
-The result of executing this code should be:
+The result of executing this code will be:
 
 [.thumb]
 image::EX3.1B.png[EX3.1B,width=600]
@@ -124,7 +124,7 @@ WITH movie, genres, collect(director) as directors
 RETURN genres, movie, directors
 ----
 
-The profile when executing this code should show fewer rows processed and a better execution time.
+The profile when executing this code will show fewer rows processed and a better execution time.
 
 *NOTE*: Remember to run the query twice to ensure no compilation time is included in the metrics the second time it is run.
 
@@ -165,7 +165,7 @@ RETURN movie.title
 
 where the $actor parameter is set to "Tom Hanks"
 
-The result of executing this code should be:
+The result of executing this code will be:
 
 [.thumb]
 image::EX3.2.png[EX3.2,width=600]
@@ -183,7 +183,7 @@ WITH DISTINCT movie
 RETURN movie.title
 ----
 
-The result of executing this code should be:
+The result of executing this code will be:
 
 [.thumb]
 image::EX3.2B.png[EX3.2B,width=600]
@@ -226,7 +226,7 @@ collect(DISTINCT m.title) AS titles ORDER BY actor
 
 where the $relYear1 parameter is set to 2010, the $relYear2 parameter is set to 2012, and the $yearBorn parameter is set to 1990
 
-The result of executing this query should be the following:
+The result of executing this query will be the following:
 
 [.thumb]
 image::EX3.3.png[EX3.3,width=500]
@@ -245,7 +245,7 @@ RETURN a.name AS actor,  a.born AS born,
 [(a)-->(x) WHERE $relYear1 <= x.releaseYear <= $relYear2 | x.title] AS titles ORDER BY actor
 ----
 
-The result of executing this query should be the following:
+The result of executing this query will be the following:
 
 [.thumb]
 image::EX3.3B.png[EX3.3B,width=500]

@@ -4,7 +4,7 @@
 
 Make sure you have the Movie database, which contains 171 nodes and 253 relationships.
 
-This is what you should see when you click the database icon:
+This is what you will see when you click the database icon:
 
 image:InitialDatabase.png[InitialDatabase,width=300]
 
@@ -49,7 +49,7 @@ You will use schema information to help you specify relationships in your querie
 CALL db.schema.visualization()
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::call_db.schema.png[call_db.schema,width=800]
@@ -67,7 +67,7 @@ image::call_db.schema.png[call_db.schema,width=800]
 MATCH (p:Person)-[:WROTE]->(:Movie {title: 'Speed Racer'}) RETURN p.name
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::SpeedRacerWriters.png[SpeedRacerWriters,width=500]
@@ -85,14 +85,14 @@ Notice here that the _:Movie_ node is an anonymous node because for the query, w
 
 *Retrieve all movies connected with _Tom Hanks_.*
 
-*Hint:* _Tom Hanks_ has multiple relationships with a movie so you should not specify a relationship type in the query.
+*Hint:* _Tom Hanks_ has multiple relationships with a movie so you do not specify a relationship type in the query.
 
 
 == Exercise 3.3: Retrieve all movies that are connected to the person, _Tom Hanks_ (Solution)
 
 *Retrieve all movies connected with _Tom Hanks_.*
 
-*Hint:* _Tom Hanks_ has multiple relationships with a movie so you should not specify a relationship type in the query.
+*Hint:* _Tom Hanks_ has multiple relationships with a movie so you do not specify a relationship type in the query.
 
 In the query editor pane, enter the Cypher query to retrieve all movies that are connected to _Tom Hanks_.
 
@@ -101,7 +101,7 @@ In the query editor pane, enter the Cypher query to retrieve all movies that are
 MATCH (m:Movie)<--(:Person {name: 'Tom Hanks'}) RETURN m.title
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::TomHanksMovies.png[TomHanksMovies,width=800]
@@ -129,7 +129,7 @@ It is a best practice to put named nodes first in a query.
 MATCH (m:Movie)-[rel]-(:Person {name: 'Tom Hanks'}) RETURN m.title, type(rel)
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::TomHanksRelationshipTypes.png[TomHanksRelationshipTypes,width=700]
@@ -157,7 +157,7 @@ Write and execute the Cypher query to retrieve all of the roles that _Tom Hanks_
 MATCH (m:Movie)-[rel:ACTED_IN]-(:Person {name: 'Tom Hanks'}) RETURN m.title, rel.roles
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::TomHanksRoles.png[TomHanksRoles,width=700]

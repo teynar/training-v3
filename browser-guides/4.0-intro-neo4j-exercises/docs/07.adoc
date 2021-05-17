@@ -4,7 +4,7 @@
 
 Make sure you have the Movie database, which contains 171 nodes and 253 relationships.
 
-This is what you should see when you click the database icon:
+This is what you will see when you click the database icon:
 
 image:InitialDatabase.png[InitialDatabase,width=300]
 
@@ -52,7 +52,7 @@ WHERE numMovies = 5
 RETURN a.name, movies
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::FiveMovies.png[FiveMovies,width=600]
@@ -73,7 +73,7 @@ WHERE numMovies <= 3
 RETURN a.name, movies
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::AtMost3MoviesPerActor.png[AtMost3MoviesPerActor,width=600]
@@ -95,7 +95,7 @@ OPTIONAL MATCH (p:Person)-[:REVIEWED]->(m)
 RETURN  m.title, p.name
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::TopDirectorsAndReviewers.png[TopDirectorsAndReviewers,width=600]
@@ -119,12 +119,12 @@ WHERE size(movies)  > 5
 RETURN p.name, movies
 ----
 
-The result returned should be:
+The result returned will be:
 [.thumb]
 image::ActorsWithMoreThan5Movies1.png[ActorsWithMoreThan5Movies1,width=800]
 
 In this view, we are examining the table view where we can see the actor name and the list of movies for each actor.
-The actors should be _Tom Hanks_ and _Keanu Reeves_.
+The actors are _Tom Hanks_ and _Keanu Reeves_.
 
 *Note:* If you are using a Neo4j 4.1 or later database, you will see some additional values for the nodes that include the _identity_ and _labels_.
 
@@ -147,7 +147,7 @@ WITH p, movies UNWIND movies AS movie
 RETURN p.name, movie.title
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::ActorsWithMoreThan5Movies2.png[ActorsWithMoreThan5Movies2,width=500]

@@ -39,7 +39,7 @@ RETURN nodesCompared, relationshipsWritten, similarityDistribution
 
 == Answer: Similar Photos
 
-This is what the query should look like:
+This is what the query will look like:
 
 [source, cypher]
 ----
@@ -80,7 +80,7 @@ CALL gds.labelPropagation.write({
 
 == Answer: Clustering photos
 
-This is what the query should look like:
+This is what the query will look like:
 
 [source, cypher]
 ----

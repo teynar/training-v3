@@ -5,7 +5,7 @@
 
 Make sure you have the Movie database, which contains 171 nodes and 253 relationships.
 
-This is what you should see when you click the database icon:
+This is what you will see when you click the database icon:
 
 image:InitialDatabase.png[InitialDatabase,width=300]
 
@@ -45,10 +45,10 @@ Go to the next page to start this exercise.
 MATCH (n) RETURN n 
 ----
 
-You should now see all nodes in the graph in the result pane.
+You will now see all nodes in the graph in the result pane.
 In this query, _n_ is a variable, which is a container that holds the result.
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::ReturnAllNode.png[ReturnAllNode,width=500]
@@ -72,7 +72,7 @@ image::ReturnAllNode.png[ReturnAllNode,width=500]
 CALL db.schema.visualization()
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::call_db.schema.png[call_db.schema,width=800]
@@ -90,7 +90,7 @@ image::call_db.schema.png[call_db.schema,width=800]
 MATCH (p:Person) RETURN p 
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::PersonNodes.png[PersonNodes,width=600]
@@ -113,7 +113,7 @@ The movie reviewers _Person_ nodes do have the _FOLLOWS_ relationship with each 
 MATCH (m:Movie) RETURN m
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::MovieNodes.png[MovieNodes,width=600]

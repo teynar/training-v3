@@ -4,7 +4,7 @@
 
 Make sure you have the Movie database, which contains 171 nodes and 253 relationships.
 
-This is what you should see when you click the database icon:
+This is what you will see when you click the database icon:
 
 image:InitialDatabase.png[InitialDatabase,width=300]
 
@@ -49,7 +49,7 @@ MATCH (p:Person)-[:ACTED_IN]->(m:Movie)
 RETURN p.name as actor, collect(m.title) AS `movie list`
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::ActorMovies.png[ActorMovies,width=500]
@@ -69,7 +69,7 @@ WHERE p.name ='Tom Cruise'
 RETURN m.title as movie, collect(p2.name) AS `co-actors`
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::TomCruiseCoActors.png[TomCruiseCoActors,width=600]
@@ -90,7 +90,7 @@ MATCH (p:Person)-[:REVIEWED]->(m:Movie)
 RETURN m.title as movie, count(p) as numReviews, collect(p.name) as reviewers
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::CountReviews.png[CountReviews,width=600]
@@ -109,7 +109,7 @@ MATCH (d:Person)-[:DIRECTED]->(m:Movie)<-[:ACTED_IN]-(a:Person)
 RETURN d.name AS director, count(a) AS `number actors` , collect(a.name) AS `actors worked with`
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::CountActorsWhoWorkedWithDirectors.png[CountActorsWhoWorkedWithDirectors,width=600]
@@ -130,7 +130,7 @@ WHERE a.name = 'Tom Hanks'
 RETURN  m {.title, .released}
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::CustomMap.png[CustomMap,width=500]
@@ -150,7 +150,7 @@ WHERE a.name = 'Tom Hanks'
 RETURN  m.title, m.released, date().year  - m.released as yearsAgoReleased, m.released  - a.born AS `age of Tom`
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::AgeCalculations.png[AgeCalculations,width=600]

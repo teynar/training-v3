@@ -30,7 +30,7 @@ CALL gds.alpha.similarity.pearson(
 
 == Answer: User Similarity
 
-This is what the query should look like:
+This is what the query will look like:
 
 [source, cypher]
 ----

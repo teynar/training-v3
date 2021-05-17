@@ -5,10 +5,10 @@
 
 You will now work with the airport graph data model.
 
-You should start with an empty database.
+You must start with an empty database.
 
 Throughout these exercises, you will be comparing query profiling results before and after refactoring.
-Since you may want to view query results that you performed throughout these exercises, you should set your Neo4j Browser to cache up to at least 100 result frames with a history of at least 100.
+Since you may want to view query results that you performed throughout these exercises, you must set your Neo4j Browser to cache up to at least 100 result frames with a history of at least 100.
 
 [.thumb]
 image::History.png[History,width=300]
@@ -53,7 +53,7 @@ MERGE (a1)-[:CONNECTED_TO {airline:'WN',flightNumber:'82',date:'2019-1-3',depart
 MERGE (a1)-[:CONNECTED_TO {airline:'WN',flightNumber:'500',date:'2019-1-3',departure:'1445',arrival:'1710'}]->(a3)
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::EX1_CreateFirstNodes.png[EX1_CreateFirstNodes,width=500]
@@ -73,7 +73,7 @@ MATCH (n)
 RETURN n
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex1_DisplayFirstNodes.png[Ex1_DisplayFirstNodes,width=600]
@@ -92,7 +92,7 @@ MATCH connection = (:Airport {code: 'LAS'})-[:CONNECTED_TO]->(:Airport)
 RETURN connection
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex1_LASConnections.png[Ex1_LASConnections,width=600]

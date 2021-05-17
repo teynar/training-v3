@@ -3,7 +3,7 @@
 
 == Exercise 6: More Query Tuning (Preparations)
 
-Before you begin this exercise, you should have this environment:
+Before you begin this exercise, you must have this environment:
 
 . Have a database that has access to the APOC library.
 
@@ -14,7 +14,7 @@ Before you begin this exercise, you should have this environment:
 include::scripts/AfterExercise4.cypher[]
 ----
 
-This is what you should see in the left panel for the database:
+This is what you will see in the left panel for the database:
 
 [.thumb]
 image::InitialDatabase.png[InitialDatabase.,width=300]
@@ -161,7 +161,7 @@ RETURN actor.name as Actor, actor.born as YearBorn, movies ORDER BY actor.born L
 
 *IMPORTANT*: For all query tuning measurements, you must [underline]#always# run the query twice. The first time ensures that the compiled query is in the Query Cache. The second time ensures that the reported metrics for the execution plan do not include the cost of compilation.
 
-This is what you should see for the execution plan:
+This is what you will see for the execution plan:
 
 [.thumb]
 image::EX6.2.png[EX6.2,width=500]
@@ -171,7 +171,7 @@ image::EX6.2.png[EX6.2,width=500]
 
 *NOTE*: Remember to run the query twice to ensure no compilation time is included in the metrics the second time it is run.
 
-The improved query should be:
+The improved query will be:
 
 [source, cypher]
 ----
@@ -183,7 +183,7 @@ WITH actor, collect(movie) AS movies
 RETURN actor.name as Actor, actor.born as YearBorn, movies
 ----
 
-The result should be:
+The result will be:
 
 [.thumb]
 image::EX6.2A.png[EX2.2A,width=500]

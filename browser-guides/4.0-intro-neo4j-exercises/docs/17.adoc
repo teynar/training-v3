@@ -55,7 +55,7 @@ YIELD name WHERE name STARTS WITH "apoc"
 RETURN name
 ----
 
-The result should be:
+The result will be:
 
 [.thumb]
 image::APOCinstalled.png[APOCinstalled,width=500]
@@ -93,7 +93,7 @@ LOAD CSV WITH HEADERS FROM
 RETURN row LIMIT 100
 ----
 
-The result should be:
+The result will be:
 
 [.thumb]
 image::ViewAPOCdataToLoad.png[ViewAPOCdataToLoad,width=700]
@@ -115,7 +115,7 @@ CREATE CONSTRAINT UniqueMovieIdConstraint ON (m:Movie) ASSERT m.id IS UNIQUE;
 CREATE CONSTRAINT UniquePersonIdConstraint ON (p:Person) ASSERT p.id IS UNIQUE
 ----
 
-The result should be:
+The result will be:
 
 [.thumb]
 image::APOCLoadConstraints.png[APOCLoadConstraints,width=500]
@@ -153,7 +153,7 @@ CALL apoc.periodic.iterate(
 
 == Exercise 17.5: Load the data with APOC (Solution)
 
-The result should be:
+The result will be:
 
 [.thumb]
 image::APOCExecute.png[APOCExecute,width=800]
@@ -166,7 +166,7 @@ image::APOCExecute.png[APOCExecute,width=800]
 
 *Call the APOC procedures to clear everything from the graph, including constraints and indexes.*
 
-Here is the code you should execute:
+Here is the code you must execute:
 
 [source, cypher]
 ----
@@ -180,7 +180,7 @@ CALL apoc.periodic.iterate(
 )
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::ClearedDB.png[ClearedDB,width=800]

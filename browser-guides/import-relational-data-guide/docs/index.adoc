@@ -40,7 +40,7 @@ You will notice that the code is copied into the code pane at the top of Neo4j B
 
 == Starting with a fresh database
 
-If you choose to run the Cypher code in  this guide, you should start with an empty database.
+If you choose to run the Cypher code in  this guide, you must start with an empty database.
 
 Execute this code to clear the database (Neo4j 4.x required; here database name is *neo4j*):
 
@@ -49,7 +49,7 @@ Execute this code to clear the database (Neo4j 4.x required; here database name 
 CREATE OR REPLACE DATABASE neo4j;
 ----
 
-You should now have no nodes or relationships in the database:
+You will now have no nodes or relationships in the database:
 
 image::ClearedDB.png[ClearedDB,width=300]
 

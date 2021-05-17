@@ -24,7 +24,7 @@ Execute this Cypher code to populate the database:
 include::scripts/initialDatabase.cypher[]
 ----
 
-This is what you should see in the left panel for the database:
+This is what you will see in the left panel for the database:
 
 [.thumb]
 image::InitialDatabase.png[InitialDatabase,width=300]
@@ -55,7 +55,7 @@ In Neo4j Browser, write and execute the command to view information about the Pa
 
 In Neo4j Browser, write and execute the command to view information about the Page Cache.
 
-You should see something like this when you enter the `:sysinfo` command:
+You will see something like this when you enter the `:sysinfo` command:
 
 [.thumb]
 image::sysinfo.png[sysinfo,width=500]
@@ -85,7 +85,7 @@ For the queries you will be executing in this exercise, set the following parame
 :params {actorName: "Meryl Streep", lookup: "The"}
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::params.png[params,width=500]
@@ -168,7 +168,7 @@ Write and execute the Cypher statement to show the indexes and determine the num
 :schema
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::indexes.png[indexes,width=900]
@@ -189,7 +189,7 @@ Write and execute the Cypher statement to show the data model for the graph.
 CALL apoc.meta.graph()
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::apoc.meta.graph.png[apoc.meta.graph,width=600]
@@ -218,7 +218,7 @@ Write and execute the Cypher statement to show the DB Stats for the graph and an
 CALL apoc.meta.stats()
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::meta.stats.png[meta.stats,width=600]
@@ -249,7 +249,7 @@ WITH count(*) as TotalDirectorRelationships
 RETURN TotalDirectorRelationships
 ----
 
-You should see this in the execution plan:
+You will see  this in the execution plan:
 
 [.thumb]
 image::EX1.8.png[EX1.8,width=500]
@@ -268,7 +268,7 @@ WITH count(*) as TotalDirectorRelationships
 RETURN TotalDirectorRelationships
 ----
 
-You should see this in the execution plan:
+You will see  this in the execution plan:
 
 [.thumb]
 image::EX1.8A.png[EX1.8A,width=600]
@@ -318,12 +318,12 @@ OR (a)-[:ACTED_IN]->(:Movie {title:$movie2})
 RETURN a.name
 ----
 
-You should see this in the execution plan:
+You will see  this in the execution plan:
 
 [.thumb]
 image::EX1.9A.png[EX1.9A,width=600]
 
-You should see here that SLOTTED is used.
+You will see  here that SLOTTED is used.
 
 Change this query so that SLOTTED will not be used.
 
@@ -337,7 +337,7 @@ WHERE m.title = $movie1 OR m.title = $movie2
 RETURN  a.name
 ----
 
-You should see this in the execution plan:
+You will see  this in the execution plan:
 
 [.thumb]
 image::EX1.9B.png[EX1.9B,width=600]
@@ -356,7 +356,7 @@ WITH count(*) as TotalDirectorRelationships
 RETURN TotalDirectorRelationships
 ----
 
-Here is what you should see in your execution plan:
+Here is what you will see in your execution plan:
 
 [.thumb]
 image::NoCountStore.png[NoCountStore,width=600]
@@ -371,7 +371,7 @@ WITH count(*) as TotalDirectorRelationships
 RETURN TotalDirectorRelationships
 ----
 
-Here is what you should see in your execution plan:
+Here is what you will see in your execution plan:
 
 [.thumb]
 image::CountStore.png[CountStore,width=600]

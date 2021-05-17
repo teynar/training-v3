@@ -51,7 +51,7 @@ AS line
 RETURN line.id, line.name, line.birthYear
 ----
 
-The result should be:
+The result will be:
 
 [.thumb]
 image::LoadActorsToView.png[LoadActorsToView,width=600]
@@ -93,7 +93,7 @@ AS line
 RETURN line.id, line.name, toInteger(trim(line.birthYear))
 ----
 
-The result should be:
+The result will be:
 
 [.thumb]
 image::LoadAndFormatActorData.png[LoadAndFormatActorData,width=600]
@@ -116,7 +116,7 @@ MERGE (actor:Person {name: line.name})
   ON MATCH SET actor.actorId = line.id
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::LoadedActors.png[LoadedActors,width=600]
@@ -141,7 +141,7 @@ AS line
 RETURN line.id, line.title, line.year, line.tagLine
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::LoadMoviesToView.png[LoadMoviesToView,width=600]
@@ -150,13 +150,13 @@ image::LoadMoviesToView.png[LoadMoviesToView,width=600]
 
 *Read the data and return it, ensuring that the data returned is properly formatted.*
 
-*Hint:* The year should be interpreted as a number and the tagline data should have no leading or trailing spaces.
+*Hint:* The year will be interpreted as a number and the tagline data will have no leading or trailing spaces.
 
 == Exercise 16.5: Read the data and return it, ensuring that the data returned is properly formatted (Solution)
 
 *Read the data and return it, ensuring that the data returned is properly formatted.*
 
-*Hint:* The year should be interpreted as a number and the tagline data should have no leading or trailing spaces.
+*Hint:* The year will be interpreted as a number and the tagline data will have no leading or trailing spaces.
 
 [source, cypher]
 ----
@@ -166,7 +166,7 @@ AS line
 RETURN line.id, line.title, toInteger(line.year), trim(line.tagLine)
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::LoadAndFormatMovies.png[LoadAndFormatMovies,width=600]
@@ -191,7 +191,7 @@ ON CREATE
       m.tagline = line.tagLine
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::LoadedMovies.png[LoadedMovies,width=600]
@@ -216,7 +216,7 @@ AS line FIELDTERMINATOR ';'
 RETURN line.personId, line.movieId, line.Role
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::LoadRolesToView.png[LoadRolesToView,width=700]
@@ -241,7 +241,7 @@ AS line FIELDTERMINATOR ';'
 RETURN line.personId, line.movieId, split(line.Role,',')
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::LoadAndFormatRoles.png[LoadAndFormatRoles,width=600]
@@ -268,7 +268,7 @@ MATCH (person:Person { actorId: line.personId })
 MERGE (person)-[:ACTED_IN { roles: split(line.Role,',')}]->(movie)
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::LoadedRoles.png[LoadedRoles,width=500]

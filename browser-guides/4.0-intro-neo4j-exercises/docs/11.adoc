@@ -4,7 +4,7 @@
 
 Make sure you have the Movie database, which contains 173 nodes and 258 relationships.
 
-This is what you should see when you click the database icon:
+This is what you will see when you click the database icon:
 
 image::AfterExercise10.png[AfterExercise10,width=300]
 
@@ -47,7 +47,7 @@ MATCH (:Person)-[rel:HELPED]-(:Person)
 DELETE rel
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::DeleteHELPED.png[DeleteHELPED,width=500]
@@ -66,7 +66,7 @@ MATCH (:Person)-[rel:HELPED]-(:Person)
 RETURN rel
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::ConfirmDeleteHELPED.png[ConfirmDeleteHELPED,width=500]
@@ -86,7 +86,7 @@ WHERE m.title = 'Forrest Gump'
 RETURN p, rel, m
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::QueryForrestGump.png[QueryForrestGump,width=700]
@@ -112,7 +112,7 @@ WHERE m.title = 'Forrest Gump'
 DELETE m
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::DeleteNodeFailed.png[DeleteNodeFailed,width=600]
@@ -132,7 +132,7 @@ WHERE m.title = 'Forrest Gump'
 DETACH DELETE m
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::DetachDelete.png[DetachDelete,width=500]
@@ -152,7 +152,7 @@ WHERE m.title = 'Forrest Gump'
 RETURN p, rel, m
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::NoForrestGump.png[NoForrestGump,width=500]

@@ -5,11 +5,11 @@
 
 Before you begin this exercise, make sure that you have created the three `Airport` nodes in the previous exercise.
 
-This is what you should see when you click the database icon image:database-icon.png[].
+This is what you will see when you click the database icon image:database-icon.png[].
 
 image::AfterExercise1.png[Empty_database,width=300,role=left]
 
-*If your database does not have the same nodes and relationships, you can execute these Cypher statements to reset your graph to what it should be before you start this exercise:*
+*If your database does not have the same nodes and relationships, you can execute these Cypher statements to reset your graph to what it must be before you start this exercise:*
 
 [source,Cypher]
 ----
@@ -109,7 +109,7 @@ This Cypher code:
 By default properties will be stored as strings.
 We know that `year`, `month`, and `day` are actually numeric values so we coerce them using the `toInteger` function.
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex2_LoadFLights.png[Ex2_LoadFlights,width=600]
@@ -138,7 +138,7 @@ This query:
 * Returns the `Airport` nodes and the `outgoing` count in descending order by `Connections`.
 * Limits the number of airports returned to 10.
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex2_PopularAirports.png[Ex2_PopularAirports,width=400]
@@ -159,7 +159,7 @@ ORDER BY incoming DESC
 LIMIT 10
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex2_IncomingConnections.png[Ex2_IncomingConnections,width=400]
@@ -179,7 +179,7 @@ WHERE destination.code = 'LAS'
 RETURN origin, destination, connection
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex2_LASIncomingConnections.png[Ex2_LASIncomingConnections,width=600]
@@ -198,7 +198,7 @@ image::Ex2_LASIncomingConnections.png[Ex2_LASIncomingConnections,width=600]
  RETURN origin, destination, connection
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex2_LASToLAXConnections.png[Ex2_LASToLAXConnections,width=600]
@@ -220,7 +220,7 @@ RETURN origin.code, destination.code, connection.date, connection.departure, con
 
 This query is reasonably fast because we only have 1,000 connections between airports, but under the covers we're actually doing a lot of unnecessary work.
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex2_WN1016.png[Ex2_WN1016,width=600]

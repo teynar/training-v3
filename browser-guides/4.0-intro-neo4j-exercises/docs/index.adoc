@@ -36,7 +36,7 @@ Pressing it once more will _unpin_ the window again: image:unpin-button.png[].
 === Preparations before each exercise
 
 Each exercise starts with a _Preparations_ page.
-It shows you how to reset the database to the point it should be at to begin the exercise.
+It shows you how to reset the database to the point it must be at to begin the exercise.
 This is useful, for example, if you have made a mistake in one of the previous exercises, or if you have done some testing on your own that changes the database into something that does not match the instructions in the exercises.
 
 

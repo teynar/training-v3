@@ -4,7 +4,7 @@
 
 Make sure you have the Movie database, which contains 173 nodes and 253 relationships.
 
-This is what you should see when you click the database icon:
+This is what you will see when you click the database icon:
 
 image::AfterExercise9.png[AfterExercise9,width=300]
 
@@ -59,7 +59,7 @@ WHERE p.name = 'Tom Hanks' OR p.name = 'Robin Wright' OR p.name = 'Gary Sinise'
 CREATE (p)-[:ACTED_IN]->(m)
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::CreateThreeRelationships.png[CreateThreeRelationships,width=500]
@@ -81,7 +81,7 @@ WHERE p.name = 'Robert Zemeckis'
 CREATE (p)-[:DIRECTED]->(m)
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::AddDirectedRelationship.png[AddDirectedRelationship,width=500]
@@ -103,7 +103,7 @@ WHERE p2.name = 'Gary Sinise'
 CREATE (p1)-[:HELPED]->(p2)
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::CreateHELPEDRelationship.png[CreateHELPEDRelationship,width=500]
@@ -123,7 +123,7 @@ WHERE m.title = 'Forrest Gump'
 RETURN p, rel, m
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::ForrestGumpRelationships.png[ForrestGumpRelationships,width=700]
@@ -162,7 +162,7 @@ CASE p.name
 END
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::SetPropertiesUsingCase.png[SetPropertiesUsingCase,width=500]
@@ -182,7 +182,7 @@ WHERE p1.name = 'Tom Hanks' AND p2.name = 'Gary Sinise'
 SET rel.research = 'war history'
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::SetResearchProperty.png[SetResearchProperty,width=500]
@@ -200,7 +200,7 @@ image::SetResearchProperty.png[SetResearchProperty,width=500]
 CALL db.propertyKeys()
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::PropertyKeys-research.png[PropertyKeys-research,width=800]
@@ -218,7 +218,7 @@ image::PropertyKeys-research.png[PropertyKeys-research,width=800]
 CALL db.schema.visualization()
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::SchemaAfterAddingRelatiobnships.png[SchemaAfterAddingRelatiobnships,width=700]
@@ -238,7 +238,7 @@ WHERE m.title = 'Forrest Gump'
 RETURN p.name, rel.roles
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::ForrestGumpRoles.png[ForrestGumpRoles,width=600]
@@ -257,7 +257,7 @@ MATCH (p1:Person)-[rel:HELPED]-(p2:Person)
 RETURN p1.name, rel, p2.name
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::HELPEDProperties.png[HELPEDProperties,width=600]
@@ -284,7 +284,7 @@ WHERE m.title = 'Forrest Gump' AND p.name = 'Gary Sinise'
 SET rel.roles =['Lt. Dan Taylor']
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::UpdateGarySiniseRole.png[UpdateGarySiniseRole,width=400]
@@ -304,7 +304,7 @@ WHERE p1.name = 'Tom Hanks' AND p2.name = 'Gary Sinise'
 REMOVE rel.research
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::RemoveResearchProperty.png[RemoveResearchProperty,width=500]
@@ -324,7 +324,7 @@ WHERE m.title = 'Forrest Gump'
 return p, rel, m
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::GarySiniseRoleUpdate.png[GarySiniseRoleUpdate,width=800]

@@ -5,11 +5,11 @@
 
 Before you begin this exercise, make sure that you have performed the refactoring from Exercise 6.
 
-This is what you should see when you click the database icon image:database-icon.png[].
+This is what you will see when you click the database icon image:database-icon.png[].
 
 image::AfterExercise6.png[AfterExercise6,width=300,role=left]
 
-*If your database does not have the same nodes and relationships, you can execute these Cypher statements to reset your graph to what it should be before you start this exercise.*
+*If your database does not have the same nodes and relationships, you can execute these Cypher statements to reset your graph to what it must be before you start this exercise.*
 
 *Note*: To execute this Cypher code, you [.underline]#must# have the APOC library installed for your database.
 
@@ -55,7 +55,7 @@ MERGE (:Airport {code: airport})
 
 *Note*: You must use the "file:///" syntax for loading the data from the import folder.
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex7_LoadAirports.png[Ex7_LoadAirports,width=600]
@@ -82,7 +82,7 @@ MERGE (newFlight)-[:LANDS_IN]->(destination)
 
 *Note*: You must use the "file:///" syntax for loading the data from the import folder.
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex7_LoadFlights.png[Ex7_LoadFlights,width=500]
@@ -97,7 +97,7 @@ MATCH (f:Flight)
 SET f:Process
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex7_PrepareFlights.png[Ex7_PrepareFlights,width=300]
@@ -158,7 +158,7 @@ RETURN COUNT(*)
 )
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex7_RefactorAirportDay.png[Ex7_RefactorAirportDay,width=800]
@@ -173,7 +173,7 @@ MATCH (ad:AirportDay)
 SET ad:Process
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex7_PrepareAirportDays.png[Ex7_PrepareAirportDays,width=300]
@@ -189,7 +189,7 @@ WHERE NOT TYPE(r) = 'HAS_DAY'
 DELETE r
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex7_DeleteSpecificRelationships.png[Ex7_DeleteSpecificRelationships,width=700]
@@ -230,7 +230,7 @@ CALL apoc.periodic.commit('
 ',{limit:500})
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex7_RefactorSpecificRelationships.png[Ex7_RefactorSpecificRelationships,width=800]
@@ -250,7 +250,7 @@ PROFILE MATCH (origin:Airport {code: 'LAS'})-[:HAS_DAY]->(:AirportDay
 RETURN origin, destination, flight
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex7_GeneralRelationshipsQuery.png[Ex7_GeneralRelationshipsQuery,width=200]
@@ -278,7 +278,7 @@ flight.departure, flight.arrival
 ORDER BY flight.date, flight.departure
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex7_SpecificRelationshipsQuery.png[Ex7_SpecificRelationshipsQuery,width=200]

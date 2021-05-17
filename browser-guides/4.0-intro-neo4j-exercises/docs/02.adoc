@@ -4,7 +4,7 @@
 
 Make sure you have the Movie database, which contains 171 nodes and 253 relationships.
 
-This is what you should see when you click the database icon:   
+This is what you will see when you click the database icon:
    
 image:InitialDatabase.png[InitialDatabase,width=300]
 
@@ -45,7 +45,7 @@ Go to the next page to start this exercise.
 MATCH (m:Movie {released:2003}) RETURN m
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::MoviesReleased2003_Nodes.png[MoviesReleased2003_Nodes,width=500]
@@ -59,7 +59,7 @@ image::MoviesReleased2003_Nodes.png[MoviesReleased2003_Nodes,width=500]
 *View the results you just viewed in Neo4j Browser as a table.*
 
 In the result pane, click the table icon in the left panel.
-You should see this table in the result pane:
+You will see this table in the result pane:
 
 [.thumb]
 image::MoviesReleased2003_Table.png[MoviesReleased2003_Table,width=600]
@@ -89,7 +89,7 @@ In the query editor pane, enter the Cypher query to retrieve the property keys f
 CALL db.propertyKeys()
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::call_db.PropertyKeys.png[call_db.PropertyKeys,width=400]
@@ -111,7 +111,7 @@ In the query editor pane, enter the Cypher query to retrieve all _Movie_ nodes f
 MATCH (m:Movie {released: 2006}) RETURN m.title
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::MoviesReleased2006_titles.png[MoviesReleased2006_titles,width=500]
@@ -140,7 +140,7 @@ In the query editor pane, enter the Cypher query to retrieve all _Movie_ nodes f
 MATCH (m:Movie) RETURN m.title, m.released, m.tagline
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::RetrieveTitleReleasedTagline.png[RetrieveTitleReleasedTagline,width=500]
@@ -158,7 +158,7 @@ image::RetrieveTitleReleasedTagline.png[RetrieveTitleReleasedTagline,width=500]
 MATCH (m:Movie) RETURN m.title AS `movie title`, m.released AS released, m.tagline AS tagLine
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::UsingAliases.png[UsingAliases,width=500]

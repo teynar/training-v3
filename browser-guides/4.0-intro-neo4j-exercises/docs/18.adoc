@@ -32,7 +32,7 @@ http://data.neo4j.com/v4.0-intro-neo4j/crimes-dataset.zip
 
 . In Neo4j Desktop for the project's DBMS you are using, select the 3 dots to the right of the DBMS.
 . Select *Open Folder > Import*.
-. Unzip the contents of the *crimes-dataset.zip* to the *import* folder. The *import* folder should contain six CSV files.
+. Unzip the contents of the *crimes-dataset.zip* to the *import* folder. The *import* folder will contain six CSV files.
 
 [.thumb]
 image::CSVFilesInImportFolder.png[CSVFilesInImportFolder,width=600]
@@ -55,7 +55,7 @@ Make sure you understand the headers and how they will be used for the import.*
 
 In Neo4j Desktop for the project you are using, do the following:
 
-. For the project's DBMS that should be running, select the 3 dots to the right of the DBMS.
+. For the project's DBMS that is running, select the 3 dots to the right of the DBMS.
 . Select *Open Terminal*.
 . Navigate to the *import* folder.
 
@@ -90,7 +90,7 @@ image::TerminalImport.png[TerminalImport,width=700]
              --trim-strings=true
 ----
 
-This is what you should enter (ensure there are no newline characters):
+This is what you must enter (ensure there are no newline characters):
 
 [source]
 ----
@@ -99,19 +99,19 @@ This is what you should enter (ensure there are no newline characters):
 
 *Note*: Depending on your system, it could take up to 10 minutes to load this data.
 
-This is what you should see in the terminal window if all goes well:
+This is what you will see in the terminal window if all goes well:
 
 [.thumb]
 image::adminImportDone.png[adminImportDone,width=700]
 
 Examine the contents of *import.out*. Did it execute without error?
 
-Here is what the beginning of *import.out* file should look like:
+Here is what the beginning of *import.out* file will look like:
 
 [.thumb]
 image::importout1.png[importout1,width=600]
 
-Here is what the end of *import.out* file should look like:
+Here is what the end of *import.out* file will look like:
 
 [.thumb]
 image::importout2.png[importout2,width=600]
@@ -142,7 +142,7 @@ Enter the following in the query edit pane:
 :use crimes
 ----
 
-The database information should now look as follows:
+The database information will now look as follows:
 
 [.thumb]
 image::Afteradmin-toolImport.png[Afteradmin-toolImport,width=800]

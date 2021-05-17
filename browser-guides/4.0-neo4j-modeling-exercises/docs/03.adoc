@@ -5,11 +5,11 @@
 
 Before you begin this exercise, make sure that you have loaded the *flights_2019_1k* data in the previous exercise.
 
-This is what you should see when you click the database icon image:database-icon.png[].
+This is what you will see when you click the database icon image:database-icon.png[].
 
 image::AfterExercise2.png[AfterExercise2,width=300,role=left]
 
-*If your database does not have the same nodes and relationships, you can execute these Cypher statements to reset your graph to what it should be before you start this exercise:*
+*If your database does not have the same nodes and relationships, you can execute these Cypher statements to reset your graph to what it must be before you start this exercise:*
 
 [source,Cypher]
 ----
@@ -50,7 +50,7 @@ WHERE destination.code = 'LAS'
 RETURN origin, destination, c
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex3_Profile1.png[Ex3_Profile1,width=200]
@@ -74,7 +74,7 @@ WHERE connection.airline = 'WN' AND connection.flightNumber = '1016'
 RETURN origin.code, destination.code, connection.date, connection.departure, connection.arrival
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex3_Profile2.png[Ex3_Profile2,width=200]

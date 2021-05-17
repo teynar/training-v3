@@ -37,7 +37,7 @@ Assuming you have uncompressed the ZIP file for this course, copy the neo4j-impl
 . Click the *Open Folder* button. This opens a file browser for the database.
 . Copy the neo4j-implementing-modeling\*.csv files to the *import* folder.
 
-The *import* folder should appear as follows:
+The *import* folder will appear as follows:
 
 image::ImportFolder.png[ImportFolder,width=400]
 

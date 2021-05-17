@@ -4,7 +4,7 @@
 
 Make sure you have the Movie database, which contains 171 nodes and 253 relationships.
 
-This is what you should see when you click the database icon:
+This is what you will see when you click the database icon:
 
 image:InitialDatabase.png[InitialDatabase,width=300]
 
@@ -50,7 +50,7 @@ WHERE a.name = 'Gene Hackman'
 RETURN m.title as movie, d.name AS director , a2.name AS `co-actors`
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::GeneHackmanMoviesWithDirectorAndCoActors.png[GeneHackmanMoviesWithDirectorAndCoActors,width=600]
@@ -74,7 +74,7 @@ WHERE p1.name = 'James Thompson'
 RETURN p1, p2
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::JamesThompsonFollows.png[JamesThompsonFollows,width=500]
@@ -94,7 +94,7 @@ WHERE p1.name = 'James Thompson'
 RETURN p1, p2
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::JamesThompson3Hop.png[JamesThompson3Hop,width=500]
@@ -116,7 +116,7 @@ WHERE p1.name = 'James Thompson'
 RETURN p1, p2
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::JamesThompson1And2Hops.png[JamesThompson1And2Hops,width=500]
@@ -137,7 +137,7 @@ WHERE p1.name = 'James Thompson'
 RETURN p1, p2
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::JamesThompsonAllHops.png[JamesThompsonAllHops,width=500]
@@ -158,7 +158,7 @@ OPTIONAL MATCH (p)-[:DIRECTED]->(m:Movie)
 RETURN p.name, m.title
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::OptionalMatch.png[OptionalMatch,width=600]

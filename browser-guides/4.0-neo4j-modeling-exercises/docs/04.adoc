@@ -5,11 +5,11 @@
 
 Before you begin this exercise, make sure that you have loaded the *flights_2019_1k* data in Exercise 2.
 
-This is what you should see when you click the database icon image:database-icon.png[].
+This is what you will see when you click the database icon image:database-icon.png[].
 
 image::AfterExercise2.png[AfterExercise2,width=300,role=left]
 
-*If your database does not have the same nodes and relationships, you can execute these Cypher statements to reset your graph to what it should be before you start this exercise.*
+*If your database does not have the same nodes and relationships, you can execute these Cypher statements to reset your graph to what it must be before you start this exercise.*
 
 [source,Cypher]
 ----
@@ -48,7 +48,7 @@ Go to the next page to start this exercise.
 CREATE INDEX Airport_code_index FOR (a:Airport) ON (a.code)
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex4_AirportCodeIndex.png[Ex4_AirportCodeIndex,width=500]
@@ -76,7 +76,7 @@ CREATE CONSTRAINT Flight_flightId_constraint ON (f:Flight)
        ASSERT f.flightId IS UNIQUE
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex4_FlightIdConstraint.png[Ex4_FlightIdConstraint,width=500]
@@ -95,7 +95,7 @@ image::Ex4_FlightIdConstraint.png[Ex4_FlightIdConstraint,width=500]
 CREATE INDEX Flight_number_index FOR (f:Flight) ON (f.number)
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex4_FlightNumberIndex.png[Ex4_FlightNumberIndex,width=500]
@@ -141,7 +141,7 @@ MERGE (origin)<-[:ORIGINATES_FROM]-(newFlight)
 MERGE (newFlight)-[:LANDS_IN]->(destination)
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex4_Refactor.png[Ex4_Refactor,width=500]
@@ -173,7 +173,7 @@ WHERE f.flightId ENDS WITH 'LAS'
 RETURN f.flightId
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex4_Profile1.png[Ex4_Profile1,width=200]
@@ -207,7 +207,7 @@ WHERE flight.airline = 'WN' AND
       flight.number = '1016' RETURN origin, destination, flight
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex4_Profile2.png[Ex4_Profile2,width=200]
@@ -229,7 +229,7 @@ MATCH ()-[connection:CONNECTED_TO]->()
 DELETE connection
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex4_DeleteRelationships.png[Ex4_DeleteRelationships,width=400]

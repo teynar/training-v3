@@ -4,7 +4,7 @@
 
 Make sure you have the Movie database, which contains 171 nodes and 253 relationships.
 
-This is what you should see when you click the database icon:   
+This is what you will see when you click the database icon:
    
 image:InitialDatabase.png[InitialDatabase,width=300]
 
@@ -62,7 +62,7 @@ WHERE a.name = 'Tom Cruise'
 RETURN m.title as Movie
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::TomCruiseMovies.png[TomCruiseMovies,width=500]
@@ -83,7 +83,7 @@ WHERE a.born >= 1970 AND a.born < 1980
 RETURN a.name as Name, a.born as `Year Born`
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::SeventiesActors.png[SeventiesActors,width=700]
@@ -104,7 +104,7 @@ WHERE a.born > 1960 AND m.title = 'The Matrix'
 RETURN a.name as Name, a.born as `Year Born`
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::MatrixYoungerActors.png[MatrixYoungerActors,width=500]
@@ -124,7 +124,7 @@ WHERE m:Movie AND m.released = 2000
 RETURN m.title
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::MatchMovies2000.png[MatchMovies2000,width=500]
@@ -144,7 +144,7 @@ WHERE a:Person AND type(rel) = 'WROTE' AND m:Movie
 RETURN a.name as Name, m.title as Movie
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::MatchWritersWhere.png[MatchWritersWhere,width=800]
@@ -166,7 +166,7 @@ WHERE NOT exists(a.born)
 RETURN a.name as Name
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::NoYearBorn.png[NoYearBorn,width=600]
@@ -188,7 +188,7 @@ WHERE exists(rel.rating)
 RETURN a.name as Name, m.title as Movie, rel.rating as Rating
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::RelationshipsWithRatings.png[RelationshipsWithRatings,width=800]
@@ -210,7 +210,7 @@ WHERE a.name STARTS WITH 'James'
 RETURN a.name
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::ActorsNamedJames.png[ActorsNamedJames,width=600]
@@ -232,7 +232,7 @@ WHERE toLower(r.summary) CONTAINS 'fun'
 RETURN  m.title as Movie, r.summary as Review, r.rating as Rating
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::ReviewsWithFun.png[ReviewsWithFun,width=600]
@@ -261,7 +261,7 @@ WHERE NOT ((a)-[:DIRECTED]->(:Movie))
 RETURN a.name, m.title
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::ProducersThatAreNotDirectors.png[ProducersThatAreNotDirectors,width=500]
@@ -281,7 +281,7 @@ WHERE exists( (a2)-[:DIRECTED]->(m) )
 RETURN  a1.name as Actor, a2.name as `Actor/Director`, m.title as Movie
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::ActorsAsDirectors.png[ActorsAsDirectors,width=600]
@@ -315,7 +315,7 @@ WHERE m.released IN [2000, 2004, 2008]
 RETURN m.title, m.released
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::MoviesInList.png[MoviesInList,width=500]
@@ -335,7 +335,7 @@ WHERE m.title in r.roles
 RETURN  m.title as Movie, a.name as Actor
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::RoleNameIsMovieName.png[RoleNameIsMovieName,width=600]

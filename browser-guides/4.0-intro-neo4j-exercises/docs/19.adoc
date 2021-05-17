@@ -60,7 +60,7 @@ image::groovyInstalled.png[groovyInstalled,width=700]
 
 == Exercise 19.3: Modify the groovy file to use the Neo4j RDBMS credentials (Instructions/Solution)
 
-. Here is the *import.groovy* file that you should place somewhere on your system:
+. Here is the *import.groovy* file that you must place somewhere on your system:
 +
 [source]
 ----
@@ -113,7 +113,7 @@ In the same terminal window:
 
 . Type: groovy import.groovy
 
-You should see something like this:
+You will see something like this:
 
 [.thumb]
 image::RunGroovy.png[RunGroovy,width=700]
@@ -122,7 +122,7 @@ image::RunGroovy.png[RunGroovy,width=700]
 
 In Neo4j Browser, confirm that the database was populated.
 
-You should see this in Neo4j Browser:
+You will see this in Neo4j Browser:
 
 [.thumb]
 image::AfterAppImport.png[AfterAppImport,width=300]

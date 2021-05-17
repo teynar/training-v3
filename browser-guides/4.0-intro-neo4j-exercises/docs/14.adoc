@@ -5,11 +5,11 @@
 
 Make sure you have the Movie database, which contains 176 nodes and 257 relationships.
 
-This is what you should see when you click the database icon:
+This is what you will see when you click the database icon:
 
 image::AfterExercise13.png[AfterExercise13,width=300]
 
-If your database does not have this number of nodes and relationships, you should do the following in Neo4j Browser to recreate the database (assuming you are using the _neo4j_ database):
+If your database does not have this number of nodes and relationships, you must do the following in Neo4j Browser to recreate the database (assuming you are using the _neo4j_ database):
 
 [source, cypher]
 ----
@@ -50,7 +50,7 @@ Go to the next page to start this exercise.
 CREATE INDEX PersonBornIndex FOR (p:Person) ON (p.born)
 ----
 
-The result should be:
+The result will be:
 
 [.thumb]
 image::CreateIndex.png[CreateIndex,width=500]
@@ -74,7 +74,7 @@ The other indexes have been created because you previously created a uniqueness 
 CALL db.indexes()
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::ViewIndexes.png[ViewIndexes,width=800]
@@ -94,7 +94,7 @@ image::ViewIndexes.png[ViewIndexes,width=800]
 DROP INDEX PersonBornIndex
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::DropIndex.png[DropIndex,width=500]
@@ -112,7 +112,7 @@ image::DropIndex.png[DropIndex,width=500]
 CALL db.index.fulltext.createNodeIndex('MovieTaglineFTIndex',['Movie'], ['tagline'])
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::CreateFTIndex.png[CreateFTIndex,width=500]
@@ -130,7 +130,7 @@ image::CreateFTIndex.png[CreateFTIndex,width=500]
 CALL db.indexes()
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::ViewIndexes2.png[ViewIndexes2,width=800]
@@ -153,7 +153,7 @@ CALL db.index.fulltext.queryNodes('MovieTaglineFTIndex', 'real OR world') YIELD 
 RETURN node.title, node.tagline
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::UseFTIndex.png[UseFTIndex,width=600]
@@ -166,7 +166,7 @@ CALL db.index.fulltext.queryNodes('MovieTaglineFTIndex', 'real AND world') YIELD
 RETURN node.title, node.tagline
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::UseFTIndex2.png[UseFTIndex2,width=800]
@@ -189,7 +189,7 @@ image::UseFTIndex2.png[UseFTIndex2,width=800]
 CALL db.index.fulltext.drop('MovieTaglineFTIndex')
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::DropFTIndex.png[DropFTIndex,width=500]

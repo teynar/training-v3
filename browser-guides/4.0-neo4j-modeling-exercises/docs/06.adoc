@@ -5,11 +5,11 @@
 
 Before you begin this exercise, make sure that you have performed the refactoring from Exercise 5.
 
-This is what you should see when you click the database icon image:database-icon.png[].
+This is what you will see when you click the database icon image:database-icon.png[].
 
 image::AfterExercise5.png[AfterExercise5,width=300,role=left]
 
-*If your database does not have the same nodes and relationships, you can execute these Cypher statements to reset your graph to what it should be before you start this exercise.*
+*If your database does not have the same nodes and relationships, you can execute these Cypher statements to reset your graph to what it must be before you start this exercise.*
 
 *Note*: To execute this Cypher code, you [.underline]#must# have the APOC library installed for your database.
 
@@ -60,7 +60,7 @@ CALL apoc.create.relationship(startNode(hasDay),
 RETURN COUNT(*)
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex6_AddSpecificRelationships.png[Ex6_AddSpecificRelationships,width=600]
@@ -98,7 +98,7 @@ flight.departure, flight.arrival
 ORDER BY flight.date, flight.departure
 ----
 
-The result returned should be:
+The result returned will be:
 
 [.thumb]
 image::Ex6_FindFlightsJan3.png[Ex6_FindFlightsJan3,width=200]

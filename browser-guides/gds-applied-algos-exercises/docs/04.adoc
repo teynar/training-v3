@@ -76,7 +76,7 @@ LIMIT 50
 
 == Answer: Trusted users
 
-This is what the answer should look like:
+This is what the answer will look like:
 
 [source,Cypher]
 ----
