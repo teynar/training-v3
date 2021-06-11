@@ -478,7 +478,7 @@ endif::[]
 == Neo4j Sandbox
 
 ifndef::env-slides[]
-The Neo4j Sandbox is way that you can begin development with Neo4j.
+The Neo4j Sandbox is a way that you can begin development with Neo4j.
 It is a free, temporary, and cloud-based instance of a Neo4j Server with its associated graph that you can access from any Web browser. The database in a Sandbox may be empty or it may be pre-populated. It is started automatically for you when you create the Sandbox.
 endif::[]
 
