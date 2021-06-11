@@ -227,7 +227,7 @@ image::AccessibilityOfData.png[AccessibilityOfData,width=900,align=center]
 Neo4j allows you to put data in labels, properties, and relationship types.
 In most cases, there is a way you can model your graph so that data being queried is in any one of these three locations.
 
-When designing or refactoring a model, you can estimate performance by checking how “accessible” the data ia that represents the important queries of your application.
+When designing or refactoring a model, you can estimate performance by checking how “accessible” the data is that represents the important queries of your application.
 --
 
 [.one-third-two-thirds-column]
@@ -256,7 +256,7 @@ Neo4j is designed for easy traversal, so relationship types are also very cheap 
 In fact, we recommend using types in Cypher queries always, because the cost of the type lookup is minimal.
 And if you do not use a type name in your traversal path, you will likely use something even less accessible, like downstream properties.
 
-Downstream information such as labels and properties further down the traversal path are the most expensive thing to access. The further downstream, the more expensive the are.
+Downstream information such as labels and properties further down the traversal path are the most expensive thing to access. The further downstream, the more expensive they are.
 That is not to say they are necessarily deal-breakers, but elevating downstream data via a model change is one of the most reliable ways to improve query performance.
 For example, reduce how far downstream a query traversal must go to get the necessary data, or change the model so that the downstream data is available in a relationship type instead of a node label or property.
 
