@@ -171,12 +171,12 @@ endif::[]
 
 ifdef::backend-html5,env-slides[]
 [.center]
-video::GM9bB4ytGao[youtube,width=560,height=315]
+video::urO5FyP9PoI[youtube,width=560,height=315]
 endif::[]
 
 ifdef::backend-pdf,env-slides[]
 [.center]
-https://youtu.be/GM9bB4ytGao
+https://youtu.be/urO5FyP9PoI
 endif::[]
 
 === Querying a graph is intuitive in Cypher
