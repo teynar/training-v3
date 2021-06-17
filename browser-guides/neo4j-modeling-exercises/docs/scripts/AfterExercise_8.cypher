@@ -101,7 +101,7 @@ ON CREATE SET destinationAirportDay.date = flight.date
 
 MERGE (origin)-[:HAS_DAY]->(originAirportDay)
 MERGE (originAirportDay)<-[:ORIGINATES_FROM]-(flight)
-MERGE (flight)-[:LANDS_IN]-(destinationAirportDay)
+MERGE (flight)-[:LANDS_IN]->(destinationAirportDay)
 MERGE (destination)-[:HAS_DAY]->(destinationAirportDay)
 
 REMOVE flight:Process
