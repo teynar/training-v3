@@ -463,7 +463,7 @@ image::Subgraph2.png[Subgraph2,width=800,align=center]
 
 [.notes]
 --
-Some actor relationships have data for the roles property or summary property of the relationship. Note that in this text, the name of the relationship is not shown, but is it in the graph visualization.
+Some actor relationships have data for the roles property or summary property of the relationship. Note that in this text, the name of the relationship is not shown, but it is in the graph visualization.
 Later in this course, you will learn more about working with lists, which is what this data represents.
 
 The APOC library is very useful if you want to query the graph to obtain subgraphs.
@@ -568,13 +568,13 @@ RETURN a.name, m.title, m.released, w.name
 ----
 
 [.statement]
-Select the correct answer.
+Select the correct answers.
 
 [%interactive.answers]
 - [ ] The second line must be: `(m2:Movie)<-[:WROTE]-(w:Person)`.
 - [x] Add a comma after the first pattern in the `MATCH` clause.
 - [ ] The second line must be: `(m2:Movie)<-[:WROTE]-(a)`.
-- [ ] Add a `MATCH` clause at the beginning of the second line.
+- [x] Add a `MATCH` clause at the beginning of the second line.
 
 === Question 3
 
