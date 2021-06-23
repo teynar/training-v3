@@ -967,7 +967,7 @@ CALL {
 MATCH (m:Movie) WHERE m.releaseYear = $year RETURN collect(m) AS movies
 }
 CALL {
-MATCH (a:Actor) WHERE a.born > $year RETURN collect(DISTINCT a) AS actors }
+MATCH (a:Actor) WHERE a.born > $year RETURN collect(DISTINCT a) AS actors }
 RETURN movies, actors
 ----
 
