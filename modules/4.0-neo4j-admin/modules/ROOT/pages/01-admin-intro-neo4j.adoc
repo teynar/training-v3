@@ -52,7 +52,7 @@ Nodes are the main objects of a graph.
 [.notes]
 --
 We say this not because nodes contain more data than relationships--although they usually do--but because it is perfectly acceptable to have nodes without any relationships.
-Conversely,  is is [.underline]#not# possible to have a relationship without any nodes.
+Conversely,  it is [.underline]#not# possible to have a relationship without any nodes.
 
 Here we see that each node has a different color, perhaps to differentiate its type from another node.
 For example, the blue node represents a person and that person node has a name of Jane.
