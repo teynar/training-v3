@@ -231,7 +231,7 @@ RETURN m.title as movie , actor.name
 The first `MATCH` clause retrieves Val Kilmer pointing to the movie, _Top Gun_ using the _ACTED_IN_ relationship.
 The anchor of this `MATCH` clause is the _Val Kilmer_ _Person_ node.
 The second `MATCH` clause retrieves all _Person_ nodes that have the _ACTED_IN_ relationship with the movie, _Top Gun_.
-The anchor of the `MATCH` clause is the _Top Gun_ _Movie_node.
+The anchor of the `MATCH` clause is the _Top Gun_ _Movie_ node.
 
 When the query engine traverses the graph for these `MATCH` clauses, we see that the _ACTED_IN_ relationship is traversed twice.
 --
