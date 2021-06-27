@@ -368,7 +368,7 @@ Retrieve the paths of length 3 with the relationship, _:RELTYPE_ from _nodeA_ to
 ----
 
 [.statement]
-Retrieve the paths of lengths 1, 2, or 3 with the relationship, _:RELTYPE_ from _nodeA_ to _nodeB_, _nodeB_ to _nodeC_, as well as, _nodeC_ to _nodeD) (up to three hops):
+Retrieve the paths of lengths 1, 2, or 3 with the relationship, _:RELTYPE_ from _nodeA_ to _nodeB_, _nodeB_ to _nodeC_, as well as, _nodeC_ to _nodeD_) (up to three hops):
 
 [source,syntax,role=nocopy noplay]
 ----
@@ -580,7 +580,7 @@ Select the correct answer.
 
 [.statement]
 Suppose you have a graph of _Person_ nodes representing a social network graph.
-A _Person_ node can have a _IS_FRIENDS_WITH_ relationship with any other _Person_ node.
+A _Person_ node can have an _IS_FRIENDS_WITH_ relationship with any other _Person_ node.
 Like in Facebook, there can be a long path of connections between people.
 What Cypher `MATCH` clause would you use to find all people in this graph that are two to four hops away from each other?
 
