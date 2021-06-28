@@ -88,7 +88,7 @@ Suppose we want to ensure that every _Person_ node in the graph has a _born_ pro
 
 [source, cypher]
 ----
-CREATE CONSTRAINT PersonBornExistsConstraint ON (p:Person) ASSERT exists(p.born)
+CREATE CONSTRAINT PersonBornExistsConstraint ON (p:Person) ASSERT p.born IS NOT NULL
 ----
 
 What happens when you add the constraint? This is what you will see.
@@ -108,7 +108,7 @@ image::CreateBornExistsConstraintFailed.png[CreateBornExistsConstraintFailed,wid
 [source, cypher]
 ----
 MATCH (p:Person) 
-WHERE NOT exists(p.born)
+WHERE p.born IS NULL
 SET p.born = 0
 ----
 
@@ -127,7 +127,7 @@ image::AddBornProperty.png[AddBornProperty,width=500]
 
 [source, cypher]
 ----
-CREATE CONSTRAINT PersonBornExistsConstraint ON (p:Person) ASSERT exists(p.born)
+CREATE CONSTRAINT PersonBornExistsConstraint ON (p:Person) ASSERT p.born IS NOT NULL
 ----
 
 The result returned will be:
@@ -165,7 +165,7 @@ Suppose we want to ensure that every _ACTED_IN_ relationship must have a value f
 
 [source, cypher]
 ----
-CREATE CONSTRAINT ActedInRolesExistConstraint ON ()-[r:ACTED_IN]-() ASSERT exists(r.roles)
+CREATE CONSTRAINT ActedInRolesExistConstraint ON ()-[r:ACTED_IN]-() ASSERT r.roles IS NOT NULL
 ----
 
 The result returned will be:

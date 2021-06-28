@@ -279,7 +279,7 @@ You can test to see if the relationship exists before you create it as follows:
 MATCH (a:Person),(m:Movie)
 WHERE a.name = 'Christian Bale' AND
       m.title = 'Batman Begins' AND
-      NOT exists((a)-[:ACTED_IN]->(m))
+      ((a)-[:ACTED_IN]->(m)) IS NULL
 CREATE (a)-[rel:ACTED_IN]->(m)
 SET rel.roles = ['Bruce Wayne','Batman']
 RETURN a, rel, m

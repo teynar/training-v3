@@ -152,7 +152,7 @@ Here is an example for adding the existence constraint to the _tagline_ property
 --
 [source,Cypher,role=nocopy noplay]
 ----
-CREATE CONSTRAINT ExistsMovieTagline ON (m:Movie) ASSERT exists(m.tagline)
+CREATE CONSTRAINT ExistsMovieTagline ON (m:Movie) ASSERT m.tagline IS NOT NULL
 ----
 
 ifndef::env-slides[]
@@ -177,7 +177,7 @@ We know that in the _Movie_ graph, all _:REVIEWED_ relationships currently have 
 [source,Cypher,role=nocopy noplay]
 ----
 CREATE CONSTRAINT ExistsREVIEWEDRating
-       ON ()-[rel:REVIEWED]-() ASSERT exists(rel.rating)
+       ON ()-[rel:REVIEWED]-() ASSERT rel.rating IS NOT NULL
 ----
 
 Notice that when you create the constraint on a relationship, you need not specify the direction of the relationship.
@@ -309,7 +309,7 @@ If we set these properties for all nodes in the graph that do not have _born_ pr
 [source,Cypher,role=nocopy noplay]
 ----
 MATCH (p:Person) 
-WHERE NOT exists(p.born)
+WHERE p.born IS NULL
 SET p.born = 0
 ----
 

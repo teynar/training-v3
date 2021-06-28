@@ -192,7 +192,7 @@ Here is the query to retrieve the specified movies where we test the existence o
 [source,Cypher,role=noplay]
 ----
 MATCH (p:Person)-[:ACTED_IN]->(m:Movie)
-WHERE p.name='Jack Nicholson' AND exists(m.tagline)
+WHERE p.name='Jack Nicholson' AND m.tagline IS NOT NULL
 RETURN m.title, m.tagline
 ----
 
@@ -311,7 +311,7 @@ Next, we modify this query to exclude people who directed that particular movie:
 [source,Cypher,role=noplay]
 ----
 MATCH (p:Person)-[:WROTE]->(m:Movie)
-WHERE NOT exists( (p)-[:DIRECTED]->(m) )
+WHERE ( (p)-[:DIRECTED]->(m) ) IS NULL
 RETURN p.name, m.title
 ----
 
@@ -329,7 +329,7 @@ Here is another example where we want to find _Gene Hackman_ and the movies that
 ----
 MATCH (gene:Person)-[:ACTED_IN]->(m:Movie)<-[:ACTED_IN]-(other:Person)
 WHERE gene.name= 'Gene Hackman'
-AND exists( (other)-[:DIRECTED]->(m) )
+AND ( (other)-[:DIRECTED]->(m) ) IS NOT NULL
 RETURN  gene, other, m
 ----
 [.statement]

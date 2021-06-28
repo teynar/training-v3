@@ -162,7 +162,7 @@ You will write Cypher queries using a `WHERE` clause to test existence.
 [source, cypher]
 ----
 MATCH (a:Person)
-WHERE NOT exists(a.born)
+WHERE a.born IS NULL
 RETURN a.name as Name
 ----
 
@@ -184,7 +184,7 @@ You will write Cypher queries using a `WHERE` clause to test existence.
 [source, cypher]
 ----
 MATCH (a:Person)-[rel]->(m:Movie)
-WHERE exists(rel.rating)
+WHERE rel.rating IS NOT NULL
 RETURN a.name as Name, m.title as Movie, rel.rating as Rating
 ----
 
@@ -277,7 +277,7 @@ image::ProducersThatAreNotDirectors.png[ProducersThatAreNotDirectors,width=500]
 [source, cypher]
 ----
 MATCH (a1:Person)-[:ACTED_IN]->(m:Movie)<-[:ACTED_IN]-(a2:Person)
-WHERE exists( (a2)-[:DIRECTED]->(m) )
+WHERE ( (a2)-[:DIRECTED]->(m) ) IS NOT NULL
 RETURN  a1.name as Actor, a2.name as `Actor/Director`, m.title as Movie
 ----
 
