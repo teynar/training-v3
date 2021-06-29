@@ -35,7 +35,7 @@ Go to the next page to start this exercise.
 
 == Exercise 6.1:  Refactor the graph to change all `HAS_DAY` relationships to specific day relationships. (Instructions)
 
-Rather than having the `HAS_DAY` relationship from `Airport` nodes to `AirportDay` nodes, we want a specific relationship that will be `ON_yyyy-dd-mm`.
+Rather than having the `HAS_DAY` relationship from `Airport` nodes to `AirportDay` nodes, we want a specific relationship that will be `ON_yyyy-mm-dd`.
 The revised model is:
 
 image::Ex6_Model.png[Ex6_Model,600]

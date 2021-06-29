@@ -359,7 +359,7 @@ image::Refactor4Details.png[Refactor4Details,width=600,align=center]
 --
 In this case we are adding the _AirportDay_ node that will have date information.
 That way we do not have to go through the _Flight_ nodes to find a date.
-Just like the _Flight_ nodes, it will have a unique ID, _AirportDay.airportDayId_ so that it can used it in the query.
+Just like the _Flight_ nodes, it will have a unique ID, _AirportDay.airportDayId_ so that it can use it in the query.
 --
 
 [source,Cypher,role=nocopy noplay]
@@ -549,7 +549,7 @@ Estimated time to complete: 30 minutes.
 
 [.small]
 --
-We now have a model that is performs well for these questions:
+We now have a model that performs well for these questions:
 
 . What are the airports and flight information for flight number xx for airline yy?
 . Find all the flights going from xx to yy on the date zz.
@@ -802,7 +802,7 @@ ON CREATE SET destinationAirportDay.date = flight.date
 
 MERGE (origin)-[:HAS_DAY]->(originAirportDay)
 MERGE (originAirportDay)<-[:ORIGINATES_FROM]-(flight)
-MERGE (flight)-[:LANDS_IN]-(destinationAirportDay)
+MERGE (flight)-[:LANDS_IN]->(destinationAirportDay)
 MERGE (destination)-[:HAS_DAY]->(destinationAirportDay)
 
 REMOVE flight:Process
@@ -846,7 +846,7 @@ ON CREATE SET destinationAirportDay.date = flight.date
 
 MERGE (origin)-[:HAS_DAY]->(originAirportDay)
 MERGE (originAirportDay)<-[:ORIGINATES_FROM]-(flight)
-MERGE (flight)-[:LANDS_IN]-(destinationAirportDay)
+MERGE (flight)-[:LANDS_IN]->(destinationAirportDay)
 MERGE (destination)-[:HAS_DAY]->(destinationAirportDay)
 
 REMOVE flight:Process
