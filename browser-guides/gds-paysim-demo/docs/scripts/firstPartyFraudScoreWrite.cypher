@@ -1,5 +1,5 @@
 MATCH(c:Client) 
-WHERE c.firstPartyFraudScore IS NOT NULL
+WHERE exists(c.firstPartyFraudScore)
 WITH percentileCont(c.firstPartyFraudScore,$firstPartyFraudThreshold) 
     AS firstPartyFraudThreshold
 MATCH(c:Client)

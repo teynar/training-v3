@@ -249,7 +249,7 @@ extend type Customer {
     recommended: [Book] @cypher(statement: """
     MATCH (this)-[:PLACED]->(:Order)-[:CONTAINS]->(:Book)<-[:CONTAINS]-(:Order)<-[:PLACED]-(c:Customer)
     MATCH (c)-[:PLACED]->(:Order)-[:CONTAINS]->(rec:Book) 
-    WHERE ((this)-[:PLACED]->(:Order)-[:CONTAINS]->(rec)) IS NULL
+    WHERE NOT EXISTS((this)-[:PLACED]->(:Order)-[:CONTAINS]->(rec))
     RETURN rec
     """)
 }
@@ -310,7 +310,7 @@ extend type Customer {
     recommended(limit: Int = 3): [Book] @cypher(statement: """
     MATCH (this)-[:PLACED]->(:Order)-[:CONTAINS]->(:Book)<-[:CONTAINS]-(:Order)<-[:PLACED]-(c:Customer)
     MATCH (c)-[:PLACED]->(:Order)-[:CONTAINS]->(rec:Book) 
-    WHERE ((this)-[:PLACED]->(:Order)-[:CONTAINS]->(rec)) IS NULL
+    WHERE NOT EXISTS((this)-[:PLACED]->(:Order)-[:CONTAINS]->(rec))
     RETURN rec LIMIT $limit
     """)
 }

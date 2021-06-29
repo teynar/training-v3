@@ -1,6 +1,6 @@
 CALL gds.graph.create.cypher('Similarity',
 'MATCH(c:Client)
-    WHERE c.firstPartyFraudGroup IS NOT NULL
+    WHERE exists(c.firstPartyFraudGroup)
     RETURN id(c) AS id,labels(c) AS labels
 UNION
 MATCH(n)
@@ -8,6 +8,6 @@ MATCH(n)
     RETURN id(n) AS id,labels(n) AS labels',
 'MATCH(c:Client)
 -[:HAS_EMAIL|:HAS_PHONE|:HAS_SSN]->(ids)
-WHERE c.firstPartyFraudGroup IS NOT NULL
+WHERE exists(c.firstPartyFraudGroup)
 RETURN id(c) AS source,id(ids) AS target')
 YIELD graphName,nodeCount,relationshipCount,createMillis;

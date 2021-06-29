@@ -17,7 +17,7 @@ type Customer {
   username: String
   orders: [Order] @relationship(type: "PLACED", direction: OUT)
   reviews: [Review] @relationship(type: "WROTE", direction: OUT)
-  recommended(limit: Int = 3): [Book] @cypher(statement: "MATCH (this)-[:PLACED]->(:Order)-[:CONTAINS]->(:Book)<-[:CONTAINS]-(:Order)<-[:PLACED]-(c:Customer) MATCH (c)-[:PLACED]->(:Order)-[:CONTAINS]->(rec:Book) WHERE ((this)-[:PLACED]->(:Order)-[:CONTAINS]->(rec)) IS NULL RETURN rec LIMIT $limit")
+  recommended(limit: Int = 3): [Book] @cypher(statement: "MATCH (this)-[:PLACED]->(:Order)-[:CONTAINS]->(:Book)<-[:CONTAINS]-(:Order)<-[:PLACED]-(c:Customer) MATCH (c)-[:PLACED]->(:Order)-[:CONTAINS]->(rec:Book) WHERE NOT EXISTS((this)-[:PLACED]->(:Order)-[:CONTAINS]->(rec)) RETURN rec LIMIT $limit")
 }
 
 type Address {

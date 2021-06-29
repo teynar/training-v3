@@ -53,7 +53,7 @@ Single-property indexes are used for:
 * Range comparisons `>`,`+>=+`,`<`, `+<=+`
 * List membership `IN`
 * String comparisons `STARTS WITH`, `ENDS WITH`, `CONTAINS`
-* Existence checks `IS NOT NULL`
+* Existence checks `exists()`
 * Spatial distance searches `distance()`
 * Spatial bounding searches `point()`
 
