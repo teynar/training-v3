@@ -205,6 +205,9 @@ endif::[]
 
 image::MegsCoActors.png[MegsCoActors,width=400,align=center]
 
+An important thing to understand about multiple patterns in a single `MATCH` statement is that the query processor will never traverse a relationship more than once.
+That is why the _Meg Ryan_ node is not retrieved in the _other_ node retrievals. All other nodes of people who acted in that same movie are retrieved.
+
 == Traversal with patterns
 
 [.notes]
