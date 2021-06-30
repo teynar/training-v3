@@ -813,7 +813,7 @@ The `UNWIND` clause is frequently used when importing data into a graph.
 Cypher has a built-in `date()` function, as well as other temporal values and functions that you can use to calculate temporal values. You use a combination of numeric, temporal, spatial, list and string functions to calculate values that are useful to your application.
 For example, suppose you wanted to calculate the age of a _Person_ node, given a year they were born (the _born_ property must exist and have a value).
 
-Here is example Cypher to retrieve all actors from the graph, and if they have a value for _born_, calculate the _age_ value.
+Here is an example Cypher to retrieve all actors from the graph, and if they have a value for _born_, calculate the _age_ value.
 
 [source,Cypher,role=noplay]
 ----
