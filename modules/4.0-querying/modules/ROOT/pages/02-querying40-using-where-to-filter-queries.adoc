@@ -203,7 +203,7 @@ endif::[]
 image::JackNicholsonMoviesWithTaglines.png[JackNicholsonMoviesWithTaglines,width=1100,align=center]
 
 [IMPORTANT]
-In Neo4j 4.3, `exists()` has been deprecated and may not work in future releases. In this query you can use `AND m.tagline IS NOT NULL`
+In Neo4j 4.3, `exists()` has been deprecated and may not work in future releases, but it still works in 4.3. In Neo4j 4.3 and later you can use `AND m.tagline IS NOT NULL`
 
 == Testing strings
 

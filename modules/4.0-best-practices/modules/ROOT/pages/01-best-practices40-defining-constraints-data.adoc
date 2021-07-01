@@ -168,7 +168,7 @@ The constraint cannot be added to the graph because a node has been detected tha
 --
 
 [IMPORTANT]
-In Neo4j 4.3, `exists()` has been deprecated and may not work in future releases. In this Cypher you can use `CREATE CONSTRAINT ExistsMovieTagline ON (m:Movie) ASSERT m.tagline IS NOT NULL`.
+In Neo4j 4.3, `exists()` has been deprecated and may not work in future releases, but it still works in 4.3. In Neo4j 4.3 and later you can use `CREATE CONSTRAINT ExistsMovieTagline ON (m:Movie) ASSERT m.tagline IS NOT NULL`.
 
 === Example: Adding the existence constraint
 
