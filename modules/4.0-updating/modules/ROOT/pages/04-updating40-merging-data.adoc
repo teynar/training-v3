@@ -409,8 +409,7 @@ Select the correct answer.
 === Question 2
 
 [.statement]
-Given this `MERGE` clause.
-Suppose that the _p_ and _m_ nodes exist in the graph.
+Given this `MERGE` clause, suppose that the _p_ and _m_ nodes exist in the graph.
 What does this code do?
 
 [source,Cypher,role=nocopy noplay]
@@ -431,8 +430,7 @@ Select the correct answers.
 === Question 3
 
 [.statement]
-Given this `MERGE` clause.
-Suppose that the _p_ and _m_ nodes exist in the graph, but you do not know whether the relationship exists.
+Given this `MERGE` clause, suppose that the _p_ and _m_ nodes exist in the graph, but you do not know whether the relationship exists.
 What are your options to process this `MERGE` clause?
 
 [source,Cypher,role=nocopy noplay]
