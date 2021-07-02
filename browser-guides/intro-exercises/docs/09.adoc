@@ -73,7 +73,6 @@ image::CreateForrestGump2.png[CreateForrestGump2,width=700]
 [source, cypher]
 ----
 MERGE (m:Movie {title: 'Forrest Gump'})
-ON CREATE SET m.released = 1994
 ON MATCH SET m.tagline = "Life is like a box of chocolates...you never know what you're gonna get."
 RETURN m
 ----
