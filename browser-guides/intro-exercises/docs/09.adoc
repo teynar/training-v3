@@ -336,17 +336,17 @@ The result returned should be:
 [.thumb]
 image::ActedInForrestGump.png[ActedInForrestGump,width=400]
 
-== Exercise 9.15: Modify the _role_ relationship property (Instructions)
+== Exercise 9.15: Modify the _roles_ relationship property (Instructions)
 
-*Modify the relationship property, _role_ for their roles in _Forrest Gump_:*
+*Modify the relationship property, _roles_ for their roles in _Forrest Gump_:*
 
 * *Tom Hanks is Forrest Gump*
 * *Gary Sinise is Lt. Dan Taylor*
 * *Robin Wright is Jenny Curran*
 
-== Exercise 9.15: Modify the _role_ relationship property (Solution)
+== Exercise 9.15: Modify the _roles_ relationship property (Solution)
 
-*Modify the relationship property, _role_ for their roles in _Forrest Gump_:*
+*Modify the relationship property, _roles_ for their roles in _Forrest Gump_:*
 
 * *Tom Hanks is Forrest Gump*
 * *Gary Sinise is Lt. Dan Taylor*

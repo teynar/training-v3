@@ -37,7 +37,7 @@ You will see how in your real application, you must take care not to create dupl
 * *Exercise 12.12*: Delete the _Forrest Gump_ node.
 * *Exercise 12.13*: Use `MERGE` to create the _DIRECTED_ relationship.
 * *Exercise 12.14*: Use `MERGE` to create the _ACTED_IN_ relationship.
-* *Exercise 12.15*: Modify the _role_ relationship property.
+* *Exercise 12.15*: Modify the _roles_ relationship property.
 * *Exercise 12.16*: Verify the update.
 
 Go to the next page to start this exercise.
@@ -342,7 +342,7 @@ image::ActedInForrestGump.png[ActedInForrestGump,width=500]
 
 == Exercise 12.15: Modify the _role_ relationship property (Instructions)
 
-*Modify the relationship property, _role_ for their roles in _Forrest Gump_:*
+*Modify the relationship property, _roles_ for their roles in _Forrest Gump_:*
 
 * *Tom Hanks is Forrest Gump*
 * *Gary Sinise is Lt. Dan Taylor*
@@ -350,9 +350,9 @@ image::ActedInForrestGump.png[ActedInForrestGump,width=500]
 
 *Hint:* Use the `CASE` clause.
 
-== Exercise 12.15: Modify the _role_ relationship property (Solution)
+== Exercise 12.15: Modify the _roles_ relationship property (Solution)
 
-*Modify the relationship property, _role_ for their roles in _Forrest Gump_:*
+*Modify the relationship property, _roles_ for their roles in _Forrest Gump_:*
 
 * *Tom Hanks is Forrest Gump*
 * *Gary Sinise is Lt. Dan Taylor*
