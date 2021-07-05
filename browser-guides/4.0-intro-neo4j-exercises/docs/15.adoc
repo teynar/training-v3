@@ -230,7 +230,7 @@ WHERE m.released = $year AND
 RETURN  DISTINCT r.name, m.title, m.released, rel.rating, collect(a.name)
 ----
 
-When The result returned will be:
+The result returned will be:
 
 [.thumb]
 image::EXPLAIN.png[EXPLAIN,width=250]

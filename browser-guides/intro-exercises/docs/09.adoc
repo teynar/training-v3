@@ -36,7 +36,7 @@ You will see how in your real application, you should take care not to create du
 * *Exercise 9.12*: Delete the _Forrest Gump_ node.
 * *Exercise 9.13*: Use `MERGE` to create the _DIRECTED_ relationship.
 * *Exercise 9.14*: Use `MERGE` to create the _ACTED_IN_ relationship.
-* *Exercise 9.15*: Modify the _role_ relationship property.
+* *Exercise 9.15*: Modify the _roles_ relationship property.
 
 Go to the next page to start this exercise.
 

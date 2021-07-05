@@ -237,7 +237,7 @@ image::CreateFullTextIndex2.png[CreateFullTextIndex2,width=1300,align=center]
 [.notes]
 --
 Just as you can create a full-text schema index on properties of nodes, you can create a full-text schema index on properties of relationships.
-To do this you use `CALL db.indexfulltext.createRelationshipIndex()`.
+To do this you use `CALL db.index.fulltext.createRelationshipIndex()`.
 --
 
 == Using a full-text schema index

@@ -386,7 +386,7 @@ Here is a very high-level list of some of the best practices you will aim for in
 * Create and use indexes effectively.
 * Use parameters rather than literals in your queries.
 * Specify node labels in `MATCH` clauses.
-* Reduce the number of rows passed processed.
+* Reduce the number of rows processed.
 * Aggregate early in the query, rather than in the `RETURN` clause, if possible.
 * Use `DISTINCT` and `LIMIT` early in the query to reduce the number of rows processed.
 * Defer property access until you really need it.

@@ -340,7 +340,7 @@ The result returned will be:
 [.thumb]
 image::ActedInForrestGump.png[ActedInForrestGump,width=500]
 
-== Exercise 12.15: Modify the _role_ relationship property (Instructions)
+== Exercise 12.15: Modify the _roles_ relationship property (Instructions)
 
 *Modify the relationship property, _roles_ for their roles in _Forrest Gump_:*
 
