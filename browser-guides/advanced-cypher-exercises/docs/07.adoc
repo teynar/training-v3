@@ -87,7 +87,7 @@ Here is the code:
 [source, cypher]
 ----
 LOAD CSV WITH HEADERS FROM 'https://data.neo4j.com/advanced-cypher/movies2.csv' AS row
-MERGE (m:Movie {id:toInteger(row.movieId)})
+MERGE (m:Movie {id: toInteger(row.movieId)})
    ON CREATE SET m.title=row.title, m.avgVote=toFloat(row.avgVote),
       m.releaseYear=toInteger(row.releaseYear), m.genres=split(row.genres,":")
 MERGE (p:Person {id: toInteger(row.personId)})
@@ -119,7 +119,7 @@ Here is the solution code:
 [source, cypher]
 ----
 PROFILE USING PERIODIC COMMIT 500 LOAD CSV WITH HEADERS FROM 'https://data.neo4j.com/advanced-cypher/movies2.csv' AS row
-MERGE (m:Movie {id:toInteger(row.movieId)})
+MERGE (m:Movie {id: toInteger(row.movieId)})
    ON CREATE SET m.title=row.title, m.avgVote=toFloat(row.avgVote),
       m.releaseYear=toInteger(row.releaseYear), m.genres=split(row.genres,":")
 MERGE (p:Person {id: toInteger(row.personId)})
@@ -173,7 +173,7 @@ Here is the solution code:
 [source, cypher]
 ----
 PROFILE USING PERIODIC COMMIT 500 LOAD CSV WITH HEADERS FROM 'https://data.neo4j.com/advanced-cypher/movies2.csv' AS row
-MERGE (m:Movie {id:toInteger(row.movieId)})
+MERGE (m:Movie {id: toInteger(row.movieId)})
    ON CREATE SET m.title=row.title, m.avgVote=toFloat(row.avgVote),
       m.releaseYear=toInteger(row.releaseYear), m.genres=split(row.genres,":")
 MERGE (p:Person {id: toInteger(row.personId)})
@@ -218,7 +218,7 @@ This is because the `ORDER BY` in the `RETURN` clause requires eager operators t
 [source, cypher]
 ----
 PROFILE USING PERIODIC COMMIT 500 LOAD CSV WITH HEADERS FROM 'https://data.neo4j.com/advanced-cypher/movies2.csv' AS row
-MERGE (m:Movie {id:toInteger(row.movieId)})
+MERGE (m:Movie {id: toInteger(row.movieId)})
    ON CREATE SET m.title=row.title, m.avgVote=toFloat(row.avgVote),
       m.releaseYear=toInteger(row.releaseYear), m.genres=split(row.genres,":")
 MERGE (p:Person {id: toInteger(row.personId)})
