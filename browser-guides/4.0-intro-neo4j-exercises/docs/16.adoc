@@ -173,11 +173,11 @@ image::LoadAndFormatMovies.png[LoadAndFormatMovies,width=600]
 
 == Exercise 16.6: Load the data into your graph (Instructions)
 
-*Load the data into your graph where you will create  Movie nodes with the properties: _title_, _released_, _tagline_, and _movieId_.*
+*Load the data into your graph where you will create  Movie nodes with the properties: _title_, _released_, _tagLine_, and _movieId_.*
 
 == Exercise 16.6: Load the data into your graph (Solution)
 
-*Load the data into your graph where you will create  Movie nodes with the properties: _title_, _released_, _tagline_, and _movieId_.*
+*Load the data into your graph where you will create  Movie nodes with the properties: _title_, _released_, _tagLine_, and _movieId_.*
 
 [source, cypher]
 ----
@@ -188,7 +188,7 @@ MERGE (m:Movie {title: line.title})
 ON CREATE
   SET m.released = toInteger(trim(line.year)),
       m.movieId = line.id,
-      m.tagline = line.tagLine
+      m.tagLine = line.tagLine
 ----
 
 The result returned will be:
