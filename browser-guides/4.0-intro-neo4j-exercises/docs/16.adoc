@@ -188,7 +188,7 @@ MERGE (m:Movie {title: line.title})
 ON CREATE
   SET m.released = toInteger(trim(line.year)),
       m.movieId = line.id,
-      m.tagline = line.tagLine
+      m.tagline = trim(line.tagLine)
 ----
 
 The result returned will be:
