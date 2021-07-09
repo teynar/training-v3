@@ -682,7 +682,7 @@ Developers will have a better idea of the challenges with implementing the model
 Stakeholders would have a better idea of how many products and parts, how often prices change etc.
 
 Here, we are only looking for conceptual scalability concerns.
-We also do this at the level of individual query performance during the implemtation of the graph data model.
+We also do this at the level of individual query performance during the implementation of the graph data model.
 
 --
 [.quiz]
