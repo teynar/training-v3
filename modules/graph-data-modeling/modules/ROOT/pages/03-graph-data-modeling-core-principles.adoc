@@ -176,7 +176,7 @@ image::TypesVSProperties.png[TypesVSProperties,width=900,align=center]
 Both of these models represent the same idea in different ways.
 Neither is strictly superior; both are optimized for a certain kind of question.
 
-For example, if you want to find all LOVES relationships, but ignore the weaker LIKES ones, the top model is best.
+For example, if you want to find all LOVES relationships, but ignore the weaker LIKES ones, the top model is better.
 Traversal will not involve any gather-and-inspect.
 On the other hand, if you want to rank the strength of all relationships, the below model is better.
 The Cypher string required is much simpler, and we know there will not be any gather-and-inspect discards because we want everything anyway.
