@@ -271,11 +271,11 @@ If you specify a direction for the relationship, only one result is returned.
 
 Next, you will modify existing properties for a relationship and also remove them.
 
-*Modify the _role_ that _Gary Sinise_ played in the movie, _Forrest Gump_ from _Lieutenant Dan Taylor_ to _Lt. Dan Taylor_.*
+*Modify the _roles_ that _Gary Sinise_ played in the movie, _Forrest Gump_ from _Lieutenant Dan Taylor_ to _Lt. Dan Taylor_.*
 
 == Exercise 9.11: Modify a property of a relationship (Solution)
 
-*Modify the _role_ that _Gary Sinise_ played in the movie, _Forrest Gump_ from _Lieutenant Dan Taylor_ to _Lt. Dan Taylor_.*
+*Modify the _roles_ that _Gary Sinise_ played in the movie, _Forrest Gump_ from _Lieutenant Dan Taylor_ to _Lt. Dan Taylor_.*
 
 [source, cypher]
 ----

@@ -225,7 +225,7 @@ image::Entities.png[Entities,width=100,align=center]
 * The generic nouns will often become labels in your model.
 * Proper nouns will often become values for properties.
 * Use domain knowledge to decide if entities need to be further grouped or differentiated.
-* In Neo4j Enterprise Edition, there is no limit to the number entities (nodes) in the graph. (Community Edition has a limit of 34B)
+* In Neo4j Enterprise Edition, there is no limit to the number entities (nodes) in the graph. (Community Edition has a limit of 34 billion)
 --
 
 [.notes]
@@ -682,7 +682,7 @@ Developers will have a better idea of the challenges with implementing the model
 Stakeholders would have a better idea of how many products and parts, how often prices change etc.
 
 Here, we are only looking for conceptual scalability concerns.
-We also do this at the level of individual query performance during the implemtation of the graph data model.
+We also do this at the level of individual query performance during the implementation of the graph data model.
 
 --
 [.quiz]

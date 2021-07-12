@@ -58,7 +58,7 @@ During the execution of a `MATCH` clause, you can specify that you want some int
 You use the `WITH` clause to perform intermediate processing that is not possible in a `RETURN` clause.
 
 Here is an example where we start the query processing by retrieving all actors and their movies. 
-During the query processing, want to only return actors that have 2 or 3 movies.
+During the query processing, we want to only return actors that have 2 or 3 movies.
 All other actors and the aggregated results are filtered out. This type of query is a replacement for SQL's "HAVING" clause.
 The `WITH` clause does the counting and collecting, and the intermediate result is used in the subsequent `WHERE` clause to test.
 --

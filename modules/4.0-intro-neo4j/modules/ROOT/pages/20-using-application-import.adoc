@@ -50,7 +50,7 @@ With an application that uses these drivers, you can control:
 * How large a transaction will be (batching).
 * How much concurrent processing you want to implement (parallel processing).
 
-You can read more about specific drivers in the https://neo4j.com/developer/language-guides/[Developer pages for Neo4j Drivers]
+You can read more about specific drivers in the https://neo4j.com/developer/language-guides/[Developer pages for Neo4j Drivers].
 
 == Synchronous or asynchronous access?
 

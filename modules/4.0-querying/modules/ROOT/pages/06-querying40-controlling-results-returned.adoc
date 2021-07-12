@@ -265,7 +265,7 @@ Here is one way to perform this query:
 MATCH (m:Movie)
 WITH m LIMIT 5
 MATCH path = (m)<-[:ACTED_IN]-(:Person)
-WITH m, collect (path) AS paths
+WITH m, collect(path) AS paths
 RETURN m, paths[0..2]
 ----
 
