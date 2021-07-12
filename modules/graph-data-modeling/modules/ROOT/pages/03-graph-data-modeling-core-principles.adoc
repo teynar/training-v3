@@ -299,7 +299,7 @@ Select the correct answers.
 === Question 3
 
 [.statement]
-Which data must be most accessible for your queries?
+Which data is most accessible for your queries?
 
 [.statement]
 Select the correct answers.
