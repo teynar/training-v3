@@ -94,7 +94,7 @@ For modeling complex data, the previous example with all properties in a node an
 In general, you use fanout to do one of two things.
 
 . Reduce duplication of properties. Instead of having a repeated property on every node, you can instead have all of those nodes connected to a shared node with that property.  This can make data updates massively easier.
-. Reduce gather-and-inspect behavior during a traversal.  In the *one node* example, if we want to find every address in the city of Axebridge, we would need to check the properties on *every* Person node, then discard the irelevant nodes.  This is grossly inefficient.  In this multiple node case, this is a simple matter of locating the singular Axebridge node, and traversing to every Address node connected to it.  This model has no “wasted” hops.
+. Reduce gather-and-inspect behavior during a traversal.  In the *one node* example, if we want to find every address in the city of Axebridge, we would need to check the properties on *every* Person node, then discard the irrelevant nodes.  This is grossly inefficient.  In this multiple node case, this is a simple matter of locating the singular Axebridge node, and traversing to every Address node connected to it.  This model has no “wasted” hops.
 
 
 As a result, you generally use fanout for anchors and traversing the graph.
@@ -176,7 +176,7 @@ image::TypesVSProperties.png[TypesVSProperties,width=900,align=center]
 Both of these models represent the same idea in different ways.
 Neither is strictly superior; both are optimized for a certain kind of question.
 
-For example, if you want to find all LOVES relationships, but ignore the weaker LIKES ones, the top model is best.
+For example, if you want to find all LOVES relationships, but ignore the weaker LIKES ones, the top model is better.
 Traversal will not involve any gather-and-inspect.
 On the other hand, if you want to rank the strength of all relationships, the below model is better.
 The Cypher string required is much simpler, and we know there will not be any gather-and-inspect discards because we want everything anyway.
@@ -249,7 +249,7 @@ _For data in the query, how much work must Neo4j do to evaluate if this is a “
 
 [.notes]
 --
-Anchor node data which could be a node label or a node property value is cheapest to access--it involves no traversal at all, and thus no wasted traversal.
+Anchor node data, which could be a node label or a node property value, is cheapest to access--it involves no traversal at all, and thus no wasted traversal.
 Indexed anchor properties are much more accessible than non-indexed anchor properties.
 
 Neo4j is designed for easy traversal, so relationship types are also very cheap to access.

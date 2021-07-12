@@ -95,7 +95,7 @@ image::NormalizedData.png[NormalizedData,width=1400,align=center]
 
 Notice that the *people.csv* file has a unique ID for every person and the *movies1.csv* file has a unique ID for every movie.
 The *roles.csv* file is used to relate a person to a movie and provide the characters.
-This is the data that could be used to create the _:ACTED_IN_ relationship that you have see in the Movie graph.
+This is the data that could be used to create the _:ACTED_IN_ relationship that you have seen in the Movie graph.
 
 == Denormalized data
 
@@ -352,7 +352,7 @@ In this example, we import the movie data:
 :auto USING PERIODIC COMMIT 500
 LOAD CSV WITH HEADERS FROM
   'https://data.neo4j.com/v4.0-intro-neo4j/movies1.csv' as row
-MERGE (m:Movie {id:toInteger(row.movieId)})
+MERGE (m:Movie {id: toInteger(row.movieId)})
     ON CREATE SET
           m.title = row.title,
           m.avgVote = toFloat(row.avgVote),
@@ -384,7 +384,7 @@ In this example, we import the data to create the relationships between existing
 ----
 LOAD CSV WITH HEADERS FROM
 'https://data.neo4j.com/v4.0-intro-neo4j/directors.csv' AS row
-MATCH (movie:Movie {id:toInteger(row.movieId)})
+MATCH (movie:Movie {id: toInteger(row.movieId)})
 MATCH (person:Person {id: toInteger(row.personId)})
 MERGE (person)-[:DIRECTED]->(movie)
 ON CREATE SET person:Director

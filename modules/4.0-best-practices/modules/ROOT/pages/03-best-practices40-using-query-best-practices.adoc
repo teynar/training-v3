@@ -286,7 +286,7 @@ image::PROFILE2.png[PROFILE2,width=1300,align=center]
 
 [.notes]
 --
-Here we see more db hits which makes sense because all nodes need to be scanned for perform this query.
+Here we see more db hits which makes sense because all nodes need to be scanned to perform this query.
 And to total elapsed milliseconds is greater which we would expect as it typically correlates to database access.
 --
 
@@ -386,7 +386,7 @@ Here is a very high-level list of some of the best practices to aim for in your 
 * Create and use indexes effectively.
 * Use parameters rather than literals in your queries.
 * Specify node labels in `MATCH` clauses.
-* Reduce the number of rows passed processed.
+* Reduce the number of rows processed.
 * Aggregate early in the query, rather than in the `RETURN` clause, if possible.
 * Use `DISTINCT` and `LIMIT` early in the query to reduce the number of rows processed.
 * Defer property access until you really need it.

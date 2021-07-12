@@ -36,7 +36,7 @@ You will see how in your real application, you should take care not to create du
 * *Exercise 9.12*: Delete the _Forrest Gump_ node.
 * *Exercise 9.13*: Use `MERGE` to create the _DIRECTED_ relationship.
 * *Exercise 9.14*: Use `MERGE` to create the _ACTED_IN_ relationship.
-* *Exercise 9.15*: Modify the _role_ relationship property.
+* *Exercise 9.15*: Modify the _roles_ relationship property.
 
 Go to the next page to start this exercise.
 
@@ -73,7 +73,6 @@ image::CreateForrestGump2.png[CreateForrestGump2,width=700]
 [source, cypher]
 ----
 MERGE (m:Movie {title: 'Forrest Gump'})
-ON CREATE SET m.released = 1994
 ON MATCH SET m.tagline = "Life is like a box of chocolates...you never know what you're gonna get."
 RETURN m
 ----
@@ -337,17 +336,17 @@ The result returned should be:
 [.thumb]
 image::ActedInForrestGump.png[ActedInForrestGump,width=400]
 
-== Exercise 9.15: Modify the _role_ relationship property (Instructions)
+== Exercise 9.15: Modify the _roles_ relationship property (Instructions)
 
-*Modify the relationship property, _role_ for their roles in _Forrest Gump_:*
+*Modify the relationship property, _roles_ for their roles in _Forrest Gump_:*
 
 * *Tom Hanks is Forrest Gump*
 * *Gary Sinise is Lt. Dan Taylor*
 * *Robin Wright is Jenny Curran*
 
-== Exercise 9.15: Modify the _role_ relationship property (Solution)
+== Exercise 9.15: Modify the _roles_ relationship property (Solution)
 
-*Modify the relationship property, _role_ for their roles in _Forrest Gump_:*
+*Modify the relationship property, _roles_ for their roles in _Forrest Gump_:*
 
 * *Tom Hanks is Forrest Gump*
 * *Gary Sinise is Lt. Dan Taylor*

@@ -284,7 +284,7 @@ REMOVE x.propertyName
 SET x.propertyName = null
 ----
 
-Suppose we determined that no other _Movie_ node in the graph has the properties, _videoFormat_ and _grossMillions_. There is no restriction that nodes of the same type must have the same properties. However, we have decided that we want to remove these properties from this node. Here is example Cypher to remove this property from this _Batman Begins_ node:
+Suppose we determined that no other _Movie_ node in the graph has the properties, _videoFormat_ and _grossMillions_. There is no restriction that nodes of the same type must have the same properties. However, we have decided that we want to remove these properties from this node. Here is an example Cypher to remove this property from this _Batman Begins_ node:
 
 [source,Cypher,role=nocopy noplay]
 ----
@@ -295,7 +295,7 @@ REMOVE m.videoFormat
 RETURN m
 ----
 
-Assuming that we have previously created the node for the movie with the these properties, here is the result of running this Cypher statement where we remove each property a different way. One way we remove the property using the `SET` clause to set the property to null. And in another way, we use the `REMOVE` clause.
+Assuming that we have previously created the node for the movie with the these properties, here is the result of running this Cypher statement where we remove each property a different way. One way we remove the property using the `SET` clause is to set the property to null. And in another way, we use the `REMOVE` clause.
 
 [.thumb]
 image::RemoveProperties.png[RemoveProperties,width=800]

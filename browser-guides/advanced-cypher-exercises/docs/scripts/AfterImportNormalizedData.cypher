@@ -14,7 +14,7 @@ ASSERT p.id IS UNIQUE;
 
 LOAD CSV WITH HEADERS FROM
      'https://data.neo4j.com/advanced-cypher/movies1.csv' AS row
-MERGE (m:Movie {id:toInteger(row.movieId)})
+MERGE (m:Movie {id: toInteger(row.movieId)})
     ON CREATE SET
           m.title = row.title,
           m.avgVote = toFloat(row.avgVote),
@@ -31,7 +31,7 @@ ON CREATE SET person.name = row.name,
 
 LOAD CSV WITH HEADERS FROM 'https://data.neo4j.com/advanced-cypher/directors.csv' as row
 
-MATCH (movie:Movie {id:toInteger(row.movieId)})
+MATCH (movie:Movie {id: toInteger(row.movieId)})
 MATCH (person:Person {id: toInteger(row.personId)})
 MERGE (person)-[:DIRECTED]->(movie)
 ON CREATE SET person:Director;
