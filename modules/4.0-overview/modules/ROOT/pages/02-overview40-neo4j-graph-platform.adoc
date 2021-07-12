@@ -902,7 +902,7 @@ image::Neo4jBrowserFavorites.png[Neo4jBrowserFavorites,width=600,align=center]
 
 === 2. Use Neo4j Browser Web browser interface
 
-You can use the Web interface to access to access a local Neo4j DBMS, or a database in Neo4j Aura or Neo4j Sandbox.
+You can use the Web interface to access a local Neo4j DBMS, or a database in Neo4j Aura or Neo4j Sandbox.
 
 image::WebNeo4jBrowser.png[WebNeo4jBrowser,width=600,align=center]
 

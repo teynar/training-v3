@@ -205,6 +205,9 @@ endif::[]
 
 image::MegsCoActors.png[MegsCoActors,width=400,align=center]
 
+An important thing to understand about multiple patterns in a single `MATCH` statement is that the query processor will never traverse a relationship more than once.
+That is why the _Meg Ryan_ node is not retrieved in the _other_ node retrievals. All other nodes of people who acted in that same movie are retrieved.
+
 == Traversal with patterns
 
 [.notes]
@@ -231,7 +234,7 @@ RETURN m.title as movie , actor.name
 The first `MATCH` clause retrieves Val Kilmer pointing to the movie, _Top Gun_ using the _ACTED_IN_ relationship.
 The anchor of this `MATCH` clause is the _Val Kilmer_ _Person_ node.
 The second `MATCH` clause retrieves all _Person_ nodes that have the _ACTED_IN_ relationship with the movie, _Top Gun_.
-The anchor of the `MATCH` clause is the _Top Gun_ _Movie_node.
+The anchor of the `MATCH` clause is the _Top Gun_ _Movie_ node.
 
 When the query engine traverses the graph for these `MATCH` clauses, we see that the _ACTED_IN_ relationship is traversed twice.
 --
@@ -368,7 +371,7 @@ Retrieve the paths of length 3 with the relationship, _:RELTYPE_ from _nodeA_ to
 ----
 
 [.statement]
-Retrieve the paths of lengths 1, 2, or 3 with the relationship, _:RELTYPE_ from _nodeA_ to _nodeB_, _nodeB_ to _nodeC_, as well as, _nodeC_ to _nodeD) (up to three hops):
+Retrieve the paths of lengths 1, 2, or 3 with the relationship, _:RELTYPE_ from _nodeA_ to _nodeB_, _nodeB_ to _nodeC_, as well as, _nodeC_ to _nodeD_) (up to three hops):
 
 [source,syntax,role=nocopy noplay]
 ----
@@ -463,7 +466,7 @@ image::Subgraph2.png[Subgraph2,width=800,align=center]
 
 [.notes]
 --
-Some actor relationships have data for the roles property or summary property of the relationship. Note that in this text, the name of the relationship is not shown, but is it in the graph visualization.
+Some actor relationships have data for the roles property or summary property of the relationship. Note that in this text, the name of the relationship is not shown, but it is in the graph visualization.
 Later in this course, you will learn more about working with lists, which is what this data represents.
 
 The APOC library is very useful if you want to query the graph to obtain subgraphs.
@@ -568,19 +571,19 @@ RETURN a.name, m.title, m.released, w.name
 ----
 
 [.statement]
-Select the correct answer.
+Select the correct answers.
 
 [%interactive.answers]
 - [ ] The second line must be: `(m2:Movie)<-[:WROTE]-(w:Person)`.
 - [x] Add a comma after the first pattern in the `MATCH` clause.
 - [ ] The second line must be: `(m2:Movie)<-[:WROTE]-(a)`.
-- [ ] Add a `MATCH` clause at the beginning of the second line.
+- [x] Add a `MATCH` clause at the beginning of the second line.
 
 === Question 3
 
 [.statement]
 Suppose you have a graph of _Person_ nodes representing a social network graph.
-A _Person_ node can have a _IS_FRIENDS_WITH_ relationship with any other _Person_ node.
+A _Person_ node can have an _IS_FRIENDS_WITH_ relationship with any other _Person_ node.
 Like in Facebook, there can be a long path of connections between people.
 What Cypher `MATCH` clause would you use to find all people in this graph that are two to four hops away from each other?
 
