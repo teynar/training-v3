@@ -42,7 +42,7 @@ UNWIND m.genres as name
 WITH DISTINCT name, m
 MERGE (g:Genre {name:name})
 WITH g, m
-MERGE (g)<-[:IS_GENRE]-(m)
+MERGE (g)<-[:IS_GENRE]-(m);
 
 CALL db.index.fulltext.createNodeIndex(
 'MovieTitleMixedCase',['Movie'], ['title'])
