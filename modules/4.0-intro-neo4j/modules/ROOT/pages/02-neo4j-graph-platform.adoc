@@ -1222,7 +1222,7 @@ ifdef::env-slides[]
 --
 *Neo4j Bloom* is a Neo4j-supported graph application.
 
-Bloom is a *codeless* search tool providing a way to to quickly explore data.
+Bloom is a *codeless* search tool providing a way to quickly explore data.
 Bloom provides a *visual presentation* of graph data -
 
 * that can *reveal non-obvious connections* between data  in a graph.

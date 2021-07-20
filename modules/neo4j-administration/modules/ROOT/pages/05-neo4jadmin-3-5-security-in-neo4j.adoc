@@ -437,7 +437,7 @@ The *security.log* file contains log records of all users that connected to or a
 
 ==== Multiple authentication providers
 
-It is possible to use native and another authentication provider together in situations where a small number of users would be maintaining the database, but most of the users would use the enterprise authentication provider such as LDAP. To to this, your configuration setting would be:
+It is possible to use native and another authentication provider together in situations where a small number of users would be maintaining the database, but most of the users would use the enterprise authentication provider such as LDAP. To do this, your configuration setting would be:
 
 [source,config,role=nocopy noplay]
 ----
