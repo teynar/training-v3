@@ -56,7 +56,7 @@ CALL gds.graph.create('PersonGraph', 'Person',
 == Part 2: Execute the Degree Centrality algorithm on a named graph (Instructions/Solution)
 
 You will execute the Degree Centrality algorithm on the *PersonGraph* named graph without any additional configuration options.
-As you do not specify which relationship types the algorithm consider, it will use all available relationship types as an input.
+As you do not specify which relationship types the algorithm considers, it will use all available relationship types as an input.
 
 *Hint*: You will call `gds.alpha.degree.stream`.
 
