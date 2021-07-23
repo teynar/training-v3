@@ -77,7 +77,7 @@ image::UndirectedDegree.png[NativeProjection,width=300]
 == Part 3: Execute the Degree Centrality algorithm on a named graph and filter relationship types (Instructions/Solution)
 
 The advantage of using a named graph with multiple relationship types is that you can filter which relationships the algorithm consider at the execution time with the *relationshipTypes* parameter.
-You will execute the Degree Centrality algorithm on the *Person* named graph and consider only *HELPS_NATURAL* relationships.
+You will execute the Degree Centrality algorithm on the *PersonGraph* named graph and consider only *HELPS_NATURAL* relationships.
 
 *Hint*: You will call `gds.alpha.degree.stream` and include the `relationshipTypes` parameter.
 
