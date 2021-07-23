@@ -78,15 +78,14 @@ endif::[]
 
 == Next Steps
 
-Now that you have completed the _Overview of Neo4j 4.x_ Course, you can progress to the link:https://neo4j.com/graphacademy/training-querying-40/enrollment/[Querying with Cypher in Neo4j 4.x^] course.
+Now that you have completed the _Querying with Cypher in Neo4j 4.x_ Course, you can progress to the link:https://neo4j.com/graphacademy/training-updating-40/enrollment/[Creating Nodes and Relationships in Neo4j 4.x^] course.
 This course teaches you the Cypher syntax for querying the database and contains numerous hands-on exercises.
 
-link:https://neo4j.com/graphacademy/training-querying-40/enrollment/[Progress to Querying with Cypher in Neo4j 4.x^, role=button]
+link:https://neo4j.com/graphacademy/training-updating-40/enrollment/[Progress to Creating Nodes and Relationships in Neo4j 4.x^, role=button]
 
 Or, you can take any other course in this Series:
 
-
-link:https://neo4j.com/graphacademy/training-updating-40/enrollment/[Creating Nodes and Relationships in Neo4j 4.x^]
+link:https://neo4j.com/graphacademy/training-overview-40/enrollment/[Overview of Neo4j 4.x^]
 
 link:https://neo4j.com/graphacademy/training-best-practices-40/enrollment/[Using Indexes and Query Best Practices in Neo4j 4.x^]
 
