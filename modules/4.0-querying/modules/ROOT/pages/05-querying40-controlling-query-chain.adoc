@@ -47,7 +47,7 @@ image::WithoutWITH.png[WithoutWITH,width=800,align=center]
 --
 What if we wanted to further qualify the query so that we only return the actors who have made 2 or 3 movies?
 What we really want to do is test the count of each movie, but the count is an aggregating function so we cannot test it until all nodes have been retrieved.
-One way to to this is with the `WITH` clause in Cypher.
+One way to do this is with the `WITH` clause in Cypher.
 --
 
 === Example: Using `WITH`

@@ -304,7 +304,7 @@ Another way that you can do is is to use the following command:
 
 [source,syntax,role= nocopy noplay]
 ----
-CREATE OR REPLACE <database>;
+CREATE OR REPLACE DATABASE <database>;
 ----
 
 == Conditionally creating a database
@@ -316,7 +316,7 @@ If you are scripting the creation of databases, you can also create a database i
 
 [source,syntax,role= nocopy noplay]
 ----
-CREATE <database> IF NOT EXISTS;
+CREATE DATABASE <database> IF NOT EXISTS;
 ----
 
 [NOTE]

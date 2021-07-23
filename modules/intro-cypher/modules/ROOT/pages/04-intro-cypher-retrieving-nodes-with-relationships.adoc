@@ -238,7 +238,7 @@ Modify the previous query to return the names for any nodes in the graph (not ju
 == Ordering results returned
 
 For the last query, it might be useful to order the values returned in rating order.
-You can add the Cypher phrase `ORDER BY rel.rating` to to `RETURN` clause to order the results.
+You can add the Cypher phrase `ORDER BY rel.rating` to the `RETURN` clause to order the results.
 
 //Q3: More effort (modify Cypher)
 

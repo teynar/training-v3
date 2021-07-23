@@ -72,6 +72,7 @@ https://data.neo4j.com/v4.0-intro-neo4j/movies2.csv
 . In Neo4j Desktop, click the 3 dots to the right of the DBMS.
 . Click *Open Folder > Import*.
 . Copy the CSV files you previously downloaded to the import folder.
+. Add this property to the neo4j.conf file: apoc.import.file.enabled=true
 . You will adapt the code to read from the filesystem: file:///movies2.csv'
 
 *Note:* If you are using Neo4j Sandbox or Neo4j Aura, you must use the URL for the file at *data.neo4j.com*.
