@@ -161,7 +161,7 @@ This is what you will see in the result pane:
 
 image::NativeProjection.png[NativeProjection,width=500]
 
-== Part 5: Project a subgraph of European Roads dataset to Graph Catalog with cypher projection. (Instructions/Solution)
+== Part 6: Project a subgraph of European Roads dataset to Graph Catalog with cypher projection. (Instructions/Solution)
 
 In some parts of this course, you will analyze the DACH region subgraph of the European Roads network.
 The native projection is not expressive enough to allow you to project only *Place* nodes with *D*,*A*, or *CH* country codes. 
