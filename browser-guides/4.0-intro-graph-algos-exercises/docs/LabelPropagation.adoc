@@ -99,7 +99,7 @@ Write Cypher code to perform a basic statistical analysis of the relationship we
 
 [source, cypher]
 ----
-UNWIND ['distance','inverse_distance'] as property
+UNWIND ['distance','inverse_distance'] AS property
 MATCH (:Place)-[r:EROAD]->(:Place)
 RETURN property, apoc.agg.statistics(r[property], [0.5,0.75,0.9,0.95,0.99])
 ----
@@ -230,8 +230,8 @@ Here is the solution code:
 [source, cypher]
 ----
 MATCH (node:Place)
-RETURN node.community_lpa as communityId,
-       count(*) as communitySize,
+RETURN node.community_lpa AS communityId,
+       count(*) AS communitySize,
        collect(node.name) AS places
 ORDER BY communitySize DESC 
 LIMIT 10
