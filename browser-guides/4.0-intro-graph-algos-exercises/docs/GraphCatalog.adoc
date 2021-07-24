@@ -128,7 +128,7 @@ Write Cypher code to project the European Roads graph to Graph Catalog using the
 
 *Hint*: You will call `gds.graph.create`.
 
-== Part 6: Project European Roads graph to Graph Catalog with native projection. (Solution)
+== Part 5: Project European Roads graph to Graph Catalog with native projection. (Solution)
 
 Write Cypher code to project the European Roads graph to Graph Catalog using these guidelines:
 
