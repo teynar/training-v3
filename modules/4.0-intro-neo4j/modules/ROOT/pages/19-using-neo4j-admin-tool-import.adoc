@@ -34,7 +34,7 @@ These include:
 [square]
 * *neo4j*, used for starting, stopping, and checking the status of the Neo4j instance.
 * *cypher-shell*, a command-line version of a Cypher interface that enables you to execute Cypher statements.
-* *admin-tool*, used for a number of administrative activities including creating a database from CSV files.
+* *neo4j-admin*, used for a number of administrative activities including creating a database from CSV files.
 
 [.notes]
 --

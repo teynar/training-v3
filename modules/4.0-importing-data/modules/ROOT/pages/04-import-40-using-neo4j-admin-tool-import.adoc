@@ -13,7 +13,7 @@
 
 You have just learned how import data into the graph using Cypher together with APOC.
 APOC provides you with more capabilities for import.
-Another way that you can import data into the graph is with and administrative tool, `neo4j-admin`.
+Another way that you can import data into the graph is with the administrative tool, `neo4j-admin`.
 Next, you will learn how to use `neo4j-admin` to create a graph from CSV files.
 You will be working with data for a much larger dataset representing crimes.
 
@@ -33,7 +33,7 @@ These include:
 [square]
 * *neo4j*, used for starting, stopping, and checking the status of the Neo4j instance.
 * *cypher-shell*, a command-line version of a Cypher interface that enables you to execute Cypher statements.
-* *admin-tool*, used for a number of administrative activities including creating a database from CSV files.
+* *neo4j-admin*, used for a number of administrative activities including creating a database from CSV files.
 
 In this lesson, you will learn how to use the import feature of `neo4j-admin`.
 You use `neo4j-admin` for import when you have extremely large amounts of data to import, for example greater than 10M nodes.
