@@ -184,7 +184,7 @@ Here are some examples:
 
 [square]
 * Assigning polarity of tweets as a part of semantic analysis. In this scenario, positive and negative seed labels from a classifier are used in combination with the Twitter follower graph. For more information, see https://dl.acm.org/citation.cfm?id=2140465[Twitter polarity classification with label propagation over lexical links and the follower graph].
-* Finding potentially dangerous combinations of possible co-prescribed drugs, based on the chemical similarity and side effect profiles. This  study is found https://dl.acm.org/citation.cfm?id=2140465[here].
+* Finding potentially dangerous combinations of possible co-prescribed drugs, based on the chemical similarity and side effect profiles. This  study is found https://www.nature.com/articles/srep12339[here].
 * Label Propagation prediction of drug-drug interactions based on clinical side effects.
 --
 

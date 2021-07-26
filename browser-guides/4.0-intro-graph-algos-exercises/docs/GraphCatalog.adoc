@@ -58,7 +58,7 @@ CALL gds.graph.create('PersonGraph', 'Person',
 You will execute the Degree Centrality algorithm on the *PersonGraph* named graph without any additional configuration options.
 As you do not specify which relationship types the algorithm considers, it will use all available relationship types as an input.
 
-*Hint*: You will call `gds.alpha.degree.stream`.
+*Hint*: You will call `gds.alpha.degree.stream` if you are using GDS earlier than 1.6, otherwise you will call `gds.degree.stream`.
 
 [source, cypher]
 ----
@@ -79,7 +79,7 @@ image::UndirectedDegree.png[NativeProjection,width=300]
 The advantage of using a named graph with multiple relationship types is that you can filter which relationships the algorithm consider at the execution time with the *relationshipTypes* parameter.
 You will execute the Degree Centrality algorithm on the *PersonGraph* named graph and consider only *HELPS_NATURAL* relationships.
 
-*Hint*: You will call `gds.alpha.degree.stream` and include the `relationshipTypes` parameter.
+*Hint*: You will call `gds.alpha.degree.stream` if you are using GDS earlier than 1.6, otherwise you will call `gds.degree.stream`. And include the `relationshipTypes` parameter.
 
 [source, cypher]
 ----
