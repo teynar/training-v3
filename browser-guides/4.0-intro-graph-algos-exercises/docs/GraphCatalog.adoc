@@ -56,7 +56,7 @@ CALL gds.graph.create('PersonGraph', 'Person',
 == Part 2: Execute the Degree Centrality algorithm on a named graph (Instructions/Solution)
 
 You will execute the Degree Centrality algorithm on the *PersonGraph* named graph without any additional configuration options.
-As you do not specify which relationship types the algorithm consider, it will use all available relationship types as an input.
+As you do not specify which relationship types the algorithm considers, it will use all available relationship types as an input.
 
 *Hint*: You will call `gds.alpha.degree.stream`.
 
@@ -77,7 +77,7 @@ image::UndirectedDegree.png[NativeProjection,width=300]
 == Part 3: Execute the Degree Centrality algorithm on a named graph and filter relationship types (Instructions/Solution)
 
 The advantage of using a named graph with multiple relationship types is that you can filter which relationships the algorithm consider at the execution time with the *relationshipTypes* parameter.
-You will execute the Degree Centrality algorithm on the *Person* named graph and consider only *HELPS_NATURAL* relationships.
+You will execute the Degree Centrality algorithm on the *PersonGraph* named graph and consider only *HELPS_NATURAL* relationships.
 
 *Hint*: You will call `gds.alpha.degree.stream` and include the `relationshipTypes` parameter.
 
@@ -128,7 +128,7 @@ Write Cypher code to project the European Roads graph to Graph Catalog using the
 
 *Hint*: You will call `gds.graph.create`.
 
-== Part 6: Project European Roads graph to Graph Catalog with native projection. (Solution)
+== Part 5: Project European Roads graph to Graph Catalog with native projection. (Solution)
 
 Write Cypher code to project the European Roads graph to Graph Catalog using these guidelines:
 
@@ -161,7 +161,7 @@ This is what you will see in the result pane:
 
 image::NativeProjection.png[NativeProjection,width=500]
 
-== Part 5: Project a subgraph of European Roads dataset to Graph Catalog with cypher projection. (Instructions/Solution)
+== Part 6: Project a subgraph of European Roads dataset to Graph Catalog with cypher projection. (Instructions/Solution)
 
 In some parts of this course, you will analyze the DACH region subgraph of the European Roads network.
 The native projection is not expressive enough to allow you to project only *Place* nodes with *D*,*A*, or *CH* country codes. 

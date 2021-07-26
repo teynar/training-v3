@@ -348,7 +348,7 @@ Putting all this information together, we would use the following syntax to proj
 ----
 CALL gds.graph.create.cypher(
     'coauthorship-graph',
-    'MATCH (n:Author) RETURN id(n) AS id, labels(n) as labels,',
+    'MATCH (n:Author) RETURN id(n) AS id, labels(n) as labels',
     'MATCH (p1:Author)-[:WROTE]->(a:Article)<-[:WROTE]-(p2:Author)
      RETURN id(p1) AS source, id(p2) AS target, count(a) AS weight'
 )
