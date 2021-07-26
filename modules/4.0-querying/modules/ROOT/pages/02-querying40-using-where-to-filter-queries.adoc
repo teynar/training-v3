@@ -323,6 +323,10 @@ Here is the result:
 
 image::WroteMoviesNotDirected.png[WroteMoviesNotDirected,width=400, align=center]
 
+[NOTE]
+The  syntax in 4.3 or when exists() is longer available for testing the existence of a pattern in the graph is:
+`WHERE ( (p)-[:DIRECTED]->(m) ) = []`
+
 == Example: Testing with patterns - 3
 
 [.statement]
