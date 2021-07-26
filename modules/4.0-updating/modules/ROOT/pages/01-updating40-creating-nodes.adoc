@@ -86,7 +86,7 @@ Add a node to the graph of types _Movie_ and _Action_ with the _title_ _Batman B
 
 [source,Cypher,role=nocopy noplay]
 ----
-CREATE (m:Movie:Action {title: ' Batman Begins'})
+CREATE (m:Movie:Action {title: 'Batman Begins'})
 RETURN m.title
 ----
 
