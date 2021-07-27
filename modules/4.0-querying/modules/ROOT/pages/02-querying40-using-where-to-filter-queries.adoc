@@ -203,7 +203,7 @@ endif::[]
 image::JackNicholsonMoviesWithTaglines.png[JackNicholsonMoviesWithTaglines,width=1100,align=center]
 
 [IMPORTANT]
-In Neo4j 4.3, `exists()` has been deprecated and may not work in future releases, but it still works in 4.3. In Neo4j 4.3 and later you can use `AND m.tagline IS NOT NULL`
+In Neo4j 4.3, `exists()` for property values has been deprecated and may not work in future releases, but it still works in 4.3. In Neo4j 4.3 and later you can use `AND m.tagline IS NOT NULL`
 
 == Testing strings
 
@@ -324,8 +324,7 @@ Here is the result:
 image::WroteMoviesNotDirected.png[WroteMoviesNotDirected,width=400, align=center]
 
 [NOTE]
-The  syntax in 4.3 or when exists() is longer available for testing the existence of a pattern in the graph is:
-`WHERE ( (p)-[:DIRECTED]->(m) ) = []`
+`exists()` for patterns has not been deprecated in 4.3. Another way that you can specify this clause is `WHERE NOT ( (p)-[:DIRECTED]->(m) )`.
 
 == Example: Testing with patterns - 3
 
