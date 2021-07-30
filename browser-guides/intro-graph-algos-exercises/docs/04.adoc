@@ -132,12 +132,12 @@ image::EX5.3.png[EX5.3,width=600]
 == Exercise 4.4: Verify the results of executing the algorithm. (Instructions)
 
 Write a query to return all *communities* values in the graph containing *Place* nodes.
-For each distinct communities value, return the list of places.
+For each distinct community value, return the list of places.
 
 == Exercise 4.4: Verify the results of executing the algorithm. (Solution)
 
 Write a query to return all *communities* values in the graph containing *Place* nodes.
-For each distinct communities value, return the list of places.
+For each distinct community value, return the list of places.
 
 Here is the solution code:
 
