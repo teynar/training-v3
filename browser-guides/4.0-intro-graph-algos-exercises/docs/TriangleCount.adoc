@@ -54,7 +54,7 @@ Write a query to perform the Triangle Count algorithm on the European road netwo
 * The algorithm must use the projected graph *roads*, which is stored in the graph catalog.
 * The algorithm will write a property named *triangles* to each node with the computed value.
 
-*Hint*: You will call `algo.triangleCount.write`.
+*Hint*: You will call `gds.triangleCount.write`.
 
 == Part 1: Retrieve the triangles in the European Roads dataset. (Solution)
 
@@ -63,7 +63,7 @@ Write a query to perform the Triangle Count algorithm on the European road netwo
 * The algorithm must use the projected graph *roads*, which is stored in the graph catalog.
 * The algorithm will write a property named *triangles* to each node with the computed value.
 
-*Hint*: You will call `algo.triangleCount.write`.
+*Hint*: You will call `gds.triangleCount.write`.
 
 Here is the solution code:
 
