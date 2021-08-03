@@ -51,7 +51,7 @@ image::jaccard-similarity.png[Betweenness centrality,width=500, align=center]
 
 [.notes]
 --
-For example, if Basket _A_ contains {Orange, Banana, Cherry}  and Basket _B_ contains {Orange, Banana, Apple, Kiwi} then the Jaccard algorithm counts 2 co-occurrences {Orange, Banana} and divides that count by the number of items in _A_ and _B_ (while not double-counting items), in this case 5 {Orange, Banana, Apple, Cherry, Kiwi}.
+For example, if Basket _A_ contains {Orange, Banana, Cherry} and Basket _B_ contains {Orange, Banana, Apple, Kiwi} then the Jaccard algorithm counts 2 co-occurrences {Orange, Banana} and divides that count by the number of items in _A_ and _B_ (while not double-counting items), in this case 5 {Orange, Banana, Apple, Cherry, Kiwi}.
 The resulting Jaccard Similarity Coefficient is 2/5 which is 0.4.
 A coefficient of 1 indicates that the compared sets are identical.
 --
@@ -135,7 +135,7 @@ Select the correct answer.
 
 [%interactive.answers]
 - [ ] Pearson Similarity
-- [ ] Euclidian Similarity
+- [ ] Euclidean Similarity
 - [x] Node Similarity (Jaccard Index)
 - [ ] Overlap Similarity
 
