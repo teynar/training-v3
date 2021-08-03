@@ -270,7 +270,7 @@ Here is the solution code:
 ----
 MATCH (i:Ingredient)
 WHERE NOT (i)-[:COMMONLY_USED_TOGETHER]-()
-RETURN count(*) as count
+RETURN count(*) AS count
 ----
 
 The results returned will look like this:
