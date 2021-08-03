@@ -359,7 +359,7 @@ CALL gds.pageRank.stream({
 
   relationshipWeightProperty:'weight',
   parameters:{community:community}})
-YIELD nodeId,score
+YIELD nodeId, score
 WITH community, communitySize, nodeId, score
 ORDER BY score DESC
 // Return the community, communitySize, and the top three representatives for each community
