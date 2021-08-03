@@ -258,9 +258,9 @@ CALL gds.graph.create('graph',
   ['Person', 'Organization'],
   {  
   LIKES: {
-    orientation: "UNDIRECTED",
-    aggregation: "DEFAULT",
-    type: "LIKES",
+    orientation: 'UNDIRECTED',
+    aggregation: 'DEFAULT',
+    type: 'LIKES',
     properties: 'property'
   })
 ----
