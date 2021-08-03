@@ -330,7 +330,7 @@ You have returned random three members for each community, which might not be th
 
 The PageRank algorithm regards each relationship as a vote of importance or influence.
 In the context of our ingredients analysis, each relationship represents a commonly used together connections.
-Ingredients, who are the most commonly used together with other common ingredients will rank the highest.
+Ingredients that are the most commonly used together with other common ingredients will rank the highest.
 You can regard them as the representatives of those communities.
 When calculating each community's representatives, you want to consider only nodes and links of a specific community.
 You will use an anonymous graph with cypher projection to filter only nodes and links between each specific community.
