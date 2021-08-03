@@ -136,7 +136,7 @@ Write Cypher code to examine the similarity score distribution of the Recipes da
 
 * The algorithm must use the projected graph *recipes*, which is stored in the graph catalog.
 * Use the `stats` mode of the Node Similarity algorithm.
-* `YIELD` the following result: nodesCompared,similarityDistribution.
+* `YIELD` the following result: nodesCompared, similarityDistribution.
 
 *Hint*: You will call `gds.nodeSimilarity.stats`.
 
@@ -146,7 +146,7 @@ Write Cypher code to examine the similarity score distribution of the Recipes da
 
 * The algorithm must use the projected graph *recipes*, which is stored in the graph catalog.
 * Use the `stats` mode of the Node Similarity algorithm.
-* `YIELD` the following result: nodesCompared,similarityDistribution.
+* `YIELD` the following result: nodesCompared, similarityDistribution.
 
 *Hint*: You will call `gds.nodeSimilarity.stats`.
 

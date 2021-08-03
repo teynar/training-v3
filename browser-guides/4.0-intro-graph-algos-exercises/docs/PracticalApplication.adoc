@@ -78,7 +78,7 @@ Write Cypher code to examine the similarity score distribution between ingredien
 
 * The algorithm must use the projected graph *ingredient*, which is stored in the graph catalog.
 * Use the `stats` mode of the Node Similarity algorithm.
-* `YIELD` the following result: nodesCompared,similarityDistribution.
+* `YIELD` the following result: nodesCompared, similarityDistribution.
 
 *Hint*: You will call `gds.nodeSimilarity.stats`.
 
@@ -89,7 +89,7 @@ You will evaluate the Jaccard similarity score distribution to better fine-tune 
 
 * The algorithm must use the projected graph *recipes*, which is stored in the graph catalog.
 * Use the `stats` mode of the Node Similarity algorithm.
-* `YIELD` the following result: nodesCompared,similarityDistribution.
+* `YIELD` the following result: nodesCompared, similarityDistribution.
 
 *Hint*: You will call `gds.nodeSimilarity.stats`.
 
