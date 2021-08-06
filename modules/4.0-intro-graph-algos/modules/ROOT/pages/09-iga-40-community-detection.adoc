@@ -396,7 +396,7 @@ Here is why you use Triangle Count:
 
 Here is an example:
 
-Identifying features for classifying a given website as spam content. This is described in https://chato.cl/papers/becchetti_2007_approximate_count_triangles.pdf[Efficient Semi-streaming Algorithms for Local Triangle Counting in Massive].
+Identifying features for classifying a given website as spam content. This is described in https://chato.cl/papers/becchetti_2007_approximate_count_triangles.pdf[Efficient Semi-streaming Algorithms for Local Triangle Counting in Massive Graphs].
 
 [.slide-title.has-green-background.has-team-background]
 == Guided Exercise: Getting Started with the Triangle Count algorithm

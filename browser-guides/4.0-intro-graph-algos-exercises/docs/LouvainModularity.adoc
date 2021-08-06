@@ -106,7 +106,7 @@ For example, the p99 value of 75 represents that 99% of communities have the com
 Next, you will retrieve the members of the largest 10 communities uncovered by the Louvain Modularity algorithm.
 
 Write a query to return all *community_louvain* values in the graph containing *Place* nodes.
-For each distinct communities value, return the list of places and the community size.
+For each distinct community value, return the list of places and the community size.
 
 * Order the results by community size descending.
 * Limit it to the top ten results.
@@ -114,7 +114,7 @@ For each distinct communities value, return the list of places and the community
 == Part 2: Inspect the results of the algorithm. (Solution)
 
 Write a query to return all *community_louvain* values in the graph containing *Place* nodes.
-For each distinct communities value, return the list of places and the community size.
+For each distinct community value, return the list of places and the community size.
 
 * Order the results by community size descending.
 * Limit it to the top ten results.
@@ -194,12 +194,12 @@ You will now inspect the intermediate communities and their structure.
 You will begin by inspecting the *Place* nodes with a shared community throughout all the levels.
 
 Write a query to return all *communities_louvain* values in the graph containing *Place* nodes.
-For each distinct communities value, return the list of places and the community size.
+For each distinct community value, return the list of places and the community size.
 
 == Part 4: Inspect the hierarchical results of the algorithm. (Solution)
 
 Write a query to return all *communities_louvain* values in the graph containing *Place* nodes.
-For each distinct communities value, return the list of places and the community size.
+For each distinct community value, return the list of places and the community size.
 
 Here is the solution code:
 

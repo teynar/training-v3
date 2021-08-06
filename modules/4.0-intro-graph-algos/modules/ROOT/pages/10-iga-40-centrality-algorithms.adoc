@@ -50,7 +50,7 @@ ifndef::env-slides,backend-pdf[]
 |===
 |image:pagerank-step-1.png[PageRank step 1]
 |PageRank measures importance in comparison to other nodes using an iterative process to update ranks.
- It starts by assigning values to nodes as 1/n (n is the total number of nodes linked to) and value to relationships as that nodes value/number of its outgoing links.
+ It starts by assigning values to nodes as 1/n (n is the total number of nodes linked to it) and value to relationships as that nodes value/number of its outgoing links.
 |===
 {set:cellbgcolor!}
 endif::[]
@@ -58,7 +58,7 @@ endif::[]
 ifdef::env-slides,backend-pdf[]
 
 PageRank measures importance in comparison to other nodes using an iterative process to update ranks.
-It starts by assigning values to nodes as 1/n (n is the total number of nodes linked to) and value to relationships as that nodes value/number of its outgoing links.
+It starts by assigning values to nodes as 1/n (n is the total number of nodes linked to it) and value to relationships as that nodes value/number of its outgoing links.
 
 image::pagerank-step-1.png[PageRank step 1,width=500, align=center]
 

@@ -78,7 +78,7 @@ Write Cypher code to examine the similarity score distribution between ingredien
 
 * The algorithm must use the projected graph *ingredient*, which is stored in the graph catalog.
 * Use the `stats` mode of the Node Similarity algorithm.
-* `YIELD` the following result: nodesCompared,similarityDistribution.
+* `YIELD` the following result: nodesCompared, similarityDistribution.
 
 *Hint*: You will call `gds.nodeSimilarity.stats`.
 
@@ -89,7 +89,7 @@ You will evaluate the Jaccard similarity score distribution to better fine-tune 
 
 * The algorithm must use the projected graph *recipes*, which is stored in the graph catalog.
 * Use the `stats` mode of the Node Similarity algorithm.
-* `YIELD` the following result: nodesCompared,similarityDistribution.
+* `YIELD` the following result: nodesCompared, similarityDistribution.
 
 *Hint*: You will call `gds.nodeSimilarity.stats`.
 
@@ -270,7 +270,7 @@ Here is the solution code:
 ----
 MATCH (i:Ingredient)
 WHERE NOT (i)-[:COMMONLY_USED_TOGETHER]-()
-RETURN count(*) as count
+RETURN count(*) AS count
 ----
 
 The results returned will look like this:
@@ -330,7 +330,7 @@ You have returned random three members for each community, which might not be th
 
 The PageRank algorithm regards each relationship as a vote of importance or influence.
 In the context of our ingredients analysis, each relationship represents a commonly used together connections.
-Ingredients, who are the most commonly used together with other common ingredients will rank the highest.
+Ingredients that are the most commonly used together with other common ingredients will rank the highest.
 You can regard them as the representatives of those communities.
 When calculating each community's representatives, you want to consider only nodes and links of a specific community.
 You will use an anonymous graph with cypher projection to filter only nodes and links between each specific community.
@@ -359,7 +359,7 @@ CALL gds.pageRank.stream({
 
   relationshipWeightProperty:'weight',
   parameters:{community:community}})
-YIELD nodeId,score
+YIELD nodeId, score
 WITH community, communitySize, nodeId, score
 ORDER BY score DESC
 // Return the community, communitySize, and the top three representatives for each community
