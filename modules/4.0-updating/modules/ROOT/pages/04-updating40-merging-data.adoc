@@ -193,6 +193,10 @@ image::OnlyTwoMichaelCaines.png[OnlyTwoMichaelCaines,width=800,align=center]
 --
 We would find that the _Michael Caine_ node with the label _Actor_ is not created.
 The `MERGE` found this node in the graph and did not create a new one.
+
+Notice that we have a `WITH a` in this code. The `WITH` clause can be used to separate the writing part of a query from a reading part of a query.
+Here we see that the variable _a_ is not used later in the query, but is simply used to separate writing and reading parts of the code.
+
 --
 
 == Syntax: Using `MERGE` to create relationships
