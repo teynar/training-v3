@@ -477,7 +477,7 @@ What query will retrieve this data?
 Select the correct answer.
 
 [%interactive.answers]
-- [ ] [src-cypher]`MATCH (p:Person) WHERE  (p)-[:WROTE]-(m) AND (p)-[WROTE]-(m) RETURN p.name, m.title`
+- [ ] [src-cypher]`MATCH (p:Person) WHERE  (p)-[:WROTE]-(m) AND (p)-[:ACTED_IN]-(m) RETURN p.name, m.title`
 - [x] [src-cypher]`MATCH (p:Person)-[:ACTED_IN]->(m:Movie) WHERE  (p)-[:WROTE]-(m) RETURN p.name, m.title`
 - [ ] [src-cypher]`MATCH (p:Person)-[:ACTED_IN | WROTE]->(m:Movie) RETURN p.name, m.title`
 - [ ] [src-cypher]`MATCH (p:Person)-[:ACTED_IN]->(m:Movie)<-[WROTE]-(p) RETURN p.name, m.title`
