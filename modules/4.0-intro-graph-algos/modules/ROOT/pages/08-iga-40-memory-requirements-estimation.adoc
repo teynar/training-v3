@@ -30,6 +30,8 @@ CALL gds.<ALGO>.<MODE>.estimate()
 All algorithm procedures in the GDSL, including graph creation, will do an estimation check at the beginning of their execution.
 If the estimation check determines that the current amount of free memory is insufficient to complete the operation, the operation will be aborted, and an error will be reported. 
 This heap control logic is restrictive in the sense that it only blocks executions that are certain to not fit into memory. It does not guarantee that an execution that passed the heap control will succeed without depleting memory. Thus, it is still useful to first run the estimation mode before running an algorithm or graph creation on a large data set to ensure you will not run out of memory.
+
+As of this writing, all algorithms in the GDSL can be estimated, except the Link Prediction algorithms.
 --
 
 The amount of free heap memory can be increased by either dropping unused named graphs from the Graph Catalog, or increasing the maximum heap size before starting the Neo4j instance.
@@ -55,7 +57,7 @@ Select the correct answers.
 
 [%interactive.answers]
 - [x] Betweenness Centrality
-- [ ] Closeness Centrality
+- [ ] Link Prediction
 - [x] PageRank
 - [x] Label Propagation
 
