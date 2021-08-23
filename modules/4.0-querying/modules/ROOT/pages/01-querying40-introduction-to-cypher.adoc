@@ -728,7 +728,7 @@ Here, you can see we have a *link* for *each* of the exercises.
 
 There’s are number of *tasks*, you are asked to do.
 
-* Most tasks are composed of a *pair* made of of *Instructions* and *Solutions*.
+* Most tasks are composed of a *pair* made of *Instructions* and *Solutions*.
 * You must read the instruction and try to answer the question.
 * Whether or not you have an answer, continue on to the answer page.
 * There - check your answer - and run the answer code if your code didn’t work.
@@ -1865,7 +1865,7 @@ endif::[]
 == Filtering using relationship properties
 
 ifndef::env-slides[]
-Just as you can specify property values for filtering nodes for a query, you can specify property values for a relationship. This query returns the name of of the person who gave the movie a rating of _65._
+Just as you can specify property values for filtering nodes for a query, you can specify property values for a relationship. This query returns the name of the person who gave the movie a rating of _65._
 endif::[]
 
 [source,Cypher,role=noplay]
@@ -1931,7 +1931,7 @@ As a result, when you *move* to *production* ...
 
 <more details>
 
-Just as you can specify property values for filtering nodes for a query, you can specify property values for a relationship. This query returns the name of of the person who gave the movie a rating of 65.
+Just as you can specify property values for filtering nodes for a query, you can specify property values for a relationship. This query returns the name of the person who gave the movie a rating of 65.
 
 --
 endif::[]
