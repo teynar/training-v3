@@ -404,8 +404,8 @@ So for example:
 [source,Cypher,role=nocopy noplay]
 ----
 // Do this only after ALL data has been imported
-CREATE INDEX MovieTitleIndex ON (m:Movie) FOR (m.title);
-CREATE INDEX PersonNameIndex ON (p:Person) FOR (p.name)
+CREATE INDEX MovieTitleIndex FOR (m:Movie) ON (m.title);
+CREATE INDEX PersonNameIndex FOR (p:Person) ON (p.name)
 ----
 
 These indexes will make lookup of a _Movie_ by _title_ as well as lookup of a _Person_ by _name_ fast.
