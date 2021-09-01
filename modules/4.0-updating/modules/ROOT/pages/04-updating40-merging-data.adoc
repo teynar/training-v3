@@ -111,6 +111,9 @@ If, however the node is not found in the graph, then the node is created.
 When you specify _nodeProperties_ for `MERGE`,  only use properties that satisfy some sort of uniqueness constraint.
 You will learn about uniqueness constraints in the course, _Using Indexes and Query Best Practices in Neo4j 4.x_.
 
+It is also extremely important to ensure that if you are using `MERGE` on a large dataset, the property that you use to uniquely identify the node has a uniqueness constraint defined which is an index.
+If there is no index, the `MERGE` needs to scan all nodes to find the matching node which is very expensive for large datasets.
+
 Here is what we currently have in the graph for the _Person_, _Michael Caine_. 
 This node has values for _name_ and _born_. Notice also that the label for the node is _Person_.
 --
