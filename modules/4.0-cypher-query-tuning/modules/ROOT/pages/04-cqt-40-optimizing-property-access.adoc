@@ -136,7 +136,7 @@ image::returnAll2.png[returnAll2,width=800,align=center]
 
 [.notes]
 --
-Notice that the query really only took 1 ms, but the streaming of the results back to the client took the 16 ms.
+Notice that the query really only took 1 ms, and the total time was 16ms.
 From this we can infer that the streaming time was 15 ms.
 If the client were on a different system, this streaming time would be greater.
 --
