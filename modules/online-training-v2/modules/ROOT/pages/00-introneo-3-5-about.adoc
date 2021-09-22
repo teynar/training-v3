@@ -18,7 +18,7 @@ This course is intended for developers, administrators, architects, data scienti
 
 This self-paced training will take you 12 hours to complete if you perform all of the hands-on exercises in the course.
 
-We have set up a discussion area in our https://community.neo4j.com/c/general/online-training[Neo4j Community Site], if you run into problems in the course and need assistance. Register on the community site  where you can view other questions and answers for students taking our online training courses. The _Neo4j Community Site_ is an  excellent resource for answering many types of questions posed by other users of Neo4j.
+We have set up a discussion area in our https://community.neo4j.com/c/general/graph-academy/116[Neo4j Community Site], if you run into problems in the course and need assistance. Register on the community site  where you can view other questions and answers for students taking our online training courses. The _Neo4j Community Site_ is an  excellent resource for answering many types of questions posed by other users of Neo4j.
 
 There are seven lessons in this course. Most lessons have hands-on exercises you complete and all lessons have a set of review questions at the end. The hands-on exercises in this course can be completed in a Neo4j Sandbox, Neo4j Aura, or in Neo4j Desktop. We have provided an estimate of how long each lesson will take you to complete if you perform the hands-on exercises.
 

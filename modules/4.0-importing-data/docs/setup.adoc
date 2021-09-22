@@ -105,9 +105,9 @@ include::{setup-guides-dir}/UseSandbox.adoc[]
 
 == Step 2: Use Neo4j Browser to load the database for this course
 
-Neo4j Browser is a tool that enables you to access a Neo4j Database by executing Cypher statements to create or update data in the graph and to query the graph to return data. 
-The data returned is typically visualized as nodes and relationships in a graph, but can also be displayed as tables. 
-In addition to executing Cypher statements, you can execute a number of system calls that are related to the database being accessed by the Browser. 
+Neo4j Browser is a tool that enables you to access a Neo4j Database by executing Cypher statements to create or update data in the graph and to query the graph to return data.
+The data returned is typically visualized as nodes and relationships in a graph, but can also be displayed as tables.
+In addition to executing Cypher statements, you can execute a number of system calls that are related to the database being accessed by the Browser.
 For example, you can retrieve the list of queries that are currently running in the server.
 
 There are two ways that you can use Neo4j Browser functionality:
@@ -142,4 +142,4 @@ If this query returns *171*, then your database has been set up properly and you
 
 == Getting help
 
-If you have problems with setting up your Neo4j development environment, you can join http://community.neo4j.com/[Neo4j Community] and ask a question https://community.neo4j.com/c/general/online-training[here].
+If you have problems with setting up your Neo4j development environment, you can join http://community.neo4j.com/[Neo4j Community] and ask a question https://community.neo4j.com/c/general/graph-academy/116[here].

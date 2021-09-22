@@ -34,10 +34,10 @@ To prepare for this course, you must do the following before coming to class (sc
 |===
 a|image::Neo4jDesktop.1.1.8.png[Neo4jDesktop,width=500,align=center]
 a|
-The Neo4j Desktop includes the Neo4j Database server which includes the graph engine and kernel so that Cypher statements can be executed to access a database on your system. 
-It includes an application called  Neo4j Browser.  
-Neo4j Browser enables you to access a Neo4j database using Cypher. 
-You can also call built-in procedures that communicate with the database server. 
+The Neo4j Desktop includes the Neo4j Database server which includes the graph engine and kernel so that Cypher statements can be executed to access a database on your system.
+It includes an application called  Neo4j Browser.
+Neo4j Browser enables you to access a Neo4j database using Cypher.
+You can also call built-in procedures that communicate with the database server.
 There are a number of additional libraries and drivers for accessing the Neo4j database from Cypher or from another programming language that you can install in your development environment.
 
 Neo4j Desktop runs on OS X, Linux, and Windows.
@@ -50,9 +50,9 @@ include::{setup-guides-dir}/DesktopInstall.adoc[]
 
 === Using Neo4j Browser
 
-Neo4j Browser is a tool that enables you to access a Neo4j Database by executing Cypher statements to create or update data in the graph and to query the graph to return data. 
-The data returned is typically visualized as nodes and relationships in a graph, but can also be displayed as tables. 
-In addition to executing Cypher statements, you can execute a number of system calls that are related to the database being accessed by the Browser. 
+Neo4j Browser is a tool that enables you to access a Neo4j Database by executing Cypher statements to create or update data in the graph and to query the graph to return data.
+The data returned is typically visualized as nodes and relationships in a graph, but can also be displayed as tables.
+In addition to executing Cypher statements, you can execute a number of system calls that are related to the database being accessed by the Browser.
 For example, you can retrieve the list of queries that are currently running in the server.
 
 There are two ways that you can use Neo4j Browser functionality:
@@ -171,5 +171,5 @@ image:AfterNEulerLoad.png[AfterNEulerLoad,width=150]
 
 == Getting help
 
-If you have problems installing Neo4j Desktop, you can join http://community.neo4j.com/[Neo4j Community] and ask a question https://community.neo4j.com/c/general/online-training[here].
+If you have problems installing Neo4j Desktop, you can join http://community.neo4j.com/[Neo4j Community] and ask a question https://community.neo4j.com/c/general/graph-academy/116[here].
 

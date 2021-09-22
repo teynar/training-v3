@@ -77,7 +77,7 @@ Prior to taking this course, set up your development environment to use one of t
 == Resources
 
 ifndef::env-slides[]
-We have set up a discussion area in our https://community.neo4j.com/c/general/online-training[Neo4j Community Site], if you run into problems in the course and need assistance.
+We have set up a discussion area in our https://community.neo4j.com/c/general/graph-academy/116[Neo4j Community Site], if you run into problems in the course and need assistance.
 You can register on the community site where you view other questions and answers for students taking our online training courses.
 The Neo4j Community Site is an excellent resource for answering many types of questions posed by other users of Neo4j.
 
@@ -89,7 +89,7 @@ Here are some resources you will use as you learn about Neo4j and Cypher for thi
 * https://neo4j.com/docs/cypher-refcard/current/[Neo4j Cypher Refcard]
 * https://neo4j.com/docs/labs/apoc/current/[APOC Documentation]
 * https://neo4j.com/docs/driver-manual/current/[Neo4j Drivers Manual]
-* https://community.neo4j.com/c/general/online-training[Neo4j Community Site]
+* https://community.neo4j.com/c/general/graph-academy/116[Neo4j Community Site]
 endif::[]
 
 ifdef::env-slides[]
@@ -98,7 +98,7 @@ ifdef::env-slides[]
 * Neo4j Cypher Refcard  https://neo4j.com/docs/cypher-refcard/current/
 * APOC Documentation    https://neo4j.com/docs/labs/apoc/current/
 * Neo4j Drivers Manual  https://neo4j.com/docs/driver-manual/current/
-* Neo4j Community Site  https://community.neo4j.com/c/general/online-training
+* Neo4j Community Site  https://community.neo4j.com/c/general/graph-academy/116
 
 [.instructor-notes]
 --

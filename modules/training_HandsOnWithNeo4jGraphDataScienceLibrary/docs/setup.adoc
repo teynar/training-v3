@@ -80,6 +80,6 @@ For this training, you will use the GDS and APOC plugins. Do NOT install the Gra
 
 == Getting help
 
-If you have problems installing Neo4j Desktop, you can join http://community.neo4j.com/[Neo4j Community] and ask a question https://community.neo4j.com/c/general/online-training[here].
+If you have problems installing Neo4j Desktop, you can join http://community.neo4j.com/[Neo4j Community] and ask a question https://community.neo4j.com/c/general/graph-academy/116[here].
 
 

@@ -42,5 +42,5 @@ password : XYps4hhLVA9WxHKF
 
 == Getting help
 
-If you have problems with setting up your Neo4j development environment, you can join http://community.neo4j.com/[Neo4j Community] and ask a question https://community.neo4j.com/c/general/online-training[here].
+If you have problems with setting up your Neo4j development environment, you can join http://community.neo4j.com/[Neo4j Community] and ask a question https://community.neo4j.com/c/general/graph-academy/116[here].
 
