@@ -1,3 +1,12 @@
 = GraphAcademy Online Training
 :page-layout: training-index
 :page-introduction: Free self-paced, hands-on Neo4j training courses
+
+.Introducing the new GraphAcademy
+[TIP]
+====
+Over the past couple of months, we have been working on a new version of Neo4j GraphAcademy, featuring brand new, interactive, hands-on courses.
+Click the link below to visit the new site.
+
+link:https://graphacademy.neo4j.com?ref=old[Visit the new GraphAcademy now,role=btn]
+====
