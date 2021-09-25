@@ -231,7 +231,7 @@ But suppose we had to answer a new question?
 --
 What must Neo4j traverse to find this answer?
 
-This is a painful one.To find flight AY189, we need to traverse every relationship in the graph, because it is impossible to anchor on relationships.
+This is a painful one. To find flight AY189, we need to traverse every relationship in the graph, because it is impossible to anchor on relationships.
 What can we do to make flight data available as an anchor?
 --
 
