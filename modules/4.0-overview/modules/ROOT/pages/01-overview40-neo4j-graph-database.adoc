@@ -306,8 +306,7 @@ image::PropertyGraphNodes.png[PropertyGraphNodes,width=300,align=center]
 * Can be labeled.
 
 ifndef::env-slides[]
-There are two kinds of data that can be associated a node,
-labels and properties.
+There are two kinds of data that can be associated with a node - labels and properties.
 
 Labels provide categorical information.
 For example, here we have two Person nodes and one Car node.
@@ -315,7 +314,7 @@ For example, here we have two Person nodes and one Car node.
 These labels categorizes these nodes, as a Person or a Car,
 but they don’t provide any specific information about a given node.
 
-Specific information for a node is represented as a properties which you will learn about soon.
+Specific information for a node is represented as properties which you will learn about soon.
 endif::[]
 
 ifdef::env-slides[]
@@ -352,8 +351,8 @@ image::PropertyGraphNodesWithProperties.png[PropertyGraphNodesWithProperties,wid
 ifndef::env-slides[]
 Properties are used to associate specific information with individual nodes.
 
-As shown here, the Person nodes now each have _name_ property,
-One node has a name property with a value, Dan, and the other Person node has a name property with a value, Ann.
+As shown here, the Person nodes now each have a _name_ property,
+One node has a name property with a value of "Dan" and the other Person node has a name property with a value of "Ann".
 The name property provides a way to differentiate the nodes.
 And the Car node has several properties providing details about this particular car.
 
@@ -527,7 +526,7 @@ image::PropertyGraphSimpleModel.png[PropertyGraphSimpleModel,width=400,align=cen
 * Nodes can share multiple relationships.
 
 ifndef::env-slides[]
-Here’s complete, although very simple,
+Here’s a complete, although very simple,
 property graph for this example.
 
 Mathematically, a node is defined as “a point where two or more edges (relationships) meet.”
@@ -547,7 +546,7 @@ endif::[]
 ifdef::env-slides[]
 [.instructor-notes]
 --
-Here’s complete, although very simple,
+Here’s a complete, although very simple,
 
 * *property graph* example.
 
