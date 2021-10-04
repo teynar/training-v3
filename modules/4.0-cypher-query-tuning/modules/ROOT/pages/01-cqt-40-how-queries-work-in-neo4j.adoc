@@ -280,7 +280,7 @@ In the third statement, a filter is specified which reduces the number of nodes 
 
 [.notes]
 --
-By default, an anchor set of nodes is determined by the metadata related to the query path and and `WHERE` clauses to filter the query.
+By default, an anchor set of nodes is determined by the metadata related to the query path and `WHERE` clauses to filter the query.
 In some cases you may have more than one set of anchor nodes.
 
 For example, you can specify:
@@ -988,7 +988,7 @@ You can also force the update to the DB Stats with these calls:
 
 [source,Cypher,role=noplay]
 ----
-/update DB Stats for a specific index
+//update DB Stats for a specific index
 CALL db.resampleIndex(':Person(name)')
 
 //update DB Stats for all indexes
