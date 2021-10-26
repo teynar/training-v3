@@ -1820,7 +1820,7 @@ endif::[]
 == Properties for relationships
 
 ifndef::env-slides[]
-Recall that a node can have as set of properties, each identified by its property key.
+Recall that a node can have a set of properties, each identified by its property key.
 Relationships can also have properties.
 This enables your graph model to provide more data about the relationships between the nodes.
 
@@ -1857,7 +1857,7 @@ It's important to understand why these *properties* are *on* the *relationship* 
 
 <more details>
 
-Recall that a node can have as set of properties, each identified by its property key. Relationships can also have properties. This enables your graph model to provide more data about the relationships between the nodes. Here is an example from the Movie graph. The movie, The Da Vinci Code has two people that reviewed it, Jessica Thompson and James Thompson. Each of these Person nodes has the REVIEWED relationship to the Movie node for The Da Vinci Code. Each relationship has properties that further describe the relationship using the summary and rating properties.null
+Recall that a node can have a set of properties, each identified by its property key. Relationships can also have properties. This enables your graph model to provide more data about the relationships between the nodes. Here is an example from the Movie graph. The movie, The Da Vinci Code has two people that reviewed it, Jessica Thompson and James Thompson. Each of these Person nodes has the REVIEWED relationship to the Movie node for The Da Vinci Code. Each relationship has properties that further describe the relationship using the summary and rating properties.null
 --
 endif::[]
 
