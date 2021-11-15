@@ -14,9 +14,12 @@
 [.notes]
 --
 In the courses, _Querying with Cypher in Neo4j 4.x_ and _Creating Nodes and Relationships in Neo4j 4.x_, you learned how to query the graph and create nodes and relationships in the graph.
-In most graphs, you will want to provide uniqueness for some properties of the nodes in the graph.
-In addition, you may want to enforce the creation of mandatory properties for selected nodes.
+In most graphs, you will want to provide uniqueness for some properties of the nodes or relationships in the graph.
+In addition, you may want to enforce the creation of mandatory properties for selected nodes and relationships.
 These are called constraints in a Neo4j graph data model and are typically defined during the graph data modeling phase of your application developement.
+
+[NOTE]
+In Neo4j 4.3 Enterprise Edition and later, you can create constraints on relationship properties.
 --
 
 At the end of this module, you will be able to:

@@ -41,10 +41,13 @@ Because the code examples in this lesson modify the database, it is recommended 
 [.notes]
 --
 The uniqueness and node key constraints that you add to a graph are essentially single-property and composite indexes respectively.
-Indexes are used to improve initial node lookup performance, but they require additional storage in the graph to maintain and also add to the cost of creating or modifying property values that are indexed.
-Indexes store redundant data that points to nodes with the specific property value or values.
+Indexes are used to improve initial lookup performance, but they require additional storage in the graph to maintain and also add to the cost of creating or modifying property values that are indexed.
+Indexes store redundant data that points to nodes or relationships with the specific property value or values.
 Unlike SQL, there is no such thing as a primary key in Neo4j.
 You can have multiple properties on nodes that must be unique.
+
+[NOTE]
+Starting with Neo4j 4.3, you can create indexes on relationship properties.
 --
 
 Single-property indexes are used for:
@@ -117,6 +120,15 @@ With the result:
 endif::[]
 
 image::CreateSingle-propertyIndex.png[CreateSingle-propertyIndex,width=1000,align=center]
+
+In Neo4j 4.3 or later, here is an example of how you would create an index on all _rating_ properties of the _REVIEWED_ relationships:
+
+[source,Cypher,role=nocopy noplay]
+----
+CREATE INDEX REVIEWED_rating
+FOR ()-[r:REVIEWED]-()
+ON (r.rating)
+----
 
 == Creating composite indexes
 
@@ -435,7 +447,7 @@ What makes creating a full-text schema index different from creating a property 
 Select the correct answers.
 
 [%interactive.answers]
-- [x] Full-text schema indexes can use relationship properties.
+- [ ] Full-text schema indexes can use relationship properties.
 - [ ] Full-text schema indexes can check for uniqueness.
 - [x] Full-text schema indexes can use multiple types of nodes for the index.
 - [ ] Full-text schema indexes can be used to ensure the existence of a property.

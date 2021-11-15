@@ -727,17 +727,18 @@ image::HierarchyOfAccessibility.png[HierarchyOfAccessibility,width=500,align=cen
 
 Here is the cost of access from least expensive to most expensive:
 
-. Anchor node label,  indexed anchor node properties
-. Relationship degrees
-. Relationship types and direction
-. Non-indexed anchor node properties
-. Downstream node labels
-. Relationship properties, downstream node properties
+. Anchor node label,  indexed anchor node properties, indexed anchor relationship properties
+. Non-anchor relationship types and direction
+. Non-anchor node labels
+. Non-anchor properties
 
 [.notes]
 --
 When analyzing queries, you must always remember how expensive nodes, relationships, and properties are to access.
 --
+
+[NOTE]
+Starting in Neo4j 4.3, you can define indexes on relationship properties and in Neo4j 4.3 Enterprise Edition, you can create constraints on relationship properties.
 
 == Understanding the graph you are working with
 
