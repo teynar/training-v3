@@ -361,7 +361,7 @@ You never want to see _AllNodesScan_ in an execution plan.
 
 [.notes]
 --
-You want to see NodeByLabelScan in your execution plans if an index will cannot be used.
+You want to see NodeByLabelScan in your execution plans if an index cannot be used.
 You must be familiar with how labels are used.
 Ideally you want the greatest selectivity for the anchor nodes.
 
