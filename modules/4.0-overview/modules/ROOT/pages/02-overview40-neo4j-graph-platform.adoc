@@ -12,7 +12,7 @@
 ifndef::env-slides[]
 == About this module
 
-The Neo4j Graph Platform enables developers to create applications that are best architected as graph-powered systems that are built upon the rich connectedness of data.
+The Neo4j Graph Platform enables developers to create applications that are best architected as graph-powered systems, built upon the rich connectedness of data.
 
 At the end of this module, you will be able to:
 [square]
@@ -28,13 +28,13 @@ image::Neo4jPlatform.png[Neo4jPlatform,width=700,align=center]
 It is used by developers, administrators, data analysts, and data scientists to access application data.
 Developers create the data in the graph by either importing it into the graph or using the Cypher language to implement the data model. In addition, developers are responsible for integrating the graph with other systems and database management system (DBMS) installations.
 Admins manage the processes and files related to the Neo4j installation.
-Data scientists and data analysts typically use a combination of Cypher queries, as well as tools to analyze the data.
+Data scientists and data analysts typically use a combination of Cypher queries, as well as tools, to analyze the data.
 End-users typically use applications written by developers to access the graph data.
 
 
 == Components of the Neo4j Graph Platform
 
-To better understand the Neo4j Graph Platform, you will learn about these components and the benefits they provide.
+To better understand the Neo4j Graph Platform, you will learn about these components and the benefits they provide:
 
 [square]
 * Neo4j DBMS
@@ -103,7 +103,7 @@ A Neo4j instance at a minimum contains two databases, the system database and th
 
 image::Neo4jDBMS.png[Neo4jDBMS,width=300,align=center]
 
-The *system* database stores metadata about the databases for the installation, as well as security configuration.
+The *system* database stores metadata about the databases for the installation as well as security configuration.
 The *default* database (named neo4j by default) is the "user" database where you implement your graph data model.
 endif::[]
 
@@ -239,7 +239,7 @@ The result of this query is 1, but in order to determine this result, the query 
 . Build the query plan for the subclause.
 . Execute the query plan for the subclause.
 . Locate the next innermost clause.
-. Repeat Steps 2-4.
+. Repeat steps 2-4.
 
 Resulting in:
 
@@ -330,7 +330,7 @@ image::ACID.png[ACID,width=800,align=center]
 ifndef::env-slides[]
 Transactionality is very important for robust applications that require an ACID (atomicity, consistency, isolation, and durability) guarantee for their data.
 If a relationship between nodes is created, not only is the relationship created, but the nodes are updated as connected. 
-All of these updates to the database must [.underline]#all# succeed or fail.
+These updates to the database must [.underline]#all# succeed, otherwise the entire transacton fails and the updates are rolled back.
 endif::[]
 
 ifdef::env-slides[]
@@ -626,7 +626,7 @@ Some of them are Web browser-based and some run in their own JVM.
 Graph applications are written by Neo4j engineers or Neo4j community members.
 Many of the graph applications supported by Neo4j are the work of https://neo4j.com/labs/[Neo4j Labs].
 Some graph applications are supported by Neo4j and some are not, so you must be aware of the type of support you can receive for a particular graph application.
-You typically install graph applications from your Neo4j Desktop environment from https://install.graphapp.io/.
+You typically install graph applications from your Neo4j Desktop environment from https://install.graphapp.io.
 
 Here are some Neo4j graph applications:
 endif::[]
@@ -664,7 +664,7 @@ Typically, graph applications are installed from your Neo4j Desktop environment.
 --
 endif::[]
 
-=== Some Neo4j graph applications
+=== Example Neo4j graph applications
 
 ifndef::env-slides[]
 Here are [.underline]#some# of the graph applications you can use:
@@ -799,14 +799,12 @@ endif::[]
 [.half-column]
 == Accessing Neo4j Browser
 
-Within Neo4j Desktop, you can connect to a started database by simply opening it (Clicking the *Open* button for the started database).
+Within Neo4j Desktop, you can connect to a started database with Neo4j Browser by simply opening it (clicking the *Open* button for the started database).
 Another way is by opening the graph apps sidebar and selecting Neo4j Browser.
 
 image::StartNeo4jBrowser.png[StartNeo4jBrowser,width=500,align=center]
 
-Runs as a graph app from Neo4j Desktop.
-
-Web browser interface can also be used for connecting to:
+Neo4j Browser also provides a Web browser interface that can connect to:
 
 [square]
 * Neo4j Desktop instance that is started
@@ -840,10 +838,10 @@ endif::[]
 image::Neo4jBrowserFollows.png[Neo4jBrowserFollows,width=500,align=center]
 
 ifndef::env-slides[]
-Neo4j Browser is a Neo4j-supported tool that enables you to access a Neo4j Database by executing Cypher statements to create or update data in the graph and to query the graph to return data.
+Neo4j Browser is a Neo4j-supported tool that enables you to access a Neo4j database by executing Cypher statements to create or update data in the graph and to query the graph to return data.
 The data returned is typically visualized as nodes and relationships in a graph, but can also be displayed as tables.
 In addition to executing Cypher statements, you can execute a number of system calls that are related to the database being accessed by the Browser.
-For example, you can retrieve the list of queries that are currently running in the server.
+For example, you can retrieve the list of queries that are currently running on the server.
 endif::[]
 
 ifdef::env-slides[]
@@ -894,7 +892,7 @@ ifndef::env-slides[]
 === 1. Open  Neo4j Browser from Neo4j Desktop
 
 Neo4j Browser is a graph application that comes with Neo4j Desktop.
-You typically use it to access a database that is running locally, but you can use it to access a remote database.
+You typically use it to access a database that is running locally, but you can also use it to access a remote database.
 
 If you save your frequently-used Cypher code in *Favorites*, you can download them so you can use them elsewhere (like in your application code).
 
@@ -906,7 +904,7 @@ You can use the Web interface to access a local Neo4j DBMS, or a database in Neo
 
 image::WebNeo4jBrowser.png[WebNeo4jBrowser,width=600,align=center]
 
-Just as in the Neo4j Browser application, you can save frequently-used Cypher code in *Favorites*, then you can download them so you can use them elsewhere (like in your application code).
+Just as in the Neo4j Browser application, you can save frequently-used Cypher code in *Favorites* and then download and use them elsewhere (like in your application code).
 In addition, when using the Web browser interface to Neo4j Browser, you can use Browser Sync to keep your favorites in the Cloud.
 endif::[]
 
@@ -1091,7 +1089,7 @@ endif::[]
 
 ifndef::env-slides[]
 Just as there are graph applications written by Neo4j engineers and Neo4j community members, there are libraries you can incorporate into your application.
-A library is also called a plug-in as it is used to extend what you can do in Cypher.
+A library is also called a plugin as it is used to extend what you can do in Cypher.
 Some libraries are available in Neo4j Desktop, while you must download and install other libraries.
 
 Functions and procedures from the  Neo4j 3.5 Graph Algorithms Library are officially supported by Neo4j as the Graph Data Science Library (GDS) in Neo4j 4.x.
@@ -1167,14 +1165,14 @@ Neo4j provides a full stack that implements all levels of access to the database
 The language used for querying the Neo4j database is Cypher, an open source language.
 
 In addition, Neo4j supports Java, JavaScript, Python, C#, and Go drivers out-of-the box that use Neo4j's bolt protocol for binary access to the database layer.
-Bolt is an efficient binary protocol that compresses data sent over the wire as well as encrypting the data.
-For example, you can write a Java application that uses the Bolt driver to access the Neo4j database, and the application may use other packages that allow data integration between Neo4j and other data stores or uses a common framework such as spring.
+Bolt is an efficient binary protocol that compresses data sent over the wire as well as encrypts the data.
+For example, you can write a Java application that uses the Bolt driver to access the Neo4j database, and the application may use other packages that allow data integration between Neo4j and other data stores or use a common framework such as spring.
 You download drivers from the https://neo4j.com/download-center/#drivers[Neo4j driver download page].
 
 It is also possible for you to develop your own server-side extensions in Java that access the data in the database directly without using Cypher.
 The Neo4j community has developed drivers for a number of languages including Ruby, PHP, and R.
 
-You can also extend the functionality of Neo4j by creating user defined functions and procedures that are callable from Cypher.
+You can also extend the functionality of Neo4j by creating user-defined functions and procedures that are callable from Cypher.
 endif::[]
 
 ifdef::env-slides[]
@@ -1202,7 +1200,7 @@ https://neo4j.com/download-center/#drivers
 
 <more details>
 
-Because Neo4j is open source, you can delve into the details of how the Neo4j Database is accessed, but most developers simply use Neo4j without needing a deeper understanding of the underlying code. Neo4j provides a full stack that implements all levels of access to the database and clustering layer where you can use our published APIs. The language used for querying the Neo4j database is Cypher, an open source language. In addition, Neo4j supports Java, JavaScript, Python, C#, and Go drivers out-of-the box that use Neo4j’s bolt protocol for binary access to the database layer. Bolt is an efficient binary protocol that compresses data sent over the wire as well as encrypting the data. For example, you can write a Java application that uses the Bolt driver to access the Neo4j database, and the application may use other packages that allow data integration between Neo4j and other data stores or uses as common framework such as spring. You download drivers from the Neo4j driver download page. It is also possible for you to develop your own server-side extensions in Java that access the data in the database directly without using Cypher. The Neo4j community has developed drivers for a number of languages including Ruby, PHP, and R. You can also extend the functionality of Neo4j by creating user defined functions and procedures that are callable from Cypher.
+Because Neo4j is open source, you can delve into the details of how the Neo4j Database is accessed, but most developers simply use Neo4j without needing a deeper understanding of the underlying code. Neo4j provides a full stack that implements all levels of access to the database and clustering layer where you can use our published APIs. The language used for querying the Neo4j database is Cypher, an open source language. In addition, Neo4j supports Java, JavaScript, Python, C#, and Go drivers out-of-the box that use Neo4j’s bolt protocol for binary access to the database layer. Bolt is an efficient binary protocol that compresses data sent over the wire as well as encrypts the data. For example, you can write a Java application that uses the Bolt driver to access the Neo4j database, and the application may use other packages that allow data integration between Neo4j and other data stores or uses as common framework such as spring. You download drivers from the Neo4j driver download page. It is also possible for you to develop your own server-side extensions in Java that access the data in the database directly without using Cypher. The Neo4j community has developed drivers for a number of languages including Ruby, PHP, and R. You can also extend the functionality of Neo4j by creating user-defined functions and procedures that are callable from Cypher.
 
 --
 endif::[]
@@ -1223,7 +1221,7 @@ Discussions:
 * Neo4j User slack channel
 * Neo4j Community
 * Stack overflow
-* Github
+* GitHub
 
 [.instructor-notes]
 --
@@ -1252,7 +1250,7 @@ endif::[]
 ifndef::env-slides[]
 Neo4j has integrations with many systems in the IOT ecosystem. Neo4j can be part of a system that uses GRANDstack, Kettle, Docker, and many others.
 How you integrate Neo4j into a larger system will depend on how you intend to use Neo4j.
-Neo4j engineers and Community members have worked through some of the challenges of integration and their discussions and work can be found on the http://neo4j.com/slack[Neo4j User slack channel], the https://community.neo4j.com[Neo4j online forum], https://stackoverflow.com/questions/tagged/neo4j[stack overflow], and on https://github.com/neo4j-contrib[Github].
+Neo4j engineers and community members have worked through some of the challenges of integration and their discussions and work can be found on the http://neo4j.com/slack[Neo4j User slack channel], the https://community.neo4j.com[Neo4j online forum], https://stackoverflow.com/questions/tagged/neo4j[stack overflow], and https://github.com/neo4j-contrib[GitHub].
 
 One Neo4j-supported integration that you can download enables data to be streamed to/from https://neo4j.com/docs/labs/neo4j-streams/current/[Kafka].
 endif::[]
@@ -1272,9 +1270,9 @@ h|Description
 |cypher-shell
 |Create, start, stop, and drop a particular database as well as query the "user" database.
 |neo4j
-|Start, stop and retrieve the status of the Neo4j DBMS instance.
+|Start, stop, and retrieve the status of the Neo4j DBMS instance.
 |neo4j-admin
-|Create, copy, remove, backup, restore and perform other administrative tasks.
+|Create, copy, remove, backup, restore, and perform other administrative tasks.
 |===
 {set:cellbgcolor!}
 

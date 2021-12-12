@@ -12,13 +12,13 @@
 ifndef::env-slides[]
 == About this module
 
-Neo4j enables developers to create applications that are best architected as graph-powered systems that are built upon the rich connectedness of data.
+Neo4j enables developers to create applications that are best architected as graph-powered systems, built upon the rich connectedness of data.
 
 At the end of this module, you will be able to:
 [square]
 * Describe what a graph is.
 * Describe what a graph database is.
-* Describe some common use cases for using a graph database.
+* Describe some common use cases for a graph database.
 * Describe the Neo4j property graph model.
 * Whiteboard a graph data model.
 
@@ -78,7 +78,7 @@ Euler observed the following:
 * The route taken within each landmass is irrelevant.  Only the sequence of bridges crossed matters.
 * Whenever you enter a land mass via a bridge, you must leave it by a different bridge.
 ** ...except at the start (where you leave but do not enter) and at the end (where you enter but do not leave).
-*Thus, for the problem to be solvable, every land mass (except the start and end) must be touched by an even number of bridges.
+* Thus, for the problem to be solvable, every land mass (except the start and end) must be touched by an even number of bridges.
 
 Based on the above observations, the problem has no solution, because all four of the land masses are touched by an odd number of bridges.
 endif::[]
@@ -227,7 +227,7 @@ endif::[]
 
 == Neo4j's property graph
 
-The components of A Neo4j graph include:
+The components of a Neo4j graph include:
 
 [square]
 * Nodes
@@ -268,11 +268,11 @@ image::EdgeVertex.png[EdgeVertex,width=300,align=center]
 ifndef::env-slides[]
 Let’s start by defining the terms vertex and edge.
 A vertex is an object in a graph.
-An edge is a connection between two vertices which could be an ordered pair of vertices
+An edge is a connection between two vertices which could be an ordered pair of vertices.
 
 Node and Relationship are the Neo4j terms for vertex and edge.
 
-We use these nodes and relationships in Neo4j since we find them more intuitive in representing and communicating -
+We use these nodes and relationships in Neo4j since we find them more intuitive in representing and communicating
 how vertices and edges are used in a property graph.
 endif::[]
 
@@ -311,7 +311,7 @@ There are two kinds of data that can be associated with a node - labels and prop
 Labels provide categorical information.
 For example, here we have two Person nodes and one Car node.
 
-These labels categorizes these nodes, as a Person or a Car,
+These labels categorize these nodes, as a Person or a Car,
 but they don’t provide any specific information about a given node.
 
 Specific information for a node is represented as properties which you will learn about soon.
@@ -404,7 +404,7 @@ Each of these types captures how a relationship is used to relate two nodes.
 
 Again, along with a type, each Neo4j relationship must have a direction.
 
-Following the direction shown in this graph we see that “Ann owns a Volvo”.
+Following the direction shown in this graph we see that “Ann owns a Volvo."
 If the relationship direction were reversed, it relays a VERY different concept,
 which is “The Volvo owns Ann.”
 endif::[]
@@ -457,7 +457,7 @@ image::PropertyGraphRelationshipProperties.png[PropertyGraphRelationshipProperti
 ifndef::env-slides[]
 Just like nodes, relationships can have properties that express specific attributes.
 
-Here we see the property ‘since’ - for the DRIVES relationship.
+Here we see the property ‘since’ for the DRIVES relationship.
 This indicates how long Dan has been driving this particular car.
 
 endif::[]
@@ -749,8 +749,8 @@ image::GraphDatabaseInEnterprise.png[GraphDatabaseInEnterprise,width=800,align=c
 
 A graph database is an online database management system with Create, Read, Update, and Delete (CRUD) operations working on a graph data model.
 
-Graph databases are often used as part of an Enterprise online transaction processing (OLTP) system.
-Accordingly, they are normally optimized for transactional performance, and engineered with transactional integrity and operational availability in mind.
+Graph databases are often used as part of an Enterprise Online Transaction Processing (OLTP) system.
+Accordingly, they are normally optimized for transactional performance and engineered with transactional integrity and operational availability in mind.
 
 Unlike other databases, relationships take first priority in graph databases.  
 This means your application doesn't have to infer data connections using foreign keys or out-of-band processing, such as MapReduce.
@@ -870,7 +870,7 @@ People are related to Movies using these relationships:
 * WROTE
 * REVIEWED
 
-People, who have reviewed movies, are related to each other using the FOLLOWS relationships.
+People who have reviewed movies are related to each other using the FOLLOWS relationship.
 
 endif::[]
 
@@ -916,7 +916,7 @@ In the next module we’ll be creating this data model.
 endif::[]
 
 ifndef::env-slides[]
-=== Initial whiteboard the data model
+=== Initial whiteboard for the data model
 
 You can use a whiteboard to better understand the graph data model.
 Stakeholders for an application typically communicate their ideas about how the data will be modeled by drawing bubbles for the entities and directed arrows for the relationships between the entities.
@@ -934,7 +934,7 @@ When nodes and relationships are added to the graph, additional properties are s
 Some properties for nodes must be unique such as the name of a person or the title of a movie.
 
 Here is the partial implementation of this graph data model.
-Notice that some nodes not only have a Person label, but also have a Actor or Director label on them.
+Notice that some nodes not only have a Person label, but also have an Actor or Director label on them.
 A Person node has a name property and some Person nodes have a born property.
 A Movie node has title and released properties.
 The ACTED_IN relationship has a roles property.
@@ -957,7 +957,7 @@ For example, here is the _Exploring a Conference_ graphgist that has a descripti
 
 image::graphgists2.png[Graphgists2,width=700,align=center]
 
-As you gain experience with Cypher and think about modeling your application, check out some of these graphgists for ideas for how to model your data.
+As you gain experience with Cypher and think about modeling your application, check out some of these graphgists for ideas on how to model your data.
 We recommend that you take our training course, _Graph Data Modeling for Neo4j_, which introduces you to the best practices for modeling data and implementing graph data models in Neo4j.
 
 endif::[]
@@ -1015,7 +1015,7 @@ You can now:
 * Describe what a graph is.
 * Describe what a graph database is.
 ifndef::env-slides[]
-* Describe some common use cases for using a graph database.
+* Describe some common use cases for a graph database.
 endif::[]
 * Describe the Neo4j property graph model.
 ifndef::env-slides[]
