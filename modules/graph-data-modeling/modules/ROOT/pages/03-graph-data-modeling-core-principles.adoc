@@ -119,7 +119,7 @@ image::SpecificRelationships.png[SpecificRelationships,width=900,align=center]
 
 [.notes]
 --
-Being specific with property types allows you to reduce gather-and-inspect behavior.
+Being specific with relationship types allows you to reduce gather-and-inspect behavior.
 In this case, if you are only interested in what libraries will be INSTALLED by an app, the specific types on the right saves you some wasted traversal.
 --
 
