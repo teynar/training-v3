@@ -163,7 +163,7 @@ Neo4j Bloom, or some other data visualization tool, may be used as the front-end
 The following are two common patterns this use case:
 
 . Neo4j is used to find and analyze connections in data from other data sources. To cater for this, the Neo4j database is loaded with data from several sources. As a Neo4j database administrator, you will ensure that the Neo4j database used for this purpose is kept up-to-date and that the data is secure and appropriately backed up.
-. Data scientists analyze the data in a Neo4j production database. In order to safeguard the production database from potentially heavy queries, a dedicated Read Replica is configured (Causal Cluster) . In this case, the analytics database is always up-to-date with the production database, and its administration is a part of the regular Causal Cluster maintenance work (see Example architecture #3).
+. Data scientists analyze the data in a Neo4j production database. In order to safeguard the production database from potentially heavy queries, a dedicated Read Replica is configured (Causal Cluster). In this case, the analytics database is always up-to-date with the production database, and its administration is a part of the regular Causal Cluster maintenance work (see Example architecture #3).
 --
 
 image::DataAnalytics.png[DataAnalytics,width=300,align=center]
