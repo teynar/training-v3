@@ -239,7 +239,7 @@ Here are some examples:
 
 [square]
 * Betweenness Centrality is used to identify influencers in various organizations. Powerful individuals are not necessarily in management positions, but can be found in “brokerage positions” using Betweeness Centrality. Removal of such influencers seriously destabilize the organization. This might be a welcome disruption by law enforcement if the organization is criminal, or may be a disaster if a business loses key staff it never knew about.
-* Betweenness Centrality uncovers key transfer points in networks such electrical grids. Counter-intuitively, removal of specific bridges can actually improve overall robustness by “islanding” disturbances.
+* Betweenness Centrality uncovers key transfer points in networks such as electrical grids. Counter-intuitively, removal of specific bridges can actually improve overall robustness by “islanding” disturbances.
 * Betweenness Centrality is also used to help micro-bloggers spread their reach on Twitter, with a recommendation engine for targeting influencers.
 --
 
