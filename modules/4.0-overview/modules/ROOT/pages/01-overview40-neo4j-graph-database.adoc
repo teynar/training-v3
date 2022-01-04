@@ -53,7 +53,7 @@ endif::[]
 [.one-sixth-five-sixths-row]
 == What is a graph?
 
-A *graph* is set of discrete objects, each of which has some set of relationships with the other objects.
+A *graph* is a set of discrete objects, each of which has some set of relationships with the other objects.
 
 ifndef::env-slides[]
 Graphs are a useful way to model data for the purposes of mathematical analysis, and they have been around for quite a long time.
