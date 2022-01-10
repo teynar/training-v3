@@ -24,15 +24,8 @@ subprojects {
   apply plugin: S3Plugin
   apply plugin: AsciidoctorModuleDescriptorPlugin
 
-  configurations {
-    asciidoctorgoogleslides
-  }
-
   repositories {
     mavenCentral()
-    maven {
-      url "https://dl.bintray.com/mogztter/io.github.mogztter"
-    }
     jcenter()
     ruby {
       gems()
@@ -43,7 +36,6 @@ subprojects {
     asciidoctorGems 'rubygems:rouge:3.18.0'
     asciidoctorGems 'rubygems:neo4j-asciidoctor-extensions:0.3.1'
     asciidoctorGems 'rubygems:asciidoctor-include-ext:0.3.1'
-    asciidoctorgoogleslides("io.github.mogztter:asciidoctor-googleslides:0.0.31")
   }
 
   def stage = project.findProperty('stage')
@@ -441,45 +433,6 @@ subprojects {
         }
       }
     }
-
-    // beta!
-    task convertGoogleSlides(type: AsciidoctorTask) {
-      dependsOn asciidoctorGemsPrepare
-
-      // disable up-to-date
-      outputs.upToDateWhen { false }
-
-      asciidoctorj {
-        requires "${rootProject.projectDir}/resources/googleslides_extensions.rb"
-        // must be a web accessible location
-        attributes 'imagesdir': "https://s3.amazonaws.com/dev.assets.neo4j.com/course/${project.name}/images/",
-          'env-slides': '',
-          'experimental': '',
-          'google-slides-copy-id': '1aR6dlFmu6ssBuf1yQJm8I_cfTOOpSBHIfjqCQzuDsdQ',
-          'google-slides-credentials-path': "${rootProject.rootDir}/tokens/credentials.json",
-          'google-slides-layout-student-exercise': "CUSTOM_2", // Title gold with body
-          'google-slides-layout-quiz': "CUSTOM_1", // Title purple
-          'google-slides-layout-one-sixth-five-sixths-row': "CUSTOM_3", // one sixth + fix sixths row
-          'google-slides-layout-half-row': "CUSTOM_4", // half row
-          'google-slides-layout-half-column': "CUSTOM_5", // half column
-          'google-slides-layout-one-third-two-thirds-column': "CUSTOM_6", // one third + two thirds column
-          'google-slides-layout-five-sixths-one-sixth-row': "CUSTOM_7", // five sixths one sixth row
-          'google-slides-layout-two-thirds-one-third-column': "CUSTOM_8", // two thirds + one third column
-          'google-slides-layout-guided-exercise': "CUSTOM_9", // Title green with body
-          'google-slides-layout-section-break': "CUSTOM_11", // Title green
-          'google-slides-layout-slide-start-title': "TITLE" // Title slide
-      }
-
-      inProcess "IN_PROCESS"
-      baseDirFollowsSourceDir()
-      sourceDir file("${projectDir}/single-slides")
-      outputDir file("${projectDir}/build/google-slides")
-      outputOptions {
-        backends = ["googleslides"]
-      }
-    }
-
-    convertGoogleSlides.configurations 'asciidoctorgoogleslides'
 
     task convert {
       dependsOn convertSetupHtml
