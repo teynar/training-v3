@@ -398,7 +398,7 @@ image::DateTime.png[DateTime,width=900,align=center]
 
 [.notes]
 --
-Since both `date()` and `datetime()` store their values as strings, you can use properties such as day, year, time to extract the values that you need:
+With `date()` and `datetime()`, you can use properties such as day, year, time to extract the values that you need:
 --
 
 [%unbreakable]
