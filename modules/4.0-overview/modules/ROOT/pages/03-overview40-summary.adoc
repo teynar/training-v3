@@ -79,7 +79,7 @@ This course teaches you the Cypher syntax for querying the database and contains
 
 link:https://neo4j.com/graphacademy/training-querying-40/enrollment/[Progress to Querying with Cypher in Neo4j 4.x^, role=button]
 
-Or, you can take any other course in this Series:
+Or, you can take any other course in this series:
 
 
 link:https://neo4j.com/graphacademy/training-updating-40/enrollment/[Creating Nodes and Relationships in Neo4j 4.x^]

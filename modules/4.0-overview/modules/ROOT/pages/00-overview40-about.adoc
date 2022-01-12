@@ -46,7 +46,7 @@ ifdef::env-slides[]
 * Do *hands-on exercises* working with Neo4j
 endif::[]
 
-This Course is published by Neo4j per this https://neo4j.com/docs/license/[License for Use^].
+This course is published by Neo4j per this https://neo4j.com/docs/license/[License for Use^].
 
 ifndef::env-slides[]
 == Lesson Overview
@@ -68,7 +68,7 @@ endif::[]
 
 ifndef::env-slides[]
 We have set up a discussion area in our https://community.neo4j.com/[Neo4j Community Site^], if you run into problems in the course and need assistance.
-You can register on the community site where you view other questions and answers for students taking our online training courses.
+You can register on the community site to ask questions as well as view other questions and answers from students taking our online training courses.
 The Neo4j Community Site is an excellent resource for answering many types of questions posed by other users of Neo4j.
 
 Here are some resources you will use as you learn about Neo4j and Cypher for this course:
