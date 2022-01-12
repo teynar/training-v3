@@ -224,7 +224,7 @@ image::AccessibilityOfData.png[AccessibilityOfData,width=900,align=center]
 
 [.notes]
 --
-Neo4j allows you to put data in labels, properties, and relationship types.
+Neo4j allows you to data or information as labels, properties, and relationship types.
 In most cases, there is a way you can model your graph so that data being queried is in any one of these three locations.
 
 When designing or refactoring a model, you can estimate performance by checking how “accessible” the data is that represents the important queries of your application.

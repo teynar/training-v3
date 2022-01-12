@@ -166,7 +166,8 @@ image::ProfileQuestion2.png[ProfileQuestion2,width=200,align=center]
 This query required 4382 db hits.
 
 Recall that our dataset only has 100 flights in it.
-In other words, in order to answer this question, we needed to hit the entire graph twice.
+In other words, in order to answer this question, we needed to access the entire graph twice.
+Once to retrieve all airports and another time to retrieve the data in the pattern.
 The query executed reasonably quickly in terms of milliseconds,  that is largely because the dataset is not large.
 Hence our insistence on using db hits as a measure--from that, we can tell that this query is grossly inefficient on this data model!
 

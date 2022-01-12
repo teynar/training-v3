@@ -65,7 +65,7 @@ MATCH (movie)<-[:DIRECTED]-(director)
 RETURN genre, director, movie
 ----
 
-where the _$titleExcerpt_ parameter is set to "Up"
+where the _$titleExcerpt_ parameter is set to "Life"
 
 . Execute this query (twice) and note how many rows are processed.
 
