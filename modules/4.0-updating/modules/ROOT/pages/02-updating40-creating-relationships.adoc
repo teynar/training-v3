@@ -294,7 +294,7 @@ You will learn about merging data later in this course.
 
 [.notes]
 --
-There are two ways that you can remove a property from a node. One way is to use the `REMOVE` keyword. The other way is to set the property's value to null, just as you do for properties of nodes.
+There are two ways that you can remove a property from a relationship. One way is to use the `REMOVE` keyword. The other way is to set the property's value to null, just as you do for properties of nodes.
 
 Suppose we have added the _:ACTED_IN_ relationship between _Christian Bale_ and the movie, _Batman Returns_ where the _roles_ property is added to the relationship.
 Here is an example where we remove the _roles_ property, yet keep the _:ACTED_IN_ relationship:

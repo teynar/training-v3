@@ -430,7 +430,7 @@ When you use `shortestPath()`, you can specify a upper limits for the shortest p
 
 [.notes]
 --
-In using `shortestPath()`, the return type is a path. A subgraph is essentially as set of paths derived from your `MATCH` clause.
+In using `shortestPath()`, the return type is a path. A subgraph is essentially a set of paths derived from your `MATCH` clause.
 
 For example, here is an example where we want a subgraph of all nodes connected to the movie, _The Replacements_:
 --
