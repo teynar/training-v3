@@ -26,8 +26,8 @@ Next, you will write a Cypher query to return information about the relationship
 Finally, you will write a query to return property values for the relationships between nodes.
 
 * *Exercise 3.1:* Display the schema of the database.
-* *Exercise 3.2*: Retrieve all people who wrote the movie _Speed Racer_.
-* *Exercise 3.3*: Retrieve all movies that are connected to the person, _Tom Hanks_.
+* *Exercise 3.2*: Retrieve the names of all people who wrote the movie _Speed Racer_.
+* *Exercise 3.3*: Retrieve the titles of all movies that are connected to the person, _Tom Hanks_, by an outgoing relationship.
 * *Exercise 3.4:* Retrieve information about the relationships _Tom Hanks_ had with the set of movies retrieved earlier.
 * *Exercise 3.5:* Retrieve information about the roles that _Tom Hanks_ acted in.
 
@@ -54,13 +54,13 @@ The result returned will be:
 [.thumb]
 image::call_db.schema.png[call_db.schema,width=800]
 
-== Exercise 3.2: Retrieve all people who wrote the movie _Speed Racer_ (Instructions)
+== Exercise 3.2: Retrieve the names of all people who wrote the movie _Speed Racer_ (Instructions)
 
-*Retrieve all people who wrote the movie _Speed Racer_.*
+*Retrieve the names of all people who wrote the movie _Speed Racer_.*
 
-== Exercise 3.2: Retrieve all people who wrote the movie _Speed Racer_ (Solution)
+== Exercise 3.2: Retrieve the names of all people who wrote the movie _Speed Racer_ (Solution)
 
-*Retrieve all people who wrote the movie _Speed Racer_.*
+*Retrieve the names of all people who wrote the movie _Speed Racer_.*
 
 [source, cypher]
 ----
@@ -75,22 +75,22 @@ image::SpeedRacerWriters.png[SpeedRacerWriters,width=500]
 
 Notice here that the _:Movie_ node is an anonymous node because for the query, we do not need information about the _Movie_ node.
 
-== Exercise 3.2: Retrieve all people who wrote the movie _Speed Racer_ (Taking it further - optional)
+== Exercise 3.2: Retrieve the names of all people who wrote the movie _Speed Racer_ (Taking it further - optional)
 
-* Retrieve all people who have written other movies.
-* Retrieve people who have acted in a particular movie.
-* Retrieve people who have directed a particular movie.
+* Retrieve the names of all people who have written other movies.
+* Retrieve the names of all people who have acted in a particular movie.
+* Retrieve the names of all people who have directed a particular movie.
 
-== Exercise 3.3: Retrieve all movies that are connected to the person, _Tom Hanks_ (Instructions)
+== Exercise 3.3: Retrieve the titles of all movies that are connected to the person, _Tom Hanks_, by an outgoing relationship (Instructions)
 
-*Retrieve all movies connected with _Tom Hanks_.*
+*Retrieve the titles of all movies connected with _Tom Hanks_ by an outgoing relationship.*
 
 *Hint:* _Tom Hanks_ has multiple relationships with a movie so you do not specify a relationship type in the query.
 
 
-== Exercise 3.3: Retrieve all movies that are connected to the person, _Tom Hanks_ (Solution)
+== Exercise 3.3: Retrieve the titles of all movies that are connected to the person, _Tom Hanks_ (Solution)
 
-*Retrieve all movies connected with _Tom Hanks_.*
+*Retrieve the titles of all movies connected with _Tom Hanks_.*
 
 *Hint:* _Tom Hanks_ has multiple relationships with a movie so you do not specify a relationship type in the query.
 
@@ -111,10 +111,10 @@ Also notice that we specify the named node (with a variable) first.
 It is a best practice to put named nodes first in a query.
 
 
-== Exercise 3.3: Retrieve all movies that are connected to the person, _Tom Hanks_ (Taking it further - optional)
+== Exercise 3.3: Retrieve the titles of all movies that are connected to the person, _Tom Hanks_, by an outgoing relationship (Taking it further - optional)
 
-* Retrieve all movies connected with another actor.
-* Retrieve all people connected with a particular movie.
+* Retrieve the titles of all movies connected with another actor.
+* Retrieve the names of all people connected with a particular movie.
 
 == Exercise 3.4: Retrieve information about the relationships _Tom Hanks_ has with the set of movies retrieved earlier (Instructions)
 
@@ -126,7 +126,7 @@ It is a best practice to put named nodes first in a query.
 
 [source, cypher]
 ----
-MATCH (m:Movie)-[rel]-(:Person {name: 'Tom Hanks'}) RETURN m.title, type(rel)
+MATCH (m:Movie)<-[rel]-(:Person {name: 'Tom Hanks'}) RETURN m.title, type(rel)
 ----
 
 The result returned will be:
@@ -150,11 +150,11 @@ One of the properties of the _ACTED_IN_ relationship is _roles_.
 
 *Retrieve information about the roles that _Tom Hanks_ played.*
 
-Write and execute the Cypher query to retrieve all of the roles that _Tom Hanks_ acted in.
+Write and execute the Cypher query to retrieve all the roles that _Tom Hanks_ acted in.
 
 [source, cypher]
 ----
-MATCH (m:Movie)-[rel:ACTED_IN]-(:Person {name: 'Tom Hanks'}) RETURN m.title, rel.roles
+MATCH (m:Movie)<-[rel:ACTED_IN]-(:Person {name: 'Tom Hanks'}) RETURN m.title, rel.roles
 ----
 
 The result returned will be:
